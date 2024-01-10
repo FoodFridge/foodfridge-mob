@@ -25,6 +25,8 @@
 		757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E12B351BC200048178 /* CourierPrime-Regular.ttf */; };
 		757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E32B351BD000048178 /* CourierPrime-Bold.ttf */; };
 		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
+		75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */; };
+		75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		757542E12B351BC200048178 /* CourierPrime-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Regular.ttf"; sourceTree = "<group>"; };
 		757542E32B351BD000048178 /* CourierPrime-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Bold.ttf"; sourceTree = "<group>"; };
 		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIChatServices.swift; sourceTree = "<group>"; };
+		75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 				757542C22B33E8F000048178 /* FoodFridgeApp.swift */,
 				757542D42B33EFCE00048178 /* Core */,
 				757542D12B33EAE900048178 /* Helper */,
+				75FF4D292B4713940081B20E /* Services */,
 				757542C62B33E8F100048178 /* Assets.xcassets */,
 				757542C82B33E8F100048178 /* FoodFridge.entitlements */,
 				757542C92B33E8F100048178 /* Preview Content */,
@@ -167,6 +172,15 @@
 				754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */,
 			);
 			path = SelectionIngredient;
+			sourceTree = "<group>";
+		};
+		75FF4D292B4713940081B20E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */,
+				75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */,
 				757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
@@ -248,6 +263,7 @@
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
+				75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
