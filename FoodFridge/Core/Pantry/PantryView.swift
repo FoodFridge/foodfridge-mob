@@ -20,7 +20,7 @@ struct PantryView: View {
     var body: some View {
         
         Text("Your pantry")
-        Text("(for testing) edit id : \(editingItemId ?? 100)")
+        Text("(for testing) edit id : \(editingItemId ?? 1000)")
         
         
         List {
@@ -54,13 +54,10 @@ struct PantryView: View {
                      }.onDelete(perform: deleteItems)
                  }
              }
-        
     }
     
     
-    
-    
-    
+
     func deleteItems(at offsets: IndexSet) {
         vm.pantryItems.remove(atOffsets: offsets)
     }
