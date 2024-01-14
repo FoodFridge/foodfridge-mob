@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5552B4E4C1F00106FD6 /* ProfileView.swift */; };
+		751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5572B4E4E8F00106FD6 /* ScanItemViewModel.swift */; };
+		751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5592B4E4FD100106FD6 /* DataScannerView.swift */; };
+		751EB55D2B4E52CA00106FD6 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB55C2B4E52CA00106FD6 /* PantryView.swift */; };
+		751EB5602B53488200106FD6 /* PantryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB55F2B53488200106FD6 /* PantryItem.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
@@ -24,12 +29,18 @@
 		757542DF2B34F3D300048178 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542DE2B34F3D300048178 /* LogInView.swift */; };
 		757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E12B351BC200048178 /* CourierPrime-Regular.ttf */; };
 		757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E32B351BD000048178 /* CourierPrime-Bold.ttf */; };
+		7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758061392B4E3F1D0091FFFA /* ScanItemView.swift */; };
 		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
 		75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */; };
 		75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		751EB5552B4E4C1F00106FD6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		751EB5572B4E4E8F00106FD6 /* ScanItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemViewModel.swift; sourceTree = "<group>"; };
+		751EB5592B4E4FD100106FD6 /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
+		751EB55C2B4E52CA00106FD6 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
+		751EB55F2B53488200106FD6 /* PantryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItem.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
@@ -50,6 +61,7 @@
 		757542E02B351AAF00048178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		757542E12B351BC200048178 /* CourierPrime-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Regular.ttf"; sourceTree = "<group>"; };
 		757542E32B351BD000048178 /* CourierPrime-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Bold.ttf"; sourceTree = "<group>"; };
+		758061392B4E3F1D0091FFFA /* ScanItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView.swift; sourceTree = "<group>"; };
 		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIChatServices.swift; sourceTree = "<group>"; };
 		75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
@@ -66,6 +78,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		751EB5542B4E4C0500106FD6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				751EB5552B4E4C1F00106FD6 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		751EB55B2B4E52B600106FD6 /* Pantry */ = {
+			isa = PBXGroup;
+			children = (
+				751EB55C2B4E52CA00106FD6 /* PantryView.swift */,
+			);
+			path = Pantry;
+			sourceTree = "<group>";
+		};
+		751EB55E2B53483600106FD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				751EB55F2B53488200106FD6 /* PantryItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		75434FFB2B37E6C500823A50 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +142,7 @@
 				757542E02B351AAF00048178 /* Info.plist */,
 				757542C22B33E8F000048178 /* FoodFridgeApp.swift */,
 				757542D42B33EFCE00048178 /* Core */,
+				751EB55E2B53483600106FD6 /* Model */,
 				757542D12B33EAE900048178 /* Helper */,
 				75FF4D292B4713940081B20E /* Services */,
 				757542C62B33E8F100048178 /* Assets.xcassets */,
@@ -137,9 +174,12 @@
 			isa = PBXGroup;
 			children = (
 				75434FFB2B37E6C500823A50 /* Authentication */,
-				75434FFC2B37E6E600823A50 /* LandingPage */,
-				75EBAAB42B3D280A0039841F /* SelectionIngredient */,
 				757542D52B33F2E700048178 /* Component */,
+				75434FFC2B37E6E600823A50 /* LandingPage */,
+				751EB5542B4E4C0500106FD6 /* Profile */,
+				751EB55B2B4E52B600106FD6 /* Pantry */,
+				75EBAAB42B3D280A0039841F /* SelectionIngredient */,
+				758061382B4E3EF60091FFFA /* ScanItem */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -161,6 +201,16 @@
 				757542E12B351BC200048178 /* CourierPrime-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		758061382B4E3EF60091FFFA /* ScanItem */ = {
+			isa = PBXGroup;
+			children = (
+				758061392B4E3F1D0091FFFA /* ScanItemView.swift */,
+				751EB5572B4E4E8F00106FD6 /* ScanItemViewModel.swift */,
+				751EB5592B4E4FD100106FD6 /* DataScannerView.swift */,
+			);
+			path = ScanItem;
 			sourceTree = "<group>";
 		};
 		75EBAAB42B3D280A0039841F /* SelectionIngredient */ = {
@@ -257,15 +307,21 @@
 			files = (
 				75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */,
 				757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */,
+				751EB5602B53488200106FD6 /* PantryItem.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
+				7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */,
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
 				754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */,
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
+				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */,
+				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
+				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
+				751EB55D2B4E52CA00106FD6 /* PantryView.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
@@ -406,6 +462,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodFridge/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow app to access the camera";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -446,6 +503,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodFridge/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow app to access the camera";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
