@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct PantryItem: Codable, Identifiable, Hashable {
     //need to name constant "id" to conform to identifiable protocal

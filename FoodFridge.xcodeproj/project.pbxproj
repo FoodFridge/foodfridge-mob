@@ -12,6 +12,7 @@
 		751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5592B4E4FD100106FD6 /* DataScannerView.swift */; };
 		751EB55D2B4E52CA00106FD6 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB55C2B4E52CA00106FD6 /* PantryView.swift */; };
 		751EB5602B53488200106FD6 /* PantryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB55F2B53488200106FD6 /* PantryItem.swift */; };
+		751EB5622B563C7500106FD6 /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5612B563C7500106FD6 /* IngredientItem.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
@@ -41,6 +42,7 @@
 		751EB5592B4E4FD100106FD6 /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
 		751EB55C2B4E52CA00106FD6 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 		751EB55F2B53488200106FD6 /* PantryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItem.swift; sourceTree = "<group>"; };
+		751EB5612B563C7500106FD6 /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				751EB55F2B53488200106FD6 /* PantryItem.swift */,
+				751EB5612B563C7500106FD6 /* IngredientItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				751EB55D2B4E52CA00106FD6 /* PantryView.swift in Sources */,
+				751EB5622B563C7500106FD6 /* IngredientItem.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
