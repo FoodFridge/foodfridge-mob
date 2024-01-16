@@ -59,14 +59,6 @@ struct LandingPageView: View {
                                 .frame(width: 200, height: 30)
                                 .offset(y: 85)
                             )
-                        
-                        
-                        
-                           
-                      
-                        
-                       
-                        
                     }
                     .padding(.top, -10)
                     
