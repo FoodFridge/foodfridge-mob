@@ -12,11 +12,13 @@
 		751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5592B4E4FD100106FD6 /* DataScannerView.swift */; };
 		751EB55D2B4E52CA00106FD6 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB55C2B4E52CA00106FD6 /* PantryView.swift */; };
 		751EB5602B53488200106FD6 /* PantryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB55F2B53488200106FD6 /* PantryItem.swift */; };
-		751EB5622B563C7500106FD6 /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5612B563C7500106FD6 /* IngredientItem.swift */; };
+		751EB5642B56463500106FD6 /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5632B56463500106FD6 /* IngredientItem.swift */; };
+		751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5652B57134900106FD6 /* FetchIngredients.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
 		754350042B3A653200823A50 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350032B3A653200823A50 /* CustomFont.swift */; };
+		754A8FA02B5792A700C9FD04 /* Ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 754A8F9F2B5792A700C9FD04 /* Ingredients.json */; };
 		754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */; };
 		754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */; };
 		757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C22B33E8F000048178 /* FoodFridgeApp.swift */; };
@@ -42,11 +44,13 @@
 		751EB5592B4E4FD100106FD6 /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
 		751EB55C2B4E52CA00106FD6 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 		751EB55F2B53488200106FD6 /* PantryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItem.swift; sourceTree = "<group>"; };
-		751EB5612B563C7500106FD6 /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
+		751EB5632B56463500106FD6 /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
+		751EB5652B57134900106FD6 /* FetchIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIngredients.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
 		754350032B3A653200823A50 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		754A8F9F2B5792A700C9FD04 /* Ingredients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Ingredients.json; sourceTree = "<group>"; };
 		754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewPrompt.swift; sourceTree = "<group>"; };
 		754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
 		757542BF2B33E8F000048178 /* FoodFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				751EB55F2B53488200106FD6 /* PantryItem.swift */,
-				751EB5612B563C7500106FD6 /* IngredientItem.swift */,
+				751EB5632B56463500106FD6 /* IngredientItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				757542E02B351AAF00048178 /* Info.plist */,
+				754A8F9F2B5792A700C9FD04 /* Ingredients.json */,
 				757542C22B33E8F000048178 /* FoodFridgeApp.swift */,
 				757542D42B33EFCE00048178 /* Core */,
 				751EB55E2B53483600106FD6 /* Model */,
@@ -232,6 +237,7 @@
 			children = (
 				75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */,
 				75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */,
+				751EB5652B57134900106FD6 /* FetchIngredients.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 				757542BB2B33E8F000048178 /* Sources */,
 				757542BC2B33E8F000048178 /* Frameworks */,
 				757542BD2B33E8F000048178 /* Resources */,
+				754A8F9C2B576CB300C9FD04 /* Run Flask server */,
 			);
 			buildRules = (
 			);
@@ -294,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754A8FA02B5792A700C9FD04 /* Ingredients.json in Resources */,
 				757542CB2B33E8F100048178 /* Preview Assets.xcassets in Resources */,
 				757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */,
 				757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */,
@@ -302,6 +310,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		754A8F9C2B576CB300C9FD04 /* Run Flask server */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Flask server";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		757542BB2B33E8F000048178 /* Sources */ = {
@@ -323,9 +353,10 @@
 				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
+				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				751EB55D2B4E52CA00106FD6 /* PantryView.swift in Sources */,
-				751EB5622B563C7500106FD6 /* IngredientItem.swift in Sources */,
+				751EB5642B56463500106FD6 /* IngredientItem.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
@@ -374,7 +405,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -435,7 +466,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -456,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = FoodFridge/FoodFridge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -497,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = FoodFridge/FoodFridge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

@@ -15,7 +15,7 @@ struct SelectionSheetView: View {
     
     private var listOfItems = ["bread", "jasmine rice", "rice noodles", "egg noodles", "wholewheat bread", "spagetthi", "glass noodles", "potato", "pasta","quinou", "oatmeal", "corn", "pita", "tortilla", "corn bread", "taro", "sweet potato","pumkin", "sweet sticky rice", "black glutenous rice", "kelp noodles",  "cornpuff", "pita bread", "corn tortilla", "purple sweet potato"]
     
-    
+      
     var body: some View {
         HStack {
         Spacer()

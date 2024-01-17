@@ -95,6 +95,18 @@ struct TagsView: View {
                 }
             }
         }
+        .onAppear {
+            //fetch all ingredient
+            Task {
+                do {
+                    // Assuming fetchData is an asynchronous function that returns data
+                    let data = try await FetchIngredients().fetchIngedients()
+                    print(data)
+                } catch {
+                    print("Error fetching data: \(error.localizedDescription)")
+                }
+            }
+        }
     }
 }
 
