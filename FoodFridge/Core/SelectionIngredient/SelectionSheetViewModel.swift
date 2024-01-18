@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class SelectionSheetViewModel: ObservableObject {
+    
+    @Published var selections = ""
+    @Published var ingredientsByType: [String: [IngredientItem]] = [:]
+    
+    
+}

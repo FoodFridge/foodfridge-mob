@@ -19,6 +19,11 @@
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
 		754350042B3A653200823A50 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350032B3A653200823A50 /* CustomFont.swift */; };
 		754A8FA02B5792A700C9FD04 /* Ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 754A8F9F2B5792A700C9FD04 /* Ingredients.json */; };
+		754A8FA22B585A8400C9FD04 /* FetchIngredientsLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A8FA12B585A8400C9FD04 /* FetchIngredientsLocal.swift */; };
+		754A8FA42B586DFE00C9FD04 /* IngredientsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A8FA32B586DFE00C9FD04 /* IngredientsParser.swift */; };
+		754A8FA62B58A41800C9FD04 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A8FA52B58A41800C9FD04 /* Category.swift */; };
+		754A8FA82B58A6BE00C9FD04 /* SelectionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A8FA72B58A6BE00C9FD04 /* SelectionSheetViewModel.swift */; };
+		754A8FAA2B58A99600C9FD04 /* IngredientByCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A8FA92B58A99600C9FD04 /* IngredientByCategory.swift */; };
 		754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */; };
 		754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */; };
 		757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C22B33E8F000048178 /* FoodFridgeApp.swift */; };
@@ -51,6 +56,11 @@
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
 		754350032B3A653200823A50 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		754A8F9F2B5792A700C9FD04 /* Ingredients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Ingredients.json; sourceTree = "<group>"; };
+		754A8FA12B585A8400C9FD04 /* FetchIngredientsLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIngredientsLocal.swift; sourceTree = "<group>"; };
+		754A8FA32B586DFE00C9FD04 /* IngredientsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsParser.swift; sourceTree = "<group>"; };
+		754A8FA52B58A41800C9FD04 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		754A8FA72B58A6BE00C9FD04 /* SelectionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetViewModel.swift; sourceTree = "<group>"; };
+		754A8FA92B58A99600C9FD04 /* IngredientByCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientByCategory.swift; sourceTree = "<group>"; };
 		754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewPrompt.swift; sourceTree = "<group>"; };
 		754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
 		757542BF2B33E8F000048178 /* FoodFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +115,7 @@
 			children = (
 				751EB55F2B53488200106FD6 /* PantryItem.swift */,
 				751EB5632B56463500106FD6 /* IngredientItem.swift */,
+				754A8FA92B58A99600C9FD04 /* IngredientByCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 				757542D22B33EB0E00048178 /* ColorExtention.swift */,
 				757542E52B351BD800048178 /* Fonts */,
 				754350032B3A653200823A50 /* CustomFont.swift */,
+				754A8FA52B58A41800C9FD04 /* Category.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -226,6 +238,7 @@
 			children = (
 				754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */,
 				75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */,
+				754A8FA72B58A6BE00C9FD04 /* SelectionSheetViewModel.swift */,
 				75EBAAB52B3D2BF80039841F /* TagsView.swift */,
 				754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */,
 			);
@@ -238,6 +251,8 @@
 				75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */,
 				75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */,
 				751EB5652B57134900106FD6 /* FetchIngredients.swift */,
+				754A8FA12B585A8400C9FD04 /* FetchIngredientsLocal.swift */,
+				754A8FA32B586DFE00C9FD04 /* IngredientsParser.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -344,13 +359,16 @@
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
 				7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */,
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
+				754A8FAA2B58A99600C9FD04 /* IngredientByCategory.swift in Sources */,
 				754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */,
+				754A8FA42B586DFE00C9FD04 /* IngredientsParser.swift in Sources */,
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */,
 				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
+				754A8FA22B585A8400C9FD04 /* FetchIngredientsLocal.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
@@ -359,9 +377,11 @@
 				751EB5642B56463500106FD6 /* IngredientItem.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
+				754A8FA62B58A41800C9FD04 /* Category.swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
 				757542DB2B3401EE00048178 /* SignUpWithEmailView.swift in Sources */,
 				75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */,
+				754A8FA82B58A6BE00C9FD04 /* SelectionSheetViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

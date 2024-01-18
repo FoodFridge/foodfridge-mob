@@ -26,7 +26,7 @@ class FetchIngredients {
             let dataString = String(data: data, encoding: .utf8)
             print("DEBUG: dataString =  \(String(describing: dataString))")
             
-            guard let jsondata = try? JSONDecoder().decode(IngredientData.self, from: data) else { return IngredientData(data: IngredientItem.mockItems) }
+            guard let jsondata = try? JSONDecoder().decode(IngredientData.self, from: data) else { return IngredientData(status:"test", message: "test", data: IngredientItem.mockItems) }
             print("DEBUG: jsonData = \(jsondata)")
             
             fetchedIngredients = jsondata
@@ -38,7 +38,7 @@ class FetchIngredients {
             print(error.localizedDescription)
         }
         
-        return IngredientData(data: IngredientItem.mockItems)
+        return IngredientData(status: "test", message: "test", data: IngredientItem.mockItems)
     }
 }
 

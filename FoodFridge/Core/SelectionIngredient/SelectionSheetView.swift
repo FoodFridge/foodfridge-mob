@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectionSheetView: View {
-   
+    @State private var data = [IngredientItem]()
     @State var searchTag = ""
     @Environment(\.dismiss) var dismiss
     
@@ -17,6 +17,7 @@ struct SelectionSheetView: View {
     
       
     var body: some View {
+        
         HStack {
         Spacer()
             Button(action: {
@@ -37,8 +38,20 @@ struct SelectionSheetView: View {
             
            }
            .searchable(text: $searchTag, placement:
-                .navigationBarDrawer(displayMode: .always))
-        
+           .navigationBarDrawer(displayMode: .always))
+           .onAppear {
+               //fetch all ingredient
+               Task {
+                   do {
+                       // Assuming fetchData is an asynchronous function that returns data
+                       let fetchedData =  try FetchIngredientsLocal().fetchIngredientsLocal()
+                       self.data += fetchedData
+                       //print("Successful retrieved data = \(fetchedData)")
+                   } catch {
+                       print("Error fetching data: \(error.localizedDescription)")
+                   }
+               }
+           }
       
       
     }

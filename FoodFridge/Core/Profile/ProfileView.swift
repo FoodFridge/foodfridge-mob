@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ProfileView: View {
-    var data: IngredientData = IngredientData(data: IngredientItem.mockItems)
+    @State private var data : [String: [IngredientItem]] = [:]
     var body: some View {
         VStack {
-            Text("User Profile")
+            Text("\(data.count)")
+            
         }
         .onAppear {
             //fetch all ingredient
             Task {
                 do {
                     // Assuming fetchData is an asynchronous function that returns data
-                    let fetchedData = try await FetchIngredients().fetchIngedients()
-                   
-                    print("Successful retrieved data = \(fetchedData)")
+                    let fetchedData =  try FetchIngredientsLocal().loadIngredients()
+                    self.data = fetchedData
+                    //print("Successful retrieved data = \(fetchedData)")
                 } catch {
                     print("Error fetching data: \(error.localizedDescription)")
                 }

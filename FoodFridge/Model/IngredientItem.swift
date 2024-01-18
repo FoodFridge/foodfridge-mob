@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct IngredientData: Codable {
-    var data: [IngredientItem]
+struct IngredientData: Decodable {
+    let status: String
+    let message: String
+    let data: [IngredientItem]
 }
 
-struct IngredientItem: Codable, Identifiable, Hashable {
+struct IngredientItem: Decodable, Identifiable {
     let id: String
     var name: String
     var type: String
