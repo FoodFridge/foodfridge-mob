@@ -32,10 +32,11 @@ struct ScanItemView: View {
                                     //add ingredient to user's fridge
                                     vm.addItemToPantry(item: text.transcript)
                                 } label: {
-                                    Text("Add: \(text.transcript)\n 1to your fridge")
+                                    Text("Add: \(text.transcript)\n to your fridge")
                                         .padding()
-                                        .background(Rectangle().foregroundStyle(.yellow).cornerRadius(15))
+                                        .background(Rectangle().foregroundStyle(.button1).cornerRadius(15))
                                 }
+                                .frame(width: 200)
                                 .padding(.top, 30)
                                 
                                 
