@@ -23,6 +23,11 @@ struct ScanItemView: View {
                 .id(vm.dataScannerViewId)
             
             VStack {
+                VStack(alignment: .center) {
+                    Text("Use camera to capture text on food package and save to your pantry")
+                }
+                .padding()
+                
                 ScrollView {
                     LazyVStack {
                         ForEach(vm.recognizedItems) { item in
