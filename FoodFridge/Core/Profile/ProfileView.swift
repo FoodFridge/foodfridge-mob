@@ -8,10 +8,21 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var data : [String: [IngredientItem]] = [:]
+    @State private var data: [String: [IngredientItem]] = [:]
+    @State private var dictData: [String : [String]] = [:]
     var body: some View {
         VStack {
             Text("\(data.count)")
+            Text("\(dictData.count)")
+            List(dictData.keys.sorted(), id: \.self) { key in
+                        Section(header: Text("Type Code: \(key)")) {
+                            ForEach(dictData[key] ?? [], id: \.self) { ingredientName in
+                                Text(ingredientName)
+                                
+                            }
+                            
+                            }
+                        }
             
         }
         .onAppear {
@@ -22,6 +33,8 @@ struct ProfileView: View {
                     let fetchedData =  try FetchIngredientsLocal().loadIngredients()
                     self.data = fetchedData
                     //print("Successful retrieved data = \(fetchedData)")
+                    self.dictData = SelectionSheetViewModel().getItemsNameWithCategory(data: self.data)
+                    
                 } catch {
                     print("Error fetching data: \(error.localizedDescription)")
                 }

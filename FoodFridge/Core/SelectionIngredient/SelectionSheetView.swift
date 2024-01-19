@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct SelectionSheetView: View {
-    @State private var data = [IngredientItem]()
+    
+    @State private var data : [String : [IngredientItem]] = [:]
+    @State private var dataDict: [String : [String]] = ["" : [""]]
     @State var searchTag = ""
     @Environment(\.dismiss) var dismiss
     
-    
+    //for testing
     private var listOfItems = ["bread", "jasmine rice", "rice noodles", "egg noodles", "wholewheat bread", "spagetthi", "glass noodles", "potato", "pasta","quinou", "oatmeal", "corn", "pita", "tortilla", "corn bread", "taro", "sweet potato","pumkin", "sweet sticky rice", "black glutenous rice", "kelp noodles",  "cornpuff", "pita bread", "corn tortilla", "purple sweet potato"]
     
       
@@ -34,8 +36,7 @@ struct SelectionSheetView: View {
         
         
         NavigationStack {
-            TagsView(items: listOfItems )
-            
+            TagsView(dataDicts: self.dataDict )
            }
            .searchable(text: $searchTag, placement:
            .navigationBarDrawer(displayMode: .always))
@@ -43,10 +44,14 @@ struct SelectionSheetView: View {
                //fetch all ingredient
                Task {
                    do {
-                       // Assuming fetchData is an asynchronous function that returns data
-                       let fetchedData =  try FetchIngredientsLocal().fetchIngredientsLocal()
-                       self.data += fetchedData
+                       
+                       let fetchedData =  try FetchIngredientsLocal().loadIngredients()
+                       self.data = fetchedData
+                       self.dataDict = SelectionSheetViewModel().getItemsNameWithCategory(data: self.data)
+                       
                        //print("Successful retrieved data = \(fetchedData)")
+                       
+                       
                    } catch {
                        print("Error fetching data: \(error.localizedDescription)")
                    }

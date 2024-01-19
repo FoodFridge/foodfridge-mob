@@ -46,7 +46,6 @@ class FetchIngredientsLocal {
     
     func loadIngredients() throws -> [String: [IngredientItem]] {
         
-
         guard let url = Bundle.main.url(forResource: "Ingredients", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
             print("JSON file was not found")
