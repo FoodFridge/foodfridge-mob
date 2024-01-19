@@ -68,7 +68,7 @@ class FetchIngredientsLocal {
             return self.ingredientsByType
         } catch {
             print("Error decoding JSON: \(error)")
-            // For even more detailed error info:
+            //detailed error info:
             if let decodingError = error as? DecodingError {
                 switch decodingError {
                 case .typeMismatch(let key, let context):

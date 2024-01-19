@@ -8,97 +8,58 @@
 import SwiftUI
 struct TagsView: View {
     
-    //let items : [String]
-    //let dataItems : [String : [IngredientItem]]
     let dataDicts : [String : [String]]
-    //var groupItemsByname:[String : [String]] = ["" : [""]]
     var groupItemsByType: [String : [[String]]] = ["" : [[""]]]
-    //var groupItems: [[String]] = [[String]]()
     let screenWidth = UIScreen.main.bounds.width
+    
     @State private var selectedItems = Set<String>()
     @EnvironmentObject var vm: TagsViewModel
     
     init(dataDicts: [ String : [String]]) {
         
-        //self.items = items
-        //self.dataItems = dataItems
         self.dataDicts = dataDicts
-        //groupItems = createGroupedItems(items: items)
         groupItemsByType = createGroupedItemsWithType(items: dataDicts)
-        
-        
-        func getItemNamewithType(data: [String: [IngredientItem]]) -> [String : [String]] {
-            let ingredientNamesByType: [String: [String]] = data.mapValues { $0.map { $0.name } }
-            return ingredientNamesByType
-        }
         
         func createGroupedItemsWithType(items: [String: [String]]) -> [String: [[String]]] {
             var groupedItemsWithType: [String: [[String]]] = [:]
             for (key, words) in items {
-                  var width: CGFloat = 0
-                  var currentGroup: [String] = []
-                  
-                  for word in words {
-                      let label = UILabel()
-                      label.text = word
-                      label.sizeToFit()
-                      
-                      let labelWidth = label.frame.size.width + 32 // Adjust padding as needed
-                      if (width + labelWidth + 32) < screenWidth {
-                          width += labelWidth
-                          currentGroup.append(word)
-                      } else {
-                          if !currentGroup.isEmpty {
-                              groupedItemsWithType[key, default: []].append(currentGroup)
-                          }
-                          width = labelWidth
-                          currentGroup = [word]
-                      }
-                  }
-                  
-                  // Append the last group if not empty
-                  if !currentGroup.isEmpty {
-                      groupedItemsWithType[key, default: []].append(currentGroup)
-                  }
-              }
-              
-              return groupedItemsWithType
-        }
-      
-        func createGroupedItems(items: [String]) -> [[String]] {
-            var groupedItems: [[String]] = [[String]]()
-            var tempItems: [String] = [String]()
-            var width: CGFloat = 0
-            for word in items {
-                let label = UILabel()
-                label.text = word
-                label.sizeToFit()
+                var width: CGFloat = 0
+                var currentGroup: [String] = []
                 
-                let labelWidth = label.frame.size.width + 32
-                if (width + labelWidth + 32) < screenWidth {
-                    width += labelWidth
-                    tempItems.append(word)
+                for word in words {
+                    let label = UILabel()
+                    label.text = word
+                    label.sizeToFit()
                     
-                }else {
-                    width = labelWidth
-                    groupedItems.append(tempItems)
-                    tempItems.removeAll()
-                    tempItems.append(word)
+                    let labelWidth = label.frame.size.width + 32 // Adjust padding as needed
+                    if (width + labelWidth + 32) < screenWidth {
+                        width += labelWidth
+                        currentGroup.append(word)
+                    } else {
+                        if !currentGroup.isEmpty {
+                            groupedItemsWithType[key, default: []].append(currentGroup)
+                        }
+                        width = labelWidth
+                        currentGroup = [word]
+                    }
                 }
                 
+                // Append the last group if not empty
+                if !currentGroup.isEmpty {
+                    groupedItemsWithType[key, default: []].append(currentGroup)
+                }
             }
-            groupedItems.append(tempItems)
             
-            return groupedItems
-
+            return groupedItemsWithType
         }
+        
     }
             
     
     var body: some View {
         ScrollView {
             LazyVStack {
-              
+    
                     ForEach(Array(groupItemsByType.keys.sorted()), id: \.self) { key in
                         if let category = Category(rawValue: key) {
                            
@@ -114,7 +75,6 @@ struct TagsView: View {
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
-                            
                         }
                     
                     //tags 
