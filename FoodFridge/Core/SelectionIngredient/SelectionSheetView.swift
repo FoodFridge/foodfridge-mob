@@ -11,7 +11,7 @@ struct SelectionSheetView: View {
     
     @State private var data : [String : [IngredientItem]] = [:]
     @State private var dataDict: [String : [String]] = ["" : [""]]
-    @State var searchTag = ""
+    //@State var searchTag = ""
     
     @ObservedObject var vm = SelectionSheetViewModel()
     @Environment(\.dismiss) var dismiss
@@ -37,8 +37,8 @@ struct SelectionSheetView: View {
         NavigationStack {
             TagsView(dataDicts: self.dataDict )
            }
-           .searchable(text: $searchTag, placement:
-           .navigationBarDrawer(displayMode: .always))
+           //.searchable(text: $searchTag, placement:
+           //.navigationBarDrawer(displayMode: .always))
            .onAppear {
                //fetch all ingredient
                Task {

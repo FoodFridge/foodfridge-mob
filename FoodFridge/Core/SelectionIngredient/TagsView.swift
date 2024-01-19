@@ -13,6 +13,8 @@ struct TagsView: View {
     let screenWidth = UIScreen.main.bounds.width
     
     @State private var selectedItems = Set<String>()
+    @State private var searchTag = ""
+    
     @EnvironmentObject var vm: TagsViewModel
     
     init(dataDicts: [ String : [String]]) {
@@ -59,7 +61,12 @@ struct TagsView: View {
     var body: some View {
         ScrollView {
             LazyVStack {
-    
+                //TextField("Search tags...", text: $searchTag)
+                       //.padding()
+                       //.background(Color(.systemGray6))
+                      // .cornerRadius(10)
+                       //.padding()
+                
                     ForEach(Array(groupItemsByType.keys.sorted()), id: \.self) { key in
                         if let category = Category(rawValue: key) {
                            
@@ -78,7 +85,11 @@ struct TagsView: View {
                         }
                     
                     //tags 
-                    ForEach(groupItemsByType[key] ?? [], id: \.self) { subItems in
+                        // Filter and display tags based on the search text
+                                    ForEach(groupItemsByType[key]?.filter { subItems in
+                                        // Check if search text is empty or if any of the sub-items start with the search text (case-insensitive)
+                                        searchTag.isEmpty || subItems.contains(where: { $0.lowercased().hasPrefix(searchTag.lowercased()) })
+                                    } ?? [], id: \.self) { subItems in
                         
                             HStack {
                                 ForEach(subItems, id: \.self) { tag in
@@ -109,14 +120,16 @@ struct TagsView: View {
                     }
                 }
             }
+            .searchable(text: $searchTag, placement:
+            .navigationBarDrawer(displayMode: .always))
             
         }
              
     }
 }
 
-/*
+
  #Preview {
- TagsView(items: ["bread", "jasmine rice", "rice noodles", "egg noodles", "wholewheat bread", "spagetthi", "glass noodles", "potato", "corn", "pasta","quinou", "oatmeal", "pita", "tortilla", "corn bread", "taro", "sweet potato"], dataItems: ["01" : IngredientItem.mockItems], dataDicts: ["" : [""]])
+ TagsView(dataDicts: ["" : [""]])
  }
- */
+
