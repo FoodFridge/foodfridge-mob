@@ -39,7 +39,7 @@ struct ScanItemView: View {
                                 } label: {
                                     Text("Add: \(text.transcript)\n to your fridge")
                                         .padding()
-                                        .background(Rectangle().foregroundStyle(.yellow).cornerRadius(15))
+                                        .background(Rectangle().foregroundStyle(.button1).cornerRadius(15))
                                 }
                                 .padding(.top, 30)
                                 
