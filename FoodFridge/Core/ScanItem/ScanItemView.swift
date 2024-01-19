@@ -37,7 +37,7 @@ struct ScanItemView: View {
                                     //add ingredient to user's fridge
                                     vm.addItemToPantry(item: text.transcript)
                                 } label: {
-                                    Text("Add: \(text.transcript)\n 1to your fridge")
+                                    Text("Add: \(text.transcript)\n to your fridge")
                                         .padding()
                                         .background(Rectangle().foregroundStyle(.yellow).cornerRadius(15))
                                 }
