@@ -26,6 +26,7 @@ struct ScanItemView: View {
                 VStack(alignment: .center) {
                     Text("Use camera to capture text on food package and save to your pantry")
                 }
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 12))
                 .padding()
                 
                 ScrollView {
@@ -37,7 +38,8 @@ struct ScanItemView: View {
                                     //add ingredient to user's fridge
                                     vm.addItemToPantry(item: text.transcript)
                                 } label: {
-                                    Text("Add: \(text.transcript)\n to your fridge")
+                                    Text("Add: \(text.transcript)")
+                                        .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                                         .padding()
                                         .background(Rectangle().foregroundStyle(.button1).cornerRadius(15))
                                 }
@@ -55,6 +57,7 @@ struct ScanItemView: View {
                     PantryView()
                 } label: {
                     Text("Go to Pantry")
+                        .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                 }
 
             }//.onChange(of: vm.scanType) { _ in vm.recognizedItems = [] }
