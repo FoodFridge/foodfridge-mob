@@ -59,14 +59,6 @@ struct LandingPageView: View {
                                 .frame(width: 200, height: 30)
                                 .offset(y: 85)
                             )
-                        
-                        
-                        
-                           
-                      
-                        
-                       
-                        
                     }
                     .padding(.top, -10)
                     
@@ -92,11 +84,20 @@ struct LandingPageView: View {
                 }
                 .padding(4)
                 .toolbar {
-                    ToolbarItem {
+                    ToolbarItemGroup(placement: .topBarTrailing) {
                         NavigationLink {
-                            //TODO: navigate to profile view
+                            //MARK: navigate to Profile view
+                            ProfileView()
                         }label: {
                             Image(systemName: "person.crop.circle")
+                                .foregroundColor(Color(.button2))
+                        }
+                        
+                        NavigationLink {
+                            //MARK: navigate to Scan Item view
+                            ScanItemView()
+                        }label: {
+                            Image(systemName: "camera.circle")
                                 .foregroundColor(Color(.button2))
                         }
                     }
