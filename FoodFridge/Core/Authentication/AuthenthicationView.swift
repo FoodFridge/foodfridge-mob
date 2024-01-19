@@ -68,7 +68,7 @@ struct AuthenthicationView: View {
                             self.logInPageShow = true
                         }
                         .sheet(isPresented: $logInPageShow, content: {
-                            LogInView()
+                            LogInView(viewModel: ChatViewModel())
                         })
                     }
                     .padding(.leading,-30)
