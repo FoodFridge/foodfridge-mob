@@ -6,3 +6,8 @@
 //
 
 import Foundation
+class ResultViewModel: ObservableObject {
+    @Published var selectedIngredients: [String] = [String]()
+    
+    
+}

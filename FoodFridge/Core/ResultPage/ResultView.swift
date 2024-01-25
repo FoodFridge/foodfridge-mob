@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ResultView: View {
+    
+    @State private var generatedRecipes: [String] = ["Salmon With Ginger Glaze", "Salmon Steak in Caramel Sauce (Vietnamese Ca Kho)","Ginger Soy Salmon – 5 Points","Teriyaki Salmon"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            Text("We found 5 Recipes")
+            ForEach(generatedRecipes, id: \.self) { recipeName in
+                Text(recipeName)
+            }
+        }
+       
     }
 }
 

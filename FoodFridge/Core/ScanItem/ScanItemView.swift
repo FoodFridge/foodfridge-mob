@@ -28,14 +28,14 @@ struct ScanItemView: View {
                 }
                 .font(Font.custom(CustomFont.appFontBold.rawValue, size: 12))
                 .padding()
-                
+    
                 ScrollView {
                     LazyVStack {
                         ForEach(vm.recognizedItems) { item in
                             switch item {
                             case .text(let text):
                                 Button {
-                                    //add ingredient to user's fridge
+                                    //add ingredient to user's pantry
                                     vm.addItemToPantry(item: text.transcript)
                                 } label: {
                                     Text("Add: \(text.transcript)")
