@@ -6,6 +6,18 @@
 //
 
 import Foundation
-func generateRecipe() {
+class generateRecipe {
+    var returnRecipes: [Recipe]
     
+    init(returnRecipes: [Recipe]) {
+        self.returnRecipes = getRecipe()
+        
+        func getRecipe() -> [Recipe] {
+            
+            
+            
+            
+            return Recipe.mockRecipes
+        }
+    }
 }
