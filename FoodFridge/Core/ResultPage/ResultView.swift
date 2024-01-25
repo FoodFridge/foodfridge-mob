@@ -9,15 +9,31 @@ import SwiftUI
 
 struct ResultView: View {
     
-    @State private var generatedRecipes: [String] = ["Salmon With Ginger Glaze", "Salmon Steak in Caramel Sauce (Vietnamese Ca Kho)","Ginger Soy Salmon – 5 Points","Teriyaki Salmon"]
+    @State private var generatedRecipes: [Recipe] = Recipe.mockRecipes
     
     var body: some View {
         
         VStack {
-            Text("We found 5 Recipes")
-            ForEach(generatedRecipes, id: \.self) { recipeName in
-                Text(recipeName)
+            VStack {
+                Text("We've found Recipes!")
+                    .padding(5)
+                    .frame(width: 350, height: 45)
+                    .background(.button2)
+                    .cornerRadius(19)
+                    .font(.custom(CustomFont.appFontBold.rawValue, size: 25))
+                    .padding()
             }
+            
+            .padding()
+            
+            ScrollView {
+                ForEach(0..<generatedRecipes.count, id: \.self) { index in
+                    NavigationLink(destination: RecipesView(title: generatedRecipes[index].title)) {
+                        RecipeRow(title: generatedRecipes[index].title , imageURL: generatedRecipes[index].image)
+                    }
+                }
+            }
+            .scrollIndicators(.hidden)
         }
        
     }

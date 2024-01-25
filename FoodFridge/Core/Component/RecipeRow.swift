@@ -30,6 +30,8 @@ struct RecipeRow: View {
             
             Text(title)
                 .font(.custom(CustomFont.appFontBold.rawValue, size: 18))
+                .frame(width: 300)
+                .multilineTextAlignment(.center)
         }
         .padding(.bottom, 20)
         

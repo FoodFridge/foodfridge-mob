@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct RecipesView: View {
+    var title: String = "Salmon with Ginger Glaze"
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Text("List of \(title) Recipes by google search")
+        
     }
 }
 
