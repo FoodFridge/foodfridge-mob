@@ -50,12 +50,16 @@ struct LandingPageView: View {
                             )
                             //MARK: Genenerate Recipes Button
                             .overlay(
+                                
                                 NavigationLink {
                                     //TODO: tap and link to result of generated recipe
                                     ResultView()
                                 } label: {
                                     SmallButton(title: "Generate Recipe")
                                 }
+                                .simultaneousGesture(TapGesture().onEnded({
+                                        vm.generateRecipe()
+                                    }))
                                 .frame(width: 200, height: 30)
                                 .offset(y: 85)
                             )

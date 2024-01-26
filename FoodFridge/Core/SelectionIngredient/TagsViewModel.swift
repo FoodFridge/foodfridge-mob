@@ -20,4 +20,8 @@ class TagsViewModel: ObservableObject {
         
     }
     
+    func generateRecipe() {
+        
+    }
+    
 }
