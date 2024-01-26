@@ -23,18 +23,25 @@ struct ScanItemView: View {
                 .id(vm.dataScannerViewId)
             
             VStack {
+                VStack(alignment: .center) {
+                    Text("Use camera to capture text on food package and save to your pantry")
+                }
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 12))
+                .padding()
+    
                 ScrollView {
                     LazyVStack {
                         ForEach(vm.recognizedItems) { item in
                             switch item {
                             case .text(let text):
                                 Button {
-                                    //add ingredient to user's fridge
+                                    //add ingredient to user's pantry
                                     vm.addItemToPantry(item: text.transcript)
                                 } label: {
-                                    Text("Add: \(text.transcript)\n 1to your fridge")
+                                    Text("Add: \(text.transcript)")
+                                        .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                                         .padding()
-                                        .background(Rectangle().foregroundStyle(.yellow).cornerRadius(15))
+                                        .background(Rectangle().foregroundStyle(.button1).cornerRadius(15))
                                 }
                                 .padding(.top, 30)
                                 
@@ -50,6 +57,7 @@ struct ScanItemView: View {
                     PantryView()
                 } label: {
                     Text("Go to Pantry")
+                        .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                 }
 
             }//.onChange(of: vm.scanType) { _ in vm.recognizedItems = [] }

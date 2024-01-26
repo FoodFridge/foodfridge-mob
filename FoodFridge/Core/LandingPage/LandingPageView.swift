@@ -50,9 +50,9 @@ struct LandingPageView: View {
                             )
                             //MARK: Genenerate Recipes Button
                             .overlay(
-                                Button {
-                                    //TODO: call chat GPT api to get recipes and navigate user to recipes screen
-                                    
+                                NavigationLink {
+                                    //TODO: tap and link to result of generated recipe
+                                    ResultView()
                                 } label: {
                                     SmallButton(title: "Generate Recipe")
                                 }

@@ -37,8 +37,6 @@ struct SelectionSheetView: View {
         NavigationStack {
             TagsView(dataDicts: self.dataDict )
            }
-           //.searchable(text: $searchTag, placement:
-           //.navigationBarDrawer(displayMode: .always))
            .onAppear {
                //fetch all ingredient
                Task {
