@@ -29,12 +29,13 @@ struct ResultView: View {
             ScrollView {
                 ForEach(0..<generatedRecipes.count, id: \.self) { index in
                     NavigationLink(destination: RecipesView(title: generatedRecipes[index].title)) {
-                        RecipeRow(title: generatedRecipes[index].title , imageURL: generatedRecipes[index].image)
+                        RecipeRow(title: generatedRecipes[index].title , imageURL: generatedRecipes[index].imageURL)
                     }
                 }
             }
             .scrollIndicators(.hidden)
         }
+        
        
     }
 }
