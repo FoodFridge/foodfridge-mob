@@ -44,6 +44,9 @@
 		75C42DE42B62EF94003959B6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DE32B62EF94003959B6 /* Recipe.swift */; };
 		75C42DE62B6300E4003959B6 /* RecipeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DE52B6300E4003959B6 /* RecipeRow.swift */; };
 		75C42DE82B631AA3003959B6 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DE72B631AA3003959B6 /* RecipesView.swift */; };
+		75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DE92B645F38003959B6 /* GoogleSearchRecipe.swift */; };
+		75C42DEC2B6460FC003959B6 /* GoogleSearchResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 75C42DEB2B6460FC003959B6 /* GoogleSearchResult.json */; };
+		75C42DEE2B646151003959B6 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 75C42DED2B646151003959B6 /* Recipes.json */; };
 		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
 		75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */; };
 		75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */; };
@@ -90,6 +93,9 @@
 		75C42DE32B62EF94003959B6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		75C42DE52B6300E4003959B6 /* RecipeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRow.swift; sourceTree = "<group>"; };
 		75C42DE72B631AA3003959B6 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		75C42DE92B645F38003959B6 /* GoogleSearchRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchRecipe.swift; sourceTree = "<group>"; };
+		75C42DEB2B6460FC003959B6 /* GoogleSearchResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleSearchResult.json; sourceTree = "<group>"; };
+		75C42DED2B646151003959B6 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIChatServices.swift; sourceTree = "<group>"; };
 		75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 				751EB5632B56463500106FD6 /* IngredientItem.swift */,
 				754A8FA92B58A99600C9FD04 /* IngredientByCategory.swift */,
 				75C42DE32B62EF94003959B6 /* Recipe.swift */,
+				75C42DE92B645F38003959B6 /* GoogleSearchRecipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,7 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				757542E02B351AAF00048178 /* Info.plist */,
+				75C42DED2B646151003959B6 /* Recipes.json */,
 				754A8F9F2B5792A700C9FD04 /* Ingredients.json */,
+				75C42DEB2B6460FC003959B6 /* GoogleSearchResult.json */,
 				757542C22B33E8F000048178 /* FoodFridgeApp.swift */,
 				757542D42B33EFCE00048178 /* Core */,
 				751EB55E2B53483600106FD6 /* Model */,
@@ -345,8 +354,10 @@
 				754A8FA02B5792A700C9FD04 /* Ingredients.json in Resources */,
 				757542CB2B33E8F100048178 /* Preview Assets.xcassets in Resources */,
 				757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */,
+				75C42DEC2B6460FC003959B6 /* GoogleSearchResult.json in Resources */,
 				757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */,
 				757542C72B33E8F100048178 /* Assets.xcassets in Resources */,
+				75C42DEE2B646151003959B6 /* Recipes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +408,7 @@
 				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
 				754A8FA22B585A8400C9FD04 /* FetchIngredientsLocal.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
+				75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */,
 				75C42DDE2B62E80C003959B6 /* ResultView.swift in Sources */,
 				75C42DE22B62EF45003959B6 /* GenerateRecipe.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
