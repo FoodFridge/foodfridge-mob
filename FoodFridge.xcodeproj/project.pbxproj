@@ -47,6 +47,7 @@
 		75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DE92B645F38003959B6 /* GoogleSearchRecipe.swift */; };
 		75C42DEC2B6460FC003959B6 /* GoogleSearchResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 75C42DEB2B6460FC003959B6 /* GoogleSearchResult.json */; };
 		75C42DEE2B646151003959B6 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 75C42DED2B646151003959B6 /* Recipes.json */; };
+		75C42DF02B646A5C003959B6 /* GoogleResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DEF2B646A5C003959B6 /* GoogleResultRow.swift */; };
 		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
 		75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */; };
 		75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */; };
@@ -96,6 +97,7 @@
 		75C42DE92B645F38003959B6 /* GoogleSearchRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchRecipe.swift; sourceTree = "<group>"; };
 		75C42DEB2B6460FC003959B6 /* GoogleSearchResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleSearchResult.json; sourceTree = "<group>"; };
 		75C42DED2B646151003959B6 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
+		75C42DEF2B646A5C003959B6 /* GoogleResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleResultRow.swift; sourceTree = "<group>"; };
 		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIChatServices.swift; sourceTree = "<group>"; };
 		75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				75434FFF2B3A332500823A50 /* SmallButton .swift */,
 				754350012B3A593300823A50 /* SelectIngredientsButton.swift */,
 				75C42DE52B6300E4003959B6 /* RecipeRow.swift */,
+				75C42DEF2B646A5C003959B6 /* GoogleResultRow.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				751EB55D2B4E52CA00106FD6 /* PantryView.swift in Sources */,
+				75C42DF02B646A5C003959B6 /* GoogleResultRow.swift in Sources */,
 				751EB5642B56463500106FD6 /* IngredientItem.swift in Sources */,
 				75C42DE82B631AA3003959B6 /* RecipesView.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
