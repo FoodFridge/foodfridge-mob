@@ -17,8 +17,8 @@ struct LandingPageView: View {
 
     @EnvironmentObject var vm: TagsViewModel
     
-    let itemCategories = ["Carbs", "Dairy", "Seasoning","Protein", "Veggies","Pantry"]
-    let threeRows = [GridItem(),GridItem(),GridItem()]
+    let itemCategories = ["Carbs", "Dairy", "Seasoning","Meat", "Seafood", "Veggies","Fruit", "Pantry"]
+    let fourRows = [GridItem(),GridItem(),GridItem(),GridItem()]
     
     var body: some View {
         NavigationStack {
@@ -72,7 +72,7 @@ struct LandingPageView: View {
                         .frame(width: proxy.size.width / 2 , height: proxy.size.width / 2)
                     Spacer()
                     //MARK: Select ingredients buttons
-                    LazyHGrid (rows: threeRows) {
+                    LazyHGrid (rows: fourRows) {
                         ForEach(0..<itemCategories.count, id: \.self) { item in
                             VStack {
                                 SelectIngredientsButton(title: "\(itemCategories[item])", action: {
@@ -80,8 +80,9 @@ struct LandingPageView: View {
                                 }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15, showSheet: $showSheet)
                             }
                         }
+                        
                     }
-                    .padding(.bottom, -5)
+                    .padding(.bottom, -25)
                     
                     Spacer()
                     
