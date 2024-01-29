@@ -17,7 +17,7 @@ struct LandingPageView: View {
 
     @EnvironmentObject var vm: TagsViewModel
     
-    let itemCategories = ["Carbs", "Dairy", "Seasoning","Protein", "Veggies","Cuisine"]
+    let itemCategories = ["Carbs", "Dairy", "Seasoning","Protein", "Veggies","Pantry"]
     let threeRows = [GridItem(),GridItem(),GridItem()]
     
     var body: some View {
@@ -59,7 +59,7 @@ struct LandingPageView: View {
                                 }
                                 .simultaneousGesture(TapGesture().onEnded({
                                         vm.generateRecipe()
-                                    }))
+                                 }))
                                 .frame(width: 200, height: 30)
                                 .offset(y: 85)
                             )

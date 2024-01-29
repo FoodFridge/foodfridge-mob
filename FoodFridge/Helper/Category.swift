@@ -14,19 +14,26 @@ enum Category: String {
     case dairy = "03"
     case veggie = "04"
     case seasoning = "05"
+    case seafood = "07"
+    case fruit = "08"
     
     var displayName: String {
            switch self {
            case .protein:
-               return "Protein"
+               return "Meat"
            case .carb:
                return "Carbohydrate"
            case .dairy:
                return "Dairy Product"
            case .veggie:
-               return "Fruit and Vegetable"
+               return "Vegetable"
            case .seasoning:
                return "Seasoning"
+           case .seafood:
+               return "Seafood"
+           case .fruit:
+               return "Fruit"
+            
            }
        }
     

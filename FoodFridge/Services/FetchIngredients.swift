@@ -12,7 +12,7 @@ class FetchIngredients {
     func fetchIngedients() async throws -> IngredientData {
         
         var fetchedIngredients: IngredientData
-        let urlEndpoint = "http://127.0.0.1:8080/api/v1/ingredient/"
+        let urlEndpoint = AppConstant.fetchIngredientsURLStinng
         
         do {
             guard let url = URL(string: urlEndpoint) else

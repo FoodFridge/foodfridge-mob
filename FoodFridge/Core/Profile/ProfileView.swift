@@ -30,7 +30,7 @@ struct ProfileView: View {
             Task {
                 do {
                     // Assuming fetchData is an asynchronous function that returns data
-                    let fetchedData =  try FetchIngredientsLocal().loadIngredients()
+                    let fetchedData =  try await GetIngredients().loadIngredients()
                     self.data = fetchedData
                     //print("Successful retrieved data = \(fetchedData)")
                     self.dictData = SelectionSheetViewModel().getItemsNameWithCategory(data: self.data)
