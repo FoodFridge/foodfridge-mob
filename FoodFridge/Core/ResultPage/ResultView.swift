@@ -32,6 +32,11 @@ struct ResultView: View {
                     NavigationLink(destination: RecipesView(title: vm.generatedRecipes[index].title)) {
                         RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
                     }
+                    .simultaneousGesture(TapGesture().onEnded({
+                        Task {
+                            try await vm.generateRecipe(ingredients: vm.selectedTags)
+                        }
+                     }))
                     
                 }
             }

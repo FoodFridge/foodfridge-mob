@@ -14,6 +14,9 @@
 		751EB5602B53488200106FD6 /* PantryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB55F2B53488200106FD6 /* PantryItem.swift */; };
 		751EB5642B56463500106FD6 /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5632B56463500106FD6 /* IngredientItem.swift */; };
 		751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EB5652B57134900106FD6 /* FetchIngredients.swift */; };
+		752580C82B698B0900D536D2 /* LinkRecipeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580C72B698B0900D536D2 /* LinkRecipeResource.swift */; };
+		752580CA2B698F6500D536D2 /* LinkeRecipeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580C92B698F6500D536D2 /* LinkeRecipeResponseData.swift */; };
+		752580CC2B69A13100D536D2 /* LinkRecipeRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580CB2B69A13100D536D2 /* LinkRecipeRequestBody.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
@@ -62,6 +65,9 @@
 		751EB55F2B53488200106FD6 /* PantryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItem.swift; sourceTree = "<group>"; };
 		751EB5632B56463500106FD6 /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
 		751EB5652B57134900106FD6 /* FetchIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIngredients.swift; sourceTree = "<group>"; };
+		752580C72B698B0900D536D2 /* LinkRecipeResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRecipeResource.swift; sourceTree = "<group>"; };
+		752580C92B698F6500D536D2 /* LinkeRecipeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkeRecipeResponseData.swift; sourceTree = "<group>"; };
+		752580CB2B69A13100D536D2 /* LinkRecipeRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRecipeRequestBody.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 				754A8FA92B58A99600C9FD04 /* IngredientByCategory.swift */,
 				75C42DE32B62EF94003959B6 /* Recipe.swift */,
 				75C42DE92B645F38003959B6 /* GoogleSearchRecipe.swift */,
+				752580C92B698F6500D536D2 /* LinkeRecipeResponseData.swift */,
+				752580CB2B69A13100D536D2 /* LinkRecipeRequestBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +302,7 @@
 				754A8FA12B585A8400C9FD04 /* GetIngredients.swift */,
 				754A8FA32B586DFE00C9FD04 /* IngredientsParser.swift */,
 				75C42DE12B62EF45003959B6 /* GenerateRecipe.swift */,
+				752580C72B698B0900D536D2 /* LinkRecipeResource.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -412,10 +421,12 @@
 				75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */,
 				75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */,
 				75C42DE62B6300E4003959B6 /* RecipeRow.swift in Sources */,
+				752580C82B698B0900D536D2 /* LinkRecipeResource.swift in Sources */,
 				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
 				754A8FA22B585A8400C9FD04 /* GetIngredients.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
 				75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */,
+				752580CC2B69A13100D536D2 /* LinkRecipeRequestBody.swift in Sources */,
 				75C42DDE2B62E80C003959B6 /* ResultView.swift in Sources */,
 				75C42DE22B62EF45003959B6 /* GenerateRecipe.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
@@ -431,6 +442,7 @@
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
 				754A8FA62B58A41800C9FD04 /* Category.swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
+				752580CA2B698F6500D536D2 /* LinkeRecipeResponseData.swift in Sources */,
 				757542DB2B3401EE00048178 /* SignUpWithEmailView.swift in Sources */,
 				75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */,
 				754A8FA82B58A6BE00C9FD04 /* SelectionSheetViewModel.swift in Sources */,

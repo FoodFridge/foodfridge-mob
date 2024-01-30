@@ -6,3 +6,33 @@
 //
 
 import Foundation
+struct LinkeRecipeResponseData: Codable {
+    let data: [LinkRecipe]
+}
+
+struct LinkRecipe: Codable {
+    let id: String
+    let title : String
+    let link: String
+    let img : String
+    
+    enum CodingKeys: String, CodingKey {
+               case id = "fav_id"
+               case title = "title"
+               case link = "link"
+               case img = "img"
+    }
+}
+
+extension LinkRecipe {
+    static var mockLinkRecipes: [LinkRecipe] {
+        [LinkRecipe(id: "1", title: "Pork omelet", link: "https://www.youtube.com/watch?v=J2hficUEUcE", img: "https://i.ytimg.com/vi/C5WBACYnSd8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBT5ZX6qXOgwmWy5o0Xvm_gJqOyqA"),
+         LinkRecipe(id: "2", title: "Crispy Omelet", link: "https://www.youtube.com/watch?v=-6zXcZjSCE4", img: "https://i.ytimg.com/vi/C5WBACYnSd8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBT5ZX6qXOgwmWy5o0Xvm_gJqOyqA")
+        ]
+    }
+    
+    
+    
+    
+    
+}

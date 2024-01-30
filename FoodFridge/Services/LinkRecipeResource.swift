@@ -8,7 +8,7 @@
 import Foundation
 class LinkRecipeResource {
     
-    static func searchGoogle (userId: String , recipeName: String) {
+    static func callLinkRecipe (userId: String , recipeName: String) {
         
     }
     

@@ -6,3 +6,7 @@
 //
 
 import Foundation
+struct LinkRecipeRequestBody: Codable {
+    let userId: String
+    let recipeName: String
+}
