@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct SpoonRecipe: Codable {
+    let recipes: [Recipe]
+}
+
+
 struct Recipe: Codable, Identifiable, Hashable {
     let id: Int
     let title: String

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LandingPageView: View {
     
-  
+    @State private var isNextViewActive = false
+
     @State private var showSheet = false
     @State var selectedTags = Set<String>()
     @State var selectedItems = [String]()
@@ -17,7 +18,7 @@ struct LandingPageView: View {
 
     @EnvironmentObject var vm: TagsViewModel
     
-    let itemCategories = ["Carbs", "Dairy", "Seasoning","Meat", "Seafood", "Veggies","Fruit", "Pantry"]
+    let itemCategories = ["Carb", "Meat", "Dairy", "Seafood", "Veggie","Fruit","Seasoning", "Pantry"]
     let fourRows = [GridItem(),GridItem(),GridItem(),GridItem()]
     
     var body: some View {
@@ -51,6 +52,11 @@ struct LandingPageView: View {
                             //MARK: Genenerate Recipes Button
                             .overlay(
                                 
+                              
+                                
+                                
+                            
+                                
                                 NavigationLink {
                                     //TODO: tap and link to result of generated recipe
                                     ResultView()
@@ -58,7 +64,9 @@ struct LandingPageView: View {
                                     SmallButton(title: "Generate Recipe")
                                 }
                                 .simultaneousGesture(TapGesture().onEnded({
-                                        vm.generateRecipe()
+                                    Task {
+                                        try await vm.generateRecipe(ingredients: vm.selectedTags)
+                                    }
                                  }))
                                 .frame(width: 200, height: 30)
                                 .offset(y: 85)
