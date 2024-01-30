@@ -209,9 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				757542D22B33EB0E00048178 /* ColorExtention.swift */,
+				754A8FA52B58A41800C9FD04 /* Category.swift */,
 				757542E52B351BD800048178 /* Fonts */,
 				754350032B3A653200823A50 /* CustomFont.swift */,
-				754A8FA52B58A41800C9FD04 /* Category.swift */,
 				75C42DF12B6600A0003959B6 /* AppConstant.swift */,
 			);
 			path = Helper;

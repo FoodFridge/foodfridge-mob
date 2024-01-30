@@ -10,7 +10,7 @@ import SwiftUI
 struct ResultView: View {
     
     @EnvironmentObject var vm: TagsViewModel
-   // @State private var generatedRecipes: [Recipe] = Recipe.mockRecipes
+  
     
     var body: some View {
         
@@ -32,15 +32,12 @@ struct ResultView: View {
                     NavigationLink(destination: RecipesView(title: vm.generatedRecipes[index].title)) {
                         RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
                     }
+                    
                 }
             }
             .scrollIndicators(.hidden)
         }
-        //.onAppear {
-           // Task {
-                //try await vm.generateRecipe(ingredients: vm.selectedTags)
-           // }
-        //}
+        
         
        
     }
