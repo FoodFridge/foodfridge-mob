@@ -20,6 +20,9 @@
 		752580CE2B6AD2D900D536D2 /* AddFavoriteRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580CD2B6AD2D900D536D2 /* AddFavoriteRecipe.swift */; };
 		752580D02B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580CF2B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift */; };
 		752580D22B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580D12B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift */; };
+		752580D42B6B036900D536D2 /* ChosenSubProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580D32B6B036900D536D2 /* ChosenSubProfileView.swift */; };
+		752580D72B6B042200D536D2 /* FavoriteRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580D62B6B042200D536D2 /* FavoriteRecipeView.swift */; };
+		752580D92B6B092100D536D2 /* FavoriteRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580D82B6B092100D536D2 /* FavoriteRecipeViewModel.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
@@ -74,6 +77,9 @@
 		752580CD2B6AD2D900D536D2 /* AddFavoriteRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteRecipe.swift; sourceTree = "<group>"; };
 		752580CF2B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeRequestBody.swift; sourceTree = "<group>"; };
 		752580D12B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoriteRecipeResonseData.swift; sourceTree = "<group>"; };
+		752580D32B6B036900D536D2 /* ChosenSubProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenSubProfileView.swift; sourceTree = "<group>"; };
+		752580D62B6B042200D536D2 /* FavoriteRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeView.swift; sourceTree = "<group>"; };
+		752580D82B6B092100D536D2 /* FavoriteRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeViewModel.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				751EB5552B4E4C1F00106FD6 /* ProfileView.swift */,
+				752580D32B6B036900D536D2 /* ChosenSubProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -158,6 +165,15 @@
 				752580D12B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		752580D52B6B03FF00D536D2 /* FavoriteRecipe */ = {
+			isa = PBXGroup;
+			children = (
+				752580D62B6B042200D536D2 /* FavoriteRecipeView.swift */,
+				752580D82B6B092100D536D2 /* FavoriteRecipeViewModel.swift */,
+			);
+			path = FavoriteRecipe;
 			sourceTree = "<group>";
 		};
 		75434FFB2B37E6C500823A50 /* Authentication */ = {
@@ -241,6 +257,7 @@
 				75434FFC2B37E6E600823A50 /* LandingPage */,
 				751EB5542B4E4C0500106FD6 /* Profile */,
 				751EB55B2B4E52B600106FD6 /* Pantry */,
+				752580D52B6B03FF00D536D2 /* FavoriteRecipe */,
 				75C42DDC2B62E7D9003959B6 /* ResultPage */,
 				75EBAAB42B3D280A0039841F /* SelectionIngredient */,
 				758061382B4E3EF60091FFFA /* ScanItem */,
@@ -435,10 +452,13 @@
 				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
 				754A8FA22B585A8400C9FD04 /* GetIngredients.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
+				752580D42B6B036900D536D2 /* ChosenSubProfileView.swift in Sources */,
 				75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */,
 				752580CC2B69A13100D536D2 /* LinkRecipeRequestBody.swift in Sources */,
 				75C42DDE2B62E80C003959B6 /* ResultView.swift in Sources */,
+				752580D92B6B092100D536D2 /* FavoriteRecipeViewModel.swift in Sources */,
 				75C42DE22B62EF45003959B6 /* GenerateRecipe.swift in Sources */,
+				752580D72B6B042200D536D2 /* FavoriteRecipeView.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				75C42DE02B62E81E003959B6 /* LinkRecipesViewModel.swift in Sources */,
 				75C42DE42B62EF94003959B6 /* Recipe.swift in Sources */,

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+class FavoriteRecipeViewModel: ObservableObject {
+    @Published var listOfFavLinks: [LinkRecipe] = [LinkRecipe]()
+    
+    static func getFavoriteRecipe() {
+        
+        
+    }
+}

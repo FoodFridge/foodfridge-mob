@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct ChosenSubProfileView: View {
+    
+    var selectedView: ChoiceOfView
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        switch selectedView {
+        case .pantry :
+            PantryView()
+        case .favorite:
+            FavoriteRecipeView()
+        }
     }
 }
 
+enum ChoiceOfView: String, CaseIterable {
+    case pantry = "Pantry"
+    case favorite = "Favorite Recipe"
+}
+
 #Preview {
-    ChosenSubProfileView()
+    ChosenSubProfileView(selectedView: .favorite)
 }

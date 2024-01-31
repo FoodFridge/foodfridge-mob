@@ -8,40 +8,41 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var data: [String: [IngredientItem]] = [:]
-    @State private var dictData: [String : [String]] = [:]
+    
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = .button2
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
+    }
+   
+    
+    @State private var selectedView: ChoiceOfView = .favorite
+    
     var body: some View {
         VStack {
-            Text("\(data.count)")
-            Text("\(dictData.count)")
-            List(dictData.keys.sorted(), id: \.self) { key in
-                        Section(header: Text("Type Code: \(key)")) {
-                            ForEach(dictData[key] ?? [], id: \.self) { ingredientName in
-                                Text(ingredientName)
-                                
-                            }
-                            
-                            }
-                        }
             
-        }
-        .onAppear {
-            //fetch all ingredient
-            Task {
-                do {
-                    // Assuming fetchData is an asynchronous function that returns data
-                    let fetchedData =  try await GetIngredients().loadIngredients()
-                    self.data = fetchedData
-                    //print("Successful retrieved data = \(fetchedData)")
-                    self.dictData = SelectionSheetViewModel().getItemsNameWithCategory(data: self.data)
-                    
-                } catch {
-                    print("Error fetching data: \(error.localizedDescription)")
+            Picker("", selection: $selectedView) {
+                ForEach(ChoiceOfView.allCases, id: \.self) {
+                    Text($0.rawValue)
+                        .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
                 }
             }
+            .pickerStyle(.segmented)
+            .padding()
+            .foregroundStyle(.button4 )
+            
+            Spacer()
+            ChosenSubProfileView(selectedView: selectedView)
+            Spacer()
+            
+         
         }
+        
     }
 }
+
+
+
+
 
 #Preview {
     ProfileView()
