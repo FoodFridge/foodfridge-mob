@@ -19,9 +19,9 @@ struct LinkRecipesView: View {
         VStack {
             ScrollView {
                 ForEach(vm.listOfgoogleLinks) { linkRecipe in
-                   
-                    GoogleLinkRow(googleLink: linkRecipe, title: "", link: "", img: "", isLiked: $isLiked)
+                    GoogleLinkRow(googleLink: linkRecipe)
                 }
+                
             }.scrollIndicators(.hidden)
             
         }

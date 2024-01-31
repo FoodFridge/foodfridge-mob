@@ -9,11 +9,7 @@ import SwiftUI
 
 struct GoogleLinkRow: View {
     var googleLink:  LinkRecipe?
-    var title: String
-    var link: String
-    var img: String
-    
-    @Binding var isLiked: Bool
+    @State private var isLiked: Bool = false
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -21,13 +17,20 @@ struct GoogleLinkRow: View {
             Rectangle()
             HStack {
                 Button {
-                    // tap to save URL
+                    // tap to save/unsave
                     isLiked.toggle()
+                    Task {
+                        try await AddFavoriteRecipe.addFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
+                    }
                 } label: {
                     Image(systemName:  isLiked ?  "heart.fill" : "heart" )
                         .foregroundStyle(.black)
                         .padding(10)
                 }
+                .onChange(of: isLiked) { newValue in
+                    
+                }
+                
                 
                 Button {
                     // tap to navigate to google link
@@ -97,5 +100,5 @@ struct GoogleLinkRow: View {
 }
 
 #Preview {
-    GoogleLinkRow(title: "Soy Ginger Salmon {Fast, Healthy Asian Salmon Recipe ...", link: "https://www.wellplated.com/soy-ginger-salmon/", img: "https://www.wellplated.com/wp-content/uploads/2017/04/Baked-Soy-Ginger-Salmon.jpg", isLiked: .constant(false))
+    GoogleLinkRow()
 }

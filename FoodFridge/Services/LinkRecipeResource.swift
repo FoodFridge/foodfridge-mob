@@ -8,7 +8,7 @@
 import Foundation
 class LinkRecipeResource {
     
-    static func getLinkRecipe (userId: String , recipeName: String) async throws -> [LinkRecipe] {
+    static func getLinkRecipe(userId: String , recipeName: String) async throws -> [LinkRecipe] {
         // Create an instance of JSONEncoder
         let encoder = JSONEncoder()
         // Create request body
@@ -31,9 +31,7 @@ class LinkRecipeResource {
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 // Make the request using URLSession
                 let (data, response) = try await URLSession.shared.data(for: request)
-               // guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                        //throw URLError(.badServerResponse)
-                    //}
+               
                 
                 guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
                 print("DEBUG: statusCode =  \(response)")
@@ -42,7 +40,7 @@ class LinkRecipeResource {
                 if let responseText = String(data: data, encoding: .utf8) {
                  print("response = \(responseText)")
                 }
-                // Decode data to SpoonRecipe
+                // Decode resonse data to LinkRecipe
                 let responseData = try JSONDecoder().decode(LinkeRecipeResponseData.self, from: data)
                 print("LinkRecipe = \(responseData.data)")
                 return responseData.data
