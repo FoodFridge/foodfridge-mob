@@ -10,7 +10,8 @@ struct LinkeRecipeResponseData: Codable {
     let data: [LinkRecipe]
 }
 
-struct LinkRecipe: Codable {
+struct LinkRecipe: Codable, Identifiable {
+    
     let id: String
     let title : String
     let link: String
@@ -18,9 +19,9 @@ struct LinkRecipe: Codable {
     
     enum CodingKeys: String, CodingKey {
                case id = "fav_id"
-               case title = "title"
-               case link = "link"
-               case img = "img"
+               case title
+               case link
+               case img 
     }
 }
 

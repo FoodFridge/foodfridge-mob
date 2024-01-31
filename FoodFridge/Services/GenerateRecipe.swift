@@ -8,9 +8,9 @@
 import Foundation
 class GenerateRecipe {
    
-    static func getRecipe(Ingredients: [String]) async throws -> [Recipe] {
+    static func getRecipe(from selectedIngredients: [String]) async throws -> [Recipe] {
         
-        let ingredients = Ingredients
+        let ingredients = selectedIngredients
 
         // Create an instance of JSONEncoder
         let encoder = JSONEncoder()

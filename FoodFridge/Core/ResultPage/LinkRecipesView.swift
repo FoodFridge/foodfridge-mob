@@ -7,19 +7,29 @@
 
 import SwiftUI
 
-struct RecipesView: View {
+struct LinkRecipesView: View {
+    
     var title: String = "Salmon with Ginger Glaze"
     var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
+    @State private var LinkRecipes = [LinkRecipe]()
     @State private var isLiked = false
+    @ObservedObject var vm = LinkRecipesViewModel()
+    
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(googleRecipes) { recipe in
+                ForEach(vm.listOfgoogleLinks) { linkRecipe in
                    
-                    GoogleResultRow(title: recipe.title, link: recipe.link, img: recipe.img, isLiked: $isLiked)
+                    GoogleLinkRow(googleLink: linkRecipe, title: "", link: "", img: "", isLiked: $isLiked)
                 }
             }.scrollIndicators(.hidden)
             
+        }
+        .onAppear {
+            Task {
+                vm.listOfgoogleLinks  = try await vm.getLinkRecipes(fromUserId: "test user", recipeName: title)
+              
+            }
         }
         
         
@@ -29,5 +39,5 @@ struct RecipesView: View {
 }
 
 #Preview {
-    RecipesView()
+    LinkRecipesView()
 }

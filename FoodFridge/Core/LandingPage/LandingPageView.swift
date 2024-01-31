@@ -52,11 +52,6 @@ struct LandingPageView: View {
                             //MARK: Genenerate Recipes Button
                             .overlay(
                                 
-                              
-                                
-                                
-                            
-                                
                                 NavigationLink {
                                     //TODO: tap and link to result of generated recipe
                                     ResultView()
@@ -65,7 +60,7 @@ struct LandingPageView: View {
                                 }
                                 .simultaneousGesture(TapGesture().onEnded({
                                     Task {
-                                        try await vm.generateRecipe(ingredients: vm.selectedTags)
+                                        try await vm.generateRecipe(from: vm.selectedTags)
                                     }
                                  }))
                                 .frame(width: 200, height: 30)

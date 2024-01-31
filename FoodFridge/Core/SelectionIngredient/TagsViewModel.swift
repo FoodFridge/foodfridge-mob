@@ -21,10 +21,10 @@ class TagsViewModel: ObservableObject {
         self.selectedTags.removeAll { $0 == tag }
     }
     
-    func generateRecipe(ingredients : [String]) async throws {
+    func generateRecipe(from ingredients : [String]) async throws {
         let ingredients = ingredients
         var recipes: [Recipe]
-        recipes = try await GenerateRecipe.getRecipe(Ingredients: ingredients)
+        recipes = try await GenerateRecipe.getRecipe(from: ingredients)
         self.generatedRecipes = recipes
     }
     

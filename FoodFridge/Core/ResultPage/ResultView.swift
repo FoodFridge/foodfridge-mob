@@ -29,14 +29,14 @@ struct ResultView: View {
             
             ScrollView {
                 ForEach(0..<vm.generatedRecipes.count, id: \.self) { index in
-                    NavigationLink(destination: RecipesView(title: vm.generatedRecipes[index].title)) {
+                    NavigationLink(destination: LinkRecipesView(title: vm.generatedRecipes[index].title)) {
                         RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
                     }
-                    .simultaneousGesture(TapGesture().onEnded({
-                        Task {
-                            try await vm.generateRecipe(ingredients: vm.selectedTags)
-                        }
-                     }))
+                   // .simultaneousGesture(TapGesture().onEnded({
+                        //Task {
+                          //  try await LinkRecipeResource.getLinkRecipe(userId: "test " , recipeName: "")
+                       // }
+                    // }))
                     
                 }
             }

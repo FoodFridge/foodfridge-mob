@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct GoogleResultRow: View {
-    
+struct GoogleLinkRow: View {
+    var googleLink:  LinkRecipe?
     var title: String
     var link: String
     var img: String
+    
     @Binding var isLiked: Bool
     @Environment(\.openURL) var openURL
     
@@ -30,12 +31,12 @@ struct GoogleResultRow: View {
                 
                 Button {
                     // tap to navigate to google link
-                    if let googleLink = URL(string: link) {
+                    if let googleLink = URL(string: googleLink?.link ?? "link") {
                         openURL(googleLink)
                     }
                 } label: {
                     VStack {
-                        Text(title)
+                        Text(googleLink?.title ?? "Recipe title")
                             .foregroundStyle(.black)
                             .font(.custom(CustomFont.appFontRegular.rawValue, size: 17))
                             .padding()
@@ -47,11 +48,11 @@ struct GoogleResultRow: View {
                 
                 Button {
                     // tap to navigate to google link
-                    if let googleLink = URL(string: link) {
+                    if let googleLink = URL(string: googleLink?.link ?? "Link") {
                         openURL(googleLink)
                     }
                 } label: {
-                    AsyncImage(url: URL(string: img)) { phase in
+                    AsyncImage(url: URL(string: googleLink?.img ?? "image" )) { phase in
                         switch phase {
                         case .empty:
                             // Placeholder when the image is not yet loaded
@@ -96,5 +97,5 @@ struct GoogleResultRow: View {
 }
 
 #Preview {
-    GoogleResultRow(title: "Soy Ginger Salmon {Fast, Healthy Asian Salmon Recipe ...", link: "https://www.wellplated.com/soy-ginger-salmon/", img: "https://www.wellplated.com/wp-content/uploads/2017/04/Baked-Soy-Ginger-Salmon.jpg", isLiked: .constant(false))
+    GoogleLinkRow(title: "Soy Ginger Salmon {Fast, Healthy Asian Salmon Recipe ...", link: "https://www.wellplated.com/soy-ginger-salmon/", img: "https://www.wellplated.com/wp-content/uploads/2017/04/Baked-Soy-Ginger-Salmon.jpg", isLiked: .constant(false))
 }
