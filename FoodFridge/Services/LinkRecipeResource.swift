@@ -14,7 +14,7 @@ class LinkRecipeResource {
         // Create request body
         let body = LinkRecipeRequestBody(userId: userId, recipeName: recipeName)
         
-        guard let url = URL(string: AppConstant.LinkRecipeResourceURLString) else {
+        guard let url = URL(string: AppConstant.linkRecipeResourceURLString) else {
                    throw URLError(.badURL)
                }
         //Encode request body to JSON data
