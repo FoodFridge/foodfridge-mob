@@ -12,21 +12,30 @@ enum Category: String {
     case carb = "01"
     case protein = "02"
     case dairy = "03"
-    case veggie = "04"
-    case seasoning = "05"
+    case seafood = "04"
+    case veggie = "05"
+    case fruit = "06"
+    case seasoning = "07"
+    
+    
     
     var displayName: String {
            switch self {
            case .protein:
-               return "Protein"
+               return "Meat"
            case .carb:
                return "Carbohydrate"
            case .dairy:
                return "Dairy Product"
            case .veggie:
-               return "Fruit and Vegetable"
+               return "Vegetable"
            case .seasoning:
                return "Seasoning"
+           case .seafood:
+               return "Seafood"
+           case .fruit:
+               return "Fruit"
+            
            }
        }
     

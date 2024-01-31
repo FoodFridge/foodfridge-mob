@@ -15,6 +15,7 @@ struct IngredientData: Decodable {
 
 struct IngredientItem: Decodable, Identifiable {
     let id: String
+    var date: Date?
     var name: String
     var type: String
     

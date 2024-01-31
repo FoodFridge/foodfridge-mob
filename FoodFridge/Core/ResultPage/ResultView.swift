@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ResultView: View {
     
-    @State private var generatedRecipes: [Recipe] = Recipe.mockRecipes
+    @EnvironmentObject var vm: TagsViewModel
+  
     
     var body: some View {
         
@@ -27,14 +28,21 @@ struct ResultView: View {
             .padding()
             
             ScrollView {
-                ForEach(0..<generatedRecipes.count, id: \.self) { index in
-                    NavigationLink(destination: RecipesView(title: generatedRecipes[index].title)) {
-                        RecipeRow(title: generatedRecipes[index].title , imageURL: generatedRecipes[index].imageURL)
+                ForEach(0..<vm.generatedRecipes.count, id: \.self) { index in
+                    NavigationLink(destination: LinkRecipesView(title: vm.generatedRecipes[index].title)) {
+                        RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
                     }
+                   // .simultaneousGesture(TapGesture().onEnded({
+                        //Task {
+                          //  try await LinkRecipeResource.getLinkRecipe(userId: "test " , recipeName: "")
+                       // }
+                    // }))
+                    
                 }
             }
             .scrollIndicators(.hidden)
         }
+        
         
        
     }

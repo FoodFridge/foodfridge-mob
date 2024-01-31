@@ -38,6 +38,7 @@ struct SelectIngredientsButton: View {
             }
             .background(Color.button1)
             .cornerRadius(120)
+            
         })
         .sheet(isPresented: $showSheet) {
             SelectionSheetView()
@@ -47,6 +48,7 @@ struct SelectIngredientsButton: View {
         }
         .foregroundColor(.black)
         .font(.title).bold()
+        
         
         
     }

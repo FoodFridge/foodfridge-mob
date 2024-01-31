@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LandingPageView: View {
     
-  
+    @State private var isNextViewActive = false
+
     @State private var showSheet = false
     @State var selectedTags = Set<String>()
     @State var selectedItems = [String]()
@@ -17,8 +18,8 @@ struct LandingPageView: View {
 
     @EnvironmentObject var vm: TagsViewModel
     
-    let itemCategories = ["Carbs", "Dairy", "Seasoning","Protein", "Veggies","Cuisine"]
-    let threeRows = [GridItem(),GridItem(),GridItem()]
+    let itemCategories = ["Carb", "Meat", "Dairy", "Seafood", "Veggie","Fruit","Seasoning", "Pantry"]
+    let fourRows = [GridItem(),GridItem(),GridItem(),GridItem()]
     
     var body: some View {
         NavigationStack {
@@ -58,8 +59,10 @@ struct LandingPageView: View {
                                     SmallButton(title: "Generate Recipe")
                                 }
                                 .simultaneousGesture(TapGesture().onEnded({
-                                        vm.generateRecipe()
-                                    }))
+                                    Task {
+                                        try await vm.generateRecipe(from: vm.selectedTags)
+                                    }
+                                 }))
                                 .frame(width: 200, height: 30)
                                 .offset(y: 85)
                             )
@@ -72,7 +75,7 @@ struct LandingPageView: View {
                         .frame(width: proxy.size.width / 2 , height: proxy.size.width / 2)
                     Spacer()
                     //MARK: Select ingredients buttons
-                    LazyHGrid (rows: threeRows) {
+                    LazyHGrid (rows: fourRows) {
                         ForEach(0..<itemCategories.count, id: \.self) { item in
                             VStack {
                                 SelectIngredientsButton(title: "\(itemCategories[item])", action: {
@@ -80,8 +83,9 @@ struct LandingPageView: View {
                                 }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15, showSheet: $showSheet)
                             }
                         }
+                        
                     }
-                    .padding(.bottom, -5)
+                    .padding(.bottom, -25)
                     
                     Spacer()
                     

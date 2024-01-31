@@ -42,7 +42,7 @@ struct SelectionSheetView: View {
                Task {
                    do {
                        
-                       let fetchedData =  try FetchIngredientsLocal().loadIngredients()
+                       let fetchedData =  try await GetIngredients().loadIngredients()
                        self.data = fetchedData
                        self.dataDict = vm.getItemsNameWithCategory(data: self.data)
                        

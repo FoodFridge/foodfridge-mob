@@ -7,9 +7,11 @@
 
 import Foundation
 
+@MainActor
 class TagsViewModel: ObservableObject {
     
-    @Published var selectedTags: [String] = ["test"]
+    @Published var selectedTags = [String]()
+    @Published var generatedRecipes: [Recipe] = [Recipe]()
     
     func addSelectedTag(tag: String) {
         self.selectedTags.append(tag)
@@ -17,11 +19,13 @@ class TagsViewModel: ObservableObject {
     
     func deleteSelectedTag(tag: String)  {
         self.selectedTags.removeAll { $0 == tag }
-        
     }
     
-    func generateRecipe() {
-        
+    func generateRecipe(from ingredients : [String]) async throws {
+        let ingredients = ingredients
+        var recipes: [Recipe]
+        recipes = try await GenerateRecipe.getRecipe(from: ingredients)
+        self.generatedRecipes = recipes
     }
     
 }

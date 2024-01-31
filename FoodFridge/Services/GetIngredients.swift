@@ -8,12 +8,14 @@
 import Foundation
 import SwiftUI
 
-class FetchIngredientsLocal {
+class GetIngredients {
     
     var ingredients: [IngredientItem] = []
     var ingredientsByType: [String: [IngredientItem]] = [:]
+    let urlEndpoint = AppConstant.fetchIngredientsURLStinng
     
-    func fetchIngredientsLocal() throws -> [IngredientItem] {
+    
+    func GetIngredients() throws -> [IngredientItem] {
         
         var returnJson: [IngredientItem]
         
@@ -44,14 +46,15 @@ class FetchIngredientsLocal {
         return  IngredientItem.mockItems
     }
     
-    func loadIngredients() throws -> [String: [IngredientItem]] {
+    func loadIngredients() async throws -> [String: [IngredientItem]] {
         
+        /*
         guard let url = Bundle.main.url(forResource: "Ingredients", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
             print("JSON file was not found")
-            return ["01" : IngredientItem.mockItems]
+            return ["01" : IngredientItem.mockItems]        
         }
-
+         */
         // Print the JSON string for debugging
         //let jsonString = String(data: data, encoding: .utf8)
         //print("JSON String: \(jsonString ?? "N/A")")
@@ -59,6 +62,14 @@ class FetchIngredientsLocal {
         let decoder = JSONDecoder()
         
         do {
+            guard let url = URL(string: urlEndpoint) else
+            { throw FetchError.invalidURL }
+            
+            let (data, response) = try await URLSession.shared.data(from: url)
+            
+            guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
+            print("DEBUG: statusCode =  \(response)")
+            
             let jsonData = try decoder.decode(IngredientData.self, from: data)
             //get all ingredients
             //self.ingredients = jsonData.data
