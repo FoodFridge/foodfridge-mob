@@ -20,7 +20,7 @@ struct GoogleLinkRow: View {
                     // tap to save/unsave
                     isLiked.toggle()
                     Task {
-                        try await AddFavoriteRecipe.addFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
+                        try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
                     }
                 } label: {
                     Image(systemName:  isLiked ?  "heart.fill" : "heart" )
@@ -41,7 +41,7 @@ struct GoogleLinkRow: View {
                     VStack {
                         Text(googleLink?.title ?? "Recipe title")
                             .foregroundStyle(.black)
-                            .font(.custom(CustomFont.appFontRegular.rawValue, size: 17))
+                            .font(.custom(CustomFont.appFontRegular.rawValue, size: 13))
                             .padding()
                             .multilineTextAlignment(.leading)
                     }

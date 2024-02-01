@@ -6,11 +6,16 @@
 //
 
 import Foundation
+
+@MainActor
 class FavoriteRecipeViewModel: ObservableObject {
-    @Published var listOfFavLinks: [LinkRecipe] = [LinkRecipe]()
-    
-    static func getFavoriteRecipe() {
-        
-        
+    @Published var listOfFavLinks: [LinkRecipe2] = [LinkRecipe2]()
+    var userId = "test user"
+  
+    func getFavoriteRecipe(userId: String, isFavorite: String) async throws {
+                Task {
+                    let result = try await GetFavoriteRecipe.getLinkRecipe(userId: userId, isFavorite: "Y")
+                    self.listOfFavLinks = result
+                }
     }
 }

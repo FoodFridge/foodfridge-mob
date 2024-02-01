@@ -12,5 +12,5 @@ class AppConstant {
     "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/GenerateRecipe"
     static var linkRecipeResourceURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/LinkRecipe"
     static var addFavoriteRecipeURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/favorite"
-    static var getFavoriteRecipeOfuserUSLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/favorite/<string:user_id>/<string:is_favorite>"
+    static var getFavoriteRecipeOfuserUSLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/favorite"
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 class UpdateFavoriteRecipe {
-    static func addFavorite(linkId: String, isFavorite: Bool) async throws {
+    static func updateFavorite(linkId: String, isFavorite: Bool) async throws {
         // Create an instance of JSONEncoder
         let encoder = JSONEncoder()
         let urlEndpoint = AppConstant.addFavoriteRecipeURLString
@@ -42,8 +42,6 @@ class UpdateFavoriteRecipe {
                     
                 }
                 
-                let responseData = try JSONDecoder().decode(AddFavoriteResponse.self,  from: data)
-                print("response = \(responseData.success)")
             }
             
         }
