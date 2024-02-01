@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class AddFavoriteRecipe {
+class UpdateFavoriteRecipe {
     static func addFavorite(linkId: String, isFavorite: Bool) async throws {
         // Create an instance of JSONEncoder
         let encoder = JSONEncoder()
