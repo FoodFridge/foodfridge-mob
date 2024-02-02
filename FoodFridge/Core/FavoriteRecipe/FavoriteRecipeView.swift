@@ -19,22 +19,18 @@ struct FavoriteRecipeView: View {
         VStack {
             ScrollView {
                 ForEach(vm.listOfFavLinks) { linkRecipe in
-                    GoogleLinkRow2(googleLink: linkRecipe)
+                    GoogleLinkRow(googleLink: linkRecipe)
                 }
-                
-            }.scrollIndicators(.hidden)
+            }
+            .scrollIndicators(.hidden)
             
         }
         .onAppear {
-            Task {
-                vm.listOfFavLinks =  try await GetFavoriteRecipe.getLinkRecipe(userId: "test user", isFavorite: "Y")
+                Task {
+                    vm.listOfFavLinks =  try await GetFavoriteRecipe.getLinkRecipe(userId: "test user", isFavorite: "Y")
+                }
             }
         }
-        
-        
-        Text("List of \(title) Recipes by google search")
-        
-    }
 }
 
 #Preview {

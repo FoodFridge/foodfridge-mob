@@ -23,7 +23,7 @@ struct GoogleLinkRow: View {
                         try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
                     }
                 } label: {
-                    Image(systemName:  isLiked ?  "heart.fill" : "heart" )
+                    Image(systemName:  googleLink?.isFavorite == "Y" || isLiked ?  "heart.fill" : "heart" )
                         .foregroundStyle(.black)
                         .padding(10)
                 }
@@ -34,7 +34,7 @@ struct GoogleLinkRow: View {
                 
                 Button {
                     // tap to navigate to google link
-                    if let googleLink = URL(string: googleLink?.link ?? "link") {
+                    if let googleLink = URL(string: googleLink?.url ?? "link") {
                         openURL(googleLink)
                     }
                 } label: {
@@ -51,7 +51,7 @@ struct GoogleLinkRow: View {
                 
                 Button {
                     // tap to navigate to google link
-                    if let googleLink = URL(string: googleLink?.link ?? "Link") {
+                    if let googleLink = URL(string: googleLink?.url ?? "Link") {
                         openURL(googleLink)
                     }
                 } label: {

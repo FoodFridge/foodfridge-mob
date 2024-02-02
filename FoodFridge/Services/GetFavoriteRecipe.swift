@@ -7,9 +7,9 @@
 
 import Foundation
 class GetFavoriteRecipe {
-    var favRecipes: [LinkRecipe2] = [LinkRecipe2]()
+    var favRecipes: [LinkRecipe] = [LinkRecipe]()
     
-    static func getLinkRecipe(userId: String, isFavorite: String) async throws -> [LinkRecipe2] {
+    static func getLinkRecipe(userId: String, isFavorite: String) async throws -> [LinkRecipe] {
         let decoder = JSONDecoder()
         let urlEndpoint = ("\(AppConstant.getFavoriteRecipeOfuserUSLString)/\(userId)/\(isFavorite)")
         print("user id = \(userId)")

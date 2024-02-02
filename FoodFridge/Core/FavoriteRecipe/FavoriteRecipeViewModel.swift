@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor
 class FavoriteRecipeViewModel: ObservableObject {
-    @Published var listOfFavLinks: [LinkRecipe2] = [LinkRecipe2]()
+    @Published var listOfFavLinks: [LinkRecipe] = [LinkRecipe]()
     var userId = "test user"
   
     func getFavoriteRecipe(userId: String, isFavorite: String) async throws {
