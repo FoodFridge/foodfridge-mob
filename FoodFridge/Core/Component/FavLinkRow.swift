@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct GoogleLinkRow2: View {
-    var googleLink:  LinkRecipe2?
-    @State private var isLiked: Bool = false
+struct FavLinkRow: View {
+    var googleLink:  LinkRecipe?
+    @State private var isLiked: Bool = true
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -23,7 +23,7 @@ struct GoogleLinkRow2: View {
                         try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
                     }
                 } label: {
-                    Image(systemName:  googleLink?.isFavorite == "Y"  ?  "heart.fill" : "heart" )
+                    Image(systemName:  isLiked  ?  "heart.fill" : "heart" )
                         .foregroundStyle(.black)
                         .padding(10)
                 }
@@ -99,6 +99,6 @@ struct GoogleLinkRow2: View {
 }
 
 #Preview {
-    GoogleLinkRow2()
+    FavLinkRow()
 }
 

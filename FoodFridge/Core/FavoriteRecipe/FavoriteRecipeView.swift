@@ -19,7 +19,7 @@ struct FavoriteRecipeView: View {
         VStack {
             ScrollView {
                 ForEach(vm.listOfFavLinks) { linkRecipe in
-                    GoogleLinkRow(googleLink: linkRecipe)
+                    FavLinkRow(googleLink: linkRecipe)
                 }
             }
             .scrollIndicators(.hidden)
