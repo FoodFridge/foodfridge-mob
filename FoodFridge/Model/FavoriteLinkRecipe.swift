@@ -14,12 +14,12 @@ struct FavoriteRecipeResponse: Codable  {
     var data : [FavoriteRecipe]
 }
 
-struct FavoriteRecipe: Codable {
+struct FavoriteRecipe: Codable, Hashable {
     var recipeName : String
-    var recipeLink  : [RecipeLink]
+    var recipeLinks  : [RecipeLink]
 }
 
-struct RecipeLink: Codable, Identifiable {
+struct RecipeLink: Codable, Identifiable, Hashable {
     
     var id: String
     var img: String

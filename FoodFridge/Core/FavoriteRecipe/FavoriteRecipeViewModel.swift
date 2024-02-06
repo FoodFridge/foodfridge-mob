@@ -9,7 +9,8 @@ import Foundation
 
 @MainActor
 class FavoriteRecipeViewModel: ObservableObject {
-    @Published var listOfFavLinks: [LinkRecipe] = [LinkRecipe]()
+    @Published var listOfFavLinks: [FavoriteRecipe] = [FavoriteRecipe]()
+    
     
     @Published var FavoriteStatus = true
     

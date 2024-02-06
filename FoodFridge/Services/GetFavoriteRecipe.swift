@@ -7,32 +7,46 @@
 
 import Foundation
 class GetFavoriteRecipe {
-    var favRecipes: [LinkRecipe] = [LinkRecipe]()
+    var favRecipes: [FavoriteRecipe] = [FavoriteRecipe]()
     
-    static func getLinkRecipe(userId: String, isFavorite: String) async throws -> [LinkRecipe] {
-        let decoder = JSONDecoder()
-        let urlEndpoint = ("\(AppConstant.getFavoriteRecipeOfuserUSLString)/\(userId)/\(isFavorite)")
-        print("user id = \(userId)")
-        guard let url = URL(string: urlEndpoint) else
-        { throw FetchError.invalidURL }
-        print("url = \(url)")
-        let (data, response) = try await URLSession.shared.data(from: url)
+    static func getLinkRecipe(userId: String, isFavorite: String) async throws -> [FavoriteRecipe] {
         
-        let jsonData = try decoder.decode(FavoriteLinkRecipe.self, from: data)
-        
-        print("decoded data = \(jsonData)")
-        
-        // Print the JSON string for debugging
-        if let responseText = String(data: data, encoding: .utf8){
-            print("JSON String: \(responseText )")
+        guard let url = Bundle.main.url(forResource: "FavoriteRecipes", withExtension: "json"),
+              let data = try? Data(contentsOf: url) else {
+            print("JSON file was not found")
+            return [FavoriteRecipe]()
         }
         
-        guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
-        print("DEBUG: statusCode =  \(response)")
         
+        let decoder = JSONDecoder()
+        //let urlEndpoint = ("\(AppConstant.getFavoriteRecipeOfuserUSLString)/\(userId)/\(isFavorite)")
+        print("user id = \(userId)")
+        //guard let url = URL(string: urlEndpoint) else
+        //{ throw FetchError.invalidURL }
+        print("url = \(url)")
         
-        return jsonData.data
-        
+        // let (data, response) = try await URLSession.shared.data(from: url)
+        do {
+            let jsonData = try decoder.decode(FavoriteRecipeResponse.self, from: data)
+            
+            print("decoded data = \(jsonData)")
+            
+            // Print the JSON string for debugging
+            if let responseText = String(data: data, encoding: .utf8){
+                print("JSON String: \(responseText )")
+            }
+            
+            //guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
+            //print("DEBUG: statusCode =  \(response)")
+            let jsonString = String(data: data, encoding: .utf8)
+            print("favorite recipes JSON String: \(jsonString ?? "N/A")")
+            
+            return jsonData.data
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        return [FavoriteRecipe]()
     }
-    
+   
 }

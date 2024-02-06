@@ -18,9 +18,20 @@ struct FavoriteRecipeView: View {
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(vm.listOfFavLinks) { linkRecipe in
-                    FavLinkRow(googleLink: linkRecipe)
+                // Looping through the recipes array
+                VStack{
+                    ForEach(vm.listOfFavLinks, id: \.self) { recipe in
+                        
+                        Text("\(recipe.recipeName)")
+                        
+                        ForEach(recipe.recipeLinks, id: \.self) { recipeLink in
+                              FavLinkRow(googleLink: recipeLink)
+                        }
+                        
+                    }
+                   
                 }
+                
             }
             .scrollIndicators(.hidden)
             

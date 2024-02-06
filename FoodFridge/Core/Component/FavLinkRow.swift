@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavLinkRow: View {
-    var googleLink:  LinkRecipe?
+    var googleLink:  RecipeLink?
     @State private var isLiked: Bool = true
     @Environment(\.openURL) var openURL
     
