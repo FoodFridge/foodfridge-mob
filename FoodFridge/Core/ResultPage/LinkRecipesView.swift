@@ -31,6 +31,25 @@ struct LinkRecipesView: View {
               
             }
         }
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                NavigationLink {
+                    //MARK: navigate to Profile view
+                    ProfileView()
+                }label: {
+                    Image(systemName: "person.crop.circle")
+                        .foregroundColor(Color(.button2))
+                }
+                
+                NavigationLink {
+                    //MARK: navigate to Scan Item view
+                    ScanItemView()
+                }label: {
+                    Image(systemName: "camera.circle")
+                        .foregroundColor(Color(.button2))
+                }
+            }
+        }
         
         
         Text("List of \(title) Recipes by google search")

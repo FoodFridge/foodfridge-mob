@@ -32,17 +32,31 @@ struct ResultView: View {
                     NavigationLink(destination: LinkRecipesView(title: vm.generatedRecipes[index].title)) {
                         RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
                     }
-                   // .simultaneousGesture(TapGesture().onEnded({
-                        //Task {
-                          //  try await LinkRecipeResource.getLinkRecipe(userId: "test " , recipeName: "")
-                       // }
-                    // }))
+                   
                     
                 }
             }
             .scrollIndicators(.hidden)
         }
-        
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                NavigationLink {
+                    //MARK: navigate to Profile view
+                    ProfileView()
+                }label: {
+                    Image(systemName: "person.crop.circle")
+                        .foregroundColor(Color(.button2))
+                }
+                
+                NavigationLink {
+                    //MARK: navigate to Scan Item view
+                    ScanItemView()
+                }label: {
+                    Image(systemName: "camera.circle")
+                        .foregroundColor(Color(.button2))
+                }
+            }
+        }
         
        
     }

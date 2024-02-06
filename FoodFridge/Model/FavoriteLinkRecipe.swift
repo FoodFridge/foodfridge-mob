@@ -10,6 +10,35 @@ struct FavoriteLinkRecipe: Codable {
     var data : [LinkRecipe]
 }
 
+struct FavoriteRecipeResponse: Codable  {
+    var data : [FavoriteRecipe]
+}
+
+struct FavoriteRecipe: Codable {
+    var recipeName : String
+    var recipeLink  : [RecipeLink]
+}
+
+struct RecipeLink: Codable, Identifiable {
+    
+    var id: String
+    var img: String
+    var title: String
+    var url:String
+    var isFavorite: String
+    var userId: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "favId"
+        case img
+        case title
+        case url
+        case isFavorite
+        case userId
+    }
+}
+
+
 struct LinkRecipe2: Codable, Identifiable {
     var id: String
     var img: String
