@@ -12,7 +12,7 @@ struct LinkRecipesView: View {
     var title: String = "Salmon with Ginger Glaze"
     var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
     @State private var LinkRecipes = [LinkRecipe]()
-    @ObservedObject var vm = LinkRecipesViewModel()
+    @StateObject var vm = LinkRecipesViewModel()
     
     
     var body: some View {
@@ -28,7 +28,6 @@ struct LinkRecipesView: View {
         .onAppear {
             Task {
                 vm.listOfgoogleLinks  = try await vm.getLinkRecipes(fromUserId: "test user", recipeName: title)
-              
             }
         }
         .toolbar {
