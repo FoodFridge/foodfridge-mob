@@ -1,15 +1,15 @@
 //
-//  GoogleResultRow.swift
+//  GoogleLinkRow2.swift
 //  FoodFridge
 //
-//  Created by Jessie Pastan on 1/26/24.
+//  Created by Jessie Pastan on 1/31/24.
 //
 
 import SwiftUI
 
-struct GoogleLinkRow: View {
-    var googleLink:  LinkRecipe?
-    @State var isLiked: Bool
+struct FavLinkRow: View {
+    var googleLink:  RecipeLink?
+    @State private var isLiked: Bool = true
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -19,28 +19,26 @@ struct GoogleLinkRow: View {
                 Button {
                     // tap to save/unsave
                     isLiked.toggle()
-                    
                     Task {
                         try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
                     }
                 } label: {
-                    Image(systemName: isLiked ?  "heart.fill" : "heart" )
+                    Image(systemName:  isLiked  ?  "heart.fill" : "heart" )
                         .foregroundStyle(.black)
                         .padding(10)
                 }
                 .onChange(of: isLiked) { newValue in
-                    //
+                    
                 }
-                
                 
                 Button {
                     // tap to navigate to google link
-                    if let googleLink = URL(string: googleLink?.url ?? "link") {
+                    if let googleLink = URL(string: googleLink?.url ?? "url") {
                         openURL(googleLink)
                     }
                 } label: {
                     VStack {
-                        Text(googleLink?.title ?? "Recipe title")
+                        Text(googleLink?.title ?? "Title")
                             .foregroundStyle(.black)
                             .font(.custom(CustomFont.appFontRegular.rawValue, size: 13))
                             .padding()
@@ -90,17 +88,17 @@ struct GoogleLinkRow: View {
             }
     
         }
-       
         .frame(width: 350, height: 100)
         .shadow(radius: 8, x: 5, y:5)
         .cornerRadius(10)
         .foregroundStyle(.button2)
-    
+        
+        
+      
     }
 }
 
-/*
- #Preview {
- GoogleLinkRow(isLiked: .constant: true)
- }
- */
+#Preview {
+    FavLinkRow()
+}
+

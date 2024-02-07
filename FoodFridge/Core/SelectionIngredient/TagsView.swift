@@ -9,7 +9,7 @@ import SwiftUI
 struct TagsView: View {
     
     let dataDicts : [String : [String]]
-    var groupItemsByType: [String : [[String]]] = ["" : [[""]]]
+    var groupItemsByType: [String : [[String]]] = [String : [[String]]]()
     let screenWidth = UIScreen.main.bounds.width
     
     @State private var selectedItems = Set<String>()

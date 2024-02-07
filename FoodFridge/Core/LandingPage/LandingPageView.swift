@@ -75,15 +75,16 @@ struct LandingPageView: View {
                         .frame(width: proxy.size.width / 2 , height: proxy.size.width / 2)
                     Spacer()
                     //MARK: Select ingredients buttons
-                    LazyHGrid (rows: fourRows) {
-                        ForEach(0..<itemCategories.count, id: \.self) { item in
-                            VStack {
-                                SelectIngredientsButton(title: "\(itemCategories[item])", action: {
-                                    showSheet = true
-                                }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15, showSheet: $showSheet)
+                    ScrollView {
+                        LazyHGrid (rows: fourRows) {
+                            ForEach(0..<itemCategories.count, id: \.self) { item in
+                                VStack {
+                                    SelectIngredientsButton(title: "\(itemCategories[item])", action: {
+                                        showSheet = true
+                                    }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15, showSheet: $showSheet)
+                                }
                             }
                         }
-                        
                     }
                     .padding(.bottom, -25)
                     
