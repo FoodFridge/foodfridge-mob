@@ -39,24 +39,7 @@ struct RecipeLink: Codable, Identifiable, Hashable {
 }
 
 
-struct LinkRecipe2: Codable, Identifiable {
-    var id: String
-    var img: String
-    var title: String
-    var recipeName: String
-    var url: String
-    var isFavorite: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "favId"
-        case img
-        case title
-        case recipeName
-        case url
-        case isFavorite
-    }
-    
-}
+
 
 extension FavoriteLinkRecipe {
     static var mockFavoriteRecipes: [LinkRecipe] {

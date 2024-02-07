@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GoogleLinkRow: View {
     var googleLink:  LinkRecipe?
-    @State private var isLiked: Bool = false
+    @State var isLiked: Bool
     @Environment(\.openURL) var openURL
     
     var body: some View {
@@ -19,16 +19,17 @@ struct GoogleLinkRow: View {
                 Button {
                     // tap to save/unsave
                     isLiked.toggle()
+                    
                     Task {
                         try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
                     }
                 } label: {
-                    Image(systemName:  googleLink?.isFavorite == "Y" || isLiked ?  "heart.fill" : "heart" )
+                    Image(systemName: isLiked ?  "heart.fill" : "heart" )
                         .foregroundStyle(.black)
                         .padding(10)
                 }
                 .onChange(of: isLiked) { newValue in
-                    
+                    //
                 }
                 
                 
@@ -89,16 +90,17 @@ struct GoogleLinkRow: View {
             }
     
         }
+       
         .frame(width: 350, height: 100)
         .shadow(radius: 8, x: 5, y:5)
         .cornerRadius(10)
         .foregroundStyle(.button2)
-        
-        
-      
+    
     }
 }
 
-#Preview {
-    GoogleLinkRow()
-}
+/*
+ #Preview {
+ GoogleLinkRow(isLiked: .constant: true)
+ }
+ */

@@ -38,6 +38,7 @@ struct ResultView: View {
             }
             .scrollIndicators(.hidden)
         }
+        
         .toolbar {
             ToolbarItemGroup(placement: .topBarTrailing) {
                 NavigationLink {

@@ -19,4 +19,6 @@ class LinkRecipesViewModel: ObservableObject {
         return listOfgoogleLinks
     }
     
+   
+    
 }

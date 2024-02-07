@@ -33,6 +33,7 @@ struct RecipeRow: View {
                 .frame(width: 300)
                 .multilineTextAlignment(.center)
         }
+        
         .padding(.bottom, 20)
         
        

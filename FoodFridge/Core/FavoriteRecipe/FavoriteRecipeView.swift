@@ -19,10 +19,17 @@ struct FavoriteRecipeView: View {
         VStack {
             ScrollView {
                 // Looping through the recipes array
-                VStack{
+                VStack {
                     ForEach(vm.listOfFavLinks, id: \.self) { recipe in
+                        VStack(alignment: .leading) {
+                            Text("\(recipe.recipeName)")
+                                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 5)
+                        .padding(.bottom, -5)
                         
-                        Text("\(recipe.recipeName)")
                         
                         ForEach(recipe.recipeLinks, id: \.self) { recipeLink in
                               FavLinkRow(googleLink: recipeLink)
