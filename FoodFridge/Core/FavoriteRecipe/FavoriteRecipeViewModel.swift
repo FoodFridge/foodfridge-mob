@@ -19,7 +19,8 @@ class FavoriteRecipeViewModel: ObservableObject {
     func getFavoriteRecipe(userId: String, isFavorite: String) async throws {
                 Task {
                     let result = try await GetFavoriteRecipe.getLinkRecipe(userId: userId, isFavorite: "Y")
-                    self.listOfFavLinks = result
+                    let sortedResult = result.sorted { $0.recipeName < $1.recipeName }
+                    self.listOfFavLinks = sortedResult
                 }
     }
 }

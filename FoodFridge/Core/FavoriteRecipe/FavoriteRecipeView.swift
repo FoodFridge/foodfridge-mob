@@ -45,7 +45,8 @@ struct FavoriteRecipeView: View {
         }
         .onAppear {
                 Task {
-                    vm.listOfFavLinks =  try await GetFavoriteRecipe.getLinkRecipe(userId: "test user", isFavorite: "Y")
+                     
+                    try await vm.getFavoriteRecipe(userId: "test user", isFavorite: "Y")
                 }
             }
         }
