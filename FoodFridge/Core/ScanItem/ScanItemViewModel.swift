@@ -30,7 +30,7 @@ final class ScanItemViewModel: ObservableObject {
     @Published var recognizeMultipleItems = false
     @Published var scanType: ScanType = .text
     @Published var recognizedItems: [RecognizedItem] = []
-    @Published var pantryItems: [PantryItem] = PantryItem.mockPantryItem
+    @Published var pantryItems: [PantryItem] = PantryItem.mockPantryItems
     
     private var isScannerAvailable: Bool {
         DataScannerViewController.isAvailable && DataScannerViewController.isSupported

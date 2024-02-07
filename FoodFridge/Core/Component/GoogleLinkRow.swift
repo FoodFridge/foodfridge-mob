@@ -28,9 +28,7 @@ struct GoogleLinkRow: View {
                         .foregroundStyle(.black)
                         .padding(10)
                 }
-                .onChange(of: isLiked) { newValue in
-                    //
-                }
+              
                 
                 
                 Button {

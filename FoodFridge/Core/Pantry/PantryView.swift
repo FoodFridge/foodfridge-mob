@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct PantryView: View {
     
     @EnvironmentObject var vm: ScanItemViewModel
@@ -15,45 +16,63 @@ struct PantryView: View {
     @State private var isEditing = false
  
     @State private var text = ""
-    @State private var editingItemId: Int?
+    @State private var editingItemId: String?
     
     var body: some View {
         
-        Text("Your pantry")
-        Text("(for testing) edit id : \(editingItemId ?? 1000)")
-        
+        //Text("(for testing) edit id : \(editingItemId ?? "testId")")
         
         List {
-            Section(header: Text(Date(), style: .date)) {
-                     ForEach($vm.pantryItems.indices, id: \.self) { index in
-                         if PantryItem.mockPantryItem[index].id == editingItemId {
-                             HStack {
-                                 TextField(PantryItem.mockPantryItem[index].itemName, text: $text, onCommit: {
-                                     self.editingItemId = nil
-                                     // Handle the commit action here
-                                 })
-                                 Button {
-                                     self.editingItemId = nil
-                                     //MARK: TODO: Save new data to database
-                                 } label: {
-                                     Text("Done")
-                                 }
-                             }
-                         } else {
-                             HStack {
-                                 Text(PantryItem.mockPantryItem[index].itemName)
-                                 Spacer()
-                                 Button {
-                                     isEditing = true
-                                     self.editingItemId = PantryItem.mockPantryItem[index].id
-                                 } label: {
-                                     Text("Edit")
-                                 }
-                             }
-                         }
-                     }.onDelete(perform: deleteItems)
-                 }
-             }
+            ForEach (vm.pantryItems, id: \.self) { pantryItem in
+                
+                Section(header: Text(pantryItem.addDate)) {
+                    
+                    ForEach(pantryItem.item, id: \.self) { pantry in
+                        
+                        if pantry.id == editingItemId ?? "id" {
+                            
+                            HStack {
+                                 
+                                TextField(pantry.name, text: $text, onCommit: {
+                                    self.editingItemId = nil
+                                    // Handle the commit action here
+                                })
+                                 
+                                Button {
+                                    self.editingItemId = nil
+                                    //MARK: TODO: Save new data to database
+                                    
+                                    
+                                } label: {
+                                    Text("Done")
+                                }
+                            }
+                            //.listRowBackground(Color.button_1)
+                            
+                        } else {
+                            HStack {
+                                Text(pantry.name)
+                                Spacer()
+                                Button {
+                                    isEditing = true
+                                    self.editingItemId = pantry.id
+                                } label: {
+                                    Text("Edit")
+                                    
+                                }
+                            }
+                            //   .listRowBackground(Color.button_1)
+                        }
+                    }
+                    .onDelete(perform: deleteItems)
+                    .frame(minHeight: 50)
+                    //.padding()
+                    //.background(Color.button_1)
+                    //.cornerRadius(10)
+                    //.padding(.vertical, 4)
+                }
+            }
+        }
     }
     
     

@@ -7,19 +7,26 @@
 
 import Foundation
 
-struct PantryItem: Codable, Identifiable, Hashable {
+struct PantryResponse: Codable {
+    var data: [PantryItem]
+}
+
+struct PantryItem: Codable, Hashable {
     //need to name constant "id" to conform to identifiable protocal
-    let id: Int
-    var itemName: String
-    var addDate: Date
+    var addDate: String
+    var item: [Pantry]
+}
+
+struct Pantry: Codable, Identifiable, Hashable {
+    var id: String
+    var name: String
 }
 extension PantryItem {
-    static var mockPantryItem: [PantryItem] {
-        [ PantryItem(id: 1, itemName: "Strawberry", addDate: Date()),
-          PantryItem(id: 2, itemName: "Pork belly", addDate: Date()),
-          PantryItem(id: 3, itemName: "Kelp", addDate: Date()),
-          PantryItem(id: 4, itemName: "Cauliflower", addDate: Date()),
-          PantryItem(id: 5, itemName: "Egg", addDate: Date())
+    static var mockPantryItems: [PantryItem] {
+        [
+            PantryItem(addDate: "Day Before Yesturday", item: [Pantry(id: "1", name: "Banana"), Pantry(id: "2", name: "Milk")] ),
+            PantryItem(addDate: "Yesturday", item: [Pantry(id: "3", name: "Pork Belly"), Pantry(id: "4", name: "Kelp"), Pantry(id: "5", name: "Egg"), Pantry(id: "6", name: "Coffee")] ),
+            PantryItem(addDate: "Today", item: [Pantry(id: "7", name: "Strawberry"), Pantry(id: "8", name: "Noodles")] ),
         ]
     }
 }
