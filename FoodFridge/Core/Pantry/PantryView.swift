@@ -14,29 +14,32 @@ struct PantryView: View {
   
     @FocusState private var isTextFieldFocused: Bool
     @State private var isEditing = false
+    @State var pantryItems = [PantryItem]()
  
     @State private var text = ""
     @State private var editingItemId: String?
     
     var body: some View {
         
+        
         //Text("(for testing) edit id : \(editingItemId ?? "testId")")
         
         List {
-            ForEach (vm.pantryItems, id: \.self) { pantryItem in
+            ForEach (pantryItems, id: \.self) { pantryItem in
                 
-                Section(header: Text(pantryItem.addDate)) {
+                Section(header: Text(pantryItem.date)) {
                     
-                    ForEach(pantryItem.item, id: \.self) { pantry in
+                    ForEach(pantryItem.pantryInfo, id: \.self) { pantry in
                         
                         if pantry.id == editingItemId ?? "id" {
                             
                             HStack {
                                  
-                                TextField(pantry.name, text: $text, onCommit: {
+                                TextField(pantry.pantryName, text: $text, onCommit: {
                                     self.editingItemId = nil
                                     // Handle the commit action here
                                 })
+                                
                                  
                                 Button {
                                     self.editingItemId = nil
@@ -51,7 +54,7 @@ struct PantryView: View {
                             
                         } else {
                             HStack {
-                                Text(pantry.name)
+                                Text(pantry.pantryName)
                                 Spacer()
                                 Button {
                                     isEditing = true
@@ -70,9 +73,26 @@ struct PantryView: View {
                     //.background(Color.button_1)
                     //.cornerRadius(10)
                     //.padding(.vertical, 4)
+                    
+                    
+
                 }
             }
         }
+        .onAppear {
+            Task {
+               try await pantryItems = GetPantry().getPantry()
+            }
+        }
+        //MARK: TODO : Add new pantry
+        Button {
+            
+        } label: {
+            Image(systemName: "plus.app")
+                .bold()
+                .font(.title)
+        }
+         
     }
     
     

@@ -12,7 +12,7 @@ class GetIngredients {
     
     var ingredients: [IngredientItem] = []
     var ingredientsByType: [String: [IngredientItem]] = [:]
-    let urlEndpoint = AppConstant.fetchIngredientsURLStinng
+    
     
     
     func GetIngredients() throws -> [IngredientItem] {
@@ -46,7 +46,7 @@ class GetIngredients {
         return  IngredientItem.mockItems
     }
     
-    func loadIngredients() async throws -> [String: [IngredientItem]] {
+    func loadIngredients(userId: String = "test user") async throws -> [String: [IngredientItem]] {
         
         /*
         guard let url = Bundle.main.url(forResource: "Ingredients", withExtension: "json"),
@@ -58,7 +58,7 @@ class GetIngredients {
         // Print the JSON string for debugging
         //let jsonString = String(data: data, encoding: .utf8)
         //print("JSON String: \(jsonString ?? "N/A")")
-
+        let urlEndpoint = ("\(AppConstant.fetchIngredientsURLString)/\(userId)")
         let decoder = JSONDecoder()
         
         do {
