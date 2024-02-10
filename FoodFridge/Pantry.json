@@ -1,0 +1,45 @@
+{
+    "status": "1",
+    "message": "Data retrieved successfully",
+    "data" : [
+        {
+            "date": "2024-01-26",
+            "pantryInfo": [
+                {
+                    "pantry_id": "1",
+                    "pantryName": "pantry1"
+                }
+            ]
+        },
+        {
+            "date": "2024-02-08",
+            "pantryInfo": [
+                {
+                    "pantry_id": "2",
+                    "pantryName": "pantry2"
+                },
+                {
+                    "pantry_id": "afc0d248-13c8-4156-a88f-e3ab11b2127a",
+                    "pantryName": "testAPI"
+                }
+            ]
+        },
+        {
+            "date": "2024-02-07",
+            "pantryInfo": [
+                {
+                    "pantry_id": "3",
+                    "pantryName": "pantry3"
+                },
+                {
+                    "pantry_id": "4",
+                    "pantryName": "pantry4"
+                },
+                {
+                    "pantry_id": "5",
+                    "pantryName": "pantry5"
+                }
+            ]
+        }
+    ]
+}

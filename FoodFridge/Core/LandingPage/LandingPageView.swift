@@ -81,6 +81,7 @@ struct LandingPageView: View {
                                 VStack {
                                     SelectIngredientsButton(title: "\(itemCategories[item])", action: {
                                         showSheet = true
+                                        
                                     }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15, showSheet: $showSheet)
                                 }
                             }

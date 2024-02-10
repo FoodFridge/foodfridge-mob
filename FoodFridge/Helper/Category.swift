@@ -16,6 +16,7 @@ enum Category: String {
     case veggie = "05"
     case fruit = "06"
     case seasoning = "07"
+    case pantry = "08"
     
     
     
@@ -35,6 +36,8 @@ enum Category: String {
                return "Seafood"
            case .fruit:
                return "Fruit"
+           case .pantry:
+               return "Pantry"
             
            }
        }

@@ -12,7 +12,7 @@ class FetchIngredients {
     func fetchIngedients() async throws -> IngredientData {
         
         var fetchedIngredients: IngredientData
-        let urlEndpoint = AppConstant.fetchIngredientsURLStinng
+        let urlEndpoint = AppConstant.fetchIngredientsURLString
         
         do {
             guard let url = URL(string: urlEndpoint) else
