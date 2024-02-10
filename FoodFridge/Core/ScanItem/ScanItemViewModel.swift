@@ -32,6 +32,11 @@ final class ScanItemViewModel: ObservableObject {
     @Published var recognizedItems: [RecognizedItem] = []
     @Published var pantryItems: [PantryItem] = PantryItem.mockPantryItems
     
+    init() {
+        self.getPantry()
+    }
+    
+    
     private var isScannerAvailable: Bool {
         DataScannerViewController.isAvailable && DataScannerViewController.isSupported
     }
@@ -78,6 +83,44 @@ final class ScanItemViewModel: ObservableObject {
     
     func addItemToPantry(item: String) {
         //pantryItems.append(item)
+    }
+    
+    func deleteItem(at offsets: IndexSet, from dateSection: String) {
+        
+        // find the index of the section from which we're deleting
+        if let sectionIndex = pantryItems.firstIndex(where: { $0.date == dateSection }) {
+            print("sectionIndex = \(sectionIndex)")
+            // retrieve the specific section
+            var section = pantryItems[sectionIndex]
+            print("section = \(section)")
+            // pantryInfo items have an 'id' property that is a String
+            // and represents the pantryId to delete
+            if let itemIndex = offsets.first, itemIndex < section.pantryInfo.count {
+                let pantryIdToDelete = section.pantryInfo[itemIndex].id
+                // remove the item from pantryInfo array within this section
+                section.pantryInfo.remove(atOffsets: offsets)
+                print("deleted \(pantryIdToDelete)")
+                // update the section in the main array
+                pantryItems[sectionIndex] = section
+                // Call API to delete pantry
+                Task {
+                    do {
+                        try await DeletePantry().delete(of: pantryIdToDelete)
+                        
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    
+    func getPantry() {
+        Task {
+          try await pantryItems = GetPantry().getPantry()
+        }
     }
 }
 

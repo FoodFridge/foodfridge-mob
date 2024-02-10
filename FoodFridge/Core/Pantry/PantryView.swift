@@ -11,21 +11,21 @@ import SwiftUI
 struct PantryView: View {
     
     @EnvironmentObject var vm: ScanItemViewModel
-  
+    
     @FocusState private var isTextFieldFocused: Bool
     @State private var isEditing = false
-    @State var pantryItems = [PantryItem]()
- 
+  
+    @State var onSwipeId = ""
     @State private var text = ""
     @State private var editingItemId: String?
     
     var body: some View {
         
         
-        //Text("(for testing) edit id : \(editingItemId ?? "testId")")
+        Text("(for testing) edit id : \(editingItemId ?? "testId")")
         
         List {
-            ForEach (pantryItems, id: \.self) { pantryItem in
+            ForEach (vm.pantryItems, id: \.self) { pantryItem in
                 
                 Section(header: Text(pantryItem.date)) {
                     
@@ -34,13 +34,13 @@ struct PantryView: View {
                         if pantry.id == editingItemId ?? "id" {
                             
                             HStack {
-                                 
+                                
                                 TextField(pantry.pantryName, text: $text, onCommit: {
                                     self.editingItemId = nil
                                     // Handle the commit action here
                                 })
                                 
-                                 
+                                
                                 Button {
                                     self.editingItemId = nil
                                     //MARK: TODO: Save new data to database
@@ -67,23 +67,20 @@ struct PantryView: View {
                             //   .listRowBackground(Color.button_1)
                         }
                     }
-                    .onDelete(perform: deleteItems)
+                    
+                    .onDelete { offsets in
+                        vm.deleteItem(at: offsets, from: pantryItem.date)
+                    }
+                    
                     .frame(minHeight: 50)
                     //.padding()
                     //.background(Color.button_1)
                     //.cornerRadius(10)
                     //.padding(.vertical, 4)
-                    
-                    
-
                 }
             }
         }
-        .onAppear {
-            Task {
-               try await pantryItems = GetPantry().getPantry()
-            }
-        }
+       
         //MARK: TODO : Add new pantry
         Button {
             
@@ -92,19 +89,14 @@ struct PantryView: View {
                 .bold()
                 .font(.title)
         }
-         
+        
     }
     
     
-
-    func deleteItems(at offsets: IndexSet) {
-        vm.pantryItems.remove(atOffsets: offsets)
-    }
     
     
     
 }
-
 #Preview {
     PantryView()
 }
