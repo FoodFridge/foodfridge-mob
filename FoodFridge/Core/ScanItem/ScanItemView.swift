@@ -10,7 +10,7 @@ import SwiftUI
 struct ScanItemView: View {
     
     @EnvironmentObject var vm: ScanItemViewModel
-    
+    var userId = "test user"
     
     
     var body: some View {
@@ -36,7 +36,7 @@ struct ScanItemView: View {
                             case .text(let text):
                                 Button {
                                     //add ingredient to user's pantry
-                                    vm.addItemToPantry(item: text.transcript)
+                                    vm.addItemToPantry(item: text.transcript, userId: self.userId)
                                 } label: {
                                     Text("Add: \(text.transcript)")
                                         .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))

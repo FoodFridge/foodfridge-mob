@@ -18,7 +18,7 @@ struct PantryItem: Codable, Hashable {
 }
 
 struct Pantry: Codable, Identifiable, Hashable {
-    var id: String
+    var id: String?
     var pantryName: String
     
     enum CodingKeys: String, CodingKey {

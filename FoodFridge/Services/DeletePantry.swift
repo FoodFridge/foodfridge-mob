@@ -8,7 +8,7 @@
 import Foundation
 class DeletePantry {
     
-    func delete(of pantryId: String) async throws {
+    static func delete(of pantryId: String) async throws {
         let urlEndpoint = ("\(AppConstant.deletePantryURLString)/\(pantryId)")
         
     

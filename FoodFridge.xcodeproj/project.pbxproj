@@ -65,6 +65,7 @@
 		75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B32B75DA8A0063B742 /* GetPantry.swift */; };
 		75CE75B62B75E2330063B742 /* Pantry.json in Resources */ = {isa = PBXBuildFile; fileRef = 75CE75B52B75E2330063B742 /* Pantry.json */; };
 		75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B72B76B3140063B742 /* DeletePantry.swift */; };
+		75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B92B771FC80063B742 /* AddPantry.swift */; };
 		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
 		75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */; };
 		75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */; };
@@ -132,6 +133,7 @@
 		75CE75B32B75DA8A0063B742 /* GetPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPantry.swift; sourceTree = "<group>"; };
 		75CE75B52B75E2330063B742 /* Pantry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pantry.json; sourceTree = "<group>"; };
 		75CE75B72B76B3140063B742 /* DeletePantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePantry.swift; sourceTree = "<group>"; };
+		75CE75B92B771FC80063B742 /* AddPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantry.swift; sourceTree = "<group>"; };
 		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIChatServices.swift; sourceTree = "<group>"; };
 		75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				752580DA2B6B0E2800D536D2 /* GetFavoriteRecipe.swift */,
 				75CE75B32B75DA8A0063B742 /* GetPantry.swift */,
 				75CE75B72B76B3140063B742 /* DeletePantry.swift */,
+				75CE75B92B771FC80063B742 /* AddPantry.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */,
 				757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */,
 				751EB5602B53488200106FD6 /* PantryItem.swift in Sources */,
+				75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
 				7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */,
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
