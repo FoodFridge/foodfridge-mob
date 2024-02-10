@@ -12,8 +12,8 @@ struct SelectionSheetView: View {
     @State private var data : [String : [IngredientItem]] = [:]
     @State private var dataDict: [String : [String]] = ["" : [""]]
     //@State var searchTag = ""
-    
-    @ObservedObject var vm = SelectionSheetViewModel()
+    @EnvironmentObject var vm: SelectionSheetViewModel
+   // @ObservedObject var vm = SelectionSheetViewModel()
     @Environment(\.dismiss) var dismiss
     
     
@@ -35,16 +35,15 @@ struct SelectionSheetView: View {
         
         
         NavigationStack {
-            TagsView(dataDicts: self.dataDict )
+            TagsView(dataDicts: vm.itemsDict )
            }
            .onAppear {
                //fetch all ingredient
                Task {
                    do {
                        
-                       let fetchedData =  try await GetIngredients().loadIngredients()
-                       self.data = fetchedData
-                       self.dataDict = vm.getItemsNameWithCategory(data: self.data)
+                       try await vm.fetchIngredients()
+                       vm.itemsDict = vm.getItemsNameWithCategory(data: vm.ingredientsByType)
                        
                        //print("Successful retrieved data = \(fetchedData)")
                        
