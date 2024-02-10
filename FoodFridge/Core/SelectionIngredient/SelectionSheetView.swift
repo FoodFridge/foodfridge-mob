@@ -13,7 +13,7 @@ struct SelectionSheetView: View {
     @State private var dataDict: [String : [String]] = ["" : [""]]
     //@State var searchTag = ""
     @EnvironmentObject var vm: SelectionSheetViewModel
-   // @ObservedObject var vm = SelectionSheetViewModel()
+    //@StateObject var vm = SelectionSheetViewModel()
     @Environment(\.dismiss) var dismiss
     
     
@@ -38,13 +38,16 @@ struct SelectionSheetView: View {
             TagsView(dataDicts: vm.itemsDict )
            }
            .onAppear {
-               //fetch all ingredient
+               //update all ingredient
                Task {
                    do {
                        
-                       try await vm.fetchIngredients()
+                       vm.fetchIngredients()
                        vm.itemsDict = vm.getItemsNameWithCategory(data: vm.ingredientsByType)
-                       
+                       let fetchedData = try await GetIngredients().loadIngredients()
+                       self.data = fetchedData
+                       self.dataDict = vm.getItemsNameWithCategory(data: data)
+                       vm.itemsDict = self.dataDict 
                        //print("Successful retrieved data = \(fetchedData)")
                        
                        

@@ -13,10 +13,12 @@ struct TagsView: View {
     var groupItemsByType: [String : [[String]]] = [String : [[String]]]()
     let screenWidth = UIScreen.main.bounds.width
     
+    
     @State private var selectedItems = Set<String>()
     @State private var searchTag = ""
     
     @EnvironmentObject var vm: TagsViewModel
+    @EnvironmentObject var vm2: SelectionSheetViewModel
     
     init(dataDicts: [ String : [String]]) {
         
@@ -121,11 +123,32 @@ struct TagsView: View {
                     }
                 }
             }
+            
+            
             .searchable(text: $searchTag, placement:
             .navigationBarDrawer(displayMode: .always))
             
         }
-             
+        /*
+        .onAppear {
+            //fetch all ingredient
+            Task {
+                do {
+                    
+                    try await vm2.fetchIngredients()
+                    vm2.itemsDict = vm2.getItemsNameWithCategory(data: vm2.ingredientsByType)
+                    //let fetchedData = try await GetIngredients().loadIngredients()
+                    //self.data = fetchedData
+                    //self.dataDict = vm.getItemsNameWithCategory(data: data)
+                    //print("Successful retrieved data = \(fetchedData)")
+                    
+                    
+                } catch {
+                    print("Error fetching data: \(error.localizedDescription)")
+                }
+            }
+        }
+             */
     }
 }
 

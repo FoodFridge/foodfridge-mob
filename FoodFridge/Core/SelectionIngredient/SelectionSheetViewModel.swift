@@ -14,18 +14,18 @@ class SelectionSheetViewModel: ObservableObject {
     @Published var ingredientsByType: [String: [IngredientItem]] = [:]
     @Published var itemsDict: [String : [String]] = [:]
     
-    init() {
-        Task {
-            try await fetchIngredients()
+    init()  {
+       
+            self.fetchIngredients()
             
             self.itemsDict = getItemsNameWithCategory(data: ingredientsByType)
-        }
+       
     }
     
     
-    func fetchIngredients()async throws {
+    func fetchIngredients()  {
         Task {
-           try await self.ingredientsByType = GetIngredients().loadIngredients(userId: "test user")
+             try await ingredientsByType = GetIngredients().loadIngredients(userId: "test user")
         }
     }
     
