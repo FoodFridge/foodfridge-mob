@@ -11,9 +11,7 @@ struct SelectionSheetView: View {
     
     @State private var data : [String : [IngredientItem]] = [:]
     @State private var dataDict: [String : [String]] = ["" : [""]]
-    //@State var searchTag = ""
     @EnvironmentObject var vm: SelectionSheetViewModel
-    //@StateObject var vm = SelectionSheetViewModel()
     @Environment(\.dismiss) var dismiss
     
     
@@ -38,7 +36,7 @@ struct SelectionSheetView: View {
             TagsView(dataDicts: vm.itemsDict )
            }
            .onAppear {
-               //update all ingredient
+               //update all ingredients
                Task {
                    do {
                        
@@ -47,9 +45,7 @@ struct SelectionSheetView: View {
                        let fetchedData = try await GetIngredients().loadIngredients()
                        self.data = fetchedData
                        self.dataDict = vm.getItemsNameWithCategory(data: data)
-                       vm.itemsDict = self.dataDict 
-                       //print("Successful retrieved data = \(fetchedData)")
-                       
+                       vm.itemsDict = self.dataDict
                        
                    } catch {
                        print("Error fetching data: \(error.localizedDescription)")
