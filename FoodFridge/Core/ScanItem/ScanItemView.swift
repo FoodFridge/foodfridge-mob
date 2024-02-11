@@ -11,6 +11,8 @@ struct ScanItemView: View {
     
     @EnvironmentObject var vm: ScanItemViewModel
     var userId = "test user"
+    @State private var addButtonTapped = false
+    //@State private var addedItem = ""
     
     
     var body: some View {
@@ -21,6 +23,9 @@ struct ScanItemView: View {
                 }
                 .ignoresSafeArea()
                 .id(vm.dataScannerViewId)
+            
+            //implement added animation bar
+            AddedBarAnimation(isTapped: addButtonTapped)
             
             VStack {
                 VStack(alignment: .center) {
@@ -37,6 +42,15 @@ struct ScanItemView: View {
                                 Button {
                                     //add ingredient to user's pantry
                                     vm.addItemToPantry(item: text.transcript.capitalized, userId: self.userId)
+                                    
+                                    // trigger animation bar
+                                    addButtonTapped = true
+                                    // Reset the state after a delay
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { 
+                                    addButtonTapped = false
+                                }
+                                    
+                                    
                                 } label: {
                                     Text("Add: \(text.transcript)")
                                         .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
