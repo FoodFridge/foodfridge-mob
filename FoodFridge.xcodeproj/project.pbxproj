@@ -51,6 +51,8 @@
 		757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E32B351BD000048178 /* CourierPrime-Bold.ttf */; };
 		7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758061392B4E3F1D0091FFFA /* ScanItemView.swift */; };
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
+		75C2DD972B7853F500CD184E /* EditPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD962B7853F500CD184E /* EditPantry.swift */; };
+		75C2DD992B785D7800CD184E /* AddedBarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */; };
 		75C42DDE2B62E80C003959B6 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DDD2B62E80C003959B6 /* ResultView.swift */; };
 		75C42DE02B62E81E003959B6 /* LinkRecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DDF2B62E81E003959B6 /* LinkRecipesViewModel.swift */; };
 		75C42DE22B62EF45003959B6 /* GenerateRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DE12B62EF45003959B6 /* GenerateRecipe.swift */; };
@@ -119,6 +121,8 @@
 		757542E32B351BD000048178 /* CourierPrime-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Bold.ttf"; sourceTree = "<group>"; };
 		758061392B4E3F1D0091FFFA /* ScanItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView.swift; sourceTree = "<group>"; };
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
+		75C2DD962B7853F500CD184E /* EditPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPantry.swift; sourceTree = "<group>"; };
+		75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedBarAnimation.swift; sourceTree = "<group>"; };
 		75C42DDD2B62E80C003959B6 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		75C42DDF2B62E81E003959B6 /* LinkRecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRecipesViewModel.swift; sourceTree = "<group>"; };
 		75C42DE12B62EF45003959B6 /* GenerateRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateRecipe.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				758061392B4E3F1D0091FFFA /* ScanItemView.swift */,
 				751EB5572B4E4E8F00106FD6 /* ScanItemViewModel.swift */,
 				751EB5592B4E4FD100106FD6 /* DataScannerView.swift */,
+				75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */,
 			);
 			path = ScanItem;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				75CE75B32B75DA8A0063B742 /* GetPantry.swift */,
 				75CE75B72B76B3140063B742 /* DeletePantry.swift */,
 				75CE75B92B771FC80063B742 /* AddPantry.swift */,
+				75C2DD962B7853F500CD184E /* EditPantry.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 				752580D92B6B092100D536D2 /* FavoriteRecipeViewModel.swift in Sources */,
 				75C42DE22B62EF45003959B6 /* GenerateRecipe.swift in Sources */,
 				752580D72B6B042200D536D2 /* FavoriteRecipeView.swift in Sources */,
+				75C2DD992B785D7800CD184E /* AddedBarAnimation.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				75C42DE02B62E81E003959B6 /* LinkRecipesViewModel.swift in Sources */,
 				752580DD2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift in Sources */,
@@ -510,6 +517,7 @@
 				757542DB2B3401EE00048178 /* SignUpWithEmailView.swift in Sources */,
 				75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */,
 				754A8FA82B58A6BE00C9FD04 /* SelectionSheetViewModel.swift in Sources */,
+				75C2DD972B7853F500CD184E /* EditPantry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
