@@ -80,6 +80,10 @@ struct PantryView: View {
                 }
             }
         }
+        .onAppear {
+            //fetch updated pantry
+            vm.getPantry()
+       }
        
         //MARK: TODO : Add new pantry
         Button {

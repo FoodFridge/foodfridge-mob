@@ -32,9 +32,9 @@ final class ScanItemViewModel: ObservableObject {
     @Published var recognizedItems: [RecognizedItem] = []
     @Published var pantryItems: [PantryItem] = PantryItem.mockPantryItems
     
-    init() {
-        self.getPantry()
-    }
+   init() {
+       self.getPantry()
+   }
     
     
     private var isScannerAvailable: Bool {
@@ -81,8 +81,13 @@ final class ScanItemViewModel: ObservableObject {
     }
     
     
-    func addItemToPantry(item: String) {
+    func addItemToPantry(item: String, userId: String) {
+        
         //pantryItems.append(item)
+        Task {
+            try await AddPantry.addPantry(with: item, by: userId)
+        }
+        
     }
     
     func deleteItem(at offsets: IndexSet, from dateSection: String) {
@@ -99,13 +104,13 @@ final class ScanItemViewModel: ObservableObject {
                 let pantryIdToDelete = section.pantryInfo[itemIndex].id
                 // remove the item from pantryInfo array within this section
                 section.pantryInfo.remove(atOffsets: offsets)
-                print("deleted \(pantryIdToDelete)")
+                print("deleted \(String(describing: pantryIdToDelete))")
                 // update the section in the main array
                 pantryItems[sectionIndex] = section
                 // Call API to delete pantry
                 Task {
                     do {
-                        try await DeletePantry().delete(of: pantryIdToDelete)
+                        try await DeletePantry.delete(of: pantryIdToDelete ?? "testId")
                         
                     } catch {
                         print(error.localizedDescription)
@@ -119,7 +124,7 @@ final class ScanItemViewModel: ObservableObject {
     
     func getPantry() {
         Task {
-          try await pantryItems = GetPantry().getPantry()
+          try await pantryItems = GetPantry.getPantry()
         }
     }
 }

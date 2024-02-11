@@ -13,6 +13,7 @@ struct TagsView: View {
     var groupItemsByType: [String : [[String]]] = [String : [[String]]]()
     let screenWidth = UIScreen.main.bounds.width
     
+    
     @State private var selectedItems = Set<String>()
     @State private var searchTag = ""
     
@@ -121,11 +122,13 @@ struct TagsView: View {
                     }
                 }
             }
+            
+            
             .searchable(text: $searchTag, placement:
             .navigationBarDrawer(displayMode: .always))
             
         }
-             
+        
     }
 }
 

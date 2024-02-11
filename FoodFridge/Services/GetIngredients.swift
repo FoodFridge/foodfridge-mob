@@ -15,7 +15,7 @@ class GetIngredients {
     
     
     
-    func GetIngredients() throws -> [IngredientItem] {
+    static func GetIngredients() throws -> [IngredientItem] {
         
         var returnJson: [IngredientItem]
         
@@ -46,7 +46,7 @@ class GetIngredients {
         return  IngredientItem.mockItems
     }
     
-    func loadIngredients(userId: String = "test user") async throws -> [String: [IngredientItem]] {
+   func loadIngredients(userId: String = "test user") async throws -> [String: [IngredientItem]] {
         
         /*
         guard let url = Bundle.main.url(forResource: "Ingredients", withExtension: "json"),

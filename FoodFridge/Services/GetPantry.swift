@@ -10,7 +10,7 @@ class GetPantry {
     
     var pantryItems:[PantryItem] = [PantryItem]()
     
-    func getPantry(of userId: String = "test user") async throws  -> [PantryItem] {
+    static func getPantry(of userId: String = "test user") async throws  -> [PantryItem] {
         let urlEndpoint = ("\(AppConstant.getPantryURLString)/\(userId)")
         let decoder = JSONDecoder()
         

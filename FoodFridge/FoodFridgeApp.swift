@@ -16,6 +16,7 @@ struct FoodFridgeApp: App {
             AuthenthicationView()
                 .environmentObject(TagsViewModel())
                 .environmentObject(ScanItemViewModel())
+                .environmentObject(SelectionSheetViewModel())
         }
     }
 }
