@@ -26,7 +26,7 @@ class GetIngredients {
                 if let ingredients = IngredientParser.parseIngredients(from: data) {
                     
                     // Print the JSON string for debugging
-                        let jsonString = String(data: data, encoding: .utf8)
+                        //let jsonString = String(data: data, encoding: .utf8)
                        // print("JSON String: \(jsonString ?? "N/A")")
                     
                     // Now you have an array of 'Ingredient' objects

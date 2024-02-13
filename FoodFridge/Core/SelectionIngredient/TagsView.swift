@@ -144,13 +144,7 @@ struct TagsView: View {
             }
             .searchable(text: $searchTag, placement:
             .navigationBarDrawer(displayMode: .always))
-            
         }
-        
-    
-    
-    
-    
     }
 
 
