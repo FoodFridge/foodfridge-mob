@@ -17,6 +17,7 @@ struct FoodFridgeApp: App {
                 .environmentObject(TagsViewModel())
                 .environmentObject(ScanItemViewModel())
                 .environmentObject(SelectionSheetViewModel())
+                .environmentObject(ScrollTarget())
         }
     }
 }

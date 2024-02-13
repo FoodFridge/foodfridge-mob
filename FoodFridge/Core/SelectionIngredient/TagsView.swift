@@ -12,17 +12,22 @@ struct TagsView: View {
     let dataDicts : [String : [String]]
     var groupItemsByType: [String : [[String]]] = [String : [[String]]]()
     let screenWidth = UIScreen.main.bounds.width
+    var selectedTarget: String = ""
     
-    
+
     @State private var selectedItems = Set<String>()
     @State private var searchTag = ""
     
-    @EnvironmentObject var vm: TagsViewModel
     
-    init(dataDicts: [ String : [String]]) {
+    @EnvironmentObject var vm: TagsViewModel
+   
+    
+    init(dataDicts: [ String : [String]], selectedTarget: String) {
         
         self.dataDicts = dataDicts
         groupItemsByType = createGroupedItemsWithType(items: dataDicts)
+        self.selectedTarget = selectedTarget
+       
         
         func createGroupedItemsWithType(items: [String: [String]]) -> [String: [[String]]] {
             var groupedItemsWithType: [String: [[String]]] = [:]
@@ -58,23 +63,32 @@ struct TagsView: View {
         }
         
     }
+    
+    var sortedKeys: [String] {
+        let keys = Array(groupItemsByType.keys)
+        return keys.sorted { first, second in
+            if first == selectedTarget {
+                return true // Always place `selectedTargetKey` at the beginning
+            } else if second == selectedTarget {
+                return false // Never place `selectedTargetKey` at the beginning if it's the second element in comparison
+            }
+            return first < second // Sort the rest of the keys base on category(01-08)
+        }
+    }
+
             
     
     var body: some View {
         ScrollView {
+            ScrollViewReader { scrollview in
+            
             LazyVStack {
-                //TextField("Search tags...", text: $searchTag)
-                       //.padding()
-                       //.background(Color(.systemGray6))
-                      // .cornerRadius(10)
-                       //.padding()
-                
-                    ForEach(Array(groupItemsByType.keys.sorted()), id: \.self) { key in
+                    ForEach(sortedKeys, id: \.self) { key in
                         if let category = Category(rawValue: key) {
-                           
                             //Category name
                             VStack {
                                 Text(category.displayName)
+                                    .id(category.displayName)
                                     .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 15))
                                     .foregroundStyle(.button2)
                                     .padding()
@@ -84,22 +98,22 @@ struct TagsView: View {
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
+                            
                         }
-                    
-                    //tags 
-                        // Filter and display tags based on the search text
-                                    ForEach(groupItemsByType[key]?.filter { subItems in
-                                        // Check if search text is empty or if any of the sub-items start with the search text (case-insensitive)
-                                        searchTag.isEmpty || subItems.contains(where: { $0.lowercased().hasPrefix(searchTag.lowercased()) })
-                                    } ?? [], id: \.self) { subItems in
                         
+                        //tags
+                        // Filter and display tags based on the search text
+                        ForEach(groupItemsByType[key]?.filter { subItems in
+                            // Check if search text is empty or if any of the sub-items start with the search text (case-insensitive)
+                            searchTag.isEmpty || subItems.contains(where: { $0.lowercased().hasPrefix(searchTag.lowercased()) })
+                        } ?? [], id: \.self) { subItems in
                             HStack {
                                 ForEach(subItems, id: \.self) { tag in
                                     Text(tag)
                                         .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
                                         .lineLimit(1)
                                         .padding()
-                                          .padding(.vertical, -10)
+                                        .padding(.vertical, -10)
                                         .background(selectedItems.contains(tag) ? (Color(.button4)) : (Color(.button3)) )
                                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
                                         .onTapGesture {
@@ -119,21 +133,29 @@ struct TagsView: View {
                                         }
                                 }
                             }
+                        }
                     }
+                    
                 }
+                    
             }
             
-            
+               
+            }
             .searchable(text: $searchTag, placement:
             .navigationBarDrawer(displayMode: .always))
             
         }
         
+    
+    
+    
+    
     }
-}
 
 
+/*
  #Preview {
- TagsView(dataDicts: ["" : [""]])
+     TagsView(dataDicts: ["" : [""]], selectedTarget: "", isTapped: .constant(true))
  }
-
+ */

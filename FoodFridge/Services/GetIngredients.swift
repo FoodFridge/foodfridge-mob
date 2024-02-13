@@ -27,12 +27,12 @@ class GetIngredients {
                     
                     // Print the JSON string for debugging
                         let jsonString = String(data: data, encoding: .utf8)
-                        print("JSON String: \(jsonString ?? "N/A")")
+                       // print("JSON String: \(jsonString ?? "N/A")")
                     
                     // Now you have an array of 'Ingredient' objects
-                    for ingredient in ingredients {
-                        print("ID: \(ingredient.id),Name: \(ingredient.name), Type Code: \(ingredient.type)")
-                    }
+                    //for ingredient in ingredients {
+                       // print("ID: \(ingredient.id),Name: \(ingredient.name), Type Code: \(ingredient.type)")
+                    //}
                     
                     
                     returnJson = ingredients
@@ -68,14 +68,14 @@ class GetIngredients {
             let (data, response) = try await URLSession.shared.data(from: url)
             
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
-            print("DEBUG: statusCode =  \(response)")
+            //print("DEBUG: statusCode =  \(response)")
             
             let jsonData = try decoder.decode(IngredientData.self, from: data)
             //get all ingredients
             //self.ingredients = jsonData.data
             // get all ingredients by type
             self.ingredientsByType = Dictionary(grouping: jsonData.data, by: { $0.type })
-            print("jsondata = \(ingredientsByType)")
+            //print("jsondata = \(ingredientsByType)")
             return self.ingredientsByType
         } catch {
             print("Error decoding JSON: \(error)")

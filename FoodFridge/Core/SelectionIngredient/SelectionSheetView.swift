@@ -13,7 +13,7 @@ struct SelectionSheetView: View {
     @State private var dataDict: [String : [String]] = ["" : [""]]
     @EnvironmentObject var vm: SelectionSheetViewModel
     @Environment(\.dismiss) var dismiss
-    
+    @EnvironmentObject var scrollTarget: ScrollTarget
     
     var body: some View {
         
@@ -33,12 +33,14 @@ struct SelectionSheetView: View {
         
         
         NavigationStack {
-            TagsView(dataDicts: vm.itemsDict )
+            TagsView(dataDicts: vm.itemsDict, selectedTarget: scrollTarget.targetID)
            }
+        
            .onAppear {
                //update all ingredients
                Task {
                    do {
+                      
                        
                        vm.fetchIngredients()
                        vm.itemsDict = vm.getItemsNameWithCategory(data: vm.ingredientsByType)

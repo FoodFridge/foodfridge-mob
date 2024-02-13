@@ -17,8 +17,8 @@ struct LandingPageView: View {
     @State private var referenceHeight: CGFloat = 0
 
     @EnvironmentObject var vm: TagsViewModel
-    
-    let itemCategories = ["Carb", "Meat", "Dairy", "Seafood", "Veggie","Fruit","Seasoning", "Pantry"]
+    @EnvironmentObject var scrollTarget: ScrollTarget
+  
     let fourRows = [GridItem(),GridItem(),GridItem(),GridItem()]
     
     var body: some View {
@@ -77,10 +77,12 @@ struct LandingPageView: View {
                     //MARK: Select ingredients buttons
                     ScrollView {
                         LazyHGrid (rows: fourRows) {
-                            ForEach(0..<itemCategories.count, id: \.self) { item in
+                            ForEach(Category.allCases, id: \.self) { category in
                                 VStack {
-                                    SelectIngredientsButton(title: "\(itemCategories[item])", action: {
+                                    SelectIngredientsButton(title: category.displayName, action: {
                                         showSheet = true
+                                        //assign key to display selectedCategory
+                                        scrollTarget.targetID = category.rawValue
                                         
                                     }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15, showSheet: $showSheet)
                                 }
@@ -117,6 +119,3 @@ struct LandingPageView: View {
     }
 }
 
-//#Preview {
-    //LandingPageView(items: <#Binding<Set<String>>#>)
-//}
