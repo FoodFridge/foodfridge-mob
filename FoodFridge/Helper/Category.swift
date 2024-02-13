@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Category: String {
+enum Category: String, CaseIterable {
     
     case carb = "01"
     case protein = "02"
@@ -25,9 +25,9 @@ enum Category: String {
            case .protein:
                return "Meat"
            case .carb:
-               return "Carbohydrate"
+               return "Carb"
            case .dairy:
-               return "Dairy Product"
+               return "Dairy"
            case .veggie:
                return "Vegetable"
            case .seasoning:
