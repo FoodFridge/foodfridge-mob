@@ -68,7 +68,7 @@ struct ScanItemView: View {
                     }
                 }
                 NavigationLink {
-                    PantryView()
+                    PantryView2()
                 } label: {
                     Text("Go to Pantry")
                         .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))

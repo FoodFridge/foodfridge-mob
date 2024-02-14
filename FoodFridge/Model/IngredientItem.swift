@@ -20,7 +20,7 @@ struct IngredientItem: Decodable, Identifiable {
     var type: String
     
     enum CodingKeys: String, CodingKey {
-               case id =   "ingredient_id"
+               case id =   "doc_id"
                case name = "ingredient_name"
                case userId = "user_id"
                case type = "ingredient_type_code"
