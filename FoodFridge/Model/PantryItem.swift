@@ -22,7 +22,7 @@ struct Pantry: Codable, Identifiable, Hashable {
     var pantryName: String
     
     enum CodingKeys: String, CodingKey {
-               case id = "pantry_id"
+               case id = "doc_id"
                case pantryName
     }
 }
