@@ -2,11 +2,10 @@
 //  PantryView.swift
 //  FoodFridge
 //
-//  Created by Jessie Pastan on 1/9/24.
+//  Created by Jessie Pastan on 2/14/24.
 //
 
 import SwiftUI
-
 
 struct PantryView: View {
     
@@ -14,7 +13,8 @@ struct PantryView: View {
     
     @FocusState private var isTextFieldFocused: Bool
     @State private var isEditing = false
-  
+    @State private var isShowAddPantry = false
+    
     @State var onSwipeId = ""
     @State private var text = ""
     @State private var editingItemId: String?
@@ -83,24 +83,25 @@ struct PantryView: View {
         .onAppear {
             //fetch updated pantry
             vm.getPantry()
-       }
-       
+        }
+        
         //MARK: TODO : Add new pantry
         Button {
-            
+            isShowAddPantry = true
         } label: {
             Image(systemName: "plus.app")
                 .bold()
                 .font(.title)
         }
+        .sheet(isPresented: $isShowAddPantry) {
+            AddPantryView()
+        }
         
     }
     
     
-    
-    
-    
 }
+
 #Preview {
     PantryView()
 }

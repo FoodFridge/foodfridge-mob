@@ -13,7 +13,7 @@ struct ScanItemView: View {
     var userId = "test user"
     @State private var addButtonTapped = false
     //@State private var addedItem = ""
-    
+    @State private var isShowPantry = false
     
     var body: some View {
         VStack {
@@ -67,14 +67,20 @@ struct ScanItemView: View {
                         }
                     }
                 }
-                NavigationLink {
-                    PantryView2()
+                
+                //MARK: Display Pantry button
+                Button {
+                    isShowPantry = true
                 } label: {
                     Text("Go to Pantry")
                         .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                 }
+                .sheet(isPresented:
+                        $isShowPantry) {
+                    PantryView()
+                }
 
-            }//.onChange(of: vm.scanType) { _ in vm.recognizedItems = [] }
+            }
             .onChange(of: vm.textContentType) { _ in vm.recognizedItems = [] }
             .onChange(of: vm.recognizeMultipleItems) {  _ in
                 vm.recognizedItems = []
