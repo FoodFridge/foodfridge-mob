@@ -83,7 +83,6 @@ final class ScanItemViewModel: ObservableObject {
     
     func addItemToPantry(item: String, userId: String) {
         
-        //pantryItems.append(item)
         Task {
             try await AddPantry.addPantry(with: item, by: userId)
         }
