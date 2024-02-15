@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct PantryView: View {
     
@@ -21,8 +22,11 @@ struct PantryView: View {
     
     var body: some View {
         
+        let userTimeZone = TimeZone.current
         
         Text("(for testing) edit id : \(editingItemId ?? "testId")")
+        Text("user time zone identifier = \(userTimeZone.identifier)")
+
         
         List {
             ForEach (vm.pantryItems, id: \.self) { pantryItem in
