@@ -18,8 +18,13 @@ struct LandingPageView: View {
 
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var scrollTarget: ScrollTarget
+    @EnvironmentObject var authentication: Authentication
+    @EnvironmentObject var sessionManager: SessionManager
   
     let fourRows = [GridItem(),GridItem(),GridItem(),GridItem()]
+    
+    
+    @State private var isSignedOut = false
     
     var body: some View {
         NavigationStack {
@@ -97,6 +102,24 @@ struct LandingPageView: View {
                 .padding(4)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
+                        Button {
+                            //log user out
+                            Task {
+                        
+                                self.isSignedOut = try await LogOut.logUserOut()
+                                if self.isSignedOut {
+                                    //remove token and local id
+                                    sessionManager.logout()
+                                    print("logged out")
+                                    authentication.updateValidation(success: false)
+                                    
+                                }
+                            }
+                        } label: {
+                            Image(systemName: "rectangle.portrait.and.arrow.forward")
+                        }
+
+                        
                         NavigationLink {
                             //MARK: navigate to Profile view
                             ProfileView()
@@ -104,6 +127,8 @@ struct LandingPageView: View {
                             Image(systemName: "person.crop.circle")
                                 .foregroundColor(Color(.button2))
                         }
+                        
+            
                         
                         NavigationLink {
                             //MARK: navigate to Scan Item view

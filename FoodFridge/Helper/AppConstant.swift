@@ -11,6 +11,7 @@ class AppConstant {
     static var signUpWithEmailURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/sign_up_with_email_and_password"
     static var logInWithEmailURLString =
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/login_with_email_and_password"
+    static var logOutUserURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/logout"
     static var fetchIngredientsURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/ingredient"
     static var getRecipesURLString =
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/GenerateRecipe"

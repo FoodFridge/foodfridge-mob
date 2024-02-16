@@ -11,9 +11,12 @@ import SwiftUI
 struct LogInView: View {
     
     @EnvironmentObject var sessionManager: SessionManager
+    @EnvironmentObject var authenthication: Authentication
+    
     @StateObject var vm = LogInWithEmailViewModel()
     @State private var userData: LogInResponseData.LogInData = LogInResponseData.MOCKdata.data
     
+    @State private var isLoggedIn = false
     
     var body: some View {
         VStack {
@@ -42,6 +45,10 @@ struct LogInView: View {
                         sessionManager.saveLocalID(id: userData.localId ?? "mockId")
                         print("saved token = \(String(describing: sessionManager.getAuthToken()))")
                         print("saved local id = \(String(describing: sessionManager.getLocalID()))")
+                        self.isLoggedIn = sessionManager.isLoggedIn()
+                        if isLoggedIn {
+                            authenthication.updateValidation(success: true)
+                        }
                     }
                 }
                 
