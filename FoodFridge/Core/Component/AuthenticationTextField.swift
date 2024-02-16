@@ -13,7 +13,7 @@ struct AuthTextFieldModifier: ViewModifier {
                    content
                        .padding()
                        .frame(height: 40)
-                       .background(Color.button3) // Make sure Color.button4 is defined in your project
+                       .background(Color.button3)
                        .foregroundColor(.black)
                        .font(.custom("CourierPrime-Regular", size: 25))
                        .cornerRadius(150)

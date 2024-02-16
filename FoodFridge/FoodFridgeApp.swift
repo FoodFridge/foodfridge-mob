@@ -10,13 +10,15 @@ import SwiftUI
 @main
 struct FoodFridgeApp: App {
     @StateObject var authentication = Authentication()
+    @StateObject var sessionManager = SessionManager()
     
     var body: some Scene {
         
         WindowGroup {
             
-            if authentication.isValidated {
+            if authentication.isValidated || sessionManager.isLoggedIn() {
                 LandingPageView()
+                    .environmentObject(sessionManager)
                     .environmentObject(authentication)
                     .environmentObject(TagsViewModel())
                     .environmentObject(ScanItemViewModel())
@@ -25,6 +27,7 @@ struct FoodFridgeApp: App {
                 
             } else {
                 AuthenthicationView()
+                    .environmentObject(sessionManager)
                     .environmentObject(authentication)
                     .environmentObject(TagsViewModel())
                     .environmentObject(ScanItemViewModel())
