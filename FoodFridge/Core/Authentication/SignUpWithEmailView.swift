@@ -9,11 +9,11 @@ import SwiftUI
 
 struct SignUpWithEmailView: View {
     
-    @ObservedObject var vm = SignUpWithEmailViewModel()
+    @StateObject var vm = SignUpWithEmailViewModel()
+    @EnvironmentObject var authenthication: Authentication
     //@State private var path = NavigationPath()
-    @State var email = ""
-    @State var name = ""
-    @State var password = ""
+    @State private var isSignUpSuccess = false
+    
     
     var body: some View {
         NavigationStack {
@@ -22,18 +22,21 @@ struct SignUpWithEmailView: View {
                     .font(.custom("CourierPrime-Bold", size: 35))
                 
                 VStack {
-                    TextField("username", text: $name)
+                    TextField("username", text: $vm.name)
                         .AppTextFieldStyle()
-                    TextField("email", text: $email)
+                    TextField("email", text: $vm.email)
                         .AppTextFieldStyle()
-                    TextField("password", text: $password)
+                    TextField("password", text: $vm.password)
                         .AppTextFieldStyle()
                 }
                 
                 Button {
                     //sign up user
                     Task {
-                        try await vm.signUpUser
+                        self.isSignUpSuccess = try await vm.signUpUser()
+                        if isSignUpSuccess {
+                            authenthication.updateValidation(success: true)
+                        }
                     }
                     
                 } label: {

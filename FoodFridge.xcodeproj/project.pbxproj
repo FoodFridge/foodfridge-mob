@@ -31,6 +31,7 @@
 		7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */; };
 		753245A22B7EE34800545DE7 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A12B7EE34800545DE7 /* ViewModelFactory.swift */; };
 		753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */; };
+		753245A62B7FD39300545DE7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A52B7FD39300545DE7 /* Authentication.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
@@ -106,6 +107,7 @@
 		7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		753245A12B7EE34800545DE7 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewModel.swift; sourceTree = "<group>"; };
+		753245A52B7FD39300545DE7 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		75434FFB2B37E6C500823A50 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				753245A52B7FD39300545DE7 /* Authentication.swift */,
 				757542C42B33E8F000048178 /* AuthenthicationView.swift */,
 				757542DE2B34F3D300048178 /* LogInView.swift */,
 				757542DA2B3401EE00048178 /* SignUpWithEmailView.swift */,
@@ -542,6 +545,7 @@
 				752580CE2B6AD2D900D536D2 /* UpdateFavoriteRecipe.swift in Sources */,
 				75C42DF02B646A5C003959B6 /* GoogleLinkRow.swift in Sources */,
 				751EB5642B56463500106FD6 /* IngredientItem.swift in Sources */,
+				753245A62B7FD39300545DE7 /* Authentication.swift in Sources */,
 				7532459D2B7EA4A100545DE7 /* AuthenticationTextField.swift in Sources */,
 				75C42DE82B631AA3003959B6 /* LinkRecipesView.swift in Sources */,
 				752580D22B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift in Sources */,

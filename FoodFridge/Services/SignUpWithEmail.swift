@@ -18,7 +18,7 @@ class SignUpWithEmail {
         }
      */
     
-     func signUp(email:String, password: String, name: String)async throws  {
+     func signUp(email:String, password: String, name: String)async throws -> Bool {
         
         guard let url = URL(string: AppConstant.signUpWithEmailURLString) else { throw URLError(.badURL)}
         
@@ -44,13 +44,15 @@ class SignUpWithEmail {
             //if sign up successfully
             print("Sign up successfully")
             
+            return true
+            
             
         }catch {
             print("Error: Unable to parse JSON response")
         }
          
    
-         
+         return false
     }
     
 }
