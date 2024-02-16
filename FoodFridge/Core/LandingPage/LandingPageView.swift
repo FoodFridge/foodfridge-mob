@@ -117,6 +117,7 @@ struct LandingPageView: View {
                             }
                         } label: {
                             Image(systemName: "rectangle.portrait.and.arrow.forward")
+                                .foregroundColor(Color(.button2))
                         }
 
                         

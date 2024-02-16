@@ -37,6 +37,7 @@
 		753245AF2B8008B600545DE7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 753245AE2B8008B600545DE7 /* KeychainAccess */; };
 		753245B12B80128F00545DE7 /* LogInWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */; };
 		753245B32B801CE500545DE7 /* LogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245B22B801CE500545DE7 /* LogOut.swift */; };
+		753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245B42B802A8300545DE7 /* LogOutViewModel.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
@@ -115,6 +116,7 @@
 		753245AB2B80081600545DE7 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 		753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInWithEmailViewModel.swift; sourceTree = "<group>"; };
 		753245B22B801CE500545DE7 /* LogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOut.swift; sourceTree = "<group>"; };
+		753245B42B802A8300545DE7 /* LogOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewModel.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				757542C42B33E8F000048178 /* AuthenthicationView.swift */,
 				757542DE2B34F3D300048178 /* LogInView.swift */,
 				753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */,
+				753245B42B802A8300545DE7 /* LogOutViewModel.swift */,
 				757542DA2B3401EE00048178 /* SignUpWithEmailView.swift */,
 				753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */,
 				7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */,
@@ -525,6 +528,7 @@
 				754A8FA42B586DFE00C9FD04 /* IngredientsParser.swift in Sources */,
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
+				753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */,
 				753245B12B80128F00545DE7 /* LogInWithEmailViewModel.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
 				753245992B7E962A00545DE7 /* SignUpWithEmail.swift in Sources */,
