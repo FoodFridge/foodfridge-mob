@@ -35,7 +35,7 @@ class AddPantry {
                 let (_, response) = try await URLSession.shared.data(for: request)
                 
                 guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
-                print("DEBUG: statusCode =  \(response)")
+                //print("DEBUG: statusCode =  \(response)")
                 
             }
             

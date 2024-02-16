@@ -25,6 +25,13 @@
 		752580DB2B6B0E2800D536D2 /* GetFavoriteRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580DA2B6B0E2800D536D2 /* GetFavoriteRecipe.swift */; };
 		752580DD2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580DC2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift */; };
 		752580DF2B6B3D6E00D536D2 /* FavLinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752580DE2B6B3D6E00D536D2 /* FavLinkRow.swift */; };
+		753245992B7E962A00545DE7 /* SignUpWithEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245982B7E962A00545DE7 /* SignUpWithEmail.swift */; };
+		7532459B2B7E9D7100545DE7 /* LoginWithEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */; };
+		7532459D2B7EA4A100545DE7 /* AuthenticationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532459C2B7EA4A100545DE7 /* AuthenticationTextField.swift */; };
+		7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */; };
+		753245A22B7EE34800545DE7 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A12B7EE34800545DE7 /* ViewModelFactory.swift */; };
+		753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */; };
+		753245A62B7FD39300545DE7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A52B7FD39300545DE7 /* Authentication.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
@@ -94,6 +101,13 @@
 		752580DA2B6B0E2800D536D2 /* GetFavoriteRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavoriteRecipe.swift; sourceTree = "<group>"; };
 		752580DC2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLinkRecipe.swift; sourceTree = "<group>"; };
 		752580DE2B6B3D6E00D536D2 /* FavLinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavLinkRow.swift; sourceTree = "<group>"; };
+		753245982B7E962A00545DE7 /* SignUpWithEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmail.swift; sourceTree = "<group>"; };
+		7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithEmail.swift; sourceTree = "<group>"; };
+		7532459C2B7EA4A100545DE7 /* AuthenticationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextField.swift; sourceTree = "<group>"; };
+		7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		753245A12B7EE34800545DE7 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewModel.swift; sourceTree = "<group>"; };
+		753245A52B7FD39300545DE7 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
@@ -202,12 +216,23 @@
 			path = FavoriteRecipe;
 			sourceTree = "<group>";
 		};
+		753245A02B7EE30E00545DE7 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				753245A12B7EE34800545DE7 /* ViewModelFactory.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
 		75434FFB2B37E6C500823A50 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				753245A52B7FD39300545DE7 /* Authentication.swift */,
 				757542C42B33E8F000048178 /* AuthenthicationView.swift */,
 				757542DE2B34F3D300048178 /* LogInView.swift */,
 				757542DA2B3401EE00048178 /* SignUpWithEmailView.swift */,
+				753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */,
+				7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -274,6 +299,7 @@
 				75C42DF12B6600A0003959B6 /* AppConstant.swift */,
 				757542E52B351BD800048178 /* Fonts */,
 				754350032B3A653200823A50 /* CustomFont.swift */,
+				753245A02B7EE30E00545DE7 /* DependencyInjection */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -303,6 +329,7 @@
 				75C42DE52B6300E4003959B6 /* RecipeRow.swift */,
 				75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */,
 				752580DE2B6B3D6E00D536D2 /* FavLinkRow.swift */,
+				7532459C2B7EA4A100545DE7 /* AuthenticationTextField.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -365,6 +392,8 @@
 				75CE75B72B76B3140063B742 /* DeletePantry.swift */,
 				75CE75B92B771FC80063B742 /* AddPantry.swift */,
 				75C2DD962B7853F500CD184E /* EditPantry.swift */,
+				753245982B7E962A00545DE7 /* SignUpWithEmail.swift */,
+				7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -474,6 +503,7 @@
 				751EB5602B53488200106FD6 /* PantryItem.swift in Sources */,
 				75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
+				753245A22B7EE34800545DE7 /* ViewModelFactory.swift in Sources */,
 				7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */,
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
 				754A8FAA2B58A99600C9FD04 /* IngredientByCategory.swift in Sources */,
@@ -482,6 +512,7 @@
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
+				753245992B7E962A00545DE7 /* SignUpWithEmail.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */,
 				75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */,
@@ -494,6 +525,7 @@
 				754A8FA22B585A8400C9FD04 /* GetIngredients.swift in Sources */,
 				752580DF2B6B3D6E00D536D2 /* FavLinkRow.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
+				753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */,
 				752580D42B6B036900D536D2 /* ChosenSubProfileView.swift in Sources */,
 				75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */,
 				752580CC2B69A13100D536D2 /* LinkRecipeRequestBody.swift in Sources */,
@@ -507,17 +539,21 @@
 				752580DD2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift in Sources */,
 				75C2DD9B2B78793B00CD184E /* ScrollTarget.swift in Sources */,
 				75C42DE42B62EF94003959B6 /* Recipe.swift in Sources */,
+				7532459B2B7E9D7100545DE7 /* LoginWithEmail.swift in Sources */,
 				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				752580CE2B6AD2D900D536D2 /* UpdateFavoriteRecipe.swift in Sources */,
 				75C42DF02B646A5C003959B6 /* GoogleLinkRow.swift in Sources */,
 				751EB5642B56463500106FD6 /* IngredientItem.swift in Sources */,
+				753245A62B7FD39300545DE7 /* Authentication.swift in Sources */,
+				7532459D2B7EA4A100545DE7 /* AuthenticationTextField.swift in Sources */,
 				75C42DE82B631AA3003959B6 /* LinkRecipesView.swift in Sources */,
 				752580D22B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
 				754A8FA62B58A41800C9FD04 /* Category.swift in Sources */,
 				752580DB2B6B0E2800D536D2 /* GetFavoriteRecipe.swift in Sources */,
+				7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */,
 				75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
 				752580CA2B698F6500D536D2 /* LinkeRecipeResponseData.swift in Sources */,
