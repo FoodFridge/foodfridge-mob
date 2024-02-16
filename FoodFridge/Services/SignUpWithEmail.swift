@@ -9,15 +9,7 @@ import Foundation
 import SwiftUI
 
 class SignUpWithEmail {
-    /*
-    
-        var navigationController: NavigationViewModel
 
-        init(navigationController: NavigationViewModel) {
-            self.navigationController = navigationController
-        }
-     */
-    
      func signUp(email:String, password: String, name: String)async throws -> Bool {
         
         guard let url = URL(string: AppConstant.signUpWithEmailURLString) else { throw URLError(.badURL)}
