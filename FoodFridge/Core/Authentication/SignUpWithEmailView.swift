@@ -31,6 +31,11 @@ struct SignUpWithEmailView: View {
                 }
                 
                 Button {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        //dismiss keyboard
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
+                    
                     //sign up user
                     Task {
                         self.isSignUpSuccess = try await vm.signUpUser()
@@ -38,6 +43,9 @@ struct SignUpWithEmailView: View {
                             authenthication.updateValidation(success: true)
                         }
                     }
+                    
+                    
+                    
                     
                 } label: {
                     Text("Sign up")
@@ -48,6 +56,7 @@ struct SignUpWithEmailView: View {
                 .background(Color(.button2))
                 .cornerRadius(20)
                 .padding(.bottom)
+               
                 
                 
                 VStack {

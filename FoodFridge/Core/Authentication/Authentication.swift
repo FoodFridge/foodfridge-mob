@@ -12,7 +12,7 @@ class Authentication: ObservableObject {
     @Published var isValidated = false
     
     func updateValidation(success: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { // Delay of 1 second
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // Delay of 0.35 second
                withAnimation {
                    self.isValidated = success
                }
