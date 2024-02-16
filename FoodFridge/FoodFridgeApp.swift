@@ -16,7 +16,7 @@ struct FoodFridgeApp: App {
         
         WindowGroup {
             
-            if authentication.isValidated || sessionManager.isLoggedIn() {
+            if authentication.isValidated {
                 LandingPageView()
                     .environmentObject(sessionManager)
                     .environmentObject(authentication)

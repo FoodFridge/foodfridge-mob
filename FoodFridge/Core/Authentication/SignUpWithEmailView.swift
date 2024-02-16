@@ -11,7 +11,7 @@ struct SignUpWithEmailView: View {
     
     @StateObject var vm = SignUpWithEmailViewModel()
     @EnvironmentObject var authenthication: Authentication
-    //@State private var path = NavigationPath()
+   
     @State private var isSignUpSuccess = false
     
     

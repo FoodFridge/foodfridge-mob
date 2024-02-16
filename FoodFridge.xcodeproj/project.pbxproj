@@ -36,6 +36,8 @@
 		753245AC2B80081600545DE7 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245AB2B80081600545DE7 /* UserSessionManager.swift */; };
 		753245AF2B8008B600545DE7 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 753245AE2B8008B600545DE7 /* KeychainAccess */; };
 		753245B12B80128F00545DE7 /* LogInWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */; };
+		753245B32B801CE500545DE7 /* LogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245B22B801CE500545DE7 /* LogOut.swift */; };
+		753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245B42B802A8300545DE7 /* LogOutViewModel.swift */; };
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
@@ -82,8 +84,6 @@
 		75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B72B76B3140063B742 /* DeletePantry.swift */; };
 		75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B92B771FC80063B742 /* AddPantry.swift */; };
 		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
-		75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */; };
-		75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +115,8 @@
 		753245A92B7FF16700545DE7 /* LogInResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponseData.swift; sourceTree = "<group>"; };
 		753245AB2B80081600545DE7 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 		753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInWithEmailViewModel.swift; sourceTree = "<group>"; };
+		753245B22B801CE500545DE7 /* LogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOut.swift; sourceTree = "<group>"; };
+		753245B42B802A8300545DE7 /* LogOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewModel.swift; sourceTree = "<group>"; };
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
@@ -164,8 +166,6 @@
 		75CE75B72B76B3140063B742 /* DeletePantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePantry.swift; sourceTree = "<group>"; };
 		75CE75B92B771FC80063B742 /* AddPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantry.swift; sourceTree = "<group>"; };
 		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
-		75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIChatServices.swift; sourceTree = "<group>"; };
-		75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +240,7 @@
 				757542C42B33E8F000048178 /* AuthenthicationView.swift */,
 				757542DE2B34F3D300048178 /* LogInView.swift */,
 				753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */,
+				753245B42B802A8300545DE7 /* LogOutViewModel.swift */,
 				757542DA2B3401EE00048178 /* SignUpWithEmailView.swift */,
 				753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */,
 				7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */,
@@ -390,8 +391,6 @@
 		75FF4D292B4713940081B20E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				75FF4D2A2B4713D10081B20E /* OpenAIChatServices.swift */,
-				75FF4D2C2B479C3A0081B20E /* OpenAIViewModel.swift */,
 				751EB5652B57134900106FD6 /* FetchIngredients.swift */,
 				754A8FA12B585A8400C9FD04 /* GetIngredients.swift */,
 				754A8FA32B586DFE00C9FD04 /* IngredientsParser.swift */,
@@ -405,6 +404,7 @@
 				75C2DD962B7853F500CD184E /* EditPantry.swift */,
 				753245982B7E962A00545DE7 /* SignUpWithEmail.swift */,
 				7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */,
+				753245B22B801CE500545DE7 /* LogOut.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -515,7 +515,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75FF4D2B2B4713D10081B20E /* OpenAIChatServices.swift in Sources */,
 				757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */,
 				751EB5602B53488200106FD6 /* PantryItem.swift in Sources */,
 				75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */,
@@ -529,6 +528,7 @@
 				754A8FA42B586DFE00C9FD04 /* IngredientsParser.swift in Sources */,
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
+				753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */,
 				753245B12B80128F00545DE7 /* LogInWithEmailViewModel.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
 				753245992B7E962A00545DE7 /* SignUpWithEmail.swift in Sources */,
@@ -536,7 +536,6 @@
 				75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */,
 				75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */,
 				75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */,
-				75FF4D2D2B479C3A0081B20E /* OpenAIViewModel.swift in Sources */,
 				75C42DE62B6300E4003959B6 /* RecipeRow.swift in Sources */,
 				752580D02B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift in Sources */,
 				752580C82B698B0900D536D2 /* LinkRecipeResource.swift in Sources */,
@@ -560,6 +559,7 @@
 				75C42DE42B62EF94003959B6 /* Recipe.swift in Sources */,
 				7532459B2B7E9D7100545DE7 /* LoginWithEmail.swift in Sources */,
 				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
+				753245B32B801CE500545DE7 /* LogOut.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				752580CE2B6AD2D900D536D2 /* UpdateFavoriteRecipe.swift in Sources */,
 				75C42DF02B646A5C003959B6 /* GoogleLinkRow.swift in Sources */,
