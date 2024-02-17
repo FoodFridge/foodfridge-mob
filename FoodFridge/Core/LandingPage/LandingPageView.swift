@@ -24,6 +24,7 @@ struct LandingPageView: View {
     
     @State private var isSignedOut = false
     
+    
     var body: some View {
         NavigationStack {
             GeometryReader { proxy in

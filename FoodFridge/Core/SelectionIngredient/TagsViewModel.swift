@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 class TagsViewModel: ObservableObject {
     
-    @Published var selectedTags = [String]()
+    @Published var selectedTags : [String] = ["test"] //MARK: todo - delete test 
     @Published var generatedRecipes: [Recipe] = [Recipe]()
     
     func addSelectedTag(tag: String) {
