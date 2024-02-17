@@ -16,13 +16,13 @@ struct FoodFridgeApp: App {
         
         WindowGroup {
             
-            if authentication.isValidated {
+            if authentication.isValidated || sessionManager.isLoggedIn() {
                 LandingPageView()
                     .environmentObject(sessionManager)
                     .environmentObject(authentication)
                     .environmentObject(TagsViewModel())
                     .environmentObject(ScanItemViewModel())
-                    .environmentObject(SelectionSheetViewModel())
+                    .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                     .environmentObject(ScrollTarget())
                 
             } else {
@@ -31,7 +31,7 @@ struct FoodFridgeApp: App {
                     .environmentObject(authentication)
                     .environmentObject(TagsViewModel())
                     .environmentObject(ScanItemViewModel())
-                    .environmentObject(SelectionSheetViewModel())
+                    .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                     .environmentObject(ScrollTarget())
             }
         }
