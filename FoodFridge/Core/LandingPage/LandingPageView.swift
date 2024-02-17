@@ -9,8 +9,6 @@ import SwiftUI
 
 struct LandingPageView: View {
     
-    @State private var isNextViewActive = false
-
     @State private var showSheet = false
     @State var selectedTags = Set<String>()
     @State var selectedItems = [String]()
