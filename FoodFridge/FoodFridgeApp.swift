@@ -16,9 +16,9 @@ struct FoodFridgeApp: App {
     var body: some Scene {
         
         WindowGroup {
-            NavigationStack{
+            
                 if authentication.isValidated || sessionManager.isLoggedIn() {
-                    LandingPageView()
+                    GreetingView()
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
                         .environmentObject(TagsViewModel())
@@ -35,7 +35,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
                 }
-            }
+            
        
         }
     }
