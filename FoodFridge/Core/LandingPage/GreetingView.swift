@@ -14,10 +14,9 @@ struct GreetingView: View {
         var body: some View {
             NavigationStack {
                 if navigateToLandingPage {
-                    // Programmatically navigate to LandingPageView
+                    // we want Initial view as Landing page this working around to programmatically navigate to landingpage. this file purpose is to fix bug in prompt(tags displaying))
                     LandingPageView()
                 } else {
-                    // Initial view (work around to programmatically navigate to landingpage to fix bug in prompt(tags displaying) 
                     Text("Welcome back, Food Fridie!")
                         .onAppear {
                             if !hasNavigated {
