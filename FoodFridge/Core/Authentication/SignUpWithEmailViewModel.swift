@@ -15,6 +15,7 @@ class SignUpWithEmailViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var isSignUpSuccess = false
     @Published var showProgressView = false
+    @Published var sessionData = LogInResponseData.MOCKdata.data
     
     
     
@@ -23,7 +24,11 @@ class SignUpWithEmailViewModel: ObservableObject {
         do {
             //call service class
             let result =  try await SignUpWithEmail().signUp(email: self.email, password: self.password, name: self.name)
+            //call log in after sign up
+            self.sessionData = try await LoginWithEmailService().login(email: self.email, password: self.password)
+            
             showProgressView = false
+            
             return result
             
         } catch {

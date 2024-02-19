@@ -11,9 +11,12 @@ struct SelectionSheetView: View {
     
     @State private var data : [String : [IngredientItem]] = [:]
     @State private var dataDict: [String : [String]] = ["" : [""]]
+    
     @EnvironmentObject var vm: SelectionSheetViewModel
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var scrollTarget: ScrollTarget
+    
+    @EnvironmentObject var sessionManager: SessionManager
     
     var body: some View {
         
@@ -40,14 +43,14 @@ struct SelectionSheetView: View {
                //update all ingredients
                Task {
                    do {
-                      
+                        vm.fetchIngredients()
+                        vm.itemsDict = vm.getItemsNameWithCategory(data: vm.ingredientsByType)
                        
-                       vm.fetchIngredients()
-                       vm.itemsDict = vm.getItemsNameWithCategory(data: vm.ingredientsByType)
-                       let fetchedData = try await GetIngredients().loadIngredients()
-                       self.data = fetchedData
-                       self.dataDict = vm.getItemsNameWithCategory(data: data)
-                       vm.itemsDict = self.dataDict
+                        let fetchedData = try await GetIngredients(sessionManager: sessionManager).loadIngredients()
+                        self.data = fetchedData
+                        self.dataDict = vm.getItemsNameWithCategory(data: data)
+                        vm.itemsDict = self.dataDict
+                    
                        
                    } catch {
                        print("Error fetching data: \(error.localizedDescription)")

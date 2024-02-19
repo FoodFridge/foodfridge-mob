@@ -17,6 +17,7 @@ struct LogInView: View {
     @State private var userData: LogInResponseData.LogInData = LogInResponseData.MOCKdata.data
     
     @State private var isLoggedIn = false
+   
     
     var body: some View {
         VStack {
@@ -48,6 +49,7 @@ struct LogInView: View {
                         self.isLoggedIn = sessionManager.isLoggedIn()
                         if isLoggedIn {
                             authenthication.updateValidation(success: true)
+                            
                         }
                     }
                 }
@@ -68,6 +70,7 @@ struct LogInView: View {
             
             
         }
+        
     }
 }
 

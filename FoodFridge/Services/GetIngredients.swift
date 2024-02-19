@@ -13,7 +13,11 @@ class GetIngredients {
     var ingredients: [IngredientItem] = []
     var ingredientsByType: [String: [IngredientItem]] = [:]
     
-    
+    let sessionManager: SessionManager
+        
+        init(sessionManager: SessionManager) {
+            self.sessionManager = sessionManager
+        }
     
     static func GetIngredients() throws -> [IngredientItem] {
         
@@ -46,26 +50,31 @@ class GetIngredients {
         return  IngredientItem.mockItems
     }
     
-   func loadIngredients(userId: String = "test user") async throws -> [String: [IngredientItem]] {
-        
-        /*
-        guard let url = Bundle.main.url(forResource: "Ingredients", withExtension: "json"),
-              let data = try? Data(contentsOf: url) else {
-            print("JSON file was not found")
-            return ["01" : IngredientItem.mockItems]        
-        }
-         */
-        // Print the JSON string for debugging
-        //let jsonString = String(data: data, encoding: .utf8)
-        //print("JSON String: \(jsonString ?? "N/A")")
-        let urlEndpoint = ("\(AppConstant.fetchIngredientsURLString)/\(userId)")
+   func loadIngredients() async throws -> [String: [IngredientItem]] {
+       
         let decoder = JSONDecoder()
-        
+       
         do {
+            guard let token = sessionManager.getAuthToken() else {
+                throw SessionError.missingAuthToken
+            }
+            
+            guard let localID = sessionManager.getLocalID() else {
+                throw SessionError.missingLocalID
+            }
+            
+            let urlEndpoint = ("\(AppConstant.fetchIngredientsURLString)/\(localID)")
+            print("ingredient url =\(urlEndpoint)")
+            
             guard let url = URL(string: urlEndpoint) else
             { throw FetchError.invalidURL }
             
-            let (data, response) = try await URLSession.shared.data(from: url)
+            var request = URLRequest(url: url)
+                   request.httpMethod = "GET"
+                   request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                   
+            let (data, response) = try await URLSession.shared.data(for: request)
+                   
             
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
             //print("DEBUG: statusCode =  \(response)")
@@ -77,8 +86,9 @@ class GetIngredients {
             self.ingredientsByType = Dictionary(grouping: jsonData.data, by: { $0.type })
             //print("jsondata = \(ingredientsByType)")
             return self.ingredientsByType
+            
         } catch {
-            print("Error decoding JSON: \(error)")
+            print("Error decoding get ingredient JSON: \(error)")
             //detailed error info:
             if let decodingError = error as? DecodingError {
                 switch decodingError {
@@ -99,4 +109,9 @@ class GetIngredients {
     }
 
     
+}
+
+enum SessionError: Error {
+    case missingAuthToken
+    case missingLocalID
 }

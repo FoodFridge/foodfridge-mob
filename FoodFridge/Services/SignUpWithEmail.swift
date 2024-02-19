@@ -30,6 +30,7 @@ class SignUpWithEmail {
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
             print("DEBUG: statusCode =  \(response)")
             
+             try await LoginWithEmailService().login(email: email, password: password)
         
           //  let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
             

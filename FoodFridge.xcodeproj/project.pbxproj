@@ -61,8 +61,10 @@
 		757542DF2B34F3D300048178 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542DE2B34F3D300048178 /* LogInView.swift */; };
 		757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E12B351BC200048178 /* CourierPrime-Regular.ttf */; };
 		757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E32B351BD000048178 /* CourierPrime-Bold.ttf */; };
+		757C63B52B82F70900FC6D5E /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63B42B82F70900FC6D5E /* GreetingView.swift */; };
 		7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758061392B4E3F1D0091FFFA /* ScanItemView.swift */; };
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
+		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
 		75C2DD972B7853F500CD184E /* EditPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD962B7853F500CD184E /* EditPantry.swift */; };
@@ -143,8 +145,10 @@
 		757542E02B351AAF00048178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		757542E12B351BC200048178 /* CourierPrime-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Regular.ttf"; sourceTree = "<group>"; };
 		757542E32B351BD000048178 /* CourierPrime-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Bold.ttf"; sourceTree = "<group>"; };
+		757C63B42B82F70900FC6D5E /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		758061392B4E3F1D0091FFFA /* ScanItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView.swift; sourceTree = "<group>"; };
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
+		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 		75C2DD962B7853F500CD184E /* EditPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPantry.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				752580D12B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift */,
 				752580DC2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift */,
 				753245A92B7FF16700545DE7 /* LogInResponseData.swift */,
+				75AAD3282B803BC400A4E1F6 /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			children = (
 				757542DC2B34B08D00048178 /* LandingPageView.swift */,
 				75C2DD9A2B78793B00CD184E /* ScrollTarget.swift */,
+				757C63B42B82F70900FC6D5E /* GreetingView.swift */,
 			);
 			path = LandingPage;
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 				754A8FA42B586DFE00C9FD04 /* IngredientsParser.swift in Sources */,
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
+				757C63B52B82F70900FC6D5E /* GreetingView.swift in Sources */,
 				753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */,
 				753245B12B80128F00545DE7 /* LogInWithEmailViewModel.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
@@ -545,6 +552,7 @@
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
 				753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */,
 				752580D42B6B036900D536D2 /* ChosenSubProfileView.swift in Sources */,
+				75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */,
 				75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */,
 				752580CC2B69A13100D536D2 /* LinkRecipeRequestBody.swift in Sources */,
 				75C42DDE2B62E80C003959B6 /* ResultView.swift in Sources */,

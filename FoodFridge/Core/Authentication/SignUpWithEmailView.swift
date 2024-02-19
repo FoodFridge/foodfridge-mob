@@ -11,6 +11,7 @@ struct SignUpWithEmailView: View {
     
     @StateObject var vm = SignUpWithEmailViewModel()
     @EnvironmentObject var authenthication: Authentication
+    @EnvironmentObject var sessionManager: SessionManager
    
     @State private var isSignUpSuccess = false
     
@@ -41,6 +42,12 @@ struct SignUpWithEmailView: View {
                         self.isSignUpSuccess = try await vm.signUpUser()
                         if isSignUpSuccess {
                             authenthication.updateValidation(success: true)
+                            if vm.sessionData.token != nil && vm .sessionData.localId != nil {
+                                //save session data
+                                sessionManager.saveAuthToken(token: vm.sessionData.token ?? "mockToken")
+                                sessionManager.saveLocalID(id: vm.sessionData.localId ?? "mockId")
+                                
+                            }
                         }
                     }
                     

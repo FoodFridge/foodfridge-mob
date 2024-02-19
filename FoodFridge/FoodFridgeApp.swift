@@ -12,28 +12,31 @@ struct FoodFridgeApp: App {
     @StateObject var authentication = Authentication()
     @StateObject var sessionManager = SessionManager()
     
+    
     var body: some Scene {
         
         WindowGroup {
             
-            if authentication.isValidated {
-                LandingPageView()
-                    .environmentObject(sessionManager)
-                    .environmentObject(authentication)
-                    .environmentObject(TagsViewModel())
-                    .environmentObject(ScanItemViewModel())
-                    .environmentObject(SelectionSheetViewModel())
-                    .environmentObject(ScrollTarget())
-                
-            } else {
-                AuthenthicationView()
-                    .environmentObject(sessionManager)
-                    .environmentObject(authentication)
-                    .environmentObject(TagsViewModel())
-                    .environmentObject(ScanItemViewModel())
-                    .environmentObject(SelectionSheetViewModel())
-                    .environmentObject(ScrollTarget())
-            }
+                if authentication.isValidated || sessionManager.isLoggedIn() {
+                    GreetingView()
+                        .environmentObject(sessionManager)
+                        .environmentObject(authentication)
+                        .environmentObject(TagsViewModel())
+                        .environmentObject(ScanItemViewModel())
+                        .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
+                        .environmentObject(ScrollTarget())
+                    
+                } else {
+                    AuthenthicationView()
+                        .environmentObject(sessionManager)
+                        .environmentObject(authentication)
+                        .environmentObject(TagsViewModel())
+                        .environmentObject(ScanItemViewModel())
+                        .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
+                        .environmentObject(ScrollTarget())
+                }
+            
+       
         }
     }
 }
