@@ -31,6 +31,7 @@ struct AuthenthicationView: View {
                         Spacer()
                         
                         //MARK: Skip link to landing page
+                        /*
                         NavigationLink {
                             LandingPageView()
                         } label: {
@@ -40,6 +41,7 @@ struct AuthenthicationView: View {
                         .padding(.trailing, -10)
                         .offset(y: -130)
                         .foregroundStyle(Color(.button4))
+                        */
                     }
                     VStack {
                         Text("Ready to explore new menu ?")
