@@ -13,7 +13,11 @@ struct FavoriteRecipeView: View {
     var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
     @State private var LinkRecipes = [LinkRecipe]()
     @State private var isLiked = false
-    @ObservedObject var vm = FavoriteRecipeViewModel()
+    @ObservedObject var vm: FavoriteRecipeViewModel
+    
+    init(sessionManager: SessionManager) {
+        self.vm = FavoriteRecipeViewModel(sessionManager: sessionManager)
+    }
     
     var body: some View {
         VStack {
@@ -53,5 +57,5 @@ struct FavoriteRecipeView: View {
 }
 
 #Preview {
-    FavoriteRecipeView()
+    FavoriteRecipeView(sessionManager: SessionManager())
 }
