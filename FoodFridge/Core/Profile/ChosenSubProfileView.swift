@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChosenSubProfileView: View {
-    
+    @EnvironmentObject var sessionManager: SessionManager
     var selectedView: ChoiceOfView
     
     var body: some View {
@@ -16,7 +16,7 @@ struct ChosenSubProfileView: View {
         case .pantry :
             PantryView()
         case .favorite:
-            FavoriteRecipeView()
+            FavoriteRecipeView(sessionManager: sessionManager)
         }
     }
 }

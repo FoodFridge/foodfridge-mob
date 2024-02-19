@@ -26,7 +26,7 @@ struct RecipeLink: Codable, Identifiable, Hashable {
     var title: String
     var url:String
     var isFavorite: String
-    var userId: String
+    var userId: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "favId"
