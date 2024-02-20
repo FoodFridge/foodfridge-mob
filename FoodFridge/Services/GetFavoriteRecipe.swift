@@ -37,9 +37,9 @@ class GetFavoriteRecipe {
                 throw SessionError.missingAuthToken
             }
             
-            guard let localID = sessionManager.getLocalID() else {
-                throw SessionError.missingLocalID
-            }
+            //guard let localID = sessionManager.getLocalID() else {
+                //throw SessionError.missingLocalID
+            //}
             
             let urlEndpoint = ("\(AppConstant.getFavoriteRecipeOfuserUSLString)/\(mockId)/\(isFavorite)")
         
