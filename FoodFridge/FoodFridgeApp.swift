@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct FoodFridgeApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var authentication = Authentication()
     @StateObject var sessionManager = SessionManager()
     
