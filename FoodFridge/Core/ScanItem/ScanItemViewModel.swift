@@ -32,8 +32,12 @@ final class ScanItemViewModel: ObservableObject {
     @Published var recognizedItems: [RecognizedItem] = []
     @Published var pantryItems: [PantryItem] = PantryItem.mockPantryItems
     
-   init() {
-       self.getPantry()
+    let sessionManager: SessionManager
+    
+    init(sessionManager: SessionManager) {
+        self.sessionManager = sessionManager
+        self.getPantry()
+        
    }
     
     
@@ -81,10 +85,10 @@ final class ScanItemViewModel: ObservableObject {
     }
     
     
-    func addItemToPantry(item: String, userId: String) {
+    func addItemToPantry(item: String) {
         
         Task {
-            try await AddPantry.addPantry(with: item, by: userId)
+            try await AddPantry(sessionManager: sessionManager).addPantry(with: item)
         }
         
     }
@@ -130,5 +134,5 @@ final class ScanItemViewModel: ObservableObject {
 
 
 #Preview {
-    ScanItemViewModel() as! any View
+    ScanItemViewModel(sessionManager: SessionManager()) as! any View
 }

@@ -27,7 +27,7 @@ struct SignUpWithEmailView: View {
                         .AppTextFieldStyle()
                     TextField("email", text: $vm.email)
                         .AppTextFieldStyle()
-                    TextField("password", text: $vm.password)
+                    SecureField("password", text: $vm.password)
                         .AppTextFieldStyle()
                 }
                 

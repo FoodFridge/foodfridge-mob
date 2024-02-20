@@ -22,7 +22,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
                         .environmentObject(TagsViewModel())
-                        .environmentObject(ScanItemViewModel())
+                        .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
                     
@@ -31,7 +31,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
                         .environmentObject(TagsViewModel())
-                        .environmentObject(ScanItemViewModel())
+                        .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
                 }

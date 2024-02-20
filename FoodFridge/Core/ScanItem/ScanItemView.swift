@@ -41,7 +41,7 @@ struct ScanItemView: View {
                             case .text(let text):
                                 Button {
                                     //add ingredient to user's pantry
-                                    vm.addItemToPantry(item: text.transcript.capitalized, userId: self.userId)
+                                    vm.addItemToPantry(item: text.transcript.capitalized)
                                     
                                     // trigger animation bar
                                     addButtonTapped = true
