@@ -51,7 +51,7 @@ struct LinkRecipesView: View {
         }
         
         
-        Text("List of \(title) Recipes by google search")
+        Text("Testing : List of \(title) Recipes")
         
     }
 }

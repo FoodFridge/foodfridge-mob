@@ -9,15 +9,18 @@ import SwiftUI
 
 @main
 struct FoodFridgeApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var authentication = Authentication()
     @StateObject var sessionManager = SessionManager()
     
+    @AppStorage("googleSignIn") var isGoogleSignIn = false
     
     var body: some Scene {
         
         WindowGroup {
             
-                if authentication.isValidated || sessionManager.isLoggedIn() {
+                if authentication.isValidated || sessionManager.isLoggedIn() || isGoogleSignIn {
                     GreetingView()
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
@@ -36,6 +39,9 @@ struct FoodFridgeApp: App {
                         .environmentObject(ScrollTarget())
                 }
             
+            
+            
+        
        
         }
     }
