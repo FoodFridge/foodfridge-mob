@@ -93,6 +93,9 @@
 		757C63F02B85298C00FC6D5E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 757C63EF2B85298C00FC6D5E /* FirebaseStorageCombine-Community */; };
 		757C63F32B852C1D00FC6D5E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 757C63F22B852C1D00FC6D5E /* GoogleSignIn */; };
 		757C63F52B852C1D00FC6D5E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 757C63F42B852C1D00FC6D5E /* GoogleSignInSwift */; };
+		757C63F82B85338000FC6D5E /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63F72B85338000FC6D5E /* GoogleSignInButton.swift */; };
+		757C63FC2B85357100FC6D5E /* GoogleSignInFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63FB2B85357100FC6D5E /* GoogleSignInFunction.swift */; };
+		757C63FE2B85362B00FC6D5E /* ExtentionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63FD2B85362B00FC6D5E /* ExtentionView.swift */; };
 		7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758061392B4E3F1D0091FFFA /* ScanItemView.swift */; };
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
 		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
@@ -179,6 +182,9 @@
 		757C63B42B82F70900FC6D5E /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		757C63B62B85260600FC6D5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		757C63B82B85279E00FC6D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		757C63F72B85338000FC6D5E /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
+		757C63FB2B85357100FC6D5E /* GoogleSignInFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInFunction.swift; sourceTree = "<group>"; };
+		757C63FD2B85362B00FC6D5E /* ExtentionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionView.swift; sourceTree = "<group>"; };
 		758061392B4E3F1D0091FFFA /* ScanItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView.swift; sourceTree = "<group>"; };
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
 		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -312,6 +318,7 @@
 				753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */,
 				7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */,
 				753245AB2B80081600545DE7 /* UserSessionManager.swift */,
+				757C63F62B85335500FC6D5E /* GoogleSignIn */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -379,6 +386,7 @@
 				757C63B82B85279E00FC6D5E /* AppDelegate.swift */,
 				757542D22B33EB0E00048178 /* ColorExtention.swift */,
 				754A8FA52B58A41800C9FD04 /* Category.swift */,
+				757C63FD2B85362B00FC6D5E /* ExtentionView.swift */,
 				757542E52B351BD800048178 /* Fonts */,
 				754350032B3A653200823A50 /* CustomFont.swift */,
 				753245A02B7EE30E00545DE7 /* DependencyInjection */,
@@ -423,6 +431,15 @@
 				757542E12B351BC200048178 /* CourierPrime-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		757C63F62B85335500FC6D5E /* GoogleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				757C63F72B85338000FC6D5E /* GoogleSignInButton.swift */,
+				757C63FB2B85357100FC6D5E /* GoogleSignInFunction.swift */,
+			);
+			path = GoogleSignIn;
 			sourceTree = "<group>";
 		};
 		758061382B4E3EF60091FFFA /* ScanItem */ = {
@@ -640,6 +657,7 @@
 				75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */,
 				75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */,
 				75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */,
+				757C63F82B85338000FC6D5E /* GoogleSignInButton.swift in Sources */,
 				75C42DE62B6300E4003959B6 /* RecipeRow.swift in Sources */,
 				752580D02B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift in Sources */,
 				752580C82B698B0900D536D2 /* LinkRecipeResource.swift in Sources */,
@@ -664,6 +682,7 @@
 				75C42DE42B62EF94003959B6 /* Recipe.swift in Sources */,
 				7532459B2B7E9D7100545DE7 /* LoginWithEmail.swift in Sources */,
 				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
+				757C63FC2B85357100FC6D5E /* GoogleSignInFunction.swift in Sources */,
 				753245B32B801CE500545DE7 /* LogOut.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				752580CE2B6AD2D900D536D2 /* UpdateFavoriteRecipe.swift in Sources */,
@@ -680,6 +699,7 @@
 				752580DB2B6B0E2800D536D2 /* GetFavoriteRecipe.swift in Sources */,
 				7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */,
 				75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */,
+				757C63FE2B85362B00FC6D5E /* ExtentionView.swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
 				752580CA2B698F6500D536D2 /* LinkeRecipeResponseData.swift in Sources */,
 				757542DB2B3401EE00048178 /* SignUpWithEmailView.swift in Sources */,
