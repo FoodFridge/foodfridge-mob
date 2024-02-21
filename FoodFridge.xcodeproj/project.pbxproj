@@ -94,10 +94,11 @@
 		757C63F32B852C1D00FC6D5E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 757C63F22B852C1D00FC6D5E /* GoogleSignIn */; };
 		757C63F52B852C1D00FC6D5E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 757C63F42B852C1D00FC6D5E /* GoogleSignInSwift */; };
 		757C63F82B85338000FC6D5E /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63F72B85338000FC6D5E /* GoogleSignInButton.swift */; };
-		757C63FC2B85357100FC6D5E /* GoogleSignInFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63FB2B85357100FC6D5E /* GoogleSignInFunction.swift */; };
 		757C63FE2B85362B00FC6D5E /* ExtentionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63FD2B85362B00FC6D5E /* ExtentionView.swift */; };
 		7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758061392B4E3F1D0091FFFA /* ScanItemView.swift */; };
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
+		75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */; };
+		75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */; };
 		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
@@ -183,10 +184,11 @@
 		757C63B62B85260600FC6D5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		757C63B82B85279E00FC6D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		757C63F72B85338000FC6D5E /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
-		757C63FB2B85357100FC6D5E /* GoogleSignInFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInFunction.swift; sourceTree = "<group>"; };
 		757C63FD2B85362B00FC6D5E /* ExtentionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionView.swift; sourceTree = "<group>"; };
 		758061392B4E3F1D0091FFFA /* ScanItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView.swift; sourceTree = "<group>"; };
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
+		75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
+		75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInHelper.swift; sourceTree = "<group>"; };
 		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */,
 				7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */,
 				753245AB2B80081600545DE7 /* UserSessionManager.swift */,
+				75A1CBB12B8681A000AC5095 /* AppleSignIn */,
 				757C63F62B85335500FC6D5E /* GoogleSignIn */,
 			);
 			path = Authentication;
@@ -437,7 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				757C63F72B85338000FC6D5E /* GoogleSignInButton.swift */,
-				757C63FB2B85357100FC6D5E /* GoogleSignInFunction.swift */,
+				75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */,
 			);
 			path = GoogleSignIn;
 			sourceTree = "<group>";
@@ -451,6 +454,14 @@
 				75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */,
 			);
 			path = ScanItem;
+			sourceTree = "<group>";
+		};
+		75A1CBB12B8681A000AC5095 /* AppleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */,
+			);
+			path = AppleSignIn;
 			sourceTree = "<group>";
 		};
 		75C42DDC2B62E7D9003959B6 /* ResultPage */ = {
@@ -646,6 +657,7 @@
 				754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */,
 				754A8FA42B586DFE00C9FD04 /* IngredientsParser.swift in Sources */,
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
+				75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */,
 				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
 				757C63B52B82F70900FC6D5E /* GreetingView.swift in Sources */,
 				753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */,
@@ -665,6 +677,7 @@
 				754A8FA22B585A8400C9FD04 /* GetIngredients.swift in Sources */,
 				752580DF2B6B3D6E00D536D2 /* FavLinkRow.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
+				75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */,
 				753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */,
 				752580D42B6B036900D536D2 /* ChosenSubProfileView.swift in Sources */,
 				75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */,
@@ -682,7 +695,6 @@
 				75C42DE42B62EF94003959B6 /* Recipe.swift in Sources */,
 				7532459B2B7E9D7100545DE7 /* LoginWithEmail.swift in Sources */,
 				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
-				757C63FC2B85357100FC6D5E /* GoogleSignInFunction.swift in Sources */,
 				753245B32B801CE500545DE7 /* LogOut.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				752580CE2B6AD2D900D536D2 /* UpdateFavoriteRecipe.swift in Sources */,
@@ -834,6 +846,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = FoodFridge/FoodFridge.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodFridge/Preview Content\"";
@@ -876,6 +889,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = FoodFridge/FoodFridge.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodFridge/Preview Content\"";

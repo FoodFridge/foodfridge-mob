@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct AuthenthicationView: View {
    
@@ -16,6 +17,7 @@ struct AuthenthicationView: View {
     @State private var logInPageShow: Bool = false
     
     @EnvironmentObject var sessionManager: SessionManager
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationStack {
@@ -86,16 +88,21 @@ struct AuthenthicationView: View {
                             .font(Font.custom("CourierPrime-Regular", size: 17))
                         
                         
-                        HStack {
+                        VStack {
                             GoogleSignInButton {
                                 GoogleSignInHelper(sessionManager: sessionManager).SignInWithGoogle(from: getRootViewController())
                             }
                             
                             
-                            Image("appleIcon")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .offset(y: -5)
+                            SignInWithAppleButton { request in
+                                
+                            } onCompletion: { result  in
+                                
+                            }
+                            .signInWithAppleButtonStyle(colorScheme == .light ? .black : .white)
+                            .frame(width: 330, height: 40)
+                            .cornerRadius(120)
+
                             
                         }
                         
