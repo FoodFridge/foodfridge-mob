@@ -49,7 +49,7 @@ class GoogleSignInHelper {
             
                 if let authDataResult = result { // Assuming authDataResult is the variable containing FIRAuthDataResult
                     let user = authDataResult.user
-                    let additionalUserInfo = authDataResult.additionalUserInfo
+                    //let additionalUserInfo = authDataResult.additionalUserInfo
                     
                     //save user id in session
                     self.sessionManager.saveLocalID(id: ("\(user.uid)"))

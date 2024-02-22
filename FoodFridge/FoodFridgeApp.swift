@@ -15,12 +15,15 @@ struct FoodFridgeApp: App {
     @StateObject var sessionManager = SessionManager()
     
     @AppStorage("googleSignIn") var isGoogleSignIn = false
+    @AppStorage("appleSignIn") var isAppleSignIn = false
+   
+    
     
     var body: some Scene {
         
         WindowGroup {
             
-                if authentication.isValidated || sessionManager.isLoggedIn() || isGoogleSignIn {
+                if authentication.isValidated || sessionManager.isLoggedIn() || isGoogleSignIn || isAppleSignIn {
                     GreetingView()
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
@@ -30,7 +33,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(ScrollTarget())
                     
                 } else {
-                    AuthenthicationView()
+                    AuthenthicationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
                         .environmentObject(TagsViewModel())

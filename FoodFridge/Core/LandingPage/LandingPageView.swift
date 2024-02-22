@@ -112,6 +112,7 @@ struct LandingPageView: View {
                                     print("logged out")
                                     authentication.updateValidation(success: false)
                                     UserDefaults.standard.set(false, forKey: "googleSignIn")
+                                    UserDefaults.standard.set(false, forKey: "appleSignIn")
                                     
                                 }
                             }

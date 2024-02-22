@@ -8,6 +8,7 @@
 import SwiftUI
 import AuthenticationServices
 
+
 struct AuthenthicationView: View {
    
     @State private var signUpWithEmailShow: Bool = false
@@ -17,8 +18,13 @@ struct AuthenthicationView: View {
     @State private var logInPageShow: Bool = false
     
     @EnvironmentObject var sessionManager: SessionManager
+    
     @Environment(\.colorScheme) var colorScheme
     
+    @StateObject var appleSignIn: AppleSignInHelper
+    
+  
+
     var body: some View {
         NavigationStack {
             if sessionManager.getAuthToken() != nil {
@@ -95,14 +101,16 @@ struct AuthenthicationView: View {
                             
                             
                             SignInWithAppleButton { request in
-                                
+                                appleSignIn.handleSignInWithAppleRequest(request)
                             } onCompletion: { result  in
-                                
+                                appleSignIn.handleSignInWithAppleCompletion(result)
                             }
                             .signInWithAppleButtonStyle(colorScheme == .light ? .black : .white)
                             .frame(width: 330, height: 40)
                             .cornerRadius(120)
-
+                            
+                          
+                           
                             
                         }
                         
@@ -114,11 +122,14 @@ struct AuthenthicationView: View {
             }
         }
     }
+    
+   
 }
 
 
 
-
-#Preview {
-    AuthenthicationView()
-}
+/*
+ #Preview {
+ AuthenthicationView()
+ }
+ */
