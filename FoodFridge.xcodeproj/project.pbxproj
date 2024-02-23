@@ -85,6 +85,7 @@
 		75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */; };
 		75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */; };
 		75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */; };
+		75A1CBBE2B88500600AC5095 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBD2B88500600AC5095 /* AuthTextField.swift */; };
 		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
@@ -176,6 +177,7 @@
 		75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
+		75A1CBBD2B88500600AC5095 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
@@ -230,8 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				751EB5552B4E4C1F00106FD6 /* ProfileView.swift */,
+				75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */,
 				752580D32B6B036900D536D2 /* ChosenSubProfileView.swift */,
-				75A1CBB92B882FFE00AC5095 /* profileSetting */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -396,6 +398,7 @@
 				75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */,
 				752580DE2B6B3D6E00D536D2 /* FavLinkRow.swift */,
 				7532459C2B7EA4A100545DE7 /* AuthenticationTextField.swift */,
+				75A1CBBD2B88500600AC5095 /* AuthTextField.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -435,14 +438,6 @@
 				75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */,
 			);
 			path = AppleSignIn;
-			sourceTree = "<group>";
-		};
-		75A1CBB92B882FFE00AC5095 /* profileSetting */ = {
-			isa = PBXGroup;
-			children = (
-				75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */,
-			);
-			path = profileSetting;
 			sourceTree = "<group>";
 		};
 		75C42DDC2B62E7D9003959B6 /* ResultPage */ = {
@@ -626,6 +621,7 @@
 				75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */,
 				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
 				757C63B52B82F70900FC6D5E /* GreetingView.swift in Sources */,
+				75A1CBBE2B88500600AC5095 /* AuthTextField.swift in Sources */,
 				753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */,
 				753245B12B80128F00545DE7 /* LogInWithEmailViewModel.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,

@@ -108,10 +108,7 @@ struct AuthenthicationView: View {
                             .signInWithAppleButtonStyle(colorScheme == .light ? .black : .white)
                             .frame(width: 330, height: 50)
                             .cornerRadius(120)
-                            
-                          
-                           
-                            
+
                         }
                         
                         Spacer()
