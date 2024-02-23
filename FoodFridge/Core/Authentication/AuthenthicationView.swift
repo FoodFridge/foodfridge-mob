@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AuthenticationServices
+
 
 struct AuthenthicationView: View {
    
@@ -17,6 +19,12 @@ struct AuthenthicationView: View {
     
     @EnvironmentObject var sessionManager: SessionManager
     
+    @Environment(\.colorScheme) var colorScheme
+    
+    @StateObject var appleSignIn: AppleSignInHelper
+    
+  
+
     var body: some View {
         NavigationStack {
             if sessionManager.getAuthToken() != nil {
@@ -36,7 +44,7 @@ struct AuthenthicationView: View {
                             Spacer()
                             
                             //MARK: Skip link to landing page
-                            /*
+                            
                              NavigationLink {
                              LandingPageView()
                              } label: {
@@ -46,7 +54,7 @@ struct AuthenthicationView: View {
                              .padding(.trailing, -10)
                              .offset(y: -130)
                              .foregroundStyle(Color(.button4))
-                             */
+                            
                         }
                         VStack {
                             Text("Ready to explore new menu ?")
@@ -86,16 +94,23 @@ struct AuthenthicationView: View {
                             .font(Font.custom("CourierPrime-Regular", size: 17))
                         
                         
-                        HStack {
+                        VStack {
                             GoogleSignInButton {
                                 GoogleSignInHelper(sessionManager: sessionManager).SignInWithGoogle(from: getRootViewController())
                             }
                             
                             
-                            Image("appleIcon")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .offset(y: -5)
+                            SignInWithAppleButton { request in
+                                appleSignIn.handleSignInWithAppleRequest(request)
+                            } onCompletion: { result  in
+                                appleSignIn.handleSignInWithAppleCompletion(result)
+                            }
+                            .signInWithAppleButtonStyle(colorScheme == .light ? .black : .white)
+                            .frame(width: 330, height: 50)
+                            .cornerRadius(120)
+                            
+                          
+                           
                             
                         }
                         
@@ -107,11 +122,14 @@ struct AuthenthicationView: View {
             }
         }
     }
+    
+   
 }
 
 
 
-
-#Preview {
-    AuthenthicationView()
-}
+/*
+ #Preview {
+ AuthenthicationView()
+ }
+ */

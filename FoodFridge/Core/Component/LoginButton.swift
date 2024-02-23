@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginButton: View {
     var title: String = ""
     var width: CGFloat = 330
-    var height: CGFloat = 40
+    var height: CGFloat = 35
     var action: () -> Void
     var image: String = ""
     
