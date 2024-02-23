@@ -66,7 +66,7 @@ class AppleSignInHelper: ObservableObject {
                     if let authDataResult = result {
                         let user = authDataResult.user
                         let additionalUserInfo = authDataResult.additionalUserInfo
-                        let profile = additionalUserInfo?.profile
+                        //let profile = additionalUserInfo?.profile
                         
                         //save user id in session
                         self.sessionManager.saveLocalID(id: ("\(user.uid)"))
@@ -145,7 +145,7 @@ class AppleSignInHelper: ObservableObject {
         
         return hashString
     }
-    
+    /*
     //MARK: TODO this func use when same user sign in again in our app do not overwite user name if it's already exist.
     func updateDisplayName(for user: User, with appleIDCredential: ASAuthorizationAppleIDCredential, force: Bool = false) async {
         if let currentDisplayName = Auth.auth().currentUser?.displayName , !currentDisplayName.isEmpty {
@@ -161,7 +161,8 @@ class AppleSignInHelper: ObservableObject {
                 print("unable to update user's display name : \(error.localizedDescription)")
             }
         }
-        
+
     }
+     */
 }
 

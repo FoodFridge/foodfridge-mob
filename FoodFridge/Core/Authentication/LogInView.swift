@@ -17,7 +17,7 @@ struct LogInView: View {
     @State private var userData: LogInResponseData.LogInData = LogInResponseData.MOCKdata.data
     
     @State private var isLoggedIn = false
-   
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
@@ -31,6 +31,7 @@ struct LogInView: View {
                 TextField("password", text: $vm.password)
                     .AppTextFieldStyle()
             }
+            
             
             Button {
                 DispatchQueue.main.asyncAfter(deadline: .now()) {

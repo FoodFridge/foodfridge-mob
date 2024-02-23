@@ -31,6 +31,7 @@ struct SignUpWithEmailView: View {
                         .AppTextFieldStyle()
                 }
                 
+                
                 Button {
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         //dismiss keyboard
