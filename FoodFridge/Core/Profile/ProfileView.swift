@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = .button2
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
@@ -18,25 +19,37 @@ struct ProfileView: View {
     @State private var selectedView: ChoiceOfView = .favorite
     
     var body: some View {
-        VStack {
-            
-            Picker("", selection: $selectedView) {
-                ForEach(ChoiceOfView.allCases, id: \.self) {
-                    Text($0.rawValue)
-                        .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
+        NavigationStack {
+            VStack {
+                
+                Picker("", selection: $selectedView) {
+                    ForEach(ChoiceOfView.allCases, id: \.self) {
+                        Text($0.rawValue)
+                            .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
+                    }
                 }
+                .pickerStyle(.segmented)
+                .padding()
+                .foregroundStyle(.button4 )
+                
+                Spacer()
+                ChosenSubProfileView(selectedView: selectedView)
+                Spacer()
+                
+                
             }
-            .pickerStyle(.segmented)
-            .padding()
-            .foregroundStyle(.button4 )
             
-            Spacer()
-            ChosenSubProfileView(selectedView: selectedView)
-            Spacer()
-            
-         
         }
-        
+        .toolbar {
+            
+            NavigationLink {
+                //MARK: navigate to Profile view
+                ProfileSettingView()
+            }label: {
+                Image(systemName: "gearshape.fill")
+                    .foregroundColor(Color(.button2))
+            }
+        }
     }
 }
 
