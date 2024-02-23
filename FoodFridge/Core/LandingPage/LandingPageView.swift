@@ -101,6 +101,7 @@ struct LandingPageView: View {
                 .padding(4)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
+                        /*
                         Button {
                             //log user out
                             Task {
@@ -120,16 +121,17 @@ struct LandingPageView: View {
                             Image(systemName: "rectangle.portrait.and.arrow.forward")
                                 .foregroundColor(Color(.button2))
                         }
+                         */
 
-                        
-                        NavigationLink {
-                            //MARK: navigate to Profile view
-                            ProfileView()
-                        }label: {
-                            Image(systemName: "person.crop.circle")
-                                .foregroundColor(Color(.button2))
+                        if sessionManager.isLoggedIn() {
+                            NavigationLink {
+                                //MARK: navigate to Profile view
+                                ProfileView()
+                            }label: {
+                                Image(systemName: "person.crop.circle")
+                                    .foregroundColor(Color(.button2))
+                            }
                         }
-                        
             
                         
                         NavigationLink {

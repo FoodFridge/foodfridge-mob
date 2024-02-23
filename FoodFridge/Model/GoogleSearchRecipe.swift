@@ -11,7 +11,7 @@ struct GoogleSearchRecipe: Codable, Hashable,Identifiable {
     let title: String
     let link: String
     let img: String
-   // var isFavorited: Bool
+   
 }
 
 extension GoogleSearchRecipe {

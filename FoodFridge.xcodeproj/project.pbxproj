@@ -84,6 +84,7 @@
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
 		75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */; };
 		75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */; };
+		75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */; };
 		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
@@ -174,6 +175,7 @@
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
 		75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInHelper.swift; sourceTree = "<group>"; };
+		75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				751EB5552B4E4C1F00106FD6 /* ProfileView.swift */,
 				752580D32B6B036900D536D2 /* ChosenSubProfileView.swift */,
+				75A1CBB92B882FFE00AC5095 /* profileSetting */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -432,6 +435,14 @@
 				75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */,
 			);
 			path = AppleSignIn;
+			sourceTree = "<group>";
+		};
+		75A1CBB92B882FFE00AC5095 /* profileSetting */ = {
+			isa = PBXGroup;
+			children = (
+				75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */,
+			);
+			path = profileSetting;
 			sourceTree = "<group>";
 		};
 		75C42DDC2B62E7D9003959B6 /* ResultPage */ = {
@@ -642,6 +653,7 @@
 				752580D92B6B092100D536D2 /* FavoriteRecipeViewModel.swift in Sources */,
 				75C42DE22B62EF45003959B6 /* GenerateRecipe.swift in Sources */,
 				752580D72B6B042200D536D2 /* FavoriteRecipeView.swift in Sources */,
+				75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */,
 				75C2DD992B785D7800CD184E /* AddedBarAnimation.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				75C42DE02B62E81E003959B6 /* LinkRecipesViewModel.swift in Sources */,
