@@ -27,7 +27,7 @@ struct SignUpWithEmailView: View {
                         .AppTextFieldStyle()
                     TextField("email", text: $vm.email)
                         .AppTextFieldStyle()
-                    SecureField("password", text: $vm.password)
+                    TextField("password", text: $vm.password)
                         .AppTextFieldStyle()
                 }
                 
@@ -71,13 +71,9 @@ struct SignUpWithEmailView: View {
                 }
                 .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                 .font(.custom("CourierPrime-Regular", size: 12))
-                
-                
             }
             
-           
             }
-                
         }
     
     

@@ -44,7 +44,7 @@ struct AuthenthicationView: View {
                             Spacer()
                             
                             //MARK: Skip link to landing page
-                            /*
+                            
                              NavigationLink {
                              LandingPageView()
                              } label: {
@@ -54,7 +54,7 @@ struct AuthenthicationView: View {
                              .padding(.trailing, -10)
                              .offset(y: -130)
                              .foregroundStyle(Color(.button4))
-                             */
+                            
                         }
                         VStack {
                             Text("Ready to explore new menu ?")
@@ -106,7 +106,7 @@ struct AuthenthicationView: View {
                                 appleSignIn.handleSignInWithAppleCompletion(result)
                             }
                             .signInWithAppleButtonStyle(colorScheme == .light ? .black : .white)
-                            .frame(width: 330, height: 40)
+                            .frame(width: 330, height: 50)
                             .cornerRadius(120)
                             
                           
