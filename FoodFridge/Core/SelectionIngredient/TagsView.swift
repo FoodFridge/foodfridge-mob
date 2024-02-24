@@ -93,7 +93,7 @@ struct TagsView: View {
                                     .foregroundStyle(.button2)
                                     .padding()
                                     .padding(.vertical, -10)
-                                    .background(Color(.button1))
+                                    .background(category.displayName == "My pantry" ? Color(.button1) : Color(.button1))
                                     .clipShape(RoundedRectangle(cornerRadius: 20.0))
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -109,6 +109,8 @@ struct TagsView: View {
                         } ?? [], id: \.self) { subItems in
                             HStack {
                                 ForEach(subItems, id: \.self) { tag in
+                                    //MARK: TODO: check if pantry is empty? will display text "Your pantry is empty"
+                                        
                                     Text(tag)
                                         .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
                                         .lineLimit(1)
