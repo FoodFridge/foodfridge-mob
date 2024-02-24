@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultView: View {
     
     @EnvironmentObject var vm: TagsViewModel
+    @EnvironmentObject var sessionManager: SessionManager
   
     
     var body: some View {
@@ -41,12 +42,14 @@ struct ResultView: View {
         
         .toolbar {
             ToolbarItemGroup(placement: .topBarTrailing) {
-                NavigationLink {
-                    //MARK: navigate to Profile view
-                    ProfileView()
-                }label: {
-                    Image(systemName: "person.crop.circle")
-                        .foregroundColor(Color(.button2))
+                if sessionManager.isLoggedIn() {
+                    NavigationLink {
+                        //MARK: navigate to Profile view
+                        ProfileView()
+                    }label: {
+                        Image(systemName: "person.crop.circle")
+                            .foregroundColor(Color(.button2))
+                    }
                 }
                 
                 NavigationLink {

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct LinkRecipesView: View {
-    
-    var title: String = "Salmon with Ginger Glaze"
-    var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
+    @EnvironmentObject var sessionManager: SessionManager
     @State private var LinkRecipes = [LinkRecipe]()
     @StateObject var vm = LinkRecipesViewModel()
     
+    var title: String = "Salmon with Ginger Glaze"
+    var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
     
     var body: some View {
         VStack {
@@ -32,12 +32,14 @@ struct LinkRecipesView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .topBarTrailing) {
-                NavigationLink {
-                    //MARK: navigate to Profile view
-                    ProfileView()
-                }label: {
-                    Image(systemName: "person.crop.circle")
-                        .foregroundColor(Color(.button2))
+                if sessionManager.isLoggedIn() {
+                    NavigationLink {
+                        //MARK: navigate to Profile view
+                        ProfileView()
+                    }label: {
+                        Image(systemName: "person.crop.circle")
+                            .foregroundColor(Color(.button2))
+                    }
                 }
                 
                 NavigationLink {
