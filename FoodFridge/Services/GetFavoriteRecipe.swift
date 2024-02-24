@@ -18,28 +18,19 @@ class GetFavoriteRecipe {
     
     func getLinkRecipe(isFavorite: String = "Y") async throws -> [FavoriteRecipe] {
         
-        
-        
-        /*
-        guard let url = Bundle.main.url(forResource: "FavoriteRecipes", withExtension: "json"),
-              let data = try? Data(contentsOf: url) else {
-            print("JSON file was not found")
-            return [FavoriteRecipe]()
-        }
-        */
-        
         let decoder = JSONDecoder()
        
         let mockId = "test user"
+        let mockId2 = "6uQLYh2O4RhijB7nOeljVcmmwED2"
          
         do {
             guard let token = sessionManager.getAuthToken() else {
                 throw SessionError.missingAuthToken
             }
             
-            //guard let localID = sessionManager.getLocalID() else {
-                //throw SessionError.missingLocalID
-            //}
+            guard let localID = sessionManager.getLocalID() else {
+                throw SessionError.missingLocalID
+            }
             
             let urlEndpoint = ("\(AppConstant.getFavoriteRecipeOfuserUSLString)/\(mockId)/\(isFavorite)")
         
