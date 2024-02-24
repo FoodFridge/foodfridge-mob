@@ -51,7 +51,8 @@ struct ProfileSettingView: View {
                 
                 Task {
                     do {
-                        self.isSignedOut = try await LogOut.logUserOut()
+                        self.isSignedOut = try await LogOut(sessionManager: sessionManager).logUserOut()
+                        print(isSignedOut)
                         if self.isSignedOut {
                             sessionManager.logout()
                             print("logged out")
