@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct AddedBarAnimation: View {
+    @EnvironmentObject var sessionManager: SessionManager
+    
     var isTapped  =  false
     //var item = "Test Item"
     var body: some View {
         Rectangle()
             .fill(Color(.button2))
             .overlay {
-                Text("Added item to pantry")
+                Text(sessionManager.isLoggedIn() ? "Item added to your pantry" : "Please Login to use this feature")
             }
             .frame(height: 30)
             .cornerRadius(5)

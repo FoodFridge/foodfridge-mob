@@ -10,6 +10,8 @@ import SwiftUI
 struct ScanItemView: View {
     
     @EnvironmentObject var vm: ScanItemViewModel
+    @EnvironmentObject var sessionManager: SessionManager
+    
     var userId = "test user"
     @State private var addButtonTapped = false
     //@State private var addedItem = ""
@@ -68,17 +70,21 @@ struct ScanItemView: View {
                     }
                 }
                 
-                //MARK: Display Pantry button
-                Button {
-                    isShowPantry = true
-                } label: {
-                    Text("Go to Pantry")
-                        .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
-                }
-                .sheet(isPresented:
-                        $isShowPantry) {
-                    PantryView()
-                }
+               
+                    //MARK: Display Pantry button
+                    Button {
+                        isShowPantry = true
+                    } label: {
+                        Text("Go to Pantry")
+                            .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
+                    }
+                    .disabled(!sessionManager.isLoggedIn())
+                    .sheet(isPresented:
+                            $isShowPantry) {
+                        PantryView()
+                    }
+    
+              
 
             }
             .onChange(of: vm.textContentType) { _ in vm.recognizedItems = [] }
