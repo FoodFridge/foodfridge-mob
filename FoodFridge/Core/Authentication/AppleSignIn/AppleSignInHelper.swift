@@ -65,7 +65,7 @@ class AppleSignInHelper: ObservableObject {
                     
                     if let authDataResult = result {
                         let user = authDataResult.user
-                        let additionalUserInfo = authDataResult.additionalUserInfo
+                        //let additionalUserInfo = authDataResult.additionalUserInfo
                         //let profile = additionalUserInfo?.profile
                         
                         //save user id in session

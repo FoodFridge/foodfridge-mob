@@ -8,21 +8,26 @@
 import Foundation
 class LogOut: ObservableObject {
     
-   static func logUserOut() async throws -> Bool {
+    let sessionManager: SessionManager
+    
+    init(sessionManager: SessionManager) {
+        self.sessionManager = sessionManager
+    }
+        
+    
+   func logUserOut() async throws -> Bool {
            
            guard let url = URL(string: AppConstant.logOutUserURLString) else { throw URLError(.badURL)}
            
            do {
+               guard let token = sessionManager.getAuthToken() else {
+                   throw SessionError.missingAuthToken
+               }
                // URL request object with URL and request method
                var request = URLRequest(url: url)
                request.httpMethod = "POST"
-               request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-               /*
-               //JSON data to be sent to the server
-               let jsonData = try? JSONSerialization.data(withJSONObject: ["email": email, "password": password, "name": name], options: [])
-               request.httpBody = jsonData
-                */
-               
+               request.setValue("\(token)", forHTTPHeaderField: "Authorization")
+            
                //network request
                let (_, response) = try await URLSession.shared.data(for: request)
                
@@ -30,8 +35,6 @@ class LogOut: ObservableObject {
                print("DEBUG: statusCode =  \(response)")
                print("log out response = \(response.description)")
            
-             //  let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
-               
                //if sign up successfully
                print("log out successfully")
                
