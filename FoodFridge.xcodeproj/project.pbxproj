@@ -86,6 +86,7 @@
 		75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */; };
 		75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */; };
 		75A1CBBE2B88500600AC5095 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBD2B88500600AC5095 /* AuthTextField.swift */; };
+		75A1CBC02B895E4900AC5095 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBF2B895E4900AC5095 /* ForgotPasswordView.swift */; };
 		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
@@ -178,6 +179,7 @@
 		75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		75A1CBBD2B88500600AC5095 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		75A1CBBF2B895E4900AC5095 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				757542C42B33E8F000048178 /* AuthenthicationView.swift */,
 				757542DE2B34F3D300048178 /* LogInView.swift */,
 				753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */,
+				75A1CBBF2B895E4900AC5095 /* ForgotPasswordView.swift */,
 				753245B42B802A8300545DE7 /* LogOutViewModel.swift */,
 				757542DA2B3401EE00048178 /* SignUpWithEmailView.swift */,
 				753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */,
@@ -607,6 +610,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */,
+				75A1CBC02B895E4900AC5095 /* ForgotPasswordView.swift in Sources */,
 				751EB5602B53488200106FD6 /* PantryItem.swift in Sources */,
 				75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,

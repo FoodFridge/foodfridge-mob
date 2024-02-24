@@ -17,62 +17,84 @@ struct LogInView: View {
     @State private var userData: LogInResponseData.LogInData = LogInResponseData.MOCKdata.data
     
     @State private var isLoggedIn = false
+   
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        VStack {
-            Text("Welcome back!")
-                .font(.custom("CourierPrime-Bold", size: 35))
-            
+        NavigationStack {
             VStack {
-            
-                TextField("email", text: $vm.email)
-                    .AppTextFieldStyle()
-                TextField("password", text: $vm.password)
-                    .AppTextFieldStyle()
-            }
-            
-            
-            Button {
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    //dismiss keyboard
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                }
+                Text("Welcome back!")
+                    .font(.custom("CourierPrime-Bold", size: 35))
                 
-                //login user
-                Task {
-                    self.userData = try await LoginWithEmailService().login(email: vm.email, password: vm.password)
-                    if self.userData.token != nil && self.userData.localId != nil {
-                        sessionManager.saveAuthToken(token: userData.token ?? "mockToken")
-                        sessionManager.saveLocalID(id: userData.localId ?? "mockId")
-                        print("saved token = \(String(describing: sessionManager.getAuthToken()))")
-                        print("saved local id = \(String(describing: sessionManager.getLocalID()))")
-                        self.isLoggedIn = sessionManager.isLoggedIn()
-                        if isLoggedIn {
-                            authenthication.updateValidation(success: true)
+                VStack {
+                    
+                    TextField("email", text: $vm.email)
+                        .AppTextFieldStyle()
+                    
+                    VStack {
+                        TextField("password", text: $vm.password)
+                            .AppTextFieldStyle()
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                ForgotPasswordView()
+                            }label: {
+                                Text("Forgot password?")
+                            }
+                            .font(.custom("CourierPrime-regular", size: 13))
+                            .padding(.trailing, 25)
+                            .padding(.top, -20)
                             
+                            
+                            
+                        
                         }
                     }
                 }
                 
                 
-            } label: {
-                Text("Log in")
+                Button {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        //dismiss keyboard
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
+                    
+                    //login user
+                    Task {
+                        self.userData = try await LoginWithEmailService().login(email: vm.email, password: vm.password)
+                        if self.userData.token != nil && self.userData.localId != nil {
+                            sessionManager.saveAuthToken(token: userData.token ?? "mockToken")
+                            sessionManager.saveLocalID(id: userData.localId ?? "mockId")
+                            print("saved token = \(String(describing: sessionManager.getAuthToken()))")
+                            print("saved local id = \(String(describing: sessionManager.getLocalID()))")
+                            self.isLoggedIn = sessionManager.isLoggedIn()
+                            if isLoggedIn {
+                                authenthication.updateValidation(success: true)
+                                
+                            }
+                        }
+                    }
+                    
+                    
+                } label: {
+                    Text("Log in")
+                }
+                .bold()
+                .padding(.vertical)
+                .foregroundStyle(.black)
+                .frame(width: 150, height: 30)
+                .background(Color(.button2))
+                .cornerRadius(20)
+                .padding(.bottom)
+                
+                
+                
+                
+                
             }
-            .bold()
-            .foregroundStyle(.black)
-            .frame(width: 150, height: 30)
-            .background(Color(.button2))
-            .cornerRadius(20)
-            .padding(.bottom)
-           
-            
-            
-            
-            
         }
-        
     }
+    
 }
 
 #Preview {
