@@ -82,6 +82,8 @@
 		757C63FE2B85362B00FC6D5E /* ExtentionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63FD2B85362B00FC6D5E /* ExtentionView.swift */; };
 		7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758061392B4E3F1D0091FFFA /* ScanItemView.swift */; };
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
+		759F55532B8AC3D300276079 /* RecipeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F55522B8AC3D300276079 /* RecipeAnimation.swift */; };
+		759F55552B8ACA7F00276079 /* GoogleLinkRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */; };
 		75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */; };
 		75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */; };
 		75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */; };
@@ -175,6 +177,8 @@
 		757C63FD2B85362B00FC6D5E /* ExtentionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionView.swift; sourceTree = "<group>"; };
 		758061392B4E3F1D0091FFFA /* ScanItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView.swift; sourceTree = "<group>"; };
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
+		759F55522B8AC3D300276079 /* RecipeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAnimation.swift; sourceTree = "<group>"; };
+		759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLinkRowViewModel.swift; sourceTree = "<group>"; };
 		75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
@@ -449,6 +453,8 @@
 				75C42DDD2B62E80C003959B6 /* ResultView.swift */,
 				75C42DDF2B62E81E003959B6 /* LinkRecipesViewModel.swift */,
 				75C42DE72B631AA3003959B6 /* LinkRecipesView.swift */,
+				759F55522B8AC3D300276079 /* RecipeAnimation.swift */,
+				759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */,
 			);
 			path = ResultPage;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759F55552B8ACA7F00276079 /* GoogleLinkRowViewModel.swift in Sources */,
 				757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */,
 				75A1CBC02B895E4900AC5095 /* ForgotPasswordView.swift in Sources */,
 				751EB5602B53488200106FD6 /* PantryItem.swift in Sources */,
@@ -633,6 +640,7 @@
 				757C63B92B85279E00FC6D5E /* AppDelegate.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */,
+				759F55532B8AC3D300276079 /* RecipeAnimation.swift in Sources */,
 				75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */,
 				75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */,
 				757C63F82B85338000FC6D5E /* GoogleSignInButton.swift in Sources */,

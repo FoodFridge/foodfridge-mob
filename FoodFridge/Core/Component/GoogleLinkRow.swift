@@ -10,19 +10,35 @@ import SwiftUI
 struct GoogleLinkRow: View {
     var googleLink:  LinkRecipe?
     @State var isLiked: Bool
+    @State var nonLoggedInUserTapped = false
     @Environment(\.openURL) var openURL
+    @EnvironmentObject var sessionManager: SessionManager
+    @ObservedObject var likeState: GoogleLinkRowViewModel
     
     var body: some View {
         ZStack {
             Rectangle()
             HStack {
                 Button {
-                    // tap to save/unsave
-                    isLiked.toggle()
-                    
-                    Task {
-                        try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
+                    // non logged in user cannot like to save, will display warning to log in
+                    if !sessionManager.isLoggedIn() {
+                        isLiked = false
+                        // trigger animation bar
+                        likeState.isNonLoggedInTapped = true
+                        // Reset the state after a delay
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                            likeState.isNonLoggedInTapped = false
+                        }
+                    }else {
+                        // logged in user tap to save/unsave
+                        isLiked.toggle()
+                        
+                        Task {
+                            try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
+                        }
                     }
+                    
+                    
                 } label: {
                     Image(systemName: isLiked ?  "heart.fill" : "heart" )
                         .foregroundStyle(.black)

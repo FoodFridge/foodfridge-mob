@@ -11,6 +11,8 @@ struct LinkRecipesView: View {
     @EnvironmentObject var sessionManager: SessionManager
     @State private var LinkRecipes = [LinkRecipe]()
     @StateObject var vm = LinkRecipesViewModel()
+    @StateObject var likeState = GoogleLinkRowViewModel()
+    
     
     var title: String = "Salmon with Ginger Glaze"
     var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
@@ -19,7 +21,7 @@ struct LinkRecipesView: View {
         VStack {
             ScrollView {
                 ForEach(vm.listOfgoogleLinks) { linkRecipe in
-                    GoogleLinkRow(googleLink: linkRecipe, isLiked: linkRecipe.isFavorite == "Y" ? true : false)
+                    GoogleLinkRow(googleLink: linkRecipe, isLiked: linkRecipe.isFavorite == "Y" ? true : false, likeState: likeState)
                 }
                 
             }.scrollIndicators(.hidden)
@@ -52,8 +54,8 @@ struct LinkRecipesView: View {
             }
         }
         
-        
-        Text("Testing : List of \(title) Recipes")
+        RecipeAnimation(likeState: likeState)
+        //Text("Testing : List of \(title) Recipes")
         
     }
 }
