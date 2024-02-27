@@ -17,6 +17,8 @@ struct LogInView: View {
     @State private var userData: LogInResponseData.LogInData = LogInResponseData.MOCKdata.data
     
     @State private var isLoggedIn = false
+    @State private var isPassHidden = true
+    
    
     @Environment(\.colorScheme) var colorScheme
     
@@ -32,8 +34,24 @@ struct LogInView: View {
                         .AppTextFieldStyle()
                     
                     VStack {
-                        TextField("password", text: $vm.password)
-                            .AppTextFieldStyle()
+                        HStack {
+                            if isPassHidden {
+                                SecureField("password", text: $vm.password)
+                                    .AppTextFieldStyle()
+                            }else {
+                                TextField("password", text: $vm.password)
+                                    .AppTextFieldStyle()
+                            }
+                        }.overlay(alignment: .trailing) {
+                            Image(systemName:  isPassHidden ? "eye.slash" : "eye")
+                                .onTapGesture {
+                                    isPassHidden.toggle()
+                                }
+                                .padding(.horizontal, 30)
+                        }
+                        
+                        
+                        
                         HStack {
                             Spacer()
                             NavigationLink {
