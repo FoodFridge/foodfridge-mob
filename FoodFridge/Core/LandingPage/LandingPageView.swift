@@ -19,7 +19,7 @@ struct LandingPageView: View {
     @EnvironmentObject var authentication: Authentication
     @EnvironmentObject var sessionManager: SessionManager
   
-    let fourRows = [GridItem(),GridItem(),GridItem(),GridItem()]
+    let rows = [GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem()]
     
     
     @State private var isSignedOut = false
@@ -80,7 +80,7 @@ struct LandingPageView: View {
                     Spacer()
                     //MARK: Select ingredients buttons
                     ScrollView {
-                        LazyHGrid (rows: fourRows) {
+                        LazyHGrid (rows: rows) {
                             ForEach(Category.allCases, id: \.self) { category in
                                 VStack {
                                     SelectIngredientsButton(title: category.displayName, action: {

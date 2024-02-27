@@ -53,26 +53,31 @@ class GetIngredients {
    func loadIngredients() async throws -> [String: [IngredientItem]] {
        
         let decoder = JSONDecoder()
+    
        
         do {
-            guard let token = sessionManager.getAuthToken() else {
-                throw SessionError.missingAuthToken
-            }
+            let token = sessionManager.getAuthToken()
             
-            guard let localID = sessionManager.getLocalID() else {
-                throw SessionError.missingLocalID
-            }
+            print("token = \(String(describing: token))")
             
-            let urlEndpoint = ("\(AppConstant.fetchIngredientsURLString)/\(localID)")
+            let localID = sessionManager.getLocalID()
+              
+            print("id = \(String(describing: localID))")
+            let urlEndpoint = ("\(AppConstant.fetchIngredientsURLString)")
             print("ingredient url =\(urlEndpoint)")
             
             guard let url = URL(string: urlEndpoint) else
             { throw FetchError.invalidURL }
             
             var request = URLRequest(url: url)
-                   request.httpMethod = "GET"
-                   request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-                   
+                   request.httpMethod = "POST"
+            //request.setValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+            
+            //JSON data to be sent to the server
+            
+            let requestBody = try? JSONSerialization.data(withJSONObject: ["localId": (localID != nil) ? localID : ""], options: [])
+            request.httpBody = requestBody
+            
             let (data, response) = try await URLSession.shared.data(for: request)
                    
             
@@ -105,7 +110,7 @@ class GetIngredients {
                 }
             }
         }
-        return ["01" : IngredientItem.mockItems]
+        return ["07" : IngredientItem.mockItems]
     }
 
     
