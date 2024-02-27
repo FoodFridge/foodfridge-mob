@@ -14,7 +14,7 @@ struct SignUpWithEmailView: View {
     @EnvironmentObject var sessionManager: SessionManager
    
     @State private var isSignUpSuccess = false
-    
+    @State private var isPassHidden = true
     
     var body: some View {
         NavigationStack {
@@ -27,8 +27,22 @@ struct SignUpWithEmailView: View {
                         .AppTextFieldStyle()
                     TextField("email", text: $vm.email)
                         .AppTextFieldStyle()
-                    TextField("password", text: $vm.password)
-                        .AppTextFieldStyle()
+                    
+                    HStack {
+                        if isPassHidden {
+                            SecureField("password", text: $vm.password)
+                                .AppTextFieldStyle()
+                        }else {
+                            TextField("password", text: $vm.password)
+                                .AppTextFieldStyle()
+                        }
+                    }.overlay(alignment: .trailing) {
+                        Image(systemName:  isPassHidden ? "eye.slash" : "eye")
+                            .onTapGesture {
+                                isPassHidden.toggle()
+                            }
+                            .padding(.horizontal, 30)
+                    }
                 }
                 
                 
