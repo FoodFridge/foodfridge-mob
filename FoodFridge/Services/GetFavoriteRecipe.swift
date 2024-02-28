@@ -19,20 +19,18 @@ class GetFavoriteRecipe {
     func getLinkRecipe(isFavorite: String = "Y") async throws -> [FavoriteRecipe] {
         
         let decoder = JSONDecoder()
-       
-        let mockId = "test user"
-        //let mockId2 = "6uQLYh2O4RhijB7nOeljVcmmwED2"
+    
          
         do {
             guard let token = sessionManager.getAuthToken() else {
                 throw SessionError.missingAuthToken
             }
             
-            //guard let localID = sessionManager.getLocalID() else {
-                //throw SessionError.missingLocalID
-            //}
+            guard let localID = sessionManager.getLocalID() else {
+                throw SessionError.missingLocalID
+            }
             
-            let urlEndpoint = ("\(AppConstant.getFavoriteRecipeOfuserUSLString)/\(mockId)/\(isFavorite)")
+            let urlEndpoint = ("\(AppConstant.getFavoriteRecipeOfuserUSLString)/\(localID)/\(isFavorite)")
         
             
             guard let url = URL(string: urlEndpoint) else

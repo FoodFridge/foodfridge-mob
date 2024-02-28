@@ -30,7 +30,7 @@ struct ResultView: View {
             
             ScrollView {
                 ForEach(0..<vm.generatedRecipes.count, id: \.self) { index in
-                    NavigationLink(destination: LinkRecipesView(title: vm.generatedRecipes[index].title)) {
+                    NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: vm.generatedRecipes[index].title)) {
                         RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
                     }
                    

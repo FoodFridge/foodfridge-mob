@@ -7,6 +7,6 @@
 
 import Foundation
 struct LinkRecipeRequestBody: Codable {
-    let userId: String
+    let localId: String
     let recipeName: String
 }

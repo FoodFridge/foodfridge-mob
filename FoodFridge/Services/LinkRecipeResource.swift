@@ -8,17 +8,35 @@
 import Foundation
 class LinkRecipeResource {
     
-    static func getLinkRecipe(userId: String , recipeName: String) async throws -> [LinkRecipe] {
+    let sessionManager: SessionManager
+    
+    init(sessionManager: SessionManager) {
+        self.sessionManager = sessionManager
+    }
+    
+    func getLinkRecipe(recipeName: String) async throws -> [LinkRecipe] {
         // Create an instance of JSONEncoder
         let encoder = JSONEncoder()
         // Create request body
-        let body = LinkRecipeRequestBody(userId: userId, recipeName: recipeName)
+       
         
         guard let url = URL(string: AppConstant.linkRecipeResourceURLString) else {
                    throw URLError(.badURL)
                }
         //Encode request body to JSON data
         do {
+            guard let token = sessionManager.getAuthToken() else {
+                throw SessionError.missingAuthToken
+            }
+            
+            guard let localID = sessionManager.getLocalID() else {
+                throw SessionError.missingLocalID
+            }
+            
+            
+            let body = LinkRecipeRequestBody(localId: localID, recipeName: recipeName)
+            
+            
             let jsonData = try encoder.encode(body)
 
             // Convert the JSON data to a string for debugging
