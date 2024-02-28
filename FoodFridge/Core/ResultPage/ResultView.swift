@@ -16,7 +16,9 @@ struct ResultView: View {
     var body: some View {
         
         VStack {
+            
             VStack {
+                
                 Text("We've found Recipes!")
                     .padding(5)
                     .frame(width: 350, height: 45)

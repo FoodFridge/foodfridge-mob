@@ -33,11 +33,11 @@ struct SelectIngredientsButton: View {
                 Text(title)
                     .lineLimit(1)
                     .frame(width: width , height: height)
-                    .foregroundColor(title == "My pantry" ? Color.black : Color.button4)
+                    .foregroundColor(title == "My pantry" ? Color.button4: Color.button4)
                     .font(.custom(CustomFont.appFontRegular.rawValue, fixedSize: 20))
                     .padding(.leading, -45)
             }
-            .background(title == "My pantry" ? Color.button5 : Color.button1)
+            .background(title == "My pantry" ? Color.button1 : Color.button1)
             .cornerRadius(120)
             
         })

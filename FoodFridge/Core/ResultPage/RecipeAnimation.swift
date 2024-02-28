@@ -12,7 +12,6 @@ struct RecipeAnimation: View {
         @EnvironmentObject var sessionManager: SessionManager
         @ObservedObject var likeState: GoogleLinkRowViewModel
         var isTapped  =  false
-        //var item = "Test Item"
         var body: some View {
             Rectangle()
                 .fill(Color(.button2))

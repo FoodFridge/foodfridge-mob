@@ -36,7 +36,7 @@ struct LinkRecipesView: View {
         }
         .onAppear {
             Task {
-                vm.listOfgoogleLinks  = try await vm.getLinkRecipes(fromUserId: "test user", recipeName: title)
+                vm.listOfgoogleLinks  = try await vm.getLinkRecipes(recipeName: title)
             }
         }
         .toolbar {

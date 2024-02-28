@@ -17,7 +17,7 @@ class LinkRecipesViewModel: ObservableObject {
         self.sessionManager = sessionManager
     }
 
-    func getLinkRecipes(fromUserId: String, recipeName: String ) async throws -> [LinkRecipe] {
+    func getLinkRecipes(recipeName: String ) async throws -> [LinkRecipe] {
         
        listOfgoogleLinks = try await LinkRecipeResource(sessionManager: sessionManager).getLinkRecipe(recipeName: recipeName)
         
