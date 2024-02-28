@@ -49,8 +49,7 @@ struct FavoriteRecipeView: View {
         }
         .onAppear {
                 Task {
-                     
-                    try await vm.getFavoriteRecipe(userId: "test user", isFavorite: "Y")
+                    try await vm.getFavoriteRecipe(isFavorite: "Y")
                 }
             }
         }

@@ -11,10 +11,15 @@ import Foundation
 class LinkRecipesViewModel: ObservableObject {
     
     @Published var listOfgoogleLinks: [LinkRecipe] = [LinkRecipe]()
+    var sessionManager: SessionManager
+    
+    init(sessionManager: SessionManager) {
+        self.sessionManager = sessionManager
+    }
 
-    func getLinkRecipes(fromUserId: String, recipeName: String ) async throws -> [LinkRecipe] {
+    func getLinkRecipes(recipeName: String ) async throws -> [LinkRecipe] {
         
-       listOfgoogleLinks = try await LinkRecipeResource.getLinkRecipe(userId: fromUserId, recipeName: recipeName)
+       listOfgoogleLinks = try await LinkRecipeResource(sessionManager: sessionManager).getLinkRecipe(recipeName: recipeName)
         
         return listOfgoogleLinks
     }

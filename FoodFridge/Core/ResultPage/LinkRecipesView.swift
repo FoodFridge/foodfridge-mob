@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct LinkRecipesView: View {
-    @EnvironmentObject var sessionManager: SessionManager
+   
     @State private var LinkRecipes = [LinkRecipe]()
-    @StateObject var vm = LinkRecipesViewModel()
+    @StateObject var vm: LinkRecipesViewModel
     @StateObject var likeState = GoogleLinkRowViewModel()
     
-    
-    var title: String = "Salmon with Ginger Glaze"
+    var sessionManager: SessionManager
+    var title: String
     var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
+    
+    init(sessionManager: SessionManager, title: String) {
+        self.sessionManager = sessionManager
+        self.title = title
+        _vm = StateObject(wrappedValue: LinkRecipesViewModel(sessionManager: sessionManager))
+        
+    }
     
     var body: some View {
         VStack {
@@ -29,7 +36,7 @@ struct LinkRecipesView: View {
         }
         .onAppear {
             Task {
-                vm.listOfgoogleLinks  = try await vm.getLinkRecipes(fromUserId: "test user", recipeName: title)
+                vm.listOfgoogleLinks  = try await vm.getLinkRecipes(recipeName: title)
             }
         }
         .toolbar {
@@ -61,5 +68,5 @@ struct LinkRecipesView: View {
 }
 
 #Preview {
-    LinkRecipesView()
+    LinkRecipesView(sessionManager: SessionManager(), title: "Ginger Salmon")
 }

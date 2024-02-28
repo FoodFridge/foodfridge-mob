@@ -13,14 +13,16 @@ class FavoriteRecipeViewModel: ObservableObject {
     
     @Published var FavoriteStatus = true
     
-    var userId = "test user"
     var sessionManager: SessionManager
     
     init(sessionManager: SessionManager) {
         self.sessionManager = sessionManager
+        Task {
+           try await self.getFavoriteRecipe(isFavorite: "Y")
+        }
     }
   
-    func getFavoriteRecipe(userId: String, isFavorite: String) async throws {
+    func getFavoriteRecipe(isFavorite: String) async throws {
                 Task {
                     let result = try await GetFavoriteRecipe(sessionManager: sessionManager).getLinkRecipe()
                     let sortedResult = result.sorted { $0.recipeName < $1.recipeName }

@@ -16,7 +16,9 @@ struct ResultView: View {
     var body: some View {
         
         VStack {
+            
             VStack {
+                
                 Text("We've found Recipes!")
                     .padding(5)
                     .frame(width: 350, height: 45)
@@ -30,7 +32,7 @@ struct ResultView: View {
             
             ScrollView {
                 ForEach(0..<vm.generatedRecipes.count, id: \.self) { index in
-                    NavigationLink(destination: LinkRecipesView(title: vm.generatedRecipes[index].title)) {
+                    NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: vm.generatedRecipes[index].title)) {
                         RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
                     }
                    
