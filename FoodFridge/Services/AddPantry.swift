@@ -21,9 +21,6 @@ class AddPantry {
         // Create request body
         let body = Pantry(pantryName: pantryName)
         
-       
-       
-       
         //Encode request body to JSON data
         do {
             guard let token = sessionManager.getAuthToken() else {
@@ -35,6 +32,7 @@ class AddPantry {
             }
             
             let urlEndpoint = ("\(AppConstant.addPantryURLString)/\(localID)")
+            print("add pantry url = \(urlEndpoint)")
             
             guard let url = URL(string: urlEndpoint) else {
                 throw URLError(.badURL)
@@ -49,19 +47,24 @@ class AddPantry {
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
                 request.httpBody = jsonData
-                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                //request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
                 
                 // Make the request using URLSession
-                let (_, response) = try await URLSession.shared.data(for: request)
+                let (data, response) = try await URLSession.shared.data(for: request)
                 
-                guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
+                guard(response as? HTTPURLResponse)?.statusCode == 200 else {  throw URLError(.badServerResponse)  }
                 print("DEBUG: statusCode =  \(response)")
                 
+                // Handle the response
+                if let responseText = String(data: data, encoding: .utf8) {
+                 print("response = \(responseText)")
+                }
             }
             
         }catch {
-            print(error.localizedDescription)
+            print("add pantry error = \(error.localizedDescription)")
         }
-    
     }
+  
 }
