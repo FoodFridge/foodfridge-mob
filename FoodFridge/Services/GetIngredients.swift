@@ -53,9 +53,15 @@ class GetIngredients {
    func loadIngredients() async throws -> [String: [IngredientItem]] {
        
         let decoder = JSONDecoder()
-    
+       /*
+        guard let url = Bundle.main.url(forResource: "Ingredients", withExtension: "json"),
+             let data = try? Data(contentsOf: url) else {
+           print("JSON file was not found")
+           return ["1" : IngredientItem.mockItems] }
+    */
        
         do {
+            
             let token = sessionManager.getAuthToken()
             
             print("token = \(String(describing: token))")
@@ -69,46 +75,31 @@ class GetIngredients {
             guard let url = URL(string: urlEndpoint) else
             { throw FetchError.invalidURL }
             
+            //JSON data  and token to be sent to the server
+            let requestBody = try? JSONSerialization.data(withJSONObject: ["localId": localID], options: [])
+            
             var request = URLRequest(url: url)
                    request.httpMethod = "POST"
-            //request.setValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
-            
-            //JSON data to be sent to the server
-            
-            let requestBody = try? JSONSerialization.data(withJSONObject: ["localId": (localID != nil) ? localID : ""], options: [])
-            request.httpBody = requestBody
+                   request.httpBody = requestBody
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
             
             let (data, response) = try await URLSession.shared.data(for: request)
                    
-            
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
-            //print("DEBUG: statusCode =  \(response)")
+            print("DEBUG: statusCode =  \(response)")
             
             let jsonData = try decoder.decode(IngredientData.self, from: data)
             //get all ingredients
             //self.ingredients = jsonData.data
             // get all ingredients by type
             self.ingredientsByType = Dictionary(grouping: jsonData.data, by: { $0.type })
-            //print("jsondata = \(ingredientsByType)")
+            print("jsondata = \(ingredientsByType)")
             return self.ingredientsByType
             
         } catch {
             print("Error decoding get ingredient JSON: \(error)")
-            //detailed error info:
-            if let decodingError = error as? DecodingError {
-                switch decodingError {
-                case .typeMismatch(let key, let context):
-                    print("Type mismatch for key \(key), \(context.debugDescription)")
-                case .valueNotFound(let key, let context):
-                    print("Value not found for key \(key), \(context.debugDescription)")
-                case .keyNotFound(let key, let context):
-                    print("Key not found \(key), \(context.debugDescription)")
-                case .dataCorrupted(let context):
-                    print("Data corrupted, \(context.debugDescription)")
-                @unknown default:
-                    print("Unknown error")
-                }
-            }
+          
         }
         return ["07" : IngredientItem.mockItems]
     }
