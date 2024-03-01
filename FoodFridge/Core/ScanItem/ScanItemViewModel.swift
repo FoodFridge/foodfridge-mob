@@ -31,13 +31,15 @@ final class ScanItemViewModel: ObservableObject {
     @Published var scanType: ScanType = .text
     @Published var recognizedItems: [RecognizedItem] = []
     @Published var pantryItems = [PantryItem]()
+    @Published var isLoading: Bool = false
     
     let sessionManager: SessionManager
     
     init(sessionManager: SessionManager) {
         self.sessionManager = sessionManager
-        self.getPantry()
-        
+        Task {
+            await self.getPantry()
+        }
    }
     
     
@@ -125,11 +127,25 @@ final class ScanItemViewModel: ObservableObject {
         }
     }
     
+    func getPantry() async {
+        isLoading = true
+        do {
+            pantryItems = try await GetPantry(sessionManager: sessionManager).getPantry()
+        } catch {
+            print("Error fetching pantry:", error)
+        }
+        isLoading = false
+    }
+    
+    /*
     func getPantry() {
+        isLoading = true
         Task {
           try await pantryItems = GetPantry(sessionManager: sessionManager).getPantry()
         }
+        isLoading = false
     }
+     */
 }
 
 
