@@ -29,9 +29,7 @@ struct Pantry: Codable, Identifiable, Hashable {
 extension PantryItem {
     static var mockPantryItems: [PantryItem] {
         [
-            PantryItem(date: "Day Before Yesturday", pantryInfo: [Pantry(id: "1", pantryName: "Banana"), Pantry(id: "2", pantryName: "Milk")] ),
-            PantryItem(date: "Yesturday", pantryInfo: [Pantry(id: "3", pantryName: "Pork Belly"), Pantry(id: "4", pantryName: "Kelp"), Pantry(id: "5", pantryName: "Egg"), Pantry(id: "6", pantryName: "Coffee")] ),
-            PantryItem(date: "Today", pantryInfo: [Pantry(id: "7", pantryName: "Strawberry"), Pantry(id: "8", pantryName: "Noodles")] ),
+            
         ]
     }
 }
