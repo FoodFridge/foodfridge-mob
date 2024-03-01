@@ -1,43 +1,26 @@
 {
     "status": "1",
     "message": "Data retrieved successfully",
-    "data" : [
+    "data": [
         {
-            "date": "2024-01-26",
+            "date": "02/28/2024",
             "pantryInfo": [
                 {
-                    "pantry_id": "1",
-                    "pantryName": "pantry1"
+                    "pantryName": "Evian",
+                    "doc_id": "jTupMq6cWx5yuLBDqpmo"
                 }
             ]
         },
         {
-            "date": "2024-02-08",
+            "date": "02/29/2024",
             "pantryInfo": [
                 {
-                    "pantry_id": "2",
-                    "pantryName": "pantry2"
+                    "pantryName": "Sausage.",
+                    "doc_id": "2diqTk7uMJCbQ2YyrXrI"
                 },
                 {
-                    "pantry_id": "afc0d248-13c8-4156-a88f-e3ab11b2127a",
-                    "pantryName": "testAPI"
-                }
-            ]
-        },
-        {
-            "date": "2024-02-07",
-            "pantryInfo": [
-                {
-                    "pantry_id": "3",
-                    "pantryName": "pantry3"
-                },
-                {
-                    "pantry_id": "4",
-                    "pantryName": "pantry4"
-                },
-                {
-                    "pantry_id": "5",
-                    "pantryName": "pantry5"
+                    "pantryName": "Cucumber",
+                    "doc_id": "GKXeGtErZemVuGQVurCB"
                 }
             ]
         }
