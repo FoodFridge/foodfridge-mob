@@ -30,7 +30,7 @@ final class ScanItemViewModel: ObservableObject {
     @Published var recognizeMultipleItems = false
     @Published var scanType: ScanType = .text
     @Published var recognizedItems: [RecognizedItem] = []
-    @Published var pantryItems: [PantryItem] = PantryItem.mockPantryItems
+    @Published var pantryItems = [PantryItem]()
     
     let sessionManager: SessionManager
     

@@ -19,23 +19,11 @@ class GetPantry {
         }
     
     
-    func getPantry(of userTimeZone: String = "America/New_York") async throws  -> [PantryItem] {
+    func getPantry() async throws  -> [PantryItem] {
         
         let decoder = JSONDecoder()
         
-        /*
-        guard let url = Bundle.main.url(forResource: "Pantry", withExtension: "json"),
-              let data = try? Data(contentsOf: url) else {
-            print("JSON file was not found")
-            return PantryItem.mockPantryItems
-        }
-        
-        // Print the JSON string for debugging
-        let jsonString = String(data: data, encoding: .utf8)
-        print("pantry JSON String: \(jsonString ?? "N/A")")
-        */
-        
-        
+    
         do {
            
             guard let token = sessionManager.getAuthToken() else {
@@ -51,19 +39,18 @@ class GetPantry {
             
             guard let url = URL(string: urlEndpoint) else
             { throw FetchError.invalidURL }
+            //print("get pantry url = \(url)")
             
+            let userTimeZone  = getTimeZone()
             
-            let requestBody = try? JSONSerialization.data(withJSONObject: ["User-Timezone": userTimeZone ], options: [])
-            
-            //JSON data to be sent to the server
+            //token and userTimeZone to be sent to the server
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
-            request.httpBody = requestBody
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
             
             
-            let (data, response) = try await URLSession.shared.data(from: url)
+            let (data, response) = try await URLSession.shared.data(for: request)
             
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
             print("DEBUG: statusCode =  \(response)")
@@ -81,4 +68,8 @@ class GetPantry {
 
     }
     
+    func getTimeZone() -> String {
+            let timeZone = TimeZone.current.identifier
+            return timeZone
+        }
 }

@@ -87,14 +87,14 @@ class GetIngredients {
             let (data, response) = try await URLSession.shared.data(for: request)
                    
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
-            print("DEBUG: statusCode =  \(response)")
+           // print("DEBUG: statusCode =  \(response)")
             
             let jsonData = try decoder.decode(IngredientData.self, from: data)
             //get all ingredients
             //self.ingredients = jsonData.data
             // get all ingredients by type
             self.ingredientsByType = Dictionary(grouping: jsonData.data, by: { $0.type })
-            print("jsondata = \(ingredientsByType)")
+           // print("jsondata = \(ingredientsByType)")
             return self.ingredientsByType
             
         } catch {

@@ -35,7 +35,7 @@ class GetFavoriteRecipe {
             
             guard let url = URL(string: urlEndpoint) else
             { throw FetchError.invalidURL }
-            print("get fave url = \(url)")
+           // print("get fave url = \(url)")
             
             var request = URLRequest(url: url)
                    request.httpMethod = "GET"
@@ -45,7 +45,7 @@ class GetFavoriteRecipe {
                    
             let jsonData = try decoder.decode(FavoriteRecipeResponse.self, from: data)
             
-            print("decoded data = \(jsonData)")
+           // print("decoded data = \(jsonData)")
             
             // Print the JSON string for debugging
            // if let responseText = String(data: data, encoding: .utf8){
@@ -53,9 +53,9 @@ class GetFavoriteRecipe {
            // }
             
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
-            print("DEBUG: statusCode =  \(response)")
+            //print("DEBUG: statusCode =  \(response)")
             let jsonString = String(data: data, encoding: .utf8)
-            print("favorite recipes JSON String: \(jsonString ?? "N/A")")
+            //print("favorite recipes JSON String: \(jsonString ?? "N/A")")
             
             
             return jsonData.data
