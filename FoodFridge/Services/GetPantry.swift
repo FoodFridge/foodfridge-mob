@@ -6,12 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
+
 class GetPantry {
     
     var pantryItems:[PantryItem] = [PantryItem]()
     
-    static func getPantry(of userId: String = "test user") async throws  -> [PantryItem] {
-        let urlEndpoint = ("\(AppConstant.getPantryURLString)/\(userId)")
+    let sessionManager: SessionManager
+        
+        init(sessionManager: SessionManager) {
+            self.sessionManager = sessionManager
+        }
+    
+    
+    func getPantry(of userTimeZone: String = "America/New_York") async throws  -> [PantryItem] {
+        
         let decoder = JSONDecoder()
         
         /*
@@ -28,8 +37,31 @@ class GetPantry {
         
         
         do {
+           
+            guard let token = sessionManager.getAuthToken() else {
+                throw SessionError.missingAuthToken
+            }
+            
+            
+            guard let localID = sessionManager.getLocalID() else {
+                throw SessionError.missingLocalID
+            }
+            
+            let urlEndpoint = ("\(AppConstant.getPantryURLString)/\(localID)")
+            
             guard let url = URL(string: urlEndpoint) else
             { throw FetchError.invalidURL }
+            
+            
+            let requestBody = try? JSONSerialization.data(withJSONObject: ["User-Timezone": userTimeZone ], options: [])
+            
+            //JSON data to be sent to the server
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.httpBody = requestBody
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
             
             let (data, response) = try await URLSession.shared.data(from: url)
             

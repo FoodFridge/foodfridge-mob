@@ -4,279 +4,1798 @@
     "message": "Data retrieved successfully",
     "data": [
         {
-            "ingredient_name": "Butter milk",
-            "ingredient_id": "44",
+            "user_id": "T4nptwFqmEOrIYlqBAtYbL7tsYq1",
+            "doc_id": "4IhPEpQYMIctgiiM9JAC",
+            "ingredient_name": "testAddPantry",
+            "ingredient_type_code": "01"
+        },
+        {
+            "user_id": "T4nptwFqmEOrIYlqBAtYbL7tsYq1",
+            "doc_id": "4mSnkpybhBxWrX6rXID7",
+            "ingredient_name": "testAddPantry2",
+            "ingredient_type_code": "01"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "0MdZ3Mw1skysDKmN7FOF",
+            "ingredient_name": "Onion Seeds",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "0P1ublvivKmzdAVG6xZE",
+            "ingredient_name": "Coriander Powder",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "0dmObvLkyVeY0mQJfH6E",
+            "ingredient_name": "Avocado",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "2KDQCGEJLADbCLCuGCCR",
+            "ingredient_name": "Green Cardamom",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "2MmvsWpAjumjYrojqiEL",
+            "ingredient_name": "Buttermilk",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "2PBDH7l2oa9QTRPMvB2q",
+            "ingredient_name": "Pigweed",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "2bbKla8kFW9A421pyFi3",
+            "ingredient_name": "Cream",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "2ldzUUkWEpVXUrh8MxIj",
+            "ingredient_name": "Lotus Stem",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "2yNeSqKuN0HvHQxyRs6J",
+            "ingredient_name": "Watermelon",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "3E2SyKljF3jx8VPQgIIQ",
+            "ingredient_name": "Oats",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "3NN3l60IYsGKcaOPRQGR",
+            "ingredient_name": "Colocasia",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "3V6MGB2mzq0nPLn0JUHE",
+            "ingredient_name": "Guava",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "3gCnaAawwkyDew3MvDFE",
+            "ingredient_name": "White Sugar",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "3oonhHR74xqNw25F5Ido",
+            "ingredient_name": "Eggplant",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "3yD6ylhsMQnBUj3RJo04",
+            "ingredient_name": "Lychee",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "406B8UsuhdGq8IW3BPZD",
+            "ingredient_name": "Castor Sugar",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "4A5d7YMQ7NHX0Ebaq39L",
+            "ingredient_name": "Chives",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "4YyvN50uV3dsSHw9GAhF",
+            "ingredient_name": "Black Pepper",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "4cu1aa0QelycSAnXw5Hp",
+            "ingredient_name": "Flounder",
             "ingredient_type_code": "03"
         },
         {
-            "ingredient_name": "White sugar",
-            "ingredient_id": "83",
-            "ingredient_type_code": "05"
-        },
-        {
-            "ingredient_name": "Black pepper",
-            "ingredient_id": "82",
-            "ingredient_type_code": "05"
-        },
-        {
+            "user_id": "Not specified",
+            "doc_id": "4kO8Kajblya4OgvVI52I",
             "ingredient_name": "Duck",
-            "ingredient_id": "12",
             "ingredient_type_code": "02"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "4lXgQfvhjoDbP6gkQqKI",
+            "ingredient_name": "Capsicum",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "4mqtgLY7SXV5YULHsybG",
+            "ingredient_name": "Mackerel",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "5Kdsa2V2HcFZXaT7dZVF",
+            "ingredient_name": "Clams",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "5LVKF0d6vJDpqigicbAh",
             "ingredient_name": "Croutons",
-            "ingredient_id": "23",
-            "ingredient_type_code": "01"
+            "ingredient_type_code": "07"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "5YlQV3uDWhELJXAxnLnz",
             "ingredient_name": "Tomato",
-            "ingredient_id": "62",
-            "ingredient_type_code": "04"
+            "ingredient_type_code": "09"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "5i8xWBNDMl8jsAMP5Ea0",
+            "ingredient_name": "Broccoli",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "5nBkXbtrRPqIW7kPtlX7",
             "ingredient_name": "Cabbage",
-            "ingredient_id": "63",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "5vEUlYyQce2u3oLxpFUN",
+            "ingredient_name": "Onion",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "610gnhhKjCcJn3NzfNQ0",
+            "ingredient_name": "Radish",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "62DGeQU8249GpH2iqFs5",
+            "ingredient_name": "Mussels",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "6HeOhBnu25lMrFoe0QOr",
+            "ingredient_name": "Fenugreek",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "6ZMAp8evXw3d15FvJBZD",
+            "ingredient_name": "Bean Sprout",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "6eNMjnGOvN4BAahb7eeg",
+            "ingredient_name": "Shallots",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "6et7kqjMiMEshS8sTVBg",
+            "ingredient_name": "Indian Gooseberry",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "6v4j7MgYgzM4aUh7JHDe",
+            "ingredient_name": "Mullet",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "70HMgJF8fIgukg92WCh4",
+            "ingredient_name": "Rice",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "77XNRrkDf6qfFw4gRDoc",
+            "ingredient_name": "Pressed Rice",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "7Cas1CHq54hgGhEkNWrR",
+            "ingredient_name": "Yogurt",
             "ingredient_type_code": "04"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "7IO8HSCMhtkE01qjWv9I",
+            "ingredient_name": "Grapes",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "7UMI6ktKgY3aKKbgz1Vy",
+            "ingredient_name": "Tamarind",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "7dz96zd6Mg2bLP73dOKs",
+            "ingredient_name": "Black Cumin",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "8Bkn37mLeQoMXh8OGCR2",
             "ingredient_name": "Oyster",
-            "ingredient_id": "17",
-            "ingredient_type_code": "02"
+            "ingredient_type_code": "03"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "8MHox3sBbiRLqAy74Hu4",
+            "ingredient_name": "Pimiento",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "8cNJ3vPWCq68dczmG7yQ",
+            "ingredient_name": "Semolina",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "9Cl0R5uW7Unh1DFbt9Fe",
+            "ingredient_name": "Black-eyed Beans",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "9EXDZToZN0Gepka0zaXd",
+            "ingredient_name": "Barley",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "9J7zheXGcTo7Vi1DMGRw",
+            "ingredient_name": "Lemon Rind",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "9KyGVrifHRDFqepFn2zW",
+            "ingredient_name": "Drumstick",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "9WIPbaWEogUkUeHH5Q2W",
             "ingredient_name": "Squid",
-            "ingredient_id": "18",
-            "ingredient_type_code": "02"
+            "ingredient_type_code": "03"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "9fRwEggzZrWmXh11wBRM",
+            "ingredient_name": "Turmeric",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "9mWasETVesMu5b40aUtr",
+            "ingredient_name": "Cajun Spices",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "AAOcH1F4rdJdFg4K4QZi",
+            "ingredient_name": "Kashmiri Mirch",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "AiGPpbEbKryV3d51qv2P",
+            "ingredient_name": "Garam Masala",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "AjmQEH6MZASyuJj6DHMk",
+            "ingredient_name": "Husked Black Gram",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "AmvwmNaxz5JmF1e5FoYm",
+            "ingredient_name": "Grapefruit",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "AzFopCEvWx3PB5uKTVze",
+            "ingredient_name": "Curry Leaves",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "BQANMN7KOBky2IFj1aBa",
             "ingredient_name": "Grains",
-            "ingredient_id": "40",
-            "ingredient_type_code": "01"
+            "ingredient_type_code": "07"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "BVVJaYbS6SCPSKoaOype",
             "ingredient_name": "Bacon",
-            "ingredient_id": "13",
             "ingredient_type_code": "02"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "BXRaEGeytE4y4HBlnZXB",
+            "ingredient_name": "Artichoke",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Bo86y0Bqmo6feXzTy1nk",
             "ingredient_name": "Quail",
-            "ingredient_id": "10",
             "ingredient_type_code": "02"
         },
         {
-            "ingredient_name": "Pork",
-            "ingredient_id": "01",
-            "ingredient_type_code": "02"
+            "user_id": "Not specified",
+            "doc_id": "C6KwB0pPNIYvfEQtVZWn",
+            "ingredient_name": "Coconut",
+            "ingredient_type_code": "09"
         },
         {
-            "ingredient_name": "Potato",
-            "ingredient_id": "31",
-            "ingredient_type_code": "01"
+            "user_id": "Not specified",
+            "doc_id": "CNYcNnRW9QW9Izycv9kn",
+            "ingredient_name": "Baby Corn",
+            "ingredient_type_code": "08"
         },
         {
-            "ingredient_name": "PorkBelly",
-            "ingredient_id": "14",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Cauliflower",
-            "ingredient_id": "61",
-            "ingredient_type_code": "04"
-        },
-        {
-            "ingredient_name": "Tuna",
-            "ingredient_id": "03",
-            "ingredient_type_code": "02"
-        },
-        {
+            "user_id": "Not specified",
+            "doc_id": "CoI2mqFOyipfgL8zFpvW",
             "ingredient_name": "Strawberry",
-            "ingredient_id": "64",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "CqdwUtBtBZwkrEKPnTGJ",
+            "ingredient_name": "Caramel",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "CsvjPVia9WYb6IhXcPpE",
+            "ingredient_name": "Lemongrass",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "CwtgjVeZu573tu36jzta",
+            "ingredient_name": "Chia Seeds",
+            "ingredient_type_code": "06"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "D4IKZMXvid2FDo9fSlhN",
+            "ingredient_name": "Pork",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "D7CAVEZAws2ku9EOXREu",
+            "ingredient_name": "Blue Cheese",
             "ingredient_type_code": "04"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "DKb1U4tkoWGQggB1S5vi",
+            "ingredient_name": "Capers",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "DSnmrWVlrywyXXe0bHX2",
+            "ingredient_name": "Potato",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "DTpbOxlBQucWquZlqH6M",
+            "ingredient_name": "Pork Belly",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "DUnmgyij0SBlGw7WCzyP",
+            "ingredient_name": "Mango",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "DeNyFQpFOZaD43kRKLrH",
+            "ingredient_name": "Fish Fillet",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Ds6DObSFpwt5SciyMmZ4",
+            "ingredient_name": "Cauliflower",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "DuWFunnJCS8xdlFDLo9B",
+            "ingredient_name": "Carom Seeds",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Dw9Bzeh3sP5MILeE7DCZ",
+            "ingredient_name": "Tuna",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "DxD45C4aWZ4VXoIKOeUo",
+            "ingredient_name": "Chops",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "E3XbHqxam551C4xFdTDE",
+            "ingredient_name": "Chicken Stock",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "EKT32BwpYm8TQqkcKP59",
+            "ingredient_name": "Strawberry",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "EPuE8lyCGioEi6MrGtm4",
+            "ingredient_name": "Whole Bengal Gram",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "EWDrthdGqgSurnxFzIRN",
+            "ingredient_name": "Hung Curd",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "F2Ztuy9s2QxlsGT3FMTH",
+            "ingredient_name": "Fish",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "F5J5DWvMKJdw9nAXK6xM",
             "ingredient_name": "Taro",
-            "ingredient_id": "37",
-            "ingredient_type_code": "01"
+            "ingredient_type_code": "08"
         },
         {
-            "ingredient_name": "Rice noodles",
-            "ingredient_id": "36",
-            "ingredient_type_code": "01"
+            "user_id": "Not specified",
+            "doc_id": "FI5i1Ct1A9Nq0G5iVv6z",
+            "ingredient_name": "Rice Noodles",
+            "ingredient_type_code": "07"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "FMKb1oW6OMZuiuYB9ny0",
+            "ingredient_name": "Marjoram",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "FiG6KQL34O5n3oW3DW2w",
             "ingredient_name": "Granola",
-            "ingredient_id": "39",
-            "ingredient_type_code": "01"
+            "ingredient_type_code": "07"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "G6P9AWhUIlGEp2TCOeJ6",
+            "ingredient_name": "Oregano",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "GCNMDrS7E0UxTMCFpiCO",
+            "ingredient_name": "Cayenne",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "GTYjPj2Zgd6L6JApXXbk",
+            "ingredient_name": "Keema",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "GXR3pCtCxrSX0MqK64JO",
+            "ingredient_name": "Icing Sugar",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Gq7JarhrqJ5hLX6CRK50",
+            "ingredient_name": "Orange Rind",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "GuzZ5kzhxiTDIkNXsSWc",
             "ingredient_name": "Ham",
-            "ingredient_id": "09",
             "ingredient_type_code": "02"
         },
         {
-            "ingredient_name": "All purpose flour",
-            "ingredient_id": "24",
-            "ingredient_type_code": "01"
+            "user_id": "Not specified",
+            "doc_id": "GzgkeVtuoEpqveh8PmGp",
+            "ingredient_name": "All Purpose Flour",
+            "ingredient_type_code": "07"
         },
         {
-            "ingredient_name": "Chili powder",
-            "ingredient_id": "84",
-            "ingredient_type_code": "05"
-        },
-        {
-            "ingredient_name": "Jasmine rice",
-            "ingredient_id": "28",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Goat",
-            "ingredient_id": "15",
+            "user_id": "Not specified",
+            "doc_id": "HCfwhh589QXfL4VxmyR3",
+            "ingredient_name": "Meat Stock",
             "ingredient_type_code": "02"
         },
         {
-            "ingredient_name": "Cheddar cheese",
-            "ingredient_id": "42",
+            "user_id": "Not specified",
+            "doc_id": "HSQ6xEIfC3lJUphoh3PY",
+            "ingredient_name": "Lemon",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "HTYLW5Fl0svHPf6iQ7az",
+            "ingredient_name": "Ash Gourd",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "I6JwsLZfBtJVmrRMWlOa",
+            "ingredient_name": "Puffed Rice",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "IJQo2WBXwndWPUuEwGMX",
+            "ingredient_name": "Red Chilli",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "IsqO9PvdupmL9eRC2pIE",
+            "ingredient_name": "Black Cardamom",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "IuXVa5ignb1z5LTHs9TI",
+            "ingredient_name": "Cherry Tomatoes",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "J9bkPuwuCySgLUpfnI07",
+            "ingredient_name": "Prawns",
             "ingredient_type_code": "03"
         },
         {
-            "ingredient_name": "Whipping cream",
-            "ingredient_id": "45",
-            "ingredient_type_code": "03"
-        },
-        {
-            "ingredient_name": "Oatmeal",
-            "ingredient_id": "25",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Pita bread",
-            "ingredient_id": "27",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Egg noodles",
-            "ingredient_id": "35",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Tortilla flour",
-            "ingredient_id": "30",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Chicken",
-            "ingredient_id": "02",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Sweet potato",
-            "ingredient_id": "32",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Salt",
-            "ingredient_id": "81",
-            "ingredient_type_code": "05"
-        },
-        {
-            "ingredient_name": "Crabmeat",
-            "ingredient_id": "19",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Fatty tuna",
-            "ingredient_id": "04",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Lobster",
-            "ingredient_id": "16",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Chicken liver",
-            "ingredient_id": "08",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Cow milk",
-            "ingredient_id": "41",
-            "ingredient_type_code": "03"
-        },
-        {
-            "ingredient_name": "Salmon",
-            "ingredient_id": "05",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Wholewheat flour",
-            "ingredient_id": "38",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Lamp",
-            "ingredient_id": "11",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Tortilla corn",
-            "ingredient_id": "29",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Beef",
-            "ingredient_id": "07",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Goat chesse",
-            "ingredient_id": "43",
-            "ingredient_type_code": "03"
-        },
-        {
-            "ingredient_name": "Turkey",
-            "ingredient_id": "06",
-            "ingredient_type_code": "02"
-        },
-        {
-            "ingredient_name": "Wasabi",
-            "ingredient_id": "85",
-            "ingredient_type_code": "05"
-        },
-        {
-            "ingredient_name": "Pumpkin",
-            "ingredient_id": "34",
-            "ingredient_type_code": "01"
-        },
-        {
-            "ingredient_name": "Apple",
-            "ingredient_id": "65",
+            "user_id": "Not specified",
+            "doc_id": "JHnSRe7RLmJgizuiMt25",
+            "ingredient_name": "Feta Cheese",
             "ingredient_type_code": "04"
         },
         {
-            "ingredient_name": "Bread",
-            "ingredient_id": "21",
-            "ingredient_type_code": "01"
+            "user_id": "Not specified",
+            "doc_id": "JrNq6Hp0javERz7Y5waU",
+            "ingredient_name": "Chili Powder",
+            "ingredient_type_code": "10"
         },
         {
-            "ingredient_name": "Black cod",
-            "ingredient_id": "20",
+            "user_id": "Not specified",
+            "doc_id": "KTRRFDFKDivurxyNVsBF",
+            "ingredient_name": "Ginger",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "KUYcza24PZuctfYAh4GM",
+            "ingredient_name": "Cinnnamon",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Ka4HgWICqH2NJtm1q3Ng",
+            "ingredient_name": "Hilsa",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "KcRa98JigcJK2x65y1Cq",
+            "ingredient_name": "Mutton Liver",
             "ingredient_type_code": "02"
         },
         {
-            "ingredient_name": "Winter squash",
-            "ingredient_id": "33",
-            "ingredient_type_code": "01"
+            "user_id": "Not specified",
+            "doc_id": "KcxQiHAhnFiB93TUO6hv",
+            "ingredient_name": "Yellow Chillies",
+            "ingredient_type_code": "10"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "LI2W3hZdVRH9R9xepkbU",
+            "ingredient_name": "Yam",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "LJK82QuLMYu4XUYlLwtT",
+            "ingredient_name": "Olives",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "LKUH6UqTWfAGSaru1CRg",
+            "ingredient_name": "Bengal Gram (Split)",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "LNEjXxLDCB2Sfj6w3c4Q",
+            "ingredient_name": "Apricots",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "LdB51ebILTuIm0e58b5y",
+            "ingredient_name": "Khoya",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "LfI1jF2nr5WcTV1DyCma",
+            "ingredient_name": "Jasmine Rice",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "LqJkNjMRZZ3lsuKXFPIN",
+            "ingredient_name": "Mulberry",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Lsl9xZnVkfFs20eagAyF",
+            "ingredient_name": "Water Chestnut Flour",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "LtfsvWm1Wz0bpWK0UrU4",
+            "ingredient_name": "Brie Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "M5LZk5bowDOyYd5XKWSm",
+            "ingredient_name": "Kidney Meat",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "MJgD1rayOaE8XLRlmOee",
+            "ingredient_name": "Aborio Rice",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "MSWPgSi3eQDdUW6hvh6f",
+            "ingredient_name": "Raisins",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "MqFbU1UIsHsTbRO9ecx3",
+            "ingredient_name": "Black Gram",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "MtNblC9PelTLgr9X7lqi",
+            "ingredient_name": "Custard Apple",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "MtoFzwX9uxdLj52vcpdy",
+            "ingredient_name": "Blueberries",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "NSxd8gSMiNEIdbVcFx7B",
+            "ingredient_name": "Goat",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "NWa6desVP8eBEFv8NfOG",
+            "ingredient_name": "Celery",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "NYWB4bzUe34xiMPFlEpA",
+            "ingredient_name": "Couscous",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "NypBfmC0DHkXY3wA3tQx",
+            "ingredient_name": "Cheddar Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "O1SZifiryYnYCh0ZXlnQ",
+            "ingredient_name": "Sorrel Leaves",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "OA136mdKbHQNEg6h6hHN",
+            "ingredient_name": "Whipping Cream",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "OKOwmcnBxyyflqHEMhHJ",
+            "ingredient_name": "Broad Beans",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Om2UrySBwRHaEVHjJjTP",
+            "ingredient_name": "Cape Gooseberry",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "PErtDW1Ga0HuLiWDyfDQ",
+            "ingredient_name": "Pomfret",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "PKficgxuKnBn2mOUgwFg",
+            "ingredient_name": "Oatmeal",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "PhFV41ps9WnRIYK41BSy",
+            "ingredient_name": "Spring Onion",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "PnRy1DZVaBt3lWCQx5tE",
+            "ingredient_name": "Garlic",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "PxepOkksYtn3Co8worPz",
+            "ingredient_name": "Tapioca",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "QFoNGrxI2kq8oPIvBw6l",
+            "ingredient_name": "Jamun",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "QYv9PXUJUTrAKvbzHjdC",
+            "ingredient_name": "Clarified Butter",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "QrO36JLAvOAqMg3nC8Fr",
+            "ingredient_name": "Amaranth",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Qxc5M0PVKT63a944PjWI",
+            "ingredient_name": "Sardines",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "QxnxupMPb5iGlq07eWQK",
+            "ingredient_name": "Cherkins",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "QyUUKBQ4daCnDJvSotMc",
+            "ingredient_name": "Pita Bread",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "RChTPUtBR8j8khuZrVrO",
+            "ingredient_name": "Paprika",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "RltvRBBIrjvl5vjvN8Qj",
+            "ingredient_name": "Egg Noodles",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "SM6pd6YvuBZPVm8PnJ2u",
+            "ingredient_name": "Basmati Rice",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Sg8sp7ZXI4LMIg2aWL8b",
+            "ingredient_name": "Skinned Chicken",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Sm1VXj2YfPGvXMQfy6RZ",
+            "ingredient_name": "Kidney Beans",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "T4HmQa4xF7JJFze4vbOd",
+            "ingredient_name": "Mushroom",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "TAGECPpn8E29cloXj36E",
+            "ingredient_name": "Tortilla Flour",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "TkK6inwFlGfu1oJftRWS",
+            "ingredient_name": "Sugar Candy",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "TuydQOfTwAOiVgWlk1D3",
+            "ingredient_name": "Chicken",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "TwVQwaj3NsSzhdPUb6DJ",
+            "ingredient_name": "Raw Mango Powder",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "TxCsYz1sLn5WNWiyFwmc",
+            "ingredient_name": "Bay Leaf",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "UWWAPlAzT2d52L6eqEm2",
+            "ingredient_name": "Sweet Potatoes",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "UfWDGxn1b8YtEZRbec5b",
+            "ingredient_name": "Pear",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Ul6VRVrrlh4lLJX4GWBY",
+            "ingredient_name": "Gruyere Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "UyCYAlZAB75TXLIbf3NF",
+            "ingredient_name": "Lady Finger",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "VQ8v8GDeuIY4HzkGKEgq",
+            "ingredient_name": "Jowar",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "VjYbJe9EFwGe77iRSFH6",
+            "ingredient_name": "Bamboo Shoot",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "W5SXZUpoIp2zjTNKjHgV",
+            "ingredient_name": "Gram Flour",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "WBYvc76oUtEeTCWMlaQl",
+            "ingredient_name": "Round Gourd",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "WTqK7e6E5qnkzaMP8HqN",
+            "ingredient_name": "Pineapple",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "WjRLv1rvUnlRgzwGPZjf",
+            "ingredient_name": "Leek",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Wrtlhj8SGzz8RxMhAKwJ",
+            "ingredient_name": "Whole Wheat Flour",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "WyE12noQF6uwIULzKGDg",
+            "ingredient_name": "Plum",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "X64X3GFdyLX2SYl2GUPw",
+            "ingredient_name": "Shrimp",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "XEmkhxqmBam4WL64aGPx",
+            "ingredient_name": "Salt",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "XtdNnD7DhA1bDAGv1JoW",
+            "ingredient_name": "Muesli",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "XuUmIznBI26KZjG4U5kF",
+            "ingredient_name": "Shark",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "YYEzpnR6qOQh9V3Cydxo",
+            "ingredient_name": "Water Chestnut",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Yq4yiQIyJftykdGUzwlk",
+            "ingredient_name": "Perch",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "Z7NhvLRrB6SV6vhrwau0",
+            "ingredient_name": "Cumin Seeds",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "b0ys3S5j8ZmhMX2XfMpy",
+            "ingredient_name": "Green Chillies",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "b8LdwH7a45pKccwELRvP",
+            "ingredient_name": "Mutton",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "bjXSheWGAefq6INM0OQ9",
+            "ingredient_name": "Cream Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "by9SuargJr63ruGGw8t5",
+            "ingredient_name": "French Beans",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "cfIixE4FuIoK7ZOn9yrO",
+            "ingredient_name": "Crab Meat",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "cg5UfzbL0UXq9PUVNxhN",
+            "ingredient_name": "Cheddar Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "chq4wTb7crAALlOgknHf",
+            "ingredient_name": "Asparagus",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "ciPxKKOwQWIXQMr8xb4R",
+            "ingredient_name": "Barnyard Millet",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "ckguVpfLyULSIridmdK2",
+            "ingredient_name": "Fatty Tuna",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "cxmjIa6CfQ3wY7vu6EP2",
+            "ingredient_name": "Lobster",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "d5bV7YgtQMOXWpIHd8Zn",
+            "ingredient_name": "Galangal",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "dCJqb2XDYBdENb6JL4y2",
+            "ingredient_name": "Sugar",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "dHDX8G1Qy5gfi2cD4CV8",
+            "ingredient_name": "Corn",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "dHvhHY0KFwg11xLURafL",
+            "ingredient_name": "Lemon Juice",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "dPAthNbaSP3tuCOCyYl3",
+            "ingredient_name": "Jackfruit",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "dSv2wcZxtMDgYfveJUu9",
+            "ingredient_name": "Fennel",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "dVdCv80xZPBTa7AGnk1J",
+            "ingredient_name": "Orange",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "dj9crZrnz0B4NGiUljSE",
+            "ingredient_name": "Thyme",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "dxmNN6LrZkxINO6znv4N",
+            "ingredient_name": "Condensed Milk",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "e0H9dY7G92PmhJ2xallC",
+            "ingredient_name": "Cornmeal",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "eE6rOA2zVMRkFpYsfKCa",
+            "ingredient_name": "Tulsi",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "eI27yPvcDSpqU2PJJuLH",
+            "ingredient_name": "Golden Syrup",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "eUJiDe7HnlGEZcpZ7s2T",
+            "ingredient_name": "Mustard Leaves",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "ebdAR0xDvlfaADMqHtwc",
+            "ingredient_name": "Lotus Root",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "eeizjEejFY8M7pUxsRR3",
+            "ingredient_name": "Cloves",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "ekly9LmXSnkHfMb2bw7f",
+            "ingredient_name": "Star Anise",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "f1LYXMYqqdRmDZyXmiCy",
+            "ingredient_name": "Rosemary",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "f4t0gnpNBbOAtTafSSxf",
+            "ingredient_name": "Gouda Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "fBcRvpvh8zimutMGttNZ",
+            "ingredient_name": "Caraway Seeds",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "fauokZQG3ceKB6JL4DTA",
+            "ingredient_name": "Chicken Liver",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "gFe7XlzjuLscPRZyRbe4",
+            "ingredient_name": "Whole Brown Lentils",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "gRF9YFfe3q6nMwLC8Z4e",
+            "ingredient_name": "Cow Milk",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "gUXbIUEKasXTAaSIDuhs",
+            "ingredient_name": "Cottage Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "gXs72IszBluJuzturtLO",
+            "ingredient_name": "Banana",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "gkqy061zfFVL0tmaCvB1",
+            "ingredient_name": "Bitter Gourd",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "gsI1X7iyv7l7G5RmDxaR",
+            "ingredient_name": "Cat Fish",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "hV3mom2ePbmqHYYHLRTx",
+            "ingredient_name": "Salmon",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "hcJjxmw4XrFKXM9wBsIv",
+            "ingredient_name": "Nasturtium",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "hm4E5dF18tcztYScKeKn",
+            "ingredient_name": "Bell Pepper",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "j9ygMdO22LnkzUopwMMn",
+            "ingredient_name": "Sage",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "jdp7i6LeXihWYQJZFOjq",
+            "ingredient_name": "Dates",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "k0qs6KEK5QPGI7KGbctG",
+            "ingredient_name": "Dried Fenugreek Leaves",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "kAU2JegGYvBD3ALVcMzp",
+            "ingredient_name": "Spinach",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "kLtwjjFto7PBprQy4rn6",
+            "ingredient_name": "Pearl Spot",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "khwyRYGvuzhJJFWvs59P",
+            "ingredient_name": "Anchovies",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "koIVzYnocEESo5SPWtui",
+            "ingredient_name": "Mascarpone Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "lgltYXmW2zq7JDF5PZUW",
+            "ingredient_name": "Wholewheat Flour",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "lkXHqVPnZPL2u6H0Ghw3",
+            "ingredient_name": "Partridge",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "lkiCOx6Vf5pvPRsMF3J0",
+            "ingredient_name": "Fenugreek Seeds",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "lsQPu2Ut4n4IkpJyokTW",
+            "ingredient_name": "Lamp",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "m23p2bfH1ZVzfheWh9xj",
+            "ingredient_name": "Asafoetida",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "mGx7HyVJGU9JPYmC9xdr",
+            "ingredient_name": "Mint Leaves",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "mRP0NIeJsYao7UotkCDT",
+            "ingredient_name": "Pigeon Pea",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "msUtFayqJDUTrpbzpr7a",
+            "ingredient_name": "Parsley",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "mt7t3tYxuJUOUMavitVf",
+            "ingredient_name": "Butter",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "n5GVvAHSFKs3IfTIDpjg",
+            "ingredient_name": "Mustard Powder",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "n6n8xrqF1AU6UEZA72jS",
+            "ingredient_name": "Horseradish",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "nCowcWb8elgLZHHwf6bK",
+            "ingredient_name": "Pomegranate",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "nE85iMyh4AoDieyZcWDx",
+            "ingredient_name": "Pearl Millet",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "nFrHKMkBwLqaosPkWy3w",
+            "ingredient_name": "Zucchini",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "nKNgZeaymMCOV7iLUUAk",
+            "ingredient_name": "Tortilla Corn",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "nMIeNAIpkU5wAFTuYWPH",
+            "ingredient_name": "Cuttler Fish",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "nc7W2k70daXeyfipsCRy",
+            "ingredient_name": "Green Gram",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "nzOLeFytked2hPmOM3OH",
+            "ingredient_name": "Cane Sugar",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "o1ucN4vQ2UupUd8Y9nIx",
+            "ingredient_name": "Canala Oil",
+            "ingredient_type_code": "06"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "osCO0NMsKhegN0AKBKby",
+            "ingredient_name": "Snake Beans",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "oycP7LSzU5EXJtsVW4yG",
+            "ingredient_name": "Buck Wheat",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "p0TruCc2arr7Ohz96O1J",
+            "ingredient_name": "Finger Millet",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "p0nvfXT39ascWAoQeS6a",
+            "ingredient_name": "Rocket Leaves",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "p9xoCBzg0sTrxE1SYy4h",
+            "ingredient_name": "Cherry",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "pLxm1jZ3ClPILQeM0maA",
+            "ingredient_name": "Kiwi",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "pQs4GfLNVAGpcoqu5yLE",
+            "ingredient_name": "Peach",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "pkaUql64hNjYOPLPYvVJ",
+            "ingredient_name": "Ridge Gourd",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "q2OOIwS6QVUQmST9pNz6",
+            "ingredient_name": "Beef",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "q4uR1egHPVVWRvbfumsG",
+            "ingredient_name": "Figs",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "qTbuEN8XgSzNolAmcNi4",
+            "ingredient_name": "Brown Rice",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "qjK5gkO32WdF3t6gPwOE",
+            "ingredient_name": "Parmesan Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "qkhQIaiysKrUtvFpNThd",
+            "ingredient_name": "Goat Chesse",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "qqBC6f5IDsxeWA86pmXc",
+            "ingredient_name": "Turkey",
+            "ingredient_type_code": "02"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "qtXOdlE12yvOOWByr8Eu",
+            "ingredient_name": "Lettuce",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "r1CkcnRhtPZbhuA9oglw",
+            "ingredient_name": "Bottle Gourd",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "r8c3E1tR6DqJbuhXcXj6",
+            "ingredient_name": "Wasabi",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "rHgvohdtf5JTzKZFIKKD",
+            "ingredient_name": "Provolone Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "rqeGKMA2r1LvG1KHFrjz",
+            "ingredient_name": "Green Peas",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "sUXJ3SMpeNLuUzVxBwS5",
+            "ingredient_name": "Beetroot",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "sjhefO4pLHrONrLrI0Io",
+            "ingredient_name": "Carrot",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "svLN1eOC8Fpt2CQdqjs5",
+            "ingredient_name": "Haddock",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "t96XWUlbWxdWilrRHOTN",
+            "ingredient_name": "Currant",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "tAfTLSJz6zYHHiKaL4G6",
+            "ingredient_name": "Kaffir Lime",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "tLD6TckQ3QeKCqThieqm",
+            "ingredient_name": "Pumpkin",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "u0oLRHVpskzVvBokhidy",
+            "ingredient_name": "Aniseed",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "uRUmR04LNT1lm3gr0a8F",
+            "ingredient_name": "Sultana",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "vEOUpk0b1Fx173YF2NC9",
+            "ingredient_name": "Plantain",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "vVClo9FlwJWfGtXK7o5w",
+            "ingredient_name": "Apple",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "vVRqqdVZjmsSJRfj7XCW",
+            "ingredient_name": "Basil Leaf",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "vYq4L3di5JlmmJO85L9Z",
+            "ingredient_name": "Jaggery",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "vcaNYv6LXTpZ3ghUhcTY",
+            "ingredient_name": "Cluster Beans",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "vzbivCiVoWvrObVYmA2j",
+            "ingredient_name": "Bread",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "w7kQk1XYdQqrlmgGIm4v",
+            "ingredient_name": "Honey",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "w8dWOTw9PwnKAKUlnqAU",
+            "ingredient_name": "Black Cod",
+            "ingredient_type_code": "03"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "w90pqtPfExyzI95cggg2",
+            "ingredient_name": "Chickpeas",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "wwL4UbE3ZPjjh1FYqXDK",
+            "ingredient_name": "Jalapeno",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "xHgWH3YETX9dn3IzPoXt",
+            "ingredient_name": "Mace",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "xRKLKxBmrvblxzYZbLJ6",
+            "ingredient_name": "Bok Choy",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "xc0GLmgoNz1kq9A2kjf9",
+            "ingredient_name": "Cranberry",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "xjATxASDebkAvtADPJJg",
+            "ingredient_name": "Nutmeg",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "xlcwWijVDxLTFj3Dp6RE",
+            "ingredient_name": "Winter Squash",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "xn3laNnrUVdMq6zogtYJ",
+            "ingredient_name": "Dry Ginger Powder",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "y8q9usHifiK1SWuixOIN",
+            "ingredient_name": "Papaya",
+            "ingredient_type_code": "09"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "yGyX8RBxvY6jBjMv6gS1",
+            "ingredient_name": "Turnip",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "yHfpazqoKm90F49h8K9R",
+            "ingredient_name": "Mozzarella Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "yNzendCU88qWB4tSJz1u",
+            "ingredient_name": "Black Beans",
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "yVSWOK6CaVb45efPf7BY",
             "ingredient_name": "Pasta",
-            "ingredient_id": "26",
-            "ingredient_type_code": "01"
+            "ingredient_type_code": "07"
         },
         {
+            "user_id": "Not specified",
+            "doc_id": "ykcZ5av57y9yZV4qvIAU",
+            "ingredient_name": "Shitake Mushroom",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "z0Q6mZjt7yOJrgngSmly",
+            "ingredient_name": "Coriander Seeds",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "z3HnPSdrs5weSiE3XqiY",
+            "ingredient_name": "Acacia",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "z9Et4EgKcoahryAAdBOE",
+            "ingredient_name": "Saffron",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "zDnA5Uf42CFOomd69sL9",
             "ingredient_name": "Cornbread",
-            "ingredient_id": "22",
-            "ingredient_type_code": "01"
+            "ingredient_type_code": "07"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "zNiflHQF7GeQfUH2iyjs",
+            "ingredient_name": "Brown Sugar",
+            "ingredient_type_code": "11"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "zb7gKLwERXoVEiK52gk4",
+            "ingredient_name": "Ricotta Cheese",
+            "ingredient_type_code": "04"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "zkQVe2E52yE0uPY5ovrW",
+            "ingredient_name": "Dill",
+            "ingredient_type_code": "10"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "zw6kYJpW8faIYcfMb2QA",
+            "ingredient_name": "Cucumber",
+            "ingredient_type_code": "08"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "19oAaqXaiV8VCDumr0rE",
+            "ingredient_name": "Tomato sauce",
+            "ingredient_type_code": "05"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "pdO8WHdqiSXPIQ9U9lhm",
+            "ingredient_name": "Fig jam",
+            "ingredient_type_code": "05"
+        },
+        {
+            "user_id": "Not specified",
+            "doc_id": "uLFYml2KAf8YsUbKmtbK",
+            "ingredient_name": "Deep sea seaweed",
+            "ingredient_type_code": "12"
         }
     ]
 }

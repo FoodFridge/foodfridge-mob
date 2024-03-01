@@ -127,7 +127,7 @@ final class ScanItemViewModel: ObservableObject {
     
     func getPantry() {
         Task {
-          try await pantryItems = GetPantry.getPantry()
+          try await pantryItems = GetPantry(sessionManager: sessionManager).getPantry()
         }
     }
 }

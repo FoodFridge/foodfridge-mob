@@ -23,9 +23,11 @@ class AddPantry {
         
         //Encode request body to JSON data
         do {
+            /*
             guard let token = sessionManager.getAuthToken() else {
                 throw SessionError.missingAuthToken
             }
+             */
             
             guard let localID = sessionManager.getLocalID() else {
                 throw SessionError.missingLocalID
