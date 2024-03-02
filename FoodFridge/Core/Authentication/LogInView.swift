@@ -16,7 +16,6 @@ struct LogInView: View {
     @StateObject var vm = LogInWithEmailViewModel()
     @State private var userData: LogInResponseData.LogInData = LogInResponseData.MOCKdata.data
     
-    @State private var isLoggedIn = false
     @State private var isPassHidden = true
     
    
@@ -63,34 +62,16 @@ struct LogInView: View {
                             .padding(.trailing, 25)
                             .padding(.top, -20)
                             
-                            
-                            
-                        
                         }
                     }
                 }
                 
                 
                 Button {
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        //dismiss keyboard
-                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                    }
-                    
                     //login user
                     Task {
-                        self.userData = try await LoginWithEmailService().login(email: vm.email, password: vm.password)
-                        if self.userData.token != nil && self.userData.localId != nil {
-                            sessionManager.saveAuthToken(token: userData.token ?? "mockToken")
-                            sessionManager.saveLocalID(id: userData.localId ?? "mockId")
-                            print("saved token = \(String(describing: sessionManager.getAuthToken()))")
-                            print("saved local id = \(String(describing: sessionManager.getLocalID()))")
-                            self.isLoggedIn = sessionManager.isLoggedIn()
-                            if isLoggedIn {
-                                authenthication.updateValidation(success: true)
-                                
-                            }
-                        }
+                        self.userData = try await LoginWithEmailService(sessionManager: sessionManager).login(email: vm.email, password: vm.password)
+                    
                     }
                     
                     

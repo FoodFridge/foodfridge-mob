@@ -90,7 +90,7 @@ class GoogleSignInHelper {
                     
                     
                     print("google signed in")
-                    UserDefaults.standard.set(true, forKey: "googleSignIn")
+                    UserDefaults.standard.set(true, forKey: "userLoggedIn")
                     
                     
                     

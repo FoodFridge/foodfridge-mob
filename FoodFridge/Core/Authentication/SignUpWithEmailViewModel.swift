@@ -19,13 +19,13 @@ class SignUpWithEmailViewModel: ObservableObject {
     
     
     
-    func signUpUser()async throws -> Bool {
+    func signUpUser(sessionManager: SessionManager)async throws -> Bool {
         showProgressView = true
         do {
             //call service class
-            let result =  try await SignUpWithEmail().signUp(email: self.email, password: self.password, name: self.name)
+            let result =  try await SignUpWithEmail(sessionManager: sessionManager).signUp(email: self.email, password: self.password, name: self.name)
             //call log in after sign up
-            self.sessionData = try await LoginWithEmailService().login(email: self.email, password: self.password)
+            self.sessionData = try await LoginWithEmailService(sessionManager: sessionManager).login(email: self.email, password: self.password)
             
             showProgressView = false
             

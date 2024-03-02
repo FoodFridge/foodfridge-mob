@@ -54,7 +54,7 @@ struct SignUpWithEmailView: View {
                     
                     //sign up user
                     Task {
-                        self.isSignUpSuccess = try await vm.signUpUser()
+                        self.isSignUpSuccess = try await vm.signUpUser(sessionManager: sessionManager)
                         if isSignUpSuccess {
                             authenthication.updateValidation(success: true)
                             if vm.sessionData.token != nil && vm .sessionData.localId != nil {

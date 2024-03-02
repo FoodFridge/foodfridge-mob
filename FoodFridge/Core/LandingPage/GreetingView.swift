@@ -16,6 +16,7 @@ struct GreetingView: View {
                 if navigateToLandingPage {
                     // we want Initial view as Landing page this working around to programmatically navigate to landingpage. this file purpose is to fix bug in prompt(tags displaying))
                     LandingPageView()
+                
                 } else {
                     Text("Welcome back, Food Fridie!")
                         .onAppear {
@@ -29,6 +30,9 @@ struct GreetingView: View {
         }
     
 }
+
+
+
 
 #Preview {
     GreetingView()
