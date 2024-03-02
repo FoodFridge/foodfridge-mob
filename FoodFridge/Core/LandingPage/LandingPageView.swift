@@ -101,29 +101,8 @@ struct LandingPageView: View {
                 .padding(4)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
-                        /*
-                        Button {
-                            //log user out
-                            Task {
-                        
-                                self.isSignedOut = try await LogOut.logUserOut()
-                                if self.isSignedOut {
-                                    //remove token and local id
-                                    sessionManager.logout()
-                                    print("logged out")
-                                    authentication.updateValidation(success: false)
-                                    UserDefaults.standard.set(false, forKey: "googleSignIn")
-                                    UserDefaults.standard.set(false, forKey: "appleSignIn")
-                                    
-                                }
-                            }
-                        } label: {
-                            Image(systemName: "rectangle.portrait.and.arrow.forward")
-                                .foregroundColor(Color(.button2))
-                        }
-                         */
-
-                        if sessionManager.isLoggedIn() {
+                     
+                        if  UserDefaults.standard.bool(forKey: "userLoggedIn") {
                             NavigationLink {
                                 //MARK: navigate to Profile view
                                 ProfileView()

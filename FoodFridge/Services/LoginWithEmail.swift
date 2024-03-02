@@ -11,7 +11,13 @@ class LoginWithEmailService: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     
- 
+    let sessionManager: SessionManager
+    
+    init(sessionManager: SessionManager) {
+        self.sessionManager = sessionManager
+    }
+    
+    
     func login(email:String, password: String) async throws -> LogInResponseData.LogInData {
            
            guard let url = URL(string: AppConstant.logInWithEmailURLString) else { throw URLError(.badURL)}
@@ -39,6 +45,23 @@ class LoginWithEmailService: ObservableObject {
                let jsonString = String(data: data, encoding: .utf8)
                print("JSON String: \(jsonString ?? "N/A")")
                
+               //save token in session
+               guard let token = jsonResponse.data.token else{
+                   throw FetchError.serverError
+               }
+               self.sessionManager.saveAuthToken(token: token)
+               let savedLogIntoken = sessionManager.getAuthToken()
+               print("log in token = \(String(describing: savedLogIntoken))")
+               //save id in session
+               guard let localID = jsonResponse.data.localId else{
+                   throw FetchError.serverError
+               }
+               self.sessionManager.saveLocalID(id: localID)
+               let savedLogInlocalID = sessionManager.getLocalID()
+               print("log in token = \(String(describing: savedLogInlocalID))")
+               
+               //update log in state to true
+               UserDefaults.standard.set(true, forKey: "userLoggedIn")
                //if successfully
                print("log in successfully")
                

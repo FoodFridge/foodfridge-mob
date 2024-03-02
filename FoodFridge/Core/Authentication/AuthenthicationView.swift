@@ -79,6 +79,7 @@ struct AuthenthicationView: View {
                                 SignUpWithEmailView()
                             })
                             
+                            
                             LoginButton(title:"Sign in with Email") {
                                 self.logInPageShow = true
                             }

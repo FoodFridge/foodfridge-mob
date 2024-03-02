@@ -57,8 +57,7 @@ struct ProfileSettingView: View {
                             sessionManager.logout()
                             print("logged out")
                             authentication.updateValidation(success: false)
-                            UserDefaults.standard.set(false, forKey: "googleSignIn")
-                            UserDefaults.standard.set(false, forKey: "appleSignIn")
+                            UserDefaults.standard.set(false, forKey: "userLoggedIn")
                         }
                     }catch {
                         print("\(error.localizedDescription)")

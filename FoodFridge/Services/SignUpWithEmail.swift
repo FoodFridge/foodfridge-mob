@@ -9,6 +9,13 @@ import Foundation
 import SwiftUI
 
 class SignUpWithEmail {
+    
+    let sessionManager: SessionManager
+    
+    init(sessionManager: SessionManager) {
+        self.sessionManager = sessionManager
+    }
+    
 
      func signUp(email:String, password: String, name: String)async throws -> Bool {
         
@@ -30,7 +37,7 @@ class SignUpWithEmail {
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
             print("DEBUG: statusCode =  \(response)")
             
-            let _ = try await LoginWithEmailService().login(email: email, password: password)
+            let _ = try await LoginWithEmailService(sessionManager: sessionManager).login(email: email, password: password)
         
           //  let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
             

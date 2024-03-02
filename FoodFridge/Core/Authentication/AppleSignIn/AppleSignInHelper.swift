@@ -104,7 +104,7 @@ class AppleSignInHelper: ObservableObject {
                         
                         print("apple signed in")
                         //update sign in state to true
-                        UserDefaults.standard.set(true, forKey: "appleSignIn")
+                        UserDefaults.standard.set(true, forKey: "userLoggedIn")
                     }
                 }
             }
