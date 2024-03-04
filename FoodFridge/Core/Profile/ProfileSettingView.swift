@@ -57,6 +57,8 @@ struct ProfileSettingView: View {
                             sessionManager.logout()
                             print("logged out")
                             authentication.updateValidation(success: false)
+
+                            UserDefaults.standard.set(false, forKey: "emailSignIn")
                             UserDefaults.standard.set(false, forKey: "userLoggedIn")
                         }
                     }catch {

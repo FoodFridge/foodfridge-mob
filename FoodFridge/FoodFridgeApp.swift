@@ -14,7 +14,7 @@ struct FoodFridgeApp: App {
     @StateObject var authentication = Authentication()
     @StateObject var sessionManager = SessionManager()
     
-
+    @AppStorage("emailSignIn") var isEmailSignIn = false
     @AppStorage("userLoggedIn") var isLoggedIn = false
     
     

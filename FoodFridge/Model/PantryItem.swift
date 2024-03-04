@@ -11,8 +11,9 @@ struct PantryResponse: Codable {
     var data: [PantryItem]
 }
 
-struct PantryItem: Codable, Hashable {
+struct PantryItem: Codable, Hashable, Identifiable {
     //need to name constant "id" to conform to identifiable protocal
+    var id: String?
     var date: String
     var pantryInfo: [Pantry]
 }

@@ -20,6 +20,8 @@ struct PantryView: View {
     @State private var text = ""
     @State private var editingItemId: String?
     
+    
+
     var body: some View {
         VStack {
             
@@ -29,61 +31,59 @@ struct PantryView: View {
                 Text("user time zone identifier = \(userTimeZone.identifier)")
                 
                 List {
-                    ForEach (vm.pantryItems, id: \.self) { pantryItem in
-                        
-                        Section(header: Text(pantryItem.date)) {
-                            
-                            ForEach(pantryItem.pantryInfo, id: \.self) { pantry in
-                                
-                                if pantry.id == editingItemId ?? "id" {
-                                    
+                    ForEach(vm.pantryItems.indices, id: \.self) { pantryIndex in
+                        Section(header: Text(vm.pantryItems[pantryIndex].date)) {
+                            ForEach(vm.pantryItems[pantryIndex].pantryInfo.indices, id: \.self) { pantryItemIndex in
+                                let pantry = $vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex]
+                                if pantry.id == editingItemId {
                                     HStack {
-                                        
-                                        TextField(pantry.pantryName, text: $text, onCommit: {
+                                        TextField("Enter pantry name" , text: $vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName, onCommit: {
+                                            // Dismiss editing when tapping "Done"
+                                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                                             self.editingItemId = nil
-                                            // Handle the commit action here
                                         })
-                                        
-                                        
-                                        Button {
-                                            self.editingItemId = nil
-                                            //MARK: TODO: Save new data to database
+                                        Button(action: {
+                                            //if user edit some text
                                             
+                                                // Save new data to database
+                                                Task {
+                                                    try await EditPantry.edit(itemID: editingItemId ?? "", to: text.isEmpty ?  String(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName) : text)
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // Delay of 0.2 second
+                                                         withAnimation {
+                                                              self.editingItemId = nil
+                                                        }
+                                                    }
+                                                }
+                                           
                                             
-                                        } label: {
+                                        }) {
                                             Text("Done")
                                         }
                                     }
-                                    //.listRowBackground(Color.button_1)
-                                    
                                 } else {
                                     HStack {
-                                        Text(pantry.pantryName)
+                                        Text(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName)
                                         Spacer()
-                                        Button {
+                                        Button(action: {
                                             isEditing = true
                                             self.editingItemId = pantry.id
-                                        } label: {
+                                        }) {
                                             Text("Edit")
-                                            
                                         }
                                     }
-                                    //   .listRowBackground(Color.button_1)
                                 }
                             }
-                            
                             .onDelete { offsets in
-                                vm.deleteItem(at: offsets, from: pantryItem.date)
+                                vm.deleteItem(at: offsets, from: vm.pantryItems[pantryIndex].date)
+                                
                             }
-                            
                             .frame(minHeight: 50)
-                            //.padding()
-                            //.background(Color.button_1)
-                            //.cornerRadius(10)
-                            //.padding(.vertical, 4)
                         }
                     }
                 }
+                
+    
+                 
             }
             else if vm.isLoading {
                 ProgressView()
@@ -114,7 +114,6 @@ struct PantryView: View {
         }
         
     }
-    
     
 }
 
