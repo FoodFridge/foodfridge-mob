@@ -21,6 +21,6 @@ class AppConstant {
     static var addPantryURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/pantry/add"
     static var getPantryURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/pantry"
     static var deletePantryURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/pantry/delete"
-   
+    static var editPantryURLString = "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/pantry/edit"
     
 }
