@@ -15,30 +15,38 @@ struct ProfileView: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
     }
    
-    
     @State private var selectedView: ChoiceOfView = .favorite
-    
+   
     var body: some View {
         NavigationStack {
             VStack {
-                
-                Picker("", selection: $selectedView) {
-                    ForEach(ChoiceOfView.allCases, id: \.self) {
-                        Text($0.rawValue)
-                            
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding()
-                .foregroundStyle(.button4 )
-               
-               
-                
+                    HStack(spacing: 3) {
+                        ForEach(ChoiceOfView.allCases, id: \.self) { view in
+                            Button {
+                                selectedView = view
+                            } label: {
+                                Text(view.rawValue)
+                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
+                                    .foregroundColor(view == selectedView ? .black : .gray)
+                                    .padding(.vertical, 10)
+                                    .padding(.horizontal, 20)
+                                    .background(view == selectedView ? Color.button2 : Color.white)
+                                    .cornerRadius(5)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color.button1, lineWidth: 5)
+                                        .opacity(view == selectedView ? 1 : 0)
+                                        .offset(x: 0, y: 0)
+                                    )
+                            }
+
+                        }
+                    } 
+                        
                 Spacer()
                 ChosenSubProfileView(selectedView: selectedView)
                 Spacer()
-                
-                
+               
             }
             
             
