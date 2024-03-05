@@ -25,12 +25,14 @@ struct ProfileView: View {
                 Picker("", selection: $selectedView) {
                     ForEach(ChoiceOfView.allCases, id: \.self) {
                         Text($0.rawValue)
-                            .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
+                            
                     }
                 }
                 .pickerStyle(.segmented)
                 .padding()
                 .foregroundStyle(.button4 )
+               
+               
                 
                 Spacer()
                 ChosenSubProfileView(selectedView: selectedView)
@@ -38,6 +40,7 @@ struct ProfileView: View {
                 
                 
             }
+            
             
         }
         .toolbar {

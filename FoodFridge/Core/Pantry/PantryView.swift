@@ -13,7 +13,7 @@ struct PantryView: View {
     @EnvironmentObject var vm: ScanItemViewModel
     
     @FocusState private var isTextFieldFocused: Bool
-    @State private var isEditing = false
+
     @State private var isShowAddPantry = false
     
     @State var onSwipeId = ""
@@ -26,9 +26,9 @@ struct PantryView: View {
         VStack {
             
             if !vm.pantryItems.isEmpty {
-                let userTimeZone = TimeZone.current
-                Text("(for testing) edit id : \(editingItemId ?? "testId")")
-                Text("user time zone identifier = \(userTimeZone.identifier)")
+                //let userTimeZone = TimeZone.current
+                //Text("(for testing) edit id : \(editingItemId ?? "testId")")
+                //Text("user time zone identifier = \(userTimeZone.identifier)")
                 
                 List {
                     ForEach(vm.pantryItems.indices, id: \.self) { pantryIndex in
@@ -37,18 +37,13 @@ struct PantryView: View {
                                 let pantry = $vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex]
                                 if pantry.id == editingItemId {
                                     HStack {
-                                        TextField("Enter pantry name" , text: $vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName, onCommit: {
-                                            // Dismiss editing when tapping "Done"
-                                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                                            self.editingItemId = nil
-                                        })
+                                        TextField("Enter pantry name" , text: $vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName)
                                         Button(action: {
                                             //if user edit some text
-                                            
                                                 // Save new data to database
                                                 Task {
                                                     try await EditPantry.edit(itemID: editingItemId ?? "", to: text.isEmpty ?  String(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName) : text)
-                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // Delay of 0.2 second
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Delay of 0.2 second
                                                          withAnimation {
                                                               self.editingItemId = nil
                                                         }
@@ -60,12 +55,18 @@ struct PantryView: View {
                                             Text("Done")
                                         }
                                     }
+                                    .focused($isTextFieldFocused) // Bind to FocusState
+                                    .onAppear {
+                                    DispatchQueue.main.async {
+                                    self.isTextFieldFocused = true // Activate editing mode
+                                }
+                                }
+                                    
                                 } else {
                                     HStack {
                                         Text(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName)
                                         Spacer()
                                         Button(action: {
-                                            isEditing = true
                                             self.editingItemId = pantry.id
                                         }) {
                                             Text("Edit")
@@ -92,6 +93,7 @@ struct PantryView: View {
                 Text("Your pantry is empty")
             }
         }
+        .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 20))
         .onAppear {
             
             //fetch updated pantry
