@@ -52,6 +52,7 @@ class LoginWithEmailService: ObservableObject {
                self.sessionManager.saveAuthToken(token: token)
                let savedLogIntoken = sessionManager.getAuthToken()
                print("log in token = \(String(describing: savedLogIntoken))")
+               
                //save id in session
                guard let localID = jsonResponse.data.localId else{
                    throw FetchError.serverError
@@ -59,6 +60,15 @@ class LoginWithEmailService: ObservableObject {
                self.sessionManager.saveLocalID(id: localID)
                let savedLogInlocalID = sessionManager.getLocalID()
                print("log in token = \(String(describing: savedLogInlocalID))")
+               
+               //save refreshToken in session
+               guard let refreshToken = jsonResponse.data.refreshToken else{
+                   throw FetchError.serverError
+               }
+               self.sessionManager.saveRefreshToken(token: refreshToken)
+               let savedRefreshToken = sessionManager.getRefreshToken()
+               print("refresh token = \(String(describing: savedRefreshToken))")
+               
                
                //update log in state to true
                UserDefaults.standard.set(true, forKey: "userLoggedIn")

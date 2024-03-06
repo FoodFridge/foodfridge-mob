@@ -63,26 +63,42 @@ class GetIngredients {
         do {
             
             let token = sessionManager.getAuthToken()
-            
             print("token = \(String(describing: token))")
             
             let localID = sessionManager.getLocalID()
-              
             print("id = \(String(describing: localID))")
+            
             let urlEndpoint = ("\(AppConstant.fetchIngredientsURLString)")
             print("ingredient url =\(urlEndpoint)")
             
             guard let url = URL(string: urlEndpoint) else
             { throw FetchError.invalidURL }
             
-            //JSON data  and token to be sent to the server
+            //JSON data  and token to be sent to the server, handled both unloggedIn user and loggedIn user
             let requestBody = try? JSONSerialization.data(withJSONObject: ["localId": localID], options: [])
+            let userTimeZone  = UserTimeZone.getTimeZone()
             
             var request = URLRequest(url: url)
                    request.httpMethod = "POST"
                    request.httpBody = requestBody
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+            request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
+            
+            //verify token is valid to use
+            if let expDateToken = TokenManager.decodeJWTExpiration(token: token ?? "") {
+                if sessionManager.isTokenExpired(expiryDate: expDateToken) {
+                    //if token expired, request new token
+                    let newToken = try await TokenManager.requestNewToken(sessionmanager: sessionManager)
+                    request.setValue("Bearer \(newToken)", forHTTPHeaderField: "Authorization")
+                    //and save it in session
+                    sessionManager.saveAuthToken(token: newToken)
+                }else {
+                    request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+                }
+                
+            }
+                
+            
             
             let (data, response) = try await URLSession.shared.data(for: request)
                    

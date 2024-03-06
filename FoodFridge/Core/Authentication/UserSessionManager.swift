@@ -31,6 +31,18 @@ class SessionManager: ObservableObject {
         try? keychain.get("localID")
     }
     
+    
+    // Get Refresh token
+    func getRefreshToken() -> String? {
+        try? keychain.get("refreshToken")
+    }
+    
+    // Refresh Token
+    func saveRefreshToken(token: String) {
+        try? keychain.set(token, key: "refreshToken")
+    }
+    
+    
     // Check if User is Logged In
     func isLoggedIn() -> Bool {
         getAuthToken() != nil
@@ -38,7 +50,17 @@ class SessionManager: ObservableObject {
     
     // Logout User
     func logout() {
-        try? keychain.remove("authToken")
-        try? keychain.remove("localID")
+        //try? keychain.remove("authToken")
+        //try? keychain.remove("localID")
+        try? keychain.removeAll()
     }
+    
+    // Verify token expired
+    func isTokenExpired(expiryDate: Date) -> Bool {
+        let currentDate = Date()
+        return currentDate > expiryDate
+    }
+    
+    
+    
 }

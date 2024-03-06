@@ -111,6 +111,10 @@
 		75CE75B62B75E2330063B742 /* Pantry.json in Resources */ = {isa = PBXBuildFile; fileRef = 75CE75B52B75E2330063B742 /* Pantry.json */; };
 		75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B72B76B3140063B742 /* DeletePantry.swift */; };
 		75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B92B771FC80063B742 /* AddPantry.swift */; };
+		75D9504C2B97DFD7009926BE /* RefreshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9504B2B97DFD7009926BE /* RefreshTokenResponse.swift */; };
+		75D9504E2B97E16F009926BE /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9504D2B97E16F009926BE /* TokenManager.swift */; };
+		75D950522B97F5DF009926BE /* JWTPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D950512B97F5DF009926BE /* JWTPayload.swift */; };
+		75D950542B97FC2F009926BE /* UserTimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D950532B97FC2F009926BE /* UserTimeZone.swift */; };
 		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -207,6 +211,10 @@
 		75CE75B52B75E2330063B742 /* Pantry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pantry.json; sourceTree = "<group>"; };
 		75CE75B72B76B3140063B742 /* DeletePantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePantry.swift; sourceTree = "<group>"; };
 		75CE75B92B771FC80063B742 /* AddPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantry.swift; sourceTree = "<group>"; };
+		75D9504B2B97DFD7009926BE /* RefreshTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenResponse.swift; sourceTree = "<group>"; };
+		75D9504D2B97E16F009926BE /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		75D950512B97F5DF009926BE /* JWTPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTPayload.swift; sourceTree = "<group>"; };
+		75D950532B97FC2F009926BE /* UserTimeZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTimeZone.swift; sourceTree = "<group>"; };
 		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,6 +279,8 @@
 				752580DC2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift */,
 				753245A92B7FF16700545DE7 /* LogInResponseData.swift */,
 				75AAD3282B803BC400A4E1F6 /* UserData.swift */,
+				75D9504B2B97DFD7009926BE /* RefreshTokenResponse.swift */,
+				75D950512B97F5DF009926BE /* JWTPayload.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +385,7 @@
 				757542D22B33EB0E00048178 /* ColorExtention.swift */,
 				754A8FA52B58A41800C9FD04 /* Category.swift */,
 				757C63FD2B85362B00FC6D5E /* ExtentionView.swift */,
+				75D950532B97FC2F009926BE /* UserTimeZone.swift */,
 				757542E52B351BD800048178 /* Fonts */,
 				754350032B3A653200823A50 /* CustomFont.swift */,
 				753245A02B7EE30E00545DE7 /* DependencyInjection */,
@@ -491,6 +502,7 @@
 				753245982B7E962A00545DE7 /* SignUpWithEmail.swift */,
 				7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */,
 				753245B22B801CE500545DE7 /* LogOut.swift */,
+				75D9504D2B97E16F009926BE /* TokenManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -644,9 +656,12 @@
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */,
 				759F55532B8AC3D300276079 /* RecipeAnimation.swift in Sources */,
+				75D9504E2B97E16F009926BE /* TokenManager.swift in Sources */,
 				75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */,
+				75D9504C2B97DFD7009926BE /* RefreshTokenResponse.swift in Sources */,
 				75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */,
 				757C63F82B85338000FC6D5E /* GoogleSignInButton.swift in Sources */,
+				75D950542B97FC2F009926BE /* UserTimeZone.swift in Sources */,
 				75C42DE62B6300E4003959B6 /* RecipeRow.swift in Sources */,
 				752580D02B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift in Sources */,
 				752580C82B698B0900D536D2 /* LinkRecipeResource.swift in Sources */,
@@ -663,6 +678,7 @@
 				75C42DDE2B62E80C003959B6 /* ResultView.swift in Sources */,
 				752580D92B6B092100D536D2 /* FavoriteRecipeViewModel.swift in Sources */,
 				75C42DE22B62EF45003959B6 /* GenerateRecipe.swift in Sources */,
+				75D950522B97F5DF009926BE /* JWTPayload.swift in Sources */,
 				752580D72B6B042200D536D2 /* FavoriteRecipeView.swift in Sources */,
 				75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */,
 				75C2DD992B785D7800CD184E /* AddedBarAnimation.swift in Sources */,

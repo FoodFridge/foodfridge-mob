@@ -41,7 +41,8 @@ class GetPantry {
             { throw FetchError.invalidURL }
             //print("get pantry url = \(url)")
             
-            let userTimeZone  = getTimeZone()
+            let userTimeZone  = UserTimeZone.getTimeZone()
+            print("userTimeZone = \(userTimeZone)")
             
             //token and userTimeZone to be sent to the server
             var request = URLRequest(url: url)
@@ -68,8 +69,5 @@ class GetPantry {
 
     }
     
-    func getTimeZone() -> String {
-            let timeZone = TimeZone.current.identifier
-            return timeZone
-        }
+   
 }
