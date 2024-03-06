@@ -25,16 +25,14 @@ class LinkRecipeResource {
                }
         //Encode request body to JSON data
         do {
-            guard let token = sessionManager.getAuthToken() else {
-                throw SessionError.missingAuthToken
-            }
+            let token = sessionManager.getAuthToken()
+            print("token = \(String(describing: token))")
             
-            guard let localID = sessionManager.getLocalID() else {
-                throw SessionError.missingLocalID
-            }
+            let localID = sessionManager.getLocalID()
+            print("id = \(String(describing: localID))")
             
             
-            let body = LinkRecipeRequestBody(localId: localID, recipeName: recipeName)
+            let body = LinkRecipeRequestBody(localId: localID ?? "" , recipeName: recipeName)
             
             
             let jsonData = try encoder.encode(body)

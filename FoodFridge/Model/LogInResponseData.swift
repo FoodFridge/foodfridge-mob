@@ -13,11 +13,10 @@ struct LogInResponseData: Codable {
         var localId : String?
         var token : String?
         var refreshToken : String?
-        var expiresIn : String?
     }
 }
 
 extension LogInResponseData {
-    static let MOCKdata: LogInResponseData = LogInResponseData(data: LogInData(localId: nil, token: nil, refreshToken: nil , expiresIn: nil))
+    static let MOCKdata: LogInResponseData = LogInResponseData(data: LogInData(localId: nil, token: nil, refreshToken: nil))
     
 }
