@@ -82,10 +82,11 @@ struct SignUpWithEmailView: View {
                 
                 
                 VStack {
-                    Text("By using the app, you agree to our Terms of use and Privacy policy")
+                    Text("Password setting with 6 digits and up.\nBy using the app, you agree to our Terms of use and Privacy policy")
                 }
-                .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                .lineLimit(3)
                 .font(.custom("CourierPrime-Regular", size: 12))
+                .padding(.horizontal)
             }
             
             }

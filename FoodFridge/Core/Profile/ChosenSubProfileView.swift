@@ -22,7 +22,7 @@ struct ChosenSubProfileView: View {
 }
 
 enum ChoiceOfView: String, CaseIterable {
-    case pantry = "Pantry"
+    case pantry = "My Pantry"
     case favorite = "Favorite Recipe"
 }
 

@@ -93,7 +93,7 @@ struct PantryView: View {
                 Text("Your pantry is empty")
             }
         }
-        .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 20))
+        .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
         .onAppear {
             
             //fetch updated pantry
