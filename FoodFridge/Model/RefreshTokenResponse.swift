@@ -9,4 +9,5 @@ import Foundation
 struct RefreshTokenResponse: Codable {
     let message: String
     let token: String
+    let expTime: TimeInterval
 }

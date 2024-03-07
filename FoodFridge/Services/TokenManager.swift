@@ -65,7 +65,7 @@ class TokenManager: ObservableObject {
     
     
     
-    static func requestNewToken(sessionmanager: SessionManager) async throws -> String? {
+    static func requestNewToken(sessionmanager: SessionManager) async throws -> RefreshTokenResponse? {
         guard let url = URL(string: AppConstant.refreshTokenURLString) else { throw URLError(.badURL)}
         do {
             // URL request object with URL and request method
@@ -90,8 +90,10 @@ class TokenManager: ObservableObject {
             //decode response data
             let jsonResponse = try JSONDecoder().decode(RefreshTokenResponse.self, from: data)
             let newToken = jsonResponse.token
-            print("got newtoken = \(newToken)")
-            return newToken
+            print("got new token = \(newToken)")
+            let newExp = jsonResponse.expTime
+            print ("got new exp = \(newExp)")
+            return jsonResponse
             // Print the JSON string for debugging
             // let jsonString = String(data: data, encoding: .utf8)
             //print("JSON String: \(jsonString ?? "N/A")")

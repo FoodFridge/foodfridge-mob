@@ -21,9 +21,10 @@ class SessionManager: ObservableObject {
         try? keychain.get("authToken")
     }
     
-    //remove expired Token
+    //remove expired Token and exp timeStamp
         func removeToken() {
             try? keychain.remove("authToken")
+            try? keychain.remove("expTime")
         }
     
     // Save Local ID
