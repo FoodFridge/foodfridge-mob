@@ -10,8 +10,8 @@ import Foundation
 @MainActor
 class FavoriteRecipeViewModel: ObservableObject {
     @Published var listOfFavLinks: [FavoriteRecipe] = [FavoriteRecipe]()
-    
     @Published var FavoriteStatus = true
+    @Published var isLoading: Bool = false
     
     var sessionManager: SessionManager
     
@@ -23,10 +23,14 @@ class FavoriteRecipeViewModel: ObservableObject {
     }
   
     func getFavoriteRecipe(isFavorite: String) async throws {
+       
                 Task {
+                    isLoading = true
                     let result = try await GetFavoriteRecipe(sessionManager: sessionManager).getLinkRecipe()
                     let sortedResult = result.sorted { $0.recipeName < $1.recipeName }
                     self.listOfFavLinks = sortedResult
+                    isLoading = false
                 }
+        
     }
 }

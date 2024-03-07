@@ -21,15 +21,7 @@ struct FavoriteRecipeView: View {
     
     var body: some View {
         VStack {
-            if vm.listOfFavLinks.isEmpty {
-                VStack {
-                    Text("No favorite yet").font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
-                    Image(systemName: "heart")
-                        .foregroundStyle(Color.button4)
-                        .bold()
-                        .font(.title)
-                }
-            }else {
+            if !vm.listOfFavLinks.isEmpty {
                 ScrollView {
                     // Looping through the recipes array
                     VStack {
@@ -54,6 +46,18 @@ struct FavoriteRecipeView: View {
                     
                 }
                 .scrollIndicators(.hidden)
+            
+            }else if vm.isLoading {
+                ProgressView()
+
+            }else {
+                VStack {
+                    Text("No favorite yet").font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
+                    Image(systemName: "heart")
+                        .foregroundStyle(Color.button4)
+                        .bold()
+                        .font(.title)
+                }
             }
         }
         .onAppear {
