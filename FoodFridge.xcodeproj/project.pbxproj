@@ -115,6 +115,7 @@
 		75D9504E2B97E16F009926BE /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9504D2B97E16F009926BE /* TokenManager.swift */; };
 		75D950522B97F5DF009926BE /* JWTPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D950512B97F5DF009926BE /* JWTPayload.swift */; };
 		75D950542B97FC2F009926BE /* UserTimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D950532B97FC2F009926BE /* UserTimeZone.swift */; };
+		75D950582B98FC03009926BE /* AddPantryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D950572B98FC03009926BE /* AddPantryViewModel.swift */; };
 		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +216,7 @@
 		75D9504D2B97E16F009926BE /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		75D950512B97F5DF009926BE /* JWTPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTPayload.swift; sourceTree = "<group>"; };
 		75D950532B97FC2F009926BE /* UserTimeZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTimeZone.swift; sourceTree = "<group>"; };
+		75D950572B98FC03009926BE /* AddPantryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryViewModel.swift; sourceTree = "<group>"; };
 		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,6 +261,7 @@
 			children = (
 				75AECFE72B7D2F92009B93E1 /* PantryView.swift */,
 				75AECFE52B7D2357009B93E1 /* AddPantryView.swift */,
+				75D950572B98FC03009926BE /* AddPantryViewModel.swift */,
 				75B1B2CF2B969FB800E0CFD6 /* TextFieldPantry.swift */,
 			);
 			path = Pantry;
@@ -666,6 +669,7 @@
 				752580D02B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift in Sources */,
 				752580C82B698B0900D536D2 /* LinkRecipeResource.swift in Sources */,
 				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
+				75D950582B98FC03009926BE /* AddPantryViewModel.swift in Sources */,
 				754A8FA22B585A8400C9FD04 /* GetIngredients.swift in Sources */,
 				752580DF2B6B3D6E00D536D2 /* FavLinkRow.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
