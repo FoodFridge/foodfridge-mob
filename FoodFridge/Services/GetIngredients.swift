@@ -68,6 +68,9 @@ class GetIngredients {
             let localID = sessionManager.getLocalID()
             print("ingredient id = \(String(describing: localID))")
             
+            let expTime = sessionManager.getExpTime()
+            print("ingredient exp time = \(String(describing: expTime))")
+            
             let urlEndpoint = ("\(AppConstant.fetchIngredientsURLString)")
             print("ingredient url =\(urlEndpoint)")
             
@@ -84,6 +87,45 @@ class GetIngredients {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
             
+            
+            
+            if UserDefaults.standard.bool(forKey: "userLoggedIn") {
+                            //verify token is valid before request api
+                            if  TokenManager.isTokenExpired(expiryDateUnix: expTime ?? Date.timeIntervalSinceReferenceDate, userTimeZoneIdentifier: userTimeZone) {
+                                print("token expired!")
+                                //remove expired token in session
+                                sessionManager.removeToken()
+                                print("removed token")
+                                
+                                do {
+                                    // if it expired request new token
+                                    let newToken = try await TokenManager.requestNewToken(sessionmanager: sessionManager)
+                                    print("new token = \(String(describing: newToken))")
+                                    
+                                    // Set Authorization header with new token
+                                            if let newToken = newToken {
+                                                request.setValue("Bearer \(newToken)", forHTTPHeaderField: "Authorization")
+                                                // save new token in session
+                                                sessionManager.saveAuthToken(token: newToken)
+                                                let savedNewToken = sessionManager.getAuthToken()
+                                                print("savedNewToken in session = \(String(describing: savedNewToken))")
+                                                
+                                            } else {
+                                                // Handle the case where the new token is nil
+                                                // Throw an error if the new token is nil
+                                                throw TokenError.tokenNotFound
+                                            }
+                                    
+                                }
+                                catch{
+                                    print("Error requesting new token: \(error)")
+                                }
+                            }else {
+                                //else token still valid use present token to fetch
+                                request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+                            }
+                            
+                        }
             
                 
             
