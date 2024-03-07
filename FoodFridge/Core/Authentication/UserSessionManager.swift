@@ -21,6 +21,12 @@ class SessionManager: ObservableObject {
         try? keychain.get("authToken")
     }
     
+    //remove expired Token and exp timeStamp
+        func removeToken() {
+            try? keychain.remove("authToken")
+            try? keychain.remove("expTime")
+        }
+    
     // Save Local ID
     func saveLocalID(id: String) {
         try? keychain.set(id, key: "localID")
@@ -43,6 +49,23 @@ class SessionManager: ObservableObject {
     }
     
     
+    // Get exp time of token
+      func getExpTime() -> TimeInterval? {
+          guard let expTimeString = try? keychain.get("expTime"),
+                let expTime = TimeInterval(expTimeString) else {
+              return nil
+          }
+          return expTime
+      }
+      
+      // Save exp time stamp
+      func saveExpTime(exp: TimeInterval) {
+          let expTimeString = "\(exp)"
+          try? keychain.set(expTimeString, key: "expTime")
+      }
+      
+    
+    
     // Check if User is Logged In
     func isLoggedIn() -> Bool {
         getAuthToken() != nil
@@ -50,16 +73,13 @@ class SessionManager: ObservableObject {
     
     // Logout User
     func logout() {
-        //try? keychain.remove("authToken")
-        //try? keychain.remove("localID")
-        try? keychain.removeAll()
-    }
+           try? keychain.remove("authToken")
+           try? keychain.remove("localID")
+           try? keychain.remove("refreshToken")
+           try? keychain.remove("expTime")
+       }
     
-    // Verify token expired
-    func isTokenExpired(expiryDate: Date) -> Bool {
-        let currentDate = Date()
-        return currentDate > expiryDate
-    }
+    
     
     
     

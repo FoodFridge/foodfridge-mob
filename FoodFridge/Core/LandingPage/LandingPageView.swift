@@ -102,7 +102,7 @@ struct LandingPageView: View {
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
                      
-                        if  UserDefaults.standard.bool(forKey: "userLoggedIn") || sessionManager.isLoggedIn() {
+                        if  UserDefaults.standard.bool(forKey: "userLoggedIn") {
                             NavigationLink {
                                 //MARK: navigate to Profile view
                                 ProfileView()

@@ -41,9 +41,31 @@ class TokenManager: ObservableObject {
         }
     }
     
+    // Verify token expired
+    static func isTokenExpired(expiryDateUnix: TimeInterval, userTimeZoneIdentifier: String) -> Bool {
+            // Convert Unix timestamp to Date object
+            let expiryDate = Date(timeIntervalSince1970: expiryDateUnix)
+            print("exp date = \(expiryDate)")
+            // Specify the user's time zone
+            let userTimeZone = TimeZone(identifier: userTimeZoneIdentifier)!
+            // Use the user's time zone in the calendar
+            var calendar = Calendar.current
+            calendar.timeZone = userTimeZone
+            // Get the current date and time, adjusted for the user's time zone
+            let currentDate = Date()
+            print("user current date = \(currentDate)")
+            // Compare the current date with the expiry date
+            if currentDate > expiryDate {
+                print("token expired")
+            }else {
+                print("token still valid")
+            }
+            return currentDate > expiryDate
+        }
     
     
-    static func requestNewToken(sessionmanager: SessionManager) async throws -> String {
+    
+    static func requestNewToken(sessionmanager: SessionManager) async throws -> RefreshTokenResponse? {
         guard let url = URL(string: AppConstant.refreshTokenURLString) else { throw URLError(.badURL)}
         do {
             // URL request object with URL and request method
@@ -51,8 +73,12 @@ class TokenManager: ObservableObject {
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             
+            guard let refreshToken = sessionmanager.getRefreshToken() else {
+                throw TokenError.tokenNotFound
+            }
+            print("request with refreshtoken = \(String(describing: refreshToken))")
             //JSON data to be sent to the server
-            let jsonData = try? JSONSerialization.data(withJSONObject: ["refresh_token": sessionmanager.getRefreshToken()], options: [])
+            let jsonData = try? JSONSerialization.data(withJSONObject: ["refresh_token": refreshToken], options: [])
             request.httpBody = jsonData
             
             //network request
@@ -64,13 +90,20 @@ class TokenManager: ObservableObject {
             //decode response data
             let jsonResponse = try JSONDecoder().decode(RefreshTokenResponse.self, from: data)
             let newToken = jsonResponse.token
-            return newToken
+            print("got new token = \(newToken)")
+            let newExp = jsonResponse.expTime
+            print ("got new exp = \(newExp)")
+            return jsonResponse
             // Print the JSON string for debugging
             // let jsonString = String(data: data, encoding: .utf8)
             //print("JSON String: \(jsonString ?? "N/A")")
         }catch {
             print(error.localizedDescription)
         }
-        return "Cannot get new token"
+        return nil
     }
+}
+
+enum TokenError: Error {
+    case tokenNotFound
 }

@@ -32,13 +32,15 @@ struct IngredientItem: Decodable, Identifiable {
 extension IngredientItem {
     static var mockItems: [IngredientItem] {
         
-        
+        []
+        /*
         [ IngredientItem(id: "01", userId: "test user", name: "Strawberry", type: "01"),
           IngredientItem(id: "02", userId: "test user", name: "Pork belly", type: "02"),
           IngredientItem(id: "03", userId: "test user", name: "Kelp", type: "03"),
           IngredientItem(id: "04", userId: "test user", name: "Cauliflower", type: "04"),
           IngredientItem(id: "05", userId: "test user", name: "Egg", type: "05")
         ]
+         */
          
     }
 }
