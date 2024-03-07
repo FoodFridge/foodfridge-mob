@@ -21,31 +21,40 @@ struct FavoriteRecipeView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
-                // Looping through the recipes array
+            if vm.listOfFavLinks.isEmpty {
                 VStack {
-                    ForEach(vm.listOfFavLinks, id: \.self) { recipe in
-                        VStack(alignment: .leading) {
-                            Text("\(recipe.recipeName)")
-                                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 20)
-                        .padding(.trailing, 5)
-                        .padding(.bottom, -5)
-                        
-                        
-                        ForEach(recipe.recipeLinks, id: \.self) { recipeLink in
-                              FavLinkRow(googleLink: recipeLink)
+                    Text("No favorite yet").font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
+                    Image(systemName: "heart")
+                        .foregroundStyle(Color.button4)
+                        .bold()
+                        .font(.title)
+                }
+            }else {
+                ScrollView {
+                    // Looping through the recipes array
+                    VStack {
+                        ForEach(vm.listOfFavLinks, id: \.self) { recipe in
+                            VStack(alignment: .leading) {
+                                Text("\(recipe.recipeName)")
+                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 20)
+                            .padding(.trailing, 5)
+                            .padding(.bottom, -5)
+                            
+                            
+                            ForEach(recipe.recipeLinks, id: \.self) { recipeLink in
+                                FavLinkRow(googleLink: recipeLink)
+                            }
+                            
                         }
                         
                     }
-                   
+                    
                 }
-                
+                .scrollIndicators(.hidden)
             }
-            .scrollIndicators(.hidden)
-            
         }
         .onAppear {
                 Task {
