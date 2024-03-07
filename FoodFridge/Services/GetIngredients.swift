@@ -63,10 +63,10 @@ class GetIngredients {
         do {
             
             let token = sessionManager.getAuthToken()
-            print("token = \(String(describing: token))")
+            print("ingredient token = \(String(describing: token))")
             
             let localID = sessionManager.getLocalID()
-            print("id = \(String(describing: localID))")
+            print("ingredient id = \(String(describing: localID))")
             
             let urlEndpoint = ("\(AppConstant.fetchIngredientsURLString)")
             print("ingredient url =\(urlEndpoint)")
@@ -84,19 +84,7 @@ class GetIngredients {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
             
-            //verify token is valid to use
-            if let expDateToken = TokenManager.decodeJWTExpiration(token: token ?? "") {
-                if sessionManager.isTokenExpired(expiryDate: expDateToken) {
-                    //if token expired, request new token
-                    let newToken = try await TokenManager.requestNewToken(sessionmanager: sessionManager)
-                    request.setValue("Bearer \(newToken)", forHTTPHeaderField: "Authorization")
-                    //and save it in session
-                    sessionManager.saveAuthToken(token: newToken)
-                }else {
-                    request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
-                }
-                
-            }
+            
                 
             
             

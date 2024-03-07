@@ -20,7 +20,7 @@ class LoginWithEmailService: ObservableObject {
     
     func login(email:String, password: String) async throws -> LogInResponseData.LogInData {
            
-           guard let url = URL(string: AppConstant.logInWithEmailURLString) else { throw URLError(.badURL)}
+           guard let url = URL(string: AppConstant.logInWithEmailURLString2) else { throw URLError(.badURL)}
            
            do {
                // URL request object with URL and request method
@@ -69,6 +69,14 @@ class LoginWithEmailService: ObservableObject {
                let savedRefreshToken = sessionManager.getRefreshToken()
                print("refresh token = \(String(describing: savedRefreshToken))")
                
+               
+               //save expTime in session
+                guard let expTime = jsonResponse.data.expTime else {
+                throw FetchError.serverError
+                }
+                self.sessionManager.saveExpTime(exp: expTime)
+                let savedExp = sessionManager.getExpTime()
+                print("exp time = \(String(describing: savedExp))")
                
                //update log in state to true
                UserDefaults.standard.set(true, forKey: "userLoggedIn")
