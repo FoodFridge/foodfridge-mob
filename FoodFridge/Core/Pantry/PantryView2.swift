@@ -1,15 +1,13 @@
 //
-//  PantryView.swift
+//  PantryView2.swift
 //  FoodFridge
 //
-//  Created by Jessie Pastan on 2/14/24.
+//  Created by Jessie Pastan on 3/7/24.
 //
 
 import SwiftUI
-import Foundation
 
-struct PantryView: View {
-    
+struct PantryView2: View {
     @EnvironmentObject var vm: ScanItemViewModel
     
     @FocusState private var isTextFieldFocused: Bool
@@ -18,10 +16,8 @@ struct PantryView: View {
     @State private var text = ""
     @State private var editingItemId: String?
     
-    
-
     var body: some View {
-        NavigationStack {
+        VStack {
             
             if !vm.pantryItems.isEmpty {
                 //let userTimeZone = TimeZone.current
@@ -38,16 +34,16 @@ struct PantryView: View {
                                         TextField("Enter pantry name" , text: $vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName)
                                         Button(action: {
                                             //if user edit some text
-                                                // Save new data to database
-                                                Task {
-                                                    try await EditPantry.edit(itemID: editingItemId ?? "", to: text.isEmpty ?  String(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName) : text)
-                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Delay of 0.2 second
-                                                         withAnimation {
-                                                              self.editingItemId = nil
-                                                        }
+                                            // Save new data to database
+                                            Task {
+                                                try await EditPantry.edit(itemID: editingItemId ?? "", to: text.isEmpty ?  String(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName) : text)
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Delay of 0.2 second
+                                                    withAnimation {
+                                                        self.editingItemId = nil
                                                     }
                                                 }
-                                           
+                                            }
+                                            
                                             
                                         }) {
                                             Text("Done")
@@ -55,10 +51,10 @@ struct PantryView: View {
                                     }
                                     .focused($isTextFieldFocused) // Bind to FocusState
                                     .onAppear {
-                                    DispatchQueue.main.async {
-                                    self.isTextFieldFocused = true // Activate editing mode
-                                }
-                                }
+                                        DispatchQueue.main.async {
+                                            self.isTextFieldFocused = true // Activate editing mode
+                                        }
+                                    }
                                     
                                 } else {
                                     HStack {
@@ -81,8 +77,8 @@ struct PantryView: View {
                     }
                 }
                 
-    
-                 
+                
+                
             }
             else if vm.isLoading {
                 ProgressView()
@@ -101,20 +97,11 @@ struct PantryView: View {
         }
         
         
-        //MARK: TODO : Add new pantry
-        NavigationLink {
-            AddPantryView()
-        } label: {
-            Image(systemName: "plus.app")
-                .bold()
-                .font(.title)
-        }
-        
-        
     }
     
 }
 
+
 #Preview {
-    PantryView()
+    PantryView2()
 }

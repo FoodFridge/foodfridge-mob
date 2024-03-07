@@ -107,6 +107,7 @@
 		75C42DEE2B646151003959B6 /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 75C42DED2B646151003959B6 /* Recipes.json */; };
 		75C42DF02B646A5C003959B6 /* GoogleLinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */; };
 		75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DF12B6600A0003959B6 /* AppConstant.swift */; };
+		75C861572B9A7850001C6160 /* PantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C861562B9A7850001C6160 /* PantryView2.swift */; };
 		75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B32B75DA8A0063B742 /* GetPantry.swift */; };
 		75CE75B62B75E2330063B742 /* Pantry.json in Resources */ = {isa = PBXBuildFile; fileRef = 75CE75B52B75E2330063B742 /* Pantry.json */; };
 		75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B72B76B3140063B742 /* DeletePantry.swift */; };
@@ -208,6 +209,7 @@
 		75C42DED2B646151003959B6 /* Recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLinkRow.swift; sourceTree = "<group>"; };
 		75C42DF12B6600A0003959B6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		75C861562B9A7850001C6160 /* PantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView2.swift; sourceTree = "<group>"; };
 		75CE75B32B75DA8A0063B742 /* GetPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPantry.swift; sourceTree = "<group>"; };
 		75CE75B52B75E2330063B742 /* Pantry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pantry.json; sourceTree = "<group>"; };
 		75CE75B72B76B3140063B742 /* DeletePantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePantry.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				75AECFE72B7D2F92009B93E1 /* PantryView.swift */,
+				75C861562B9A7850001C6160 /* PantryView2.swift */,
 				75AECFE52B7D2357009B93E1 /* AddPantryView.swift */,
 				75D950572B98FC03009926BE /* AddPantryViewModel.swift */,
 				75B1B2CF2B969FB800E0CFD6 /* TextFieldPantry.swift */,
@@ -650,6 +653,7 @@
 				75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */,
 				751EB5582B4E4E8F00106FD6 /* ScanItemViewModel.swift in Sources */,
 				757C63B52B82F70900FC6D5E /* GreetingView.swift in Sources */,
+				75C861572B9A7850001C6160 /* PantryView2.swift in Sources */,
 				75A1CBBE2B88500600AC5095 /* AuthTextField.swift in Sources */,
 				753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */,
 				753245B12B80128F00545DE7 /* LogInWithEmailViewModel.swift in Sources */,

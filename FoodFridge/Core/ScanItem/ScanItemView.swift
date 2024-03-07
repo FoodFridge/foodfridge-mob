@@ -84,7 +84,7 @@ struct ScanItemView: View {
                     .disabled(!sessionManager.isLoggedIn())
                     .sheet(isPresented:
                             $isShowPantry) {
-                        PantryView()
+                        PantryView2()
                     }
     
               
