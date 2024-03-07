@@ -37,9 +37,12 @@ class GetFavoriteRecipe {
             { throw FetchError.invalidURL }
            // print("get fave url = \(url)")
             
-            var request = URLRequest(url: url)
+            let userTimeZone  = UserTimeZone.getTimeZone()
+            var request = URLRequest(url: url) 
                    request.httpMethod = "GET"
+                   request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
                    request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
                    
             let (data, response) = try await URLSession.shared.data(for: request)
                    

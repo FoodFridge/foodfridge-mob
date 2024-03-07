@@ -11,9 +11,12 @@ struct AddPantryView: View {
     
     @StateObject private var vm = AddPantryViewModel()
     @EnvironmentObject var sessionManager: SessionManager
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: 1.2) {
+            Text("Add your pantry item")
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 25))
             Spacer()
                 ZStack{
                     HStack(spacing: 0) {
@@ -21,16 +24,18 @@ struct AddPantryView: View {
                             .padding()
                             .autocapitalization(.none)
                             //.background(Color.button4)
-                            .foregroundColor(.white)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
                             .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.button1, lineWidth: 5))
                         Spacer()
                         Button {
                             //MARK: TODO add pantry
                             if !vm.searchText.isEmpty {
                                 vm.addPantry(sessionManager: sessionManager, item: vm.searchText)
+                                
                             }
                         } label: {
                             Text("Add")
+                                .bold()
                                 .padding(.horizontal)
                                 .frame(height: 62)
                                 .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.button2, lineWidth: 5))
@@ -59,6 +64,8 @@ struct AddPantryView: View {
                .scrollContentBackground(.hidden)
                .frame(maxWidth: .infinity)
                .padding()
+               .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
+               
        
     }
 }

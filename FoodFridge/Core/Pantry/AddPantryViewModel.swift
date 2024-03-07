@@ -11,7 +11,7 @@ class AddPantryViewModel: ObservableObject {
         @Published var suggestions: [String] = []
         
         // Sample list of ingredients
-        let allIngredients = ["Apple","Apple pie", "Apple smith","Apple fuji","Apple green","Apple vinigar","Apricot","Banana","Thai banana", "Carrot", "Dates", "Eggplant", "Fig", "Grapes"]
+        let allIngredients = ["Apple","Apple pie", "Apple smith","Apple fuji","Apple green","Apple vinegar","Apricot","Banana","Thai namwha banana","Dried banana","Carrot", "Dates", "Eggplant", "Fig", "Grapes"]
         
         init() {
             // Update suggestions whenever searchText changes

@@ -83,7 +83,7 @@ class GetIngredients {
             
             var request = URLRequest(url: url)
                    request.httpMethod = "POST"
-                   request.httpBody = requestBody
+                   request.httpBody = requestBody  
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
             request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
