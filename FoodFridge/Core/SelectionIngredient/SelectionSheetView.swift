@@ -43,13 +43,12 @@ struct SelectionSheetView: View {
                //update all ingredients
                Task {
                    do {
-                        vm.fetchIngredients()
-                        vm.itemsDict = vm.getItemsNameWithCategory(data: vm.ingredientsByType)
-                       
+                    
                         let fetchedData = try await GetIngredients(sessionManager: sessionManager).loadIngredients()
                         self.data = fetchedData
                         self.dataDict = vm.getItemsNameWithCategory(data: data)
                         vm.itemsDict = self.dataDict
+                        
                     
                        
                    } catch {
