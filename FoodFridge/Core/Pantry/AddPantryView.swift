@@ -12,6 +12,7 @@ struct AddPantryView: View {
     @StateObject private var vm = AddPantryViewModel()
     @EnvironmentObject var sessionManager: SessionManager
     @Environment(\.colorScheme) var colorScheme
+    @State private var isTapped = false
     
     var body: some View {
         VStack(spacing: 1.2) {
@@ -30,15 +31,30 @@ struct AddPantryView: View {
                         Button {
                             //MARK: TODO add pantry
                             if !vm.searchText.isEmpty {
-                                vm.addPantry(sessionManager: sessionManager, item: vm.searchText)
+                                //add item
+                                vm.addPantry(sessionManager: sessionManager, item: vm.searchText.trimmingCharacters(in: .whitespacesAndNewlines))
+                                
+                                //trigger button animation
+                                isTapped = true
+                                // Reset the state after a delay
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    isTapped = false
+                                    //reset text after tap button
+                                    vm.searchText = ""
+                                }
+                                
                                 
                             }
                         } label: {
                             Text("Add")
                                 .bold()
                                 .padding(.horizontal)
-                                .frame(height: 62)
-                                .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.button2, lineWidth: 5))
+                                .frame(height: 55)
+                                .overlay(RoundedRectangle(cornerRadius: 5)
+                                    .stroke(Color.button2, lineWidth: 5)
+                                    .scaleEffect(isTapped ? 1.2 : 1)
+                                    .animation(.easeInOut, value: isTapped))
+                            
                             
                         }
                     }

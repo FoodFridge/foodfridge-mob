@@ -19,10 +19,6 @@ class SelectionSheetViewModel: ObservableObject {
     init(sessionManager: SessionManager)  {
             
             self.session = sessionManager
-        
-            self.fetchIngredients()
-            
-            self.itemsDict = getItemsNameWithCategory(data: ingredientsByType)
     }
     
     
