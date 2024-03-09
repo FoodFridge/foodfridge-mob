@@ -78,8 +78,9 @@ class LoginWithEmailService: ObservableObject {
                 let savedExp = sessionManager.getExpTime()
                 print("exp time = \(String(describing: savedExp))")
                
-               let userTimeZoneString = UserTimeZone.getTimeZone()
-               let isTokenExpired = TokenManager.isTokenExpired(expiryDateUnix: savedExp ?? Date.timeIntervalSinceReferenceDate, userTimeZoneIdentifier: userTimeZoneString)
+              // let userTimeZoneString = UserTimeZone.getTimeZone()
+               //let isTokenExpired = TokenManager.isTokenExpired(expiryDateUnix: savedExp ?? Date.timeIntervalSinceReferenceDate, userTimeZoneIdentifier: userTimeZoneString)
+               
                //update log in state to true
                UserDefaults.standard.set(true, forKey: "userLoggedIn")
                //if successfully

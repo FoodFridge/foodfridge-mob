@@ -102,6 +102,42 @@ class TokenManager: ObservableObject {
         }
         return nil
     }
+    
+    
+    static func verifyTokenAndRequestNewToken(expTime: TimeInterval, userTimeZone: String, sessionManager: SessionManager) async throws -> String? {
+        
+        
+        //verify if token has expired?
+        if self.isTokenExpired(expiryDateUnix: expTime, userTimeZoneIdentifier: userTimeZone) {
+            print("Token expired!!")
+            //if token expired will remove expired token
+            sessionManager.removeToken()
+            print("Removed token")
+            
+            do {
+                // make a request
+                guard let response = try await self.requestNewToken(sessionmanager: sessionManager) else {
+                    print("cannot get response from request new token")
+                    throw TokenError.tokenNotFound
+                }
+                // save new exp in session
+                sessionManager.saveExpTime(exp: response.expTime)
+                print("new exp = \(response.expTime)")
+                //save new token in session
+                sessionManager.saveAuthToken(token: response.token)
+                print("new token = \(response.token)")
+                //get new token
+                let newToken = sessionManager.getAuthToken()
+                print("return new token = \(String(describing: newToken))")
+                return newToken
+                
+            } catch{
+                print("Error requesting new token: \(error)")
+            }
+        }
+        //if token hasn't expired return nil
+        return nil
+    }
 }
 
 enum TokenError: Error {

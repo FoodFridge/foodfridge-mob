@@ -40,8 +40,8 @@ struct TagsView: View {
                     label.text = word
                     label.sizeToFit()
                     
-                    let labelWidth = label.frame.size.width + 32 // Adjust padding as needed
-                    if (width + labelWidth + 32) < screenWidth {
+                    let labelWidth = label.frame.size.width + 40 // Adjust padding as needed
+                    if (width + labelWidth + 40) < screenWidth {
                         width += labelWidth
                         currentGroup.append(word)
                     } else {
@@ -89,7 +89,7 @@ struct TagsView: View {
                             VStack {
                                 Text(category.displayName)
                                     .id(category.displayName)
-                                    .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 15))
+                                    .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 16))
                                     .foregroundStyle(.button2)
                                     .padding()
                                     .padding(.vertical, -10)
@@ -112,7 +112,7 @@ struct TagsView: View {
                                     //MARK: TODO: check if pantry is empty? will display text "Your pantry is empty"
                                         
                                     Text(tag)
-                                        .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
+                                        .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 14))
                                         .lineLimit(1)
                                         .padding()
                                         .padding(.vertical, -10)

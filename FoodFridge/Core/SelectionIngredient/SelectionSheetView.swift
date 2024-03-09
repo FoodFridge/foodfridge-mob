@@ -38,7 +38,6 @@ struct SelectionSheetView: View {
         NavigationStack {
             TagsView(dataDicts: vm.itemsDict, selectedTarget: scrollTarget.targetID)
            }
-        
            .onAppear {
                //update all ingredients
                Task {

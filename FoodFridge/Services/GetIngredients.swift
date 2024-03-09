@@ -88,18 +88,29 @@ class GetIngredients {
             request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
             request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
             
-            /*
+         
             //if user is logged in
             if UserDefaults.standard.bool(forKey: "userLoggedIn") {
+                let returnNewToken = try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime ?? Date.timeIntervalSinceReferenceDate, userTimeZone: userTimeZone, sessionManager: sessionManager)
+                if returnNewToken == nil {
+                    // if token still valid use present token to fetch
+                    request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+                }else {
+                    // use new token to fetch
+                    request.setValue("Bearer \(returnNewToken ?? "")", forHTTPHeaderField: "Authorization")
+                }
+                
+                
+                /*
                 //verify token is valid before request api
                 if  TokenManager.isTokenExpired(expiryDateUnix: expTime ?? Date.timeIntervalSinceReferenceDate, userTimeZoneIdentifier: userTimeZone) {
                     print("token expired!")
-                    //remove expired token in session
+                    //if it expired remove expired token of session
                     sessionManager.removeToken()
-                    print("removed token")
+                    print("removed token and exp time")
                     
                     do {
-                        // if it expired request new token
+                        // then request new token
                         let newTokenResponse = try await TokenManager.requestNewToken(sessionmanager: sessionManager)
                         print("new token = \(String(describing: newTokenResponse?.token))")
                         
@@ -130,10 +141,11 @@ class GetIngredients {
                     // if token still valid use present token to fetch
                     request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
                 }
+                 */
                 
             }
             
-            */
+          
             
             
             let (data, response) = try await URLSession.shared.data(for: request)
@@ -159,7 +171,4 @@ class GetIngredients {
     
 }
 
-enum SessionError: Error {
-    case missingAuthToken
-    case missingLocalID
-}
+
