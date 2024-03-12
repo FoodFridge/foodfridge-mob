@@ -41,9 +41,9 @@ class TagsViewModel: ObservableObject {
     }
     
    
-    func fetchIngredients() async throws -> [String : [IngredientItem]] {
-        return try await GetIngredients(sessionManager: session).loadIngredients()
-        
+    func fetchIngredients() async throws {
+        self.ingredientsByType = try await GetIngredients(sessionManager: session).loadIngredients()
+       
     }
      
     func getItemsNameWithCategory(data: [String: [IngredientItem]])async throws -> [String : [String]] {

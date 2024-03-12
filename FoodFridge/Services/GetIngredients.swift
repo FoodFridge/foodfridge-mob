@@ -165,10 +165,15 @@ class GetIngredients {
             
             let jsonData = try decoder.decode(IngredientData.self, from: data)
             //get all ingredients
-            //self.ingredients = jsonData.data
+           // self.ingredients = jsonData.data
             // get all ingredients by type
             self.ingredientsByType = Dictionary(grouping: jsonData.data, by: { $0.type })
-           // print("jsondata = \(ingredientsByType)")
+            
+            if !ingredientsByType.isEmpty {
+                print("got fetched ingredient jsondata from service")
+            }else {
+                print("fetch ingredients data from sevice is empty")
+            }
             return self.ingredientsByType
             
         } catch {

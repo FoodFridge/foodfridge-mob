@@ -42,22 +42,18 @@ struct SelectionSheetView: View {
         .onAppear {
             Task {
                 //update all ingredients
-                vm.ingredientsByType = try await vm.fetchIngredients()
+                try await vm.fetchIngredients()
                 if !vm.ingredientsByType.isEmpty {
-                    print("********got fetched ingredients data*********")
+                    print("********sheetview got fetched ingredients data*********")
                 }else {
-                    print("can't get fethed data")
+                    print("sheetView can't get fethed data")
                 }
-                
-                
-                
+                // transform fetched data to group of category
                 vm.itemsDict = try await vm.getItemsNameWithCategory(data: vm.ingredientsByType)
-               
-                
                 if !vm.itemsDict.isEmpty {
-                    print("**********got transform fetched data to dataDict*********")
+                    print("**********sheetView got transform fetched data to dataDict*********")
                 }else {
-                    print("can't get dataDict")
+                    print("sheetView can't get dataDict")
                 }
                 
             }
