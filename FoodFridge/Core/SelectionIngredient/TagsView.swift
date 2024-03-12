@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TagsView: View {
     
-    let dataDicts : [String : [String]]
+    var dataDicts : [String : [String]]
     var groupItemsByType: [String : [[String]]] = [String : [[String]]]()
     let screenWidth = UIScreen.main.bounds.width
     var selectedTarget: String = ""
@@ -20,15 +20,20 @@ struct TagsView: View {
     
     
     @EnvironmentObject var vm: TagsViewModel
-   
+    @StateObject var createGroup = CreateGroup()
     
-    init(dataDicts: [ String : [String]], selectedTarget: String) {
-        
-        self.dataDicts = dataDicts
-        groupItemsByType = createGroupedItemsWithType(items: dataDicts)
-        self.selectedTarget = selectedTarget
-       
-        
+    init(dataDicts: [String : [String]], selectedTarget: String) {
+      
+            self.dataDicts = dataDicts
+            if !self.dataDicts.isEmpty {
+            print("*******tagView got dataDict passed******** ")
+            }else{
+                print("tagView can't get passing dataDict")
+            }
+          
+            groupItemsByType = createGroupedItemsWithType(items: dataDicts)
+            self.selectedTarget = selectedTarget
+    
         func createGroupedItemsWithType(items: [String: [String]]) -> [String: [[String]]] {
             var groupedItemsWithType: [String: [[String]]] = [:]
             for (key, words) in items {
@@ -61,8 +66,12 @@ struct TagsView: View {
             
             return groupedItemsWithType
         }
-        
+         
     }
+      
+        
+   
+        
     
     var sortedKeys: [String] {
         let keys = Array(groupItemsByType.keys)
@@ -139,6 +148,7 @@ struct TagsView: View {
                     }
                     
                 }
+                
                     
             }
             

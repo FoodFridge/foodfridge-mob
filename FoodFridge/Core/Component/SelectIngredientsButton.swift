@@ -42,11 +42,11 @@ struct SelectIngredientsButton: View {
             
         })
         .sheet(isPresented: $showSheet) {
-            SelectionSheetView()
-                .presentationDetents([.height(sheetHeight / 1.7)])
-                .presentationDragIndicator(.hidden)
+             SelectionSheetView()
+                 .presentationDetents([.height(sheetHeight / 1.7)])
+                 .presentationDragIndicator(.hidden)
                 
-        }
+         }
         .foregroundColor(.black)
         .font(.title).bold()
         
@@ -55,7 +55,8 @@ struct SelectIngredientsButton: View {
     }
 }
 
-#Preview {
-    SelectIngredientsButton(action: {},showSheet: .constant(false))
-        .previewLayout(.sizeThatFits)
-}
+ #Preview {
+ SelectIngredientsButton(action: {},showSheet: .constant(false))
+ .previewLayout(.sizeThatFits)
+ }
+ 

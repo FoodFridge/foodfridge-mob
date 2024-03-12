@@ -54,6 +54,7 @@ class TokenManager: ObservableObject {
             // Get the current date and time, adjusted for the user's time zone
             let currentDate = Date()
             print("user current date = \(currentDate)")
+        
             // Compare the current date with the expiry date
             if currentDate > expiryDate {
                 print("token expired")

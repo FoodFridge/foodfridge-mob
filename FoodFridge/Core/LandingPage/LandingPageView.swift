@@ -85,10 +85,13 @@ struct LandingPageView: View {
                                 VStack {
                                     SelectIngredientsButton(title: category.displayName, action: {
                                         showSheet = true
+                                        print("**Button \(category.displayName) tapped")
                                         //assign key to display selectedCategory
                                         scrollTarget.targetID = category.rawValue
                                         
                                     }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15, showSheet: $showSheet)
+                                    
+                
                                 }
                             }
                         }
@@ -98,11 +101,12 @@ struct LandingPageView: View {
                     Spacer()
                     
                 }
+                
                 .padding(4)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
                      
-                        if  UserDefaults.standard.bool(forKey: "userLoggedIn") {
+                        if  UserDefaults.standard.bool(forKey: "userLoggedIn") || sessionManager.isLoggedIn() {
                             NavigationLink {
                                 //MARK: navigate to Profile view
                                 ProfileView()

@@ -13,12 +13,13 @@ struct TagsViewPrompt: View {
     let screenWidth = UIScreen.main.bounds.width
     @State private var selectedItems = Set<String>()
     var items: [String]
-    @ObservedObject var vm = TagsViewModel()
+    
+    //@ObservedObject var vm = TagsViewModel()
     @EnvironmentObject var vm2: TagsViewModel
     
     init(items: [String]) {
         self.items = items
-        _vm = ObservedObject(initialValue: TagsViewModel())
+        //_vm = ObservedObject(initialValue: TagsViewModel())
         //groupItems = createGroupedItems(items: _vm.wrappedValue.selectedTags )
         groupItems = createGroupedItems(items: items)
         func createGroupedItems(items: [String]) -> [[String]] {

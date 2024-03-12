@@ -9,55 +9,63 @@ import SwiftUI
 
 struct SelectionSheetView: View {
     
-    @State private var data : [String : [IngredientItem]] = [:]
-    @State private var dataDict: [String : [String]] = ["" : [""]]
-    
-    @EnvironmentObject var vm: SelectionSheetViewModel
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var scrollTarget: ScrollTarget
-    
+    @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var sessionManager: SessionManager
     
+   
     var body: some View {
-        
-        HStack {
-        Spacer()
-            Button(action: {
-                dismiss()
-            }, label: {
-                Image(systemName: "x.circle.fill").resizable()
+        VStack{
+            HStack {
+                Spacer()
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "x.circle.fill").resizable()
+                    
+                })
+                .frame(width: 20, height: 20)
+                .padding(.top)
+                .padding(.horizontal)
+                .foregroundColor(Color(.button2))
+            }
+            
+            
+                NavigationStack {
+                    VStack {
+                        TagsView(dataDicts: vm.itemsDict, selectedTarget: scrollTarget.targetID)
+                    }
+                }
+           
+        }
+        .onAppear {
+            Task {
+                //update all ingredients
+                vm.ingredientsByType = try await vm.fetchIngredients()
+                if !vm.ingredientsByType.isEmpty {
+                    print("********got fetched ingredients data*********")
+                }else {
+                    print("can't get fethed data")
+                }
                 
-            })
-            .frame(width: 20, height: 20)
-            .padding(.top)
-            .padding(.horizontal)
-            .foregroundColor(Color(.button2))
+                
+                
+                vm.itemsDict = try await vm.getItemsNameWithCategory(data: vm.ingredientsByType)
+               
+                
+                if !vm.itemsDict.isEmpty {
+                    print("**********got transform fetched data to dataDict*********")
+                }else {
+                    print("can't get dataDict")
+                }
+                
+            }
         }
         
-        
-        NavigationStack {
-            TagsView(dataDicts: vm.itemsDict, selectedTarget: scrollTarget.targetID)
-           }
-           .onAppear {
-               //update all ingredients
-               Task {
-                   do {
-                    
-                        let fetchedData = try await GetIngredients(sessionManager: sessionManager).loadIngredients()
-                        self.data = fetchedData
-                        self.dataDict = vm.getItemsNameWithCategory(data: data)
-                        vm.itemsDict = self.dataDict
-                        
-                    
-                       
-                   } catch {
-                       print("Error fetching data: \(error.localizedDescription)")
-                   }
-               }
-           }
-      
-      
     }
+    
+    
 }
 
 
