@@ -22,13 +22,12 @@ class SelectionSheetViewModel: ObservableObject {
     }
     
     
-    func fetchIngredients()  {
-        Task {
-            try await ingredientsByType = GetIngredients(sessionManager: session).loadIngredients()
-        }
+    func fetchIngredients() async throws -> [String: [IngredientItem]] {
+        self.ingredientsByType = try await GetIngredients(sessionManager: session).loadIngredients()
+        return self.ingredientsByType
     }
     
-    func getItemsNameWithCategory(data: [String: [IngredientItem]]) -> [String : [String]] {
+    func getItemsNameWithCategory(data: [String: [IngredientItem]]) async throws  -> [String : [String]] {
         let ingredientNamesByType: [String: [String]] = data.mapValues { $0.map { $0.name } }
         return ingredientNamesByType
     }

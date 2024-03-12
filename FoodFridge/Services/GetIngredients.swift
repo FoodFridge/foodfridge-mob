@@ -66,7 +66,7 @@ class GetIngredients {
             print("ingredient token = \(String(describing: token))")
             
             let localID = sessionManager.getLocalID()
-            print("ingredient id = \(String(describing: localID))")
+            print("ingredient user id = \(String(describing: localID))")
             
             let expTime = sessionManager.getExpTime()
             print("ingredient exp time = \(String(describing: expTime))")
@@ -80,26 +80,45 @@ class GetIngredients {
             //JSON data  and token to be sent to the server, handled both unloggedIn user and loggedIn user
             let requestBody = try? JSONSerialization.data(withJSONObject: ["localId": localID], options: [])
             let userTimeZone  = UserTimeZone.getTimeZone()
+            let timeStamp = UserTimeZone.getCurrentTimestamp()
             
             var request = URLRequest(url: url)
                    request.httpMethod = "POST"
                    request.httpBody = requestBody  
+    
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
-            request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+           
             
-            /*
+         
             //if user is logged in
             if UserDefaults.standard.bool(forKey: "userLoggedIn") {
+                let returnNewToken = try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime ?? Date.timeIntervalSinceReferenceDate, userTimeZone: userTimeZone, sessionManager: sessionManager)
+                print("returnNewToken in checking user default = \(String(describing: returnNewToken))")
+                if returnNewToken == nil {
+                    // if token still valid use present token to fetch
+                    request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+                    request.setValue(timeStamp, forHTTPHeaderField: "TimeStamp")
+                }else {
+                    // use new token to fetch
+                    request.setValue("Bearer \(returnNewToken ?? "")", forHTTPHeaderField: "Authorization")
+                    request.setValue(timeStamp, forHTTPHeaderField: "TimeStamp")
+                }
+                
+                
+                print("request header token = \(String(describing: request.value(forHTTPHeaderField: "Authorization")))")
+                print("request header timeStamp  = \(String(describing: request.value(forHTTPHeaderField: "TimeStamp")))")
+               
+                /*
                 //verify token is valid before request api
                 if  TokenManager.isTokenExpired(expiryDateUnix: expTime ?? Date.timeIntervalSinceReferenceDate, userTimeZoneIdentifier: userTimeZone) {
                     print("token expired!")
-                    //remove expired token in session
+                    //if it expired remove expired token of session
                     sessionManager.removeToken()
-                    print("removed token")
+                    print("removed token and exp time")
                     
                     do {
-                        // if it expired request new token
+                        // then request new token
                         let newTokenResponse = try await TokenManager.requestNewToken(sessionmanager: sessionManager)
                         print("new token = \(String(describing: newTokenResponse?.token))")
                         
@@ -130,15 +149,18 @@ class GetIngredients {
                     // if token still valid use present token to fetch
                     request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
                 }
+                 */
                 
             }
             
-            */
+          
             
             
             let (data, response) = try await URLSession.shared.data(for: request)
                    
-            guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
+            guard(response as? HTTPURLResponse)?.statusCode == 200 else { 
+                print("DeBug: cannot fetch ingredients = \(response)")
+                throw FetchError.serverError }
             print("DEBUG: ingredient load statusCode =  \(response)")
             
             let jsonData = try decoder.decode(IngredientData.self, from: data)
@@ -159,7 +181,4 @@ class GetIngredients {
     
 }
 
-enum SessionError: Error {
-    case missingAuthToken
-    case missingLocalID
-}
+

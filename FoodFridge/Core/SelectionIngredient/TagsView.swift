@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TagsView: View {
     
-    let dataDicts : [String : [String]]
+    var dataDicts : [String : [String]]
     var groupItemsByType: [String : [[String]]] = [String : [[String]]]()
     let screenWidth = UIScreen.main.bounds.width
     var selectedTarget: String = ""
@@ -20,15 +20,20 @@ struct TagsView: View {
     
     
     @EnvironmentObject var vm: TagsViewModel
-   
+    @StateObject var createGroup = CreateGroup()
     
-    init(dataDicts: [ String : [String]], selectedTarget: String) {
-        
-        self.dataDicts = dataDicts
-        groupItemsByType = createGroupedItemsWithType(items: dataDicts)
-        self.selectedTarget = selectedTarget
-       
-        
+    init(dataDicts: [String : [String]], selectedTarget: String) {
+      
+            self.dataDicts = dataDicts
+            if !self.dataDicts.isEmpty {
+            print("*******tagView got dataDict passed******** ")
+            }else{
+                print("tagView can't get passing dataDict")
+            }
+          
+            groupItemsByType = createGroupedItemsWithType(items: dataDicts)
+            self.selectedTarget = selectedTarget
+    
         func createGroupedItemsWithType(items: [String: [String]]) -> [String: [[String]]] {
             var groupedItemsWithType: [String: [[String]]] = [:]
             for (key, words) in items {
@@ -40,8 +45,8 @@ struct TagsView: View {
                     label.text = word
                     label.sizeToFit()
                     
-                    let labelWidth = label.frame.size.width + 32 // Adjust padding as needed
-                    if (width + labelWidth + 32) < screenWidth {
+                    let labelWidth = label.frame.size.width + 40 // Adjust padding as needed
+                    if (width + labelWidth + 40) < screenWidth {
                         width += labelWidth
                         currentGroup.append(word)
                     } else {
@@ -61,8 +66,12 @@ struct TagsView: View {
             
             return groupedItemsWithType
         }
-        
+         
     }
+      
+        
+   
+        
     
     var sortedKeys: [String] {
         let keys = Array(groupItemsByType.keys)
@@ -89,7 +98,7 @@ struct TagsView: View {
                             VStack {
                                 Text(category.displayName)
                                     .id(category.displayName)
-                                    .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 15))
+                                    .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 16))
                                     .foregroundStyle(.button2)
                                     .padding()
                                     .padding(.vertical, -10)
@@ -112,7 +121,7 @@ struct TagsView: View {
                                     //MARK: TODO: check if pantry is empty? will display text "Your pantry is empty"
                                         
                                     Text(tag)
-                                        .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
+                                        .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 14))
                                         .lineLimit(1)
                                         .padding()
                                         .padding(.vertical, -10)
@@ -139,6 +148,7 @@ struct TagsView: View {
                     }
                     
                 }
+                
                     
             }
             

@@ -30,6 +30,10 @@ class GetFavoriteRecipe {
                 throw SessionError.missingLocalID
             }
             
+            guard let expTime = sessionManager.getExpTime() else {
+                throw SessionError.missingExpTime
+            }
+            
             let urlEndpoint = ("\(AppConstant.getFavoriteRecipeOfuserUSLString)/\(localID)/\(isFavorite)")
         
             
@@ -37,11 +41,25 @@ class GetFavoriteRecipe {
             { throw FetchError.invalidURL }
            // print("get fave url = \(url)")
             
+            //Make a request
             let userTimeZone  = UserTimeZone.getTimeZone()
             var request = URLRequest(url: url) 
                    request.httpMethod = "GET"
                    request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
-                   request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                   
+            
+            //if user is logged in
+            if UserDefaults.standard.bool(forKey: "userLoggedIn") {
+                let returnNewToken = try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime, userTimeZone: userTimeZone, sessionManager: sessionManager)
+                if returnNewToken == nil {
+                    // if token still valid use present token to fetch
+                    request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+                }else {
+                    // use new token to fetch
+                    request.setValue("Bearer \(returnNewToken ?? "")", forHTTPHeaderField: "Authorization")
+                }
+            }
+            
             
                    
             let (data, response) = try await URLSession.shared.data(for: request)

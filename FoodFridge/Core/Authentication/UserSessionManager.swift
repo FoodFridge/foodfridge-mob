@@ -78,9 +78,11 @@ class SessionManager: ObservableObject {
            try? keychain.remove("refreshToken")
            try? keychain.remove("expTime")
        }
-    
-    
-    
-    
-    
+
+}
+
+enum SessionError: Error {
+    case missingAuthToken
+    case missingLocalID
+    case missingExpTime
 }

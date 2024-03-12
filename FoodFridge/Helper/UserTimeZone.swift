@@ -11,4 +11,17 @@ class UserTimeZone: ObservableObject {
         let timeZone = TimeZone.current.identifier
         return timeZone
     }
+    
+    static func getCurrentTimestamp() -> String {
+           let currentDate = Date()
+           
+           // Get user's time zone
+           let userTimeZone = TimeZone.current
+           
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+           dateFormatter.timeZone = userTimeZone
+           
+           return dateFormatter.string(from: currentDate)
+       }
 }
