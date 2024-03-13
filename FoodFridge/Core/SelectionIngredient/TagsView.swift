@@ -105,7 +105,7 @@ struct TagsView: View {
                                     HStack(spacing: 0){
                                         Text("My pantry")
                                             .id(category.displayName)
-                                            .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 20))
+                                            .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 16))
                                             .foregroundStyle(.button2)
                                             .padding()
                                             .padding(.vertical, -10)
@@ -212,6 +212,10 @@ struct TagsView: View {
                                                         selectedItems.insert(tag)
                                                     }
                                                 }
+                                        }
+                                        else{
+                                            Text(" ")
+                                                .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 10))
                                         }
                                        
                                     }
