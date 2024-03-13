@@ -16,7 +16,7 @@ struct RecipeAnimation: View {
             Rectangle()
                 .fill(Color(.button2))
                 .overlay {
-                    Text("Please Login to save your favorite!")
+                    Text("Please Sign in to save your favorite!")
                 }
                 .frame(width: 300, height: 30)
                 .cornerRadius(5)

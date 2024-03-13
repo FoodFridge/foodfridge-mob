@@ -1,14 +1,13 @@
 //
-//  ScanItemView.swift
+//  ScanItemView2.swift
 //  FoodFridge
 //
-//  Created by Jessie Pastan on 1/9/24.
+//  Created by Jessie Pastan on 3/13/24.
 //
 
 import SwiftUI
 
-struct ScanItemView: View {
-    
+struct ScanItemView2: View {
     @EnvironmentObject var vm: ScanItemViewModel
     @EnvironmentObject var sessionManager: SessionManager
     
@@ -25,19 +24,13 @@ struct ScanItemView: View {
                 }
                 .ignoresSafeArea()
                 .id(vm.dataScannerViewId)
+                .frame(height: 250)
             
             //implement added animation bar
             AddedBarAnimation(isTapped: addButtonTapped)
             
             VStack {
-                /*
-                VStack(alignment: .center) {
-                    Text("Use camera to capture text on food package and save to your pantry")
-                }
-                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 12))
-                .padding()
-                 */
-    
+               
                 ScrollView {
                     LazyVStack {
                         ForEach(vm.recognizedItems) { item in
@@ -53,7 +46,7 @@ struct ScanItemView: View {
                                     // trigger animation bar
                                     addButtonTapped = true
                                     // Reset the state after a delay
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { 
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
                                     addButtonTapped = false
                                 }
                                     
@@ -63,7 +56,6 @@ struct ScanItemView: View {
                                         .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                                         .padding()
                                         .background(Rectangle().foregroundStyle(.button1).cornerRadius(15))
-                                        .foregroundStyle(.button2)
                                 }
                                 .padding(.top, 30)
                                 
@@ -75,23 +67,9 @@ struct ScanItemView: View {
                         }
                     }
                 }
-                VStack(alignment: .center) {
-                    Text("Scan text")
-                }.font(Font.custom(CustomFont.appFontBold.rawValue, size: 15))
-               /*
-                    //MARK: Display Pantry button
-                    Button {
-                        isShowPantry = true
-                    } label: {
-                        Text("Go to Pantry")
-                            .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
-                    }
-                    .disabled(!sessionManager.isLoggedIn())
-                    .sheet(isPresented:
-                            $isShowPantry) {
-                        PantryView2()
-                    }
-            */
+                
+               
+    
               
 
             }
@@ -101,9 +79,10 @@ struct ScanItemView: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    ScanItemView()
+    ScanItemView2()
 }
