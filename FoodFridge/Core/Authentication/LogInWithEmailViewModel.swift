@@ -9,6 +9,4 @@ import Foundation
 class LogInWithEmailViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
-    
-    
 }

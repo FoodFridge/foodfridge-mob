@@ -14,11 +14,15 @@ struct LogInView: View {
     @EnvironmentObject var authenthication: Authentication
     
     @StateObject var vm = LogInWithEmailViewModel()
+    @StateObject var validator = ValidateField()
     @State private var userData: LogInResponseData.LogInData = LogInResponseData.MOCKdata.data
     
     @State private var isPassHidden = true
-    
    
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    
+    
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -68,16 +72,33 @@ struct LogInView: View {
                 
                 
                 Button {
-                    //login user
-                    Task {
-                        self.userData = try await LoginWithEmailService(sessionManager: sessionManager).login(email: vm.email, password: vm.password)
-                    
+                    //validate textfield
+                    let isFieldValidated =  validator.validateTextField(email: vm.email, password: vm.password, name: nil)
+                    print("validated = \(isFieldValidated)")
+                    if isFieldValidated {
+                        
+                        //login user
+                        Task {
+                            do {
+                                self.userData = try await LoginWithEmailService(sessionManager: sessionManager).login(email: vm.email, password: vm.password)
+                            }catch {
+                                self.alertMessage =  validator.loginFieldError?.textErrorDescription ?? "Failed to login. Please try again"
+                                self.showAlert = true
+                            }
+                        }
+                        //if validate is failed
+                    }else {
+                        self.alertMessage = validator.loginFieldError?.textErrorDescription ?? "An error occor"
+                        self.showAlert = true
                     }
                     
                     
                 } label: {
                     Text("Log in")
                 }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text(""), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                        }
                 .bold()
                 .padding(.vertical)
                 .foregroundStyle(.black)
@@ -85,6 +106,7 @@ struct LogInView: View {
                 .background(Color(.button2))
                 .cornerRadius(20)
                 .padding(.bottom)
+                
                 
                 
                 

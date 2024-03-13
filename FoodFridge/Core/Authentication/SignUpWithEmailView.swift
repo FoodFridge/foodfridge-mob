@@ -9,12 +9,18 @@ import SwiftUI
 
 struct SignUpWithEmailView: View {
     
+    @StateObject var validator = ValidateField()
     @StateObject var vm = SignUpWithEmailViewModel()
     @EnvironmentObject var authenthication: Authentication
     @EnvironmentObject var sessionManager: SessionManager
    
     @State private var isSignUpSuccess = false
     @State private var isPassHidden = true
+    
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    
+   
     
     var body: some View {
         NavigationStack {
@@ -52,32 +58,48 @@ struct SignUpWithEmailView: View {
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }
                     
-                    //sign up user
-                    Task {
-                        self.isSignUpSuccess = try await vm.signUpUser(sessionManager: sessionManager)
-                        if isSignUpSuccess {
-                            authenthication.updateValidation(success: true)
-                            if vm.sessionData.token != nil && vm .sessionData.localId != nil {
-                                //save session data
-                                sessionManager.saveAuthToken(token: vm.sessionData.token ?? "mockToken")
-                                sessionManager.saveLocalID(id: vm.sessionData.localId ?? "mockId")
-                                
+                    let isFieldValidated = validator.validateTextField(email: vm.email, password: vm.password, name: vm.name)
+                    print("sign up validated = \(isFieldValidated)")
+                    if isFieldValidated {
+                        //sign up user
+                        Task {
+                            do {
+                                self.isSignUpSuccess = try await vm.signUpUser(sessionManager: sessionManager)
+                                if isSignUpSuccess {
+                                    authenthication.updateValidation(success: true)
+                                    if vm.sessionData.token != nil && vm .sessionData.localId != nil {
+                                        //save session data
+                                        sessionManager.saveAuthToken(token: vm.sessionData.token ?? "mockToken")
+                                        sessionManager.saveLocalID(id: vm.sessionData.localId ?? "mockId")
+                                        
+                                    }
+                                }
+                            }catch {
+                                // handle sign up error
+                                self.alertMessage = "Failed to login. Please try again"
+                                self.showAlert = true
                             }
                         }
+                        //if validation has failed, show alert
+                    }else {
+                        self.alertMessage = validator.loginFieldError?.textErrorDescription ?? "An unknown error occur"
+                        self.showAlert = true
                     }
-                    
-                    
                     
                     
                 } label: {
                     Text("Sign up")
                 }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text(""), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                        }
                 .bold()
                 .foregroundStyle(.black)
                 .frame(width: 150, height: 30)
                 .background(Color(.button2))
                 .cornerRadius(20)
                 .padding(.bottom)
+                
                
                 
                 
