@@ -101,14 +101,21 @@ struct AuthenthicationView: View {
                             }
                             
                             
-                            SignInWithAppleButton { request in
-                                appleSignIn.handleSignInWithAppleRequest(request)
-                            } onCompletion: { result  in
-                                appleSignIn.handleSignInWithAppleCompletion(result)
-                            }
-                            .signInWithAppleButtonStyle(colorScheme == .light ? .black : .white)
-                            .frame(width: 330, height: 50)
-                            .cornerRadius(120)
+                            
+                                SignInWithAppleButton { request in
+                                    appleSignIn.handleSignInWithAppleRequest(request)
+                                } onCompletion: { result  in
+                                    appleSignIn.handleSignInWithAppleCompletion(result)
+                                }
+                                
+                                .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
+                                .frame(width: 330, height: 50)
+                                .cornerRadius(120)
+                       
+                                
+                                
+                                
+                          
 
                         }
                         
