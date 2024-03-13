@@ -108,6 +108,7 @@
 		75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DF12B6600A0003959B6 /* AppConstant.swift */; };
 		75C861572B9A7850001C6160 /* PantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C861562B9A7850001C6160 /* PantryView2.swift */; };
 		75CD189B2BA2182000758328 /* AddPantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189A2BA2182000758328 /* AddPantryView2.swift */; };
+		75CD189D2BA2190000758328 /* ScanItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189C2BA2190000758328 /* ScanItemView2.swift */; };
 		75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B32B75DA8A0063B742 /* GetPantry.swift */; };
 		75CE75B62B75E2330063B742 /* Pantry.json in Resources */ = {isa = PBXBuildFile; fileRef = 75CE75B52B75E2330063B742 /* Pantry.json */; };
 		75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B72B76B3140063B742 /* DeletePantry.swift */; };
@@ -210,6 +211,7 @@
 		75C42DF12B6600A0003959B6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		75C861562B9A7850001C6160 /* PantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView2.swift; sourceTree = "<group>"; };
 		75CD189A2BA2182000758328 /* AddPantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView2.swift; sourceTree = "<group>"; };
+		75CD189C2BA2190000758328 /* ScanItemView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView2.swift; sourceTree = "<group>"; };
 		75CE75B32B75DA8A0063B742 /* GetPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPantry.swift; sourceTree = "<group>"; };
 		75CE75B52B75E2330063B742 /* Pantry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pantry.json; sourceTree = "<group>"; };
 		75CE75B72B76B3140063B742 /* DeletePantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePantry.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				758061392B4E3F1D0091FFFA /* ScanItemView.swift */,
+				75CD189C2BA2190000758328 /* ScanItemView2.swift */,
 				751EB5572B4E4E8F00106FD6 /* ScanItemViewModel.swift */,
 				751EB5592B4E4FD100106FD6 /* DataScannerView.swift */,
 				75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */,
@@ -706,6 +709,7 @@
 				75C42DE82B631AA3003959B6 /* LinkRecipesView.swift in Sources */,
 				75BD40862BA10F800055B06F /* ValidateField.swift in Sources */,
 				752580D22B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift in Sources */,
+				75CD189D2BA2190000758328 /* ScanItemView2.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
 				753245AA2B7FF16700545DE7 /* LogInResponseData.swift in Sources */,
