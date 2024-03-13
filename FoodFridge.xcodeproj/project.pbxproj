@@ -51,7 +51,7 @@
 		754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */; };
 		754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */; };
 		757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C22B33E8F000048178 /* FoodFridgeApp.swift */; };
-		757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C42B33E8F000048178 /* AuthenthicationView.swift */; };
+		757542C52B33E8F000048178 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C42B33E8F000048178 /* AuthenticationView.swift */; };
 		757542C72B33E8F100048178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757542C62B33E8F100048178 /* Assets.xcassets */; };
 		757542CB2B33E8F100048178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757542CA2B33E8F100048178 /* Preview Assets.xcassets */; };
 		757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542D22B33EB0E00048178 /* ColorExtention.swift */; };
@@ -109,6 +109,8 @@
 		75C861572B9A7850001C6160 /* PantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C861562B9A7850001C6160 /* PantryView2.swift */; };
 		75CD189B2BA2182000758328 /* AddPantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189A2BA2182000758328 /* AddPantryView2.swift */; };
 		75CD189D2BA2190000758328 /* ScanItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189C2BA2190000758328 /* ScanItemView2.swift */; };
+		75CD189F2BA22D2500758328 /* FetchPantryIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */; };
+		75CD18A12BA2322B00758328 /* AuthenticationView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD18A02BA2322B00758328 /* AuthenticationView2.swift */; };
 		75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B32B75DA8A0063B742 /* GetPantry.swift */; };
 		75CE75B62B75E2330063B742 /* Pantry.json in Resources */ = {isa = PBXBuildFile; fileRef = 75CE75B52B75E2330063B742 /* Pantry.json */; };
 		75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B72B76B3140063B742 /* DeletePantry.swift */; };
@@ -166,7 +168,7 @@
 		754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
 		757542BF2B33E8F000048178 /* FoodFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757542C22B33E8F000048178 /* FoodFridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodFridgeApp.swift; sourceTree = "<group>"; };
-		757542C42B33E8F000048178 /* AuthenthicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenthicationView.swift; sourceTree = "<group>"; };
+		757542C42B33E8F000048178 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		757542C62B33E8F100048178 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		757542C82B33E8F100048178 /* FoodFridge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodFridge.entitlements; sourceTree = "<group>"; };
 		757542CA2B33E8F100048178 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -212,6 +214,8 @@
 		75C861562B9A7850001C6160 /* PantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView2.swift; sourceTree = "<group>"; };
 		75CD189A2BA2182000758328 /* AddPantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView2.swift; sourceTree = "<group>"; };
 		75CD189C2BA2190000758328 /* ScanItemView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView2.swift; sourceTree = "<group>"; };
+		75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPantryIngredients.swift; sourceTree = "<group>"; };
+		75CD18A02BA2322B00758328 /* AuthenticationView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView2.swift; sourceTree = "<group>"; };
 		75CE75B32B75DA8A0063B742 /* GetPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPantry.swift; sourceTree = "<group>"; };
 		75CE75B52B75E2330063B742 /* Pantry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pantry.json; sourceTree = "<group>"; };
 		75CE75B72B76B3140063B742 /* DeletePantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePantry.swift; sourceTree = "<group>"; };
@@ -314,7 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				753245A52B7FD39300545DE7 /* Authentication.swift */,
-				757542C42B33E8F000048178 /* AuthenthicationView.swift */,
+				757542C42B33E8F000048178 /* AuthenticationView.swift */,
+				75CD18A02BA2322B00758328 /* AuthenticationView2.swift */,
 				75BD40852BA10F800055B06F /* ValidateField.swift */,
 				757542DE2B34F3D300048178 /* LogInView.swift */,
 				753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */,
@@ -512,6 +517,7 @@
 				7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */,
 				753245B22B801CE500545DE7 /* LogOut.swift */,
 				75D9504D2B97E16F009926BE /* TokenManager.swift */,
+				75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -659,9 +665,10 @@
 				75C861572B9A7850001C6160 /* PantryView2.swift in Sources */,
 				753245B52B802A8300545DE7 /* LogOutViewModel.swift in Sources */,
 				753245B12B80128F00545DE7 /* LogInWithEmailViewModel.swift in Sources */,
-				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
+				757542C52B33E8F000048178 /* AuthenticationView.swift in Sources */,
 				753245992B7E962A00545DE7 /* SignUpWithEmail.swift in Sources */,
 				757C63B92B85279E00FC6D5E /* AppDelegate.swift in Sources */,
+				75CD18A12BA2322B00758328 /* AuthenticationView2.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */,
 				759F55532B8AC3D300276079 /* RecipeAnimation.swift in Sources */,
@@ -682,6 +689,7 @@
 				75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */,
 				753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */,
 				752580D42B6B036900D536D2 /* ChosenSubProfileView.swift in Sources */,
+				75CD189F2BA22D2500758328 /* FetchPantryIngredients.swift in Sources */,
 				75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */,
 				75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */,
 				752580CC2B69A13100D536D2 /* LinkRecipeRequestBody.swift in Sources */,

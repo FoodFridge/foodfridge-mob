@@ -9,7 +9,7 @@ import SwiftUI
 import AuthenticationServices
 
 
-struct AuthenthicationView: View {
+struct AuthenticationView: View {
    
     @State private var signUpWithEmailShow: Bool = false
     @State private var signUpWithGoogleShow: Bool = false

@@ -32,7 +32,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(ScrollTarget())
                     
                 } else {
-                    AuthenthicationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager)) 
+                    AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager)) 
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
                         .environmentObject(TagsViewModel(sessionManager: sessionManager))

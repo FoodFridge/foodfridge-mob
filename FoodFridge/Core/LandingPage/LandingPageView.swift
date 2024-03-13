@@ -112,6 +112,14 @@ struct LandingPageView: View {
                                 Image(systemName: "person.crop.circle")
                                     .foregroundColor(Color(.button2))
                             }
+                        }else {
+                            NavigationLink {
+                               //MARK: navigate to Authen view
+                                AuthenticationView2(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
+                            }label: {
+                                Text("Sign in")
+                                    .foregroundColor(Color(.button2))
+                            }
                         }
             
                         

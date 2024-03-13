@@ -16,7 +16,7 @@ struct AddedBarAnimation: View {
         Rectangle()
             .fill(Color(.button2))
             .overlay {
-                Text(sessionManager.isLoggedIn() ? "Item added to your pantry" : "Please Login to use this feature")
+                Text(sessionManager.isLoggedIn() ? "Item added to your pantry" : "Please Sign in to use this feature")
             }
             .frame(height: 30)
             .cornerRadius(5)
