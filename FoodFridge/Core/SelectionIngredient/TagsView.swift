@@ -18,7 +18,9 @@ struct TagsView: View {
     @State private var selectedItems = Set<String>()
     @State private var searchTag = ""
     
-    @State private var showAlert = false
+    @State private var showAlertForLoginUser = false
+    @State private var showAlertForNotLoginUser = false
+    
     @State private var navigationSelection: NavigationSelection?
     // Use NavigationPath for path-based navigation
     @State private var navigationPath = NavigationPath()
@@ -112,12 +114,22 @@ struct TagsView: View {
                                         
                                         
                                         Button(action: {
-                                            showAlert = true
+                                            if UserDefaults.standard.bool(forKey: "userLoggedIn") {
+                                                showAlertForLoginUser = true
+                                            }else {
+                                                showAlertForNotLoginUser = true
+                                            }
+                                            
                                         }) {
                                             Image(systemName: "plus.circle")
                                                 .font(.title)
                                         }
-                                        .alert("Add Pantry", isPresented: $showAlert) {
+                                        .alert("", isPresented: $showAlertForNotLoginUser) {
+                                            Button("ok", role: .cancel) { }
+                                        } message: {
+                                            Text("Please login to add pantry")
+                                        }
+                                        .alert("Add Pantry", isPresented: $showAlertForLoginUser) {
                                             Button("Camera", role: .destructive) {
                                                 // Update the navigation path to navigate
                                                 navigationPath.append(NavigationSelection.scanItemView)
