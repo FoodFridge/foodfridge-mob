@@ -189,29 +189,31 @@ struct TagsView: View {
                                 HStack {
                                     ForEach(subItems, id: \.self) { tag in
                                         //MARK: TODO: check if pantry is empty?"
-                                        
-                                        Text(tag)
-                                            .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 14))
-                                            .lineLimit(1)
-                                            .padding()
-                                            .padding(.vertical, -10)
-                                            .background(selectedItems.contains(tag) ? (Color(.button4)) : (Color(.button3)) )
-                                            .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                                            .onTapGesture {
-                                                //update tag to prompt
-                                                vm.addSelectedTag(tag: tag)
-                                                print("selected tag = \(tag)")
-                                                print("update added list:\(vm.selectedTags)")
-                                                
-                                                //update tag background color in sheet
-                                                if selectedItems.contains(tag) {
-                                                    selectedItems.remove(tag)
-                                                    //update prompt list
-                                                    vm.deleteSelectedTag(tag: tag)
-                                                }else {
-                                                    selectedItems.insert(tag)
+                                        if !tag.isEmpty {
+                                            Text(tag)
+                                                .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 14))
+                                                .lineLimit(1)
+                                                .padding()
+                                                .padding(.vertical, -10)
+                                                .background(selectedItems.contains(tag) ? (Color(.button4)) : (Color(.button3)) )
+                                                .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                                .onTapGesture {
+                                                    //update tag to prompt
+                                                    vm.addSelectedTag(tag: tag)
+                                                    print("selected tag = \(tag)")
+                                                    print("update added list:\(vm.selectedTags)")
+                                                    
+                                                    //update tag background color in sheet
+                                                    if selectedItems.contains(tag) {
+                                                        selectedItems.remove(tag)
+                                                        //update prompt list
+                                                        vm.deleteSelectedTag(tag: tag)
+                                                    }else {
+                                                        selectedItems.insert(tag)
+                                                    }
                                                 }
-                                            }
+                                        }
+                                       
                                     }
                                 }
                             }
