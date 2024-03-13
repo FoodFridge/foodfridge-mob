@@ -134,7 +134,7 @@ struct TagsView: View {
                                             case .scanItemView:
                                                 ScanItemView()
                                             case .addPantryView:
-                                                AddPantryView()
+                                                AddPantryView2()
                                             }
                                         }
                                         

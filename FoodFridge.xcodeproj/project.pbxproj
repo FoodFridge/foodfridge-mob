@@ -107,6 +107,7 @@
 		75C42DF02B646A5C003959B6 /* GoogleLinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */; };
 		75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DF12B6600A0003959B6 /* AppConstant.swift */; };
 		75C861572B9A7850001C6160 /* PantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C861562B9A7850001C6160 /* PantryView2.swift */; };
+		75CD189B2BA2182000758328 /* AddPantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189A2BA2182000758328 /* AddPantryView2.swift */; };
 		75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B32B75DA8A0063B742 /* GetPantry.swift */; };
 		75CE75B62B75E2330063B742 /* Pantry.json in Resources */ = {isa = PBXBuildFile; fileRef = 75CE75B52B75E2330063B742 /* Pantry.json */; };
 		75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B72B76B3140063B742 /* DeletePantry.swift */; };
@@ -208,6 +209,7 @@
 		75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLinkRow.swift; sourceTree = "<group>"; };
 		75C42DF12B6600A0003959B6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		75C861562B9A7850001C6160 /* PantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView2.swift; sourceTree = "<group>"; };
+		75CD189A2BA2182000758328 /* AddPantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView2.swift; sourceTree = "<group>"; };
 		75CE75B32B75DA8A0063B742 /* GetPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPantry.swift; sourceTree = "<group>"; };
 		75CE75B52B75E2330063B742 /* Pantry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pantry.json; sourceTree = "<group>"; };
 		75CE75B72B76B3140063B742 /* DeletePantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePantry.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				75AECFE72B7D2F92009B93E1 /* PantryView.swift */,
 				75C861562B9A7850001C6160 /* PantryView2.swift */,
 				75AECFE52B7D2357009B93E1 /* AddPantryView.swift */,
+				75CD189A2BA2182000758328 /* AddPantryView2.swift */,
 				75D950572B98FC03009926BE /* AddPantryViewModel.swift */,
 			);
 			path = Pantry;
@@ -706,6 +709,7 @@
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
 				753245AA2B7FF16700545DE7 /* LogInResponseData.swift in Sources */,
+				75CD189B2BA2182000758328 /* AddPantryView2.swift in Sources */,
 				754A8FA62B58A41800C9FD04 /* Category.swift in Sources */,
 				752580DB2B6B0E2800D536D2 /* GetFavoriteRecipe.swift in Sources */,
 				7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */,
