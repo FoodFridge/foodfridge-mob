@@ -102,7 +102,6 @@ struct SignUpWithEmailView: View {
                 
                
                 
-                
                 VStack {
                     Text("Password setting with 6 digits and up.\nBy using the app, you agree to our Terms of use and Privacy policy")
                 }

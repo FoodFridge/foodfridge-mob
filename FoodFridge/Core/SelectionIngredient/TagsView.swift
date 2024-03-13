@@ -110,7 +110,7 @@ struct TagsView: View {
                             
                         }
                         
-                        //tags
+                        //ingredient tags
                         // Filter and display tags based on the search text
                         ForEach(groupItemsByType[key]?.filter { subItems in
                             // Check if search text is empty or if any of the sub-items start with the search text (case-insensitive)
@@ -118,8 +118,8 @@ struct TagsView: View {
                         } ?? [], id: \.self) { subItems in
                             HStack {
                                 ForEach(subItems, id: \.self) { tag in
-                                    //MARK: TODO: check if pantry is empty? will display text "Your pantry is empty"
-                                        
+                                    //MARK: TODO: check if pantry is empty?"
+                                     
                                     Text(tag)
                                         .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 14))
                                         .lineLimit(1)
