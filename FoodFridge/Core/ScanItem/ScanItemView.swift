@@ -77,7 +77,9 @@ struct ScanItemView: View {
                 }
                 VStack(alignment: .center) {
                     Text("Scan text")
-                }.font(Font.custom(CustomFont.appFontBold.rawValue, size: 15))
+                }
+                .foregroundStyle(Color(.accent))
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 16))
                /*
                     //MARK: Display Pantry button
                     Button {

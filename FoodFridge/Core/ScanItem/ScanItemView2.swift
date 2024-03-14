@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScanItemView2: View {
-    @EnvironmentObject var vm: ScanItemViewModel
+    @StateObject var vm: ScanItemViewModel
     @EnvironmentObject var sessionManager: SessionManager
     
     var userId = "test user"
@@ -53,11 +53,12 @@ struct ScanItemView2: View {
                                     
                                 } label: {
                                     Text("Add: \(text.transcript)")
+                                        .foregroundStyle(Color(.button2))
                                         .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                                         .padding()
                                         .background(Rectangle().foregroundStyle(.button1).cornerRadius(15))
                                 }
-                                .padding(.top, 30)
+                                .padding(.top)
                                 
                                 
                                 
@@ -68,8 +69,14 @@ struct ScanItemView2: View {
                     }
                 }
                 
-               
-    
+                VStack(alignment: .center) {
+                    Text("Scan text")
+                }
+                .ignoresSafeArea()
+                .padding(.bottom, -50)
+                .foregroundStyle(Color(.accent))
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 16))
+                
               
 
             }
@@ -83,6 +90,3 @@ struct ScanItemView2: View {
     }
 }
 
-#Preview {
-    ScanItemView2()
-}
