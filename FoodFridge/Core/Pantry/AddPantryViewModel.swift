@@ -14,11 +14,6 @@ class AddPantryViewModel: ObservableObject {
     
         private var cancellables = Set<AnyCancellable>()
     
-        
-        // Sample list of ingredients
-        let allIngredients = ["Apple","Apple pie", "Apple smith","Apple fuji","Apple green","Apple vinegar","Apricot","Banana","Thai namwha banana","Dried banana","Carrot", "Dates", "Eggplant", "Fig", "Grapes"]
-    
-    
     init() {
         
         $searchText
@@ -31,8 +26,8 @@ class AddPantryViewModel: ObservableObject {
     }
     
     private func performSearch(query: String) {
-            // Use Task.init to bridge to async code
-        
+        // Use Task.init to bridge to async code
+
         // Check if the query string is empty and return early if it is
         guard !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             self.suggestions = []
@@ -58,27 +53,11 @@ class AddPantryViewModel: ObservableObject {
        return try await FetchPantryIngredients().quaryIngredients(text: query)
     }
        
-    /*
-        init() {
-            // Update suggestions whenever searchText changes
-            $searchText
-                .map { text in
-                    if text.isEmpty {
-                        return []
-                    } else {
-                        return self.allIngredients.filter { $0.lowercased().contains(text.lowercased()) }
-                    }
-                }
-                .assign(to: &$suggestions)
-        }
-     */
-    
+   
     func addPantry(sessionManager: SessionManager, item: String) {
-    
-            Task {
+        Task {
                 try await AddPantry(sessionManager: sessionManager).addPantry(with: item)
-            }
-            
+             }
     }
     
     
