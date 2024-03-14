@@ -58,29 +58,34 @@ struct AddPantryView2: View {
                         }
                     }
                 }
+           
                 
-                   // Display suggestions
+            
+                // Display suggestions
                 List  {
-                        ForEach(vm.suggestions, id: \.self) { suggestion in
-                            Text(suggestion)
-                                .onTapGesture {
-                                    vm.searchText = suggestion // Update the text field with the selected suggestion
-                                }
-                        }
-                        .listRowBackground(Color.button3)
-                        .foregroundColor(.black)
-                        
-                        
+                    ForEach(vm.suggestions, id: \.self) { suggestion in
+                        Text(suggestion)
+                            .onTapGesture {
+                                vm.searchText = suggestion // Update the text field with the selected suggestion
+                            }
                     }
-                    .listStyle(PlainListStyle()) // Remove default List padding/styling
-                  
+                    .listRowBackground(Color.button3)
+                    .foregroundColor(.black)
+                    
+                    
+                }
+                .listStyle(PlainListStyle()) // Remove default List padding/styling
+         
+            
             Spacer()
                }
                .scrollContentBackground(.hidden)
                .frame(maxWidth: .infinity)
                .padding()
                .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
+               .foregroundColor(colorScheme == .dark ? .white : .black)
                .navigationBarBackButtonHidden(true)
+               
        
     }
 }

@@ -26,6 +26,7 @@ struct TagsView: View {
     @State private var navigationPath = NavigationPath()
     
     @EnvironmentObject var vm: TagsViewModel
+    @EnvironmentObject var sessionManager: SessionManager
     @StateObject var createGroup = CreateGroup()
     
     init(dataDicts: [String : [String]], selectedTarget: String) {
@@ -132,7 +133,7 @@ struct TagsView: View {
                                        
                                        
                                         .alert("Add Pantry", isPresented: $showAlertForLoginUser) {
-                                            Button("Camera", role: .destructive) {
+                                            Button("By camera", role: .destructive) {
                                                 // Update the navigation path to navigate
                                                 navigationPath.append(NavigationSelection.scanItemView)
                                             }
@@ -146,7 +147,7 @@ struct TagsView: View {
                                         .navigationDestination(for: NavigationSelection.self) { destination in
                                             switch destination {
                                             case .scanItemView:
-                                                ScanItemView()
+                                                ScanItemView2(vm: ScanItemViewModel(sessionManager: sessionManager))
                                             case .addPantryView:
                                                 AddPantryView2()
                                             }
