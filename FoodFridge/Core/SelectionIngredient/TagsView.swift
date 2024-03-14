@@ -127,8 +127,10 @@ struct TagsView: View {
                                         .alert("", isPresented: $showAlertForNotLoginUser) {
                                             Button("ok", role: .cancel) { }
                                         } message: {
-                                            Text("Please login to add pantry")
+                                            Text("Please Sign in to add pantry")
                                         }
+                                       
+                                       
                                         .alert("Add Pantry", isPresented: $showAlertForLoginUser) {
                                             Button("Camera", role: .destructive) {
                                                 // Update the navigation path to navigate
@@ -149,15 +151,10 @@ struct TagsView: View {
                                                 AddPantryView2()
                                             }
                                         }
-                                        
-                                        
-                                        
-                                        .foregroundStyle(.button2)
-                                        
-                                        
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(.horizontal)
+                                    .foregroundStyle(.button2)
                                     
                                     
                                     
