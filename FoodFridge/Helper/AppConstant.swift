@@ -15,7 +15,10 @@ class AppConstant {
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/login_with_email_and_password"
     
     static var logInWithEmailURLString2 =
-        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod//api/v1/LoginWithEmailAndPassword"
+        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/LoginWithEmailAndPassword"
+    
+    static var authWithAppURLString =
+        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/AuthWithApp"
     
     static var refreshTokenURLString =
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/RefreshToken"

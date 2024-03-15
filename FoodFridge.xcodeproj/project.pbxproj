@@ -91,6 +91,7 @@
 		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
+		75B480582BA3BEBE00477EC4 /* AuthUserWithApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */; };
 		75BD40862BA10F800055B06F /* ValidateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD40852BA10F800055B06F /* ValidateField.swift */; };
 		75C2DD972B7853F500CD184E /* EditPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD962B7853F500CD184E /* EditPantry.swift */; };
 		75C2DD992B785D7800CD184E /* AddedBarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */; };
@@ -196,6 +197,7 @@
 		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
+		75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserWithApp.swift; sourceTree = "<group>"; };
 		75BD40852BA10F800055B06F /* ValidateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateField.swift; sourceTree = "<group>"; };
 		75C2DD962B7853F500CD184E /* EditPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPantry.swift; sourceTree = "<group>"; };
 		75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedBarAnimation.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 		75FF4D292B4713940081B20E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */,
 				751EB5652B57134900106FD6 /* FetchIngredients.swift */,
 				754A8FA12B585A8400C9FD04 /* GetIngredients.swift */,
 				754A8FA32B586DFE00C9FD04 /* IngredientsParser.swift */,
@@ -689,6 +692,7 @@
 				75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */,
 				753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */,
 				752580D42B6B036900D536D2 /* ChosenSubProfileView.swift in Sources */,
+				75B480582BA3BEBE00477EC4 /* AuthUserWithApp.swift in Sources */,
 				75CD189F2BA22D2500758328 /* FetchPantryIngredients.swift in Sources */,
 				75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */,
 				75C42DEA2B645F38003959B6 /* GoogleSearchRecipe.swift in Sources */,

@@ -27,20 +27,14 @@ struct GoogleSignInButton: View {
                         .frame(width: 25, height: 25)
                         .clipShape(Circle())
                         .shadow(radius: 1)
-                        
-                     
-                    
                     Text("Sign in with Google")
                         .bold()
                         .foregroundStyle(.black)
                     Spacer()
                 }
-                
-                
                 }
             }
         .frame(width: 330, height: 50)
-            
         }
 }
 
