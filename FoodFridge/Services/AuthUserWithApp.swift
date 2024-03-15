@@ -8,7 +8,7 @@
 import Foundation
 class AuthUserWithApp {
     
-    static func auth(email : String, userId : String, sessionManager: SessionManager) async throws -> LogInResponseData.LogInData {
+    static func auth(email : String, userId : String, sessionManager: SessionManager) async throws -> Bool {
        
         let urlEndPoint = AppConstant.authWithAppURLString
         
@@ -75,13 +75,13 @@ class AuthUserWithApp {
             //if successfully
             print("Auth with app successfully")
             
-            return jsonResponse.data
+            return true
             
             
         } catch {
             print("Auth with app Error: \(error.localizedDescription)")
         }
         
-        return LogInResponseData.MOCKdata.data
+        return false
     }
 }

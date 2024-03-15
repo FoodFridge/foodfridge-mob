@@ -99,21 +99,35 @@ struct AuthenticationView2: View {
                             }
                             
                             
-                            
+                            switch colorScheme {
+                            case .dark:
                                 SignInWithAppleButton { request in
                                     appleSignIn.handleSignInWithAppleRequest(request)
                                 } onCompletion: { result  in
                                     appleSignIn.handleSignInWithAppleCompletion(result)
                                 }
-                                
-                                .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
+                                .signInWithAppleButtonStyle(.white)
                                 .frame(width: 330, height: 50)
                                 .cornerRadius(120)
-                       
-                                
-                                
-                                
-                          
+                            case .light:
+                                SignInWithAppleButton { request in
+                                    appleSignIn.handleSignInWithAppleRequest(request)
+                                } onCompletion: { result  in
+                                    appleSignIn.handleSignInWithAppleCompletion(result)
+                                }
+                                .signInWithAppleButtonStyle(.black)
+                                .frame(width: 330, height: 50)
+                                .cornerRadius(120)
+                            @unknown default:
+                                SignInWithAppleButton { request in
+                                    appleSignIn.handleSignInWithAppleRequest(request)
+                                } onCompletion: { result  in
+                                    appleSignIn.handleSignInWithAppleCompletion(result)
+                                }
+                                .signInWithAppleButtonStyle(.whiteOutline)
+                                .frame(width: 330, height: 50)
+                                .cornerRadius(120)
+                            }
 
                         }
                         

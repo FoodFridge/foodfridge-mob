@@ -50,7 +50,6 @@ class GoogleSignInHelper {
                     print("cannot auth user with Firebase = \(String(describing: error?.localizedDescription))")
                     return
                 }
-                
                 if let authDataResult = result { // Assuming authDataResult is the variable containing FIRAuthDataResult
                     let user = authDataResult.user
                     let additionalUserInfo = authDataResult.additionalUserInfo
@@ -60,15 +59,15 @@ class GoogleSignInHelper {
                         Task {
                             //Auth user with app and save user session info in AuthwithApp function
                             do {
-                                let authWithAppResult = try await AuthUserWithApp.auth(email: userEmail , userId: user.uid , sessionManager: self.sessionManager )
-                                print("google signed in")
+                                let successAuthWithApp = try await AuthUserWithApp.auth(email: userEmail , userId: user.uid , sessionManager: self.sessionManager )
+                                if successAuthWithApp {
+                                    print("google signed in")
+                                }
                             }catch {
                                 print("got error AuthWithApp = \(error.localizedDescription)")
                             }
                         }
                     }
-                    
-                    
                 }
             }
             
