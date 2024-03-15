@@ -65,9 +65,23 @@ class AppleSignInHelper: ObservableObject {
                     
                     if let authDataResult = result {
                         let user = authDataResult.user
-                        //let additionalUserInfo = authDataResult.additionalUserInfo
-                        //let profile = additionalUserInfo?.profile
                         
+                        //get email and firebase UID to Auth user with our app
+                        if let userEmail = user.email {
+                            Task {
+                                //Auth user with app and save user session info in AuthwithApp function
+                                do {
+                                    let successAuthWithApp = try await AuthUserWithApp.auth(email: userEmail , userId: user.uid , sessionManager: self.sessionManager )
+                                    if successAuthWithApp {
+                                        print("apple signed in")
+                                    }
+                                }catch {
+                                    print("got error AuthWithApp = \(error.localizedDescription)")
+                                }
+                            }
+                        }
+                        
+                        /* delete when done
                         //save user id in session
                         self.sessionManager.saveLocalID(id: ("\(user.uid)"))
                         print("User apple ID: \(user.uid)")
@@ -102,9 +116,10 @@ class AppleSignInHelper: ObservableObject {
                          }
                          */
                         
-                        print("apple signed in")
+                       
                         //update sign in state to true
                         UserDefaults.standard.set(true, forKey: "userLoggedIn")
+                         */
                     }
                 }
             }
