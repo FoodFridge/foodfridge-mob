@@ -21,7 +21,7 @@ struct LandingPageView: View {
     @EnvironmentObject var sessionManager: SessionManager
     
     var popToRoot: () -> Void
-
+    
     
   
     let rows = [GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem()]
@@ -63,7 +63,7 @@ struct LandingPageView: View {
                                 
                                 NavigationLink {
                                     //TODO: tap and link to result of generated recipe
-                                    ResultView()
+                                    ResultView(popToRoot: popToRoot)
                                 } label: {
                                     SmallButton(title: "Generate Recipe")
                                 }

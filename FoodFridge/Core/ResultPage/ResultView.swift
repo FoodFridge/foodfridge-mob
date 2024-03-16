@@ -11,7 +11,7 @@ struct ResultView: View {
     
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var sessionManager: SessionManager
-  
+    var popToRoot: () -> Void
     
     var body: some View {
         
@@ -30,7 +30,7 @@ struct ResultView: View {
                 
                 .padding()
                 ForEach(0..<vm.generatedRecipes.count, id: \.self) { index in
-                    NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: vm.generatedRecipes[index].title)) {
+                    NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: vm.generatedRecipes[index].title, popToRoot: popToRoot)) {
                         RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
                     }
                 }
@@ -49,9 +49,9 @@ struct ResultView: View {
                             .foregroundColor(Color(.button2))
                     }
                 }else {
-                    NavigationLink {
-                       //MARK: navigate to Authen view
-                        AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
+                    Button {
+                       //MARK: pop to Authen view
+                        popToRoot()
                     }label: {
                         Text("Sign in")
                             .foregroundColor(Color(.button2))
@@ -72,6 +72,3 @@ struct ResultView: View {
     }
 }
 
-#Preview {
-    ResultView()
-}
