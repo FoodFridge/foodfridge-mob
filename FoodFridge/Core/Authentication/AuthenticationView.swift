@@ -23,12 +23,13 @@ struct AuthenticationView: View {
     
     @StateObject var appleSignIn: AppleSignInHelper
     
-  
+    @State private var path: [Int] = []
+    
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             if sessionManager.getAuthToken() != nil {
-                LandingPageView()
+                LandingPageView(popToRoot: { path.removeAll() })
             } else {
                 GeometryReader { proxy in
                     VStack {
@@ -45,11 +46,20 @@ struct AuthenticationView: View {
                             
                             //MARK: Skip link to landing page
                             
-                             NavigationLink {
-                             LandingPageView()
+                             Button {
+                             //append path
+                                 path.append(1)
                              } label: {
                              Text("Skip")
                              
+                             }
+                             .navigationDestination(for: Int.self) { index  in
+                                 switch index {
+                                 case 1 :
+                                     LandingPageView(popToRoot: { path.removeAll() })
+                                 default:
+                                     EmptyView()
+                                 }
                              }
                              .padding(.trailing, -10)
                              .offset(y: -130)
@@ -141,6 +151,7 @@ struct AuthenticationView: View {
                 }
             }
         }
+        //.navigationBarBackButtonHidden(true)  
     }
     
    

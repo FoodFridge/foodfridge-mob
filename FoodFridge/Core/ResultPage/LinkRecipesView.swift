@@ -16,12 +16,13 @@ struct LinkRecipesView: View {
     var sessionManager: SessionManager
     var title: String
     var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
+    var popToRoot: () -> Void
     
-    init(sessionManager: SessionManager, title: String) {
+    init(sessionManager: SessionManager, title: String, popToRoot: @escaping () -> Void) {
         self.sessionManager = sessionManager
         self.title = title
         _vm = StateObject(wrappedValue: LinkRecipesViewModel(sessionManager: sessionManager))
-        
+        self.popToRoot = popToRoot
     }
     
     var body: some View {
@@ -51,9 +52,9 @@ struct LinkRecipesView: View {
                     }
                 }
                 else {
-                    NavigationLink {
-                       //MARK: navigate to Authen view
-                        AuthenticationView2(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
+                    Button {
+                       //MARK: pop to Authen view
+                       popToRoot()
                     }label: {
                         Text("Sign in")
                             .foregroundColor(Color(.button2))
@@ -71,11 +72,13 @@ struct LinkRecipesView: View {
         }
         
         RecipeAnimation(likeState: likeState)
-        //Text("Testing : List of \(title) Recipes")
+       
         
     }
 }
 
-#Preview {
-    LinkRecipesView(sessionManager: SessionManager(), title: "Ginger Salmon")
-}
+/*
+ #Preview {
+ LinkRecipesView(sessionManager: SessionManager(), title: "Ginger Salmon", popToRoot: {})
+ }
+ */

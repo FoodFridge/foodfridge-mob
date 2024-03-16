@@ -31,8 +31,8 @@ struct FoodFridgeApp: App {
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
                     
-                } else {
-                    AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager)) 
+                }else {
+                    AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
                         .environmentObject(TagsViewModel(sessionManager: sessionManager))
