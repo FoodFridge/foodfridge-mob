@@ -108,6 +108,7 @@
 		75C42DF02B646A5C003959B6 /* GoogleLinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */; };
 		75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DF12B6600A0003959B6 /* AppConstant.swift */; };
 		75C861572B9A7850001C6160 /* PantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C861562B9A7850001C6160 /* PantryView2.swift */; };
+		75CC3BD32BA5FBF9002BEBAD /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CC3BD22BA5FBF9002BEBAD /* WebView.swift */; };
 		75CD189B2BA2182000758328 /* AddPantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189A2BA2182000758328 /* AddPantryView2.swift */; };
 		75CD189D2BA2190000758328 /* ScanItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189C2BA2190000758328 /* ScanItemView2.swift */; };
 		75CD189F2BA22D2500758328 /* FetchPantryIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */; };
@@ -214,6 +215,7 @@
 		75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLinkRow.swift; sourceTree = "<group>"; };
 		75C42DF12B6600A0003959B6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		75C861562B9A7850001C6160 /* PantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView2.swift; sourceTree = "<group>"; };
+		75CC3BD22BA5FBF9002BEBAD /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		75CD189A2BA2182000758328 /* AddPantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView2.swift; sourceTree = "<group>"; };
 		75CD189C2BA2190000758328 /* ScanItemView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView2.swift; sourceTree = "<group>"; };
 		75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPantryIngredients.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				757542E52B351BD800048178 /* Fonts */,
 				754350032B3A653200823A50 /* CustomFont.swift */,
 				753245A02B7EE30E00545DE7 /* DependencyInjection */,
+				75CC3BD22BA5FBF9002BEBAD /* WebView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				754A8FA22B585A8400C9FD04 /* GetIngredients.swift in Sources */,
 				752580DF2B6B3D6E00D536D2 /* FavLinkRow.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
+				75CC3BD32BA5FBF9002BEBAD /* WebView.swift in Sources */,
 				75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */,
 				753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */,
 				752580D42B6B036900D536D2 /* ChosenSubProfileView.swift in Sources */,
