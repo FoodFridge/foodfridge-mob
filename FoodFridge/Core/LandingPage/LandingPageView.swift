@@ -13,20 +13,25 @@ struct LandingPageView: View {
     @State var selectedTags = Set<String>()
     @State var selectedItems = [String]()
     @State private var referenceHeight: CGFloat = 0
-
+    @State private var isSignedOut = false
+    
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var scrollTarget: ScrollTarget
     @EnvironmentObject var authentication: Authentication
     @EnvironmentObject var sessionManager: SessionManager
+    
+    var popToRoot: () -> Void
+
+    
   
     let rows = [GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem()]
     
     
-    @State private var isSignedOut = false
+    
     
     
     var body: some View {
-        NavigationStack {
+        VStack {
             GeometryReader { proxy in
                 VStack {
                     //MARK: Head line
@@ -113,9 +118,9 @@ struct LandingPageView: View {
                                     .foregroundColor(Color(.button2))
                             }
                         }else {
-                            NavigationLink {
-                               //MARK: navigate to Authen view
-                                AuthenticationView2(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
+                            Button {
+                              //MARK: pop to Authen view 
+                              popToRoot()
                             }label: {
                                 Text("Sign in")
                                     .foregroundColor(Color(.button2))
@@ -134,6 +139,7 @@ struct LandingPageView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

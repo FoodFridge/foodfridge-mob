@@ -53,7 +53,7 @@ struct LinkRecipesView: View {
                 else {
                     NavigationLink {
                        //MARK: navigate to Authen view
-                        AuthenticationView2(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
+                        AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
                     }label: {
                         Text("Sign in")
                             .foregroundColor(Color(.button2))

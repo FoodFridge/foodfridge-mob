@@ -26,7 +26,7 @@ struct AuthenticationView2: View {
     var body: some View {
         NavigationStack {
             if sessionManager.getAuthToken() != nil {
-                LandingPageView()
+               // LandingPageView()
             } else {
                 GeometryReader { proxy in
                     VStack {
@@ -137,7 +137,7 @@ struct AuthenticationView2: View {
                     .padding()
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
    
