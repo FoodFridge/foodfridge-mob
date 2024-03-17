@@ -30,13 +30,13 @@ struct ScanItemView: View {
             AddedBarAnimation(isTapped: addButtonTapped)
             
             VStack {
-                /*
+                
                 VStack(alignment: .center) {
                     Text("Use camera to capture text on food package and save to your pantry")
                 }
                 .font(Font.custom(CustomFont.appFontBold.rawValue, size: 12))
                 .padding()
-                 */
+                 
     
                 ScrollView {
                     LazyVStack {

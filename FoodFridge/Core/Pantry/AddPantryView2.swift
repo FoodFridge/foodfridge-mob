@@ -11,19 +11,35 @@ struct AddPantryView2: View {
     @StateObject private var vm = AddPantryViewModel()
     @EnvironmentObject var sessionManager: SessionManager
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.dismiss) var dismiss
     @State private var isTapped = false
     
     var body: some View {
-        VStack(spacing: 1.2) {
-            Text("Add your pantry item")
-                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 25))
-            Spacer()
+      
+            VStack(spacing: 1.2) {
+                HStack {
+                    HStack{
+                        Image(systemName: "chevron.backward")
+                        Button(action: {
+                            dismiss()
+                        }, label: {
+                            Text("back")
+                        })
+                    }
+                    .foregroundStyle(.accent)
+                    Spacer()
+                }
+                .padding(.bottom, 40)
+                
+                Text("Add your pantry item")
+                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 25))
+                Spacer()
                 ZStack{
                     HStack(spacing: 0) {
                         TextField("Enter item", text: $vm.searchText)
                             .padding()
                             .autocapitalization(.none)
-                            //.background(Color.button4)
+                        //.background(Color.button4)
                             .foregroundColor(colorScheme == .dark ? .white : .black)
                             .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.button1, lineWidth: 5))
                         Spacer()
@@ -58,9 +74,9 @@ struct AddPantryView2: View {
                         }
                     }
                 }
-           
                 
-            
+                
+                
                 // Display suggestions
                 List  {
                     ForEach(vm.suggestions, id: \.self) { suggestion in
@@ -75,16 +91,21 @@ struct AddPantryView2: View {
                     
                 }
                 .listStyle(PlainListStyle()) // Remove default List padding/styling
-         
+                
+                
+                Spacer()
+            }
+            .scrollContentBackground(.hidden)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
+            .foregroundColor(colorScheme == .dark ? .white : .black)
+            .navigationBarBackButtonHidden(true)
             
-            Spacer()
-               }
-               .scrollContentBackground(.hidden)
-               .frame(maxWidth: .infinity)
-               .padding()
-               .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
-               .foregroundColor(colorScheme == .dark ? .white : .black)
-               .navigationBarBackButtonHidden(true)
+            
+        
+         
+               
                
        
     }

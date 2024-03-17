@@ -109,6 +109,7 @@
 		75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C42DF12B6600A0003959B6 /* AppConstant.swift */; };
 		75C861572B9A7850001C6160 /* PantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C861562B9A7850001C6160 /* PantryView2.swift */; };
 		75CC3BD32BA5FBF9002BEBAD /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CC3BD22BA5FBF9002BEBAD /* WebView.swift */; };
+		75CC3BD52BA658E7002BEBAD /* CustomSignedInUserEmptyPantryAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CC3BD42BA658E7002BEBAD /* CustomSignedInUserEmptyPantryAlert.swift */; };
 		75CD189B2BA2182000758328 /* AddPantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189A2BA2182000758328 /* AddPantryView2.swift */; };
 		75CD189D2BA2190000758328 /* ScanItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189C2BA2190000758328 /* ScanItemView2.swift */; };
 		75CD189F2BA22D2500758328 /* FetchPantryIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */; };
@@ -216,6 +217,7 @@
 		75C42DF12B6600A0003959B6 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		75C861562B9A7850001C6160 /* PantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView2.swift; sourceTree = "<group>"; };
 		75CC3BD22BA5FBF9002BEBAD /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		75CC3BD42BA658E7002BEBAD /* CustomSignedInUserEmptyPantryAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignedInUserEmptyPantryAlert.swift; sourceTree = "<group>"; };
 		75CD189A2BA2182000758328 /* AddPantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView2.swift; sourceTree = "<group>"; };
 		75CD189C2BA2190000758328 /* ScanItemView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView2.swift; sourceTree = "<group>"; };
 		75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPantryIngredients.swift; sourceTree = "<group>"; };
@@ -404,10 +406,10 @@
 				754A8FA52B58A41800C9FD04 /* Category.swift */,
 				757C63FD2B85362B00FC6D5E /* ExtentionView.swift */,
 				75D950532B97FC2F009926BE /* UserTimeZone.swift */,
+				75CC3BD22BA5FBF9002BEBAD /* WebView.swift */,
 				757542E52B351BD800048178 /* Fonts */,
 				754350032B3A653200823A50 /* CustomFont.swift */,
 				753245A02B7EE30E00545DE7 /* DependencyInjection */,
-				75CC3BD22BA5FBF9002BEBAD /* WebView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -438,6 +440,7 @@
 				75C42DEF2B646A5C003959B6 /* GoogleLinkRow.swift */,
 				752580DE2B6B3D6E00D536D2 /* FavLinkRow.swift */,
 				7532459C2B7EA4A100545DE7 /* AuthenticationTextField.swift */,
+				75CC3BD42BA658E7002BEBAD /* CustomSignedInUserEmptyPantryAlert.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				751EB5602B53488200106FD6 /* PantryItem.swift in Sources */,
 				75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
+				75CC3BD52BA658E7002BEBAD /* CustomSignedInUserEmptyPantryAlert.swift in Sources */,
 				753245A22B7EE34800545DE7 /* ViewModelFactory.swift in Sources */,
 				7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */,
 				753245AC2B80081600545DE7 /* UserSessionManager.swift in Sources */,

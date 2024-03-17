@@ -20,9 +20,6 @@ struct PantryView2: View {
         VStack {
             
             if !vm.pantryItems.isEmpty {
-                //let userTimeZone = TimeZone.current
-                //Text("(for testing) edit id : \(editingItemId ?? "testId")")
-                //Text("user time zone identifier = \(userTimeZone.identifier)")
                 
                 List {
                     ForEach(vm.pantryItems.indices, id: \.self) { pantryIndex in

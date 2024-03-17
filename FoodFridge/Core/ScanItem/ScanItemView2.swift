@@ -10,6 +10,7 @@ import SwiftUI
 struct ScanItemView2: View {
     @StateObject var vm: ScanItemViewModel
     @EnvironmentObject var sessionManager: SessionManager
+    @Environment(\.dismiss) var dismiss
     
     var userId = "test user"
     @State private var addButtonTapped = false
@@ -24,13 +25,19 @@ struct ScanItemView2: View {
                 }
                 .ignoresSafeArea()
                 .id(vm.dataScannerViewId)
-                .frame(height: 250)
+                
             
             //implement added animation bar
             AddedBarAnimation(isTapped: addButtonTapped)
             
             VStack {
-               
+              
+                VStack(alignment: .center) {
+                    Text("Use camera to capture text on food package and save to your pantry")
+                }
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 12))
+                .padding()
+                            
                 ScrollView {
                     LazyVStack {
                         ForEach(vm.recognizedItems) { item in
@@ -69,14 +76,23 @@ struct ScanItemView2: View {
                     }
                 }
                 
-                VStack(alignment: .center) {
-                    Text("Scan text")
-                }
-                .ignoresSafeArea()
-                .padding(.bottom, -50)
-                .foregroundStyle(Color(.accent))
-                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 16))
-                
+               
+                    VStack(alignment: .center) {
+                        Button {
+                            //dismiss view
+                            dismiss()
+                        } label: {
+                            Text("Go back")
+                        }
+                    }
+                    .ignoresSafeArea()
+                    .padding(.bottom, -50)
+                    .foregroundStyle(Color(.accent))
+                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
+                    
+                   
+
+               
               
 
             }
@@ -86,7 +102,7 @@ struct ScanItemView2: View {
                 
             }
         }
-        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

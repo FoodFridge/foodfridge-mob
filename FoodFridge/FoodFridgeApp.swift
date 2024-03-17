@@ -30,6 +30,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
+                       
                     
                 }else {
                     AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
@@ -39,6 +40,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
+                        
                 }
             
             
