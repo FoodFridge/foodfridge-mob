@@ -24,14 +24,15 @@ struct TagsView: View {
     @State private var showAlertForLoginUser = false
     @State private var showAlertForNotLoginUser = false
 
-    @State private var fullScreenViewType: FullScreenViewType? = nil
-    @State private var navigationPath = NavigationPath()
+    // navigate choice of views camera // or add pantry manual in alert
+    @State private var navigationSelection: NavigationSelection? = nil
+    
     
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var sessionManager: SessionManager
     @Environment(\.dismiss) var dismiss
-   
-
+    
+    
     @StateObject var createGroup = CreateGroup()
     
     init(dataDicts: [String : [String]], selectedTarget: String) {
@@ -101,7 +102,7 @@ struct TagsView: View {
     
     var body: some View {
        
-            NavigationStack(path: $navigationPath) {
+            NavigationStack() {
                 ScrollView {
                     ScrollViewReader { scrollview in
                         
@@ -138,20 +139,27 @@ struct TagsView: View {
                                                     Image(systemName: "plus.circle")
                                                         .font(.title)
                                                 }
+                                                .alert("", isPresented: $showAlertForNotLoginUser) {
+                                                Button("ok", role: .cancel) { }
+                                                } message: {
+                                                Text("Please Sign in to add pantry")
+                                                }
+                                                
                                                 .alert("Add Pantry", isPresented: $showAlertForLoginUser) {
                                                     Button("By camera", role: .destructive) {
                                                         // Update to trigger full screen presentation
-                                                        fullScreenViewType = .scanItemView
+                                                        navigationSelection = .scanItemView
                                                     }
                                                     Button("By text", role: .destructive) {
                                                         // Update to trigger full screen presentation
-                                                        fullScreenViewType = .addPantryView
+                                                        navigationSelection = .addPantryView
                                                     }
                                                     Button("Not now", role: .cancel) { }
                                                 } message: {
                                                     Text("How do you like to add the item?")
                                                 }
-                                            
+                                               
+                                                
                                             }
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .padding(.horizontal)
@@ -233,8 +241,6 @@ struct TagsView: View {
                                 }
                             }
                             
-                            
-                            
                         }
                         
                         
@@ -245,7 +251,7 @@ struct TagsView: View {
                 .searchable(text: $searchTag, placement:
                         .navigationBarDrawer(displayMode: .always))
             } 
-            .fullScreenCover(item: $fullScreenViewType) { viewType in
+            .fullScreenCover(item: $navigationSelection) { viewType in
                 switch viewType {
                 case .scanItemView:
                     ScanItemView2(vm: ScanItemViewModel(sessionManager: sessionManager), onDismiss: {DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
@@ -283,7 +289,10 @@ struct TagsView: View {
 }
 
 
-enum FullScreenViewType: Identifiable {
+
+
+
+enum NavigationSelection: Identifiable {
     case scanItemView
     case addPantryView
 
