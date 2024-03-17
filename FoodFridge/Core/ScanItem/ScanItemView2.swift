@@ -12,10 +12,11 @@ struct ScanItemView2: View {
     @EnvironmentObject var sessionManager: SessionManager
     @Environment(\.dismiss) var dismiss
     
-    var userId = "test user"
     @State private var addButtonTapped = false
     //@State private var addedItem = ""
     @State private var isShowPantry = false
+    
+    var onDismiss: () -> Void
     
     var body: some View {
         VStack {
@@ -31,11 +32,11 @@ struct ScanItemView2: View {
             AddedBarAnimation(isTapped: addButtonTapped)
             
             VStack {
-              
                 VStack(alignment: .center) {
-                    Text("Use camera to capture text on food package and save to your pantry")
+                    Text("Use camera to capture text on food package. tap on green button to save.")
                 }
-                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 12))
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 15))
+                .foregroundStyle(.white)
                 .padding()
                             
                 ScrollView {
@@ -80,7 +81,11 @@ struct ScanItemView2: View {
                     VStack(alignment: .center) {
                         Button {
                             //dismiss view
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 ) {
                             dismiss()
+                        }
+                        onDismiss()
+                            
                         } label: {
                             Text("Go back")
                         }

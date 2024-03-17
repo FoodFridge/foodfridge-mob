@@ -14,6 +14,8 @@ struct AddPantryView2: View {
     @Environment(\.dismiss) var dismiss
     @State private var isTapped = false
     
+    var onDismiss: () -> Void
+    
     var body: some View {
       
             VStack(spacing: 1.2) {
@@ -21,7 +23,10 @@ struct AddPantryView2: View {
                     HStack{
                         Image(systemName: "chevron.backward")
                         Button(action: {
-                            dismiss()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                             dismiss()
+                            }
+                            onDismiss()
                         }, label: {
                             Text("back")
                         })
@@ -111,6 +116,4 @@ struct AddPantryView2: View {
     }
 }
 
-#Preview {
-    AddPantryView2()
-}
+

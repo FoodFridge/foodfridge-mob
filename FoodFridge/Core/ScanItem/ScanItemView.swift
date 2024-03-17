@@ -16,6 +16,7 @@ struct ScanItemView: View {
     @State private var addButtonTapped = false
     //@State private var addedItem = ""
     @State private var isShowPantry = false
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -32,9 +33,9 @@ struct ScanItemView: View {
             VStack {
                 
                 VStack(alignment: .center) {
-                    Text("Use camera to capture text on food package and save to your pantry")
+                    Text("Use camera to capture text on food package. tap on green button to save.")
                 }
-                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 12))
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 15))
                 .padding()
                  
     
@@ -75,11 +76,20 @@ struct ScanItemView: View {
                         }
                     }
                 }
+                
+                
                 VStack(alignment: .center) {
-                    Text("Scan text")
+                    Button {
+                        //dismiss view
+                        dismiss()
+                    } label: {
+                        Text("Go back")
+                    }
                 }
+                .ignoresSafeArea()
+                .padding(.bottom, -50)
                 .foregroundStyle(Color(.accent))
-                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 16))
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
                /*
                     //MARK: Display Pantry button
                     Button {
@@ -102,7 +112,7 @@ struct ScanItemView: View {
                 vm.recognizedItems = []
                 
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
