@@ -16,7 +16,7 @@ struct GoogleLinkRow: View {
     @ObservedObject var likeState: GoogleLinkRowViewModel
     
     var body: some View {
-        NavigationStack {
+        
             ZStack {
                 Rectangle()
                 HStack {
@@ -47,7 +47,7 @@ struct GoogleLinkRow: View {
                     }
                     
                     
-        
+      
                     NavigationLink {
                         // tap to navigate to google link
                         if let link = URL(string: googleLink?.url ?? "link") {
@@ -66,6 +66,7 @@ struct GoogleLinkRow: View {
                                 
                         }
                     }
+       
                     
                     Spacer()
                     
@@ -116,7 +117,7 @@ struct GoogleLinkRow: View {
             .foregroundStyle(.button2)
         }
     }
-}
+
 
 /*
  #Preview {

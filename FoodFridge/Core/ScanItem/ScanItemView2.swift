@@ -33,7 +33,7 @@ struct ScanItemView2: View {
             
             VStack {
                 VStack(alignment: .center) {
-                    Text("Use camera to capture text on food package. tap on green button to save.")
+                    Text("Use camera to capture text on food package. Tap on green button to save.")
                 }
                 .font(Font.custom(CustomFont.appFontBold.rawValue, size: 15))
                 .foregroundStyle(.white)

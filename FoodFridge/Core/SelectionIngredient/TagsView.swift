@@ -26,7 +26,7 @@ struct TagsView: View {
 
     // navigate choice of views camera // or add pantry manual in alert
     @State private var navigationSelection: NavigationSelection? = nil
-    
+    @State private var path = NavigationPath()
     
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var sessionManager: SessionManager
@@ -102,7 +102,7 @@ struct TagsView: View {
     
     var body: some View {
        
-            NavigationStack() {
+            NavigationStack {
                 ScrollView {
                     ScrollViewReader { scrollview in
                         
