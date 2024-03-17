@@ -10,11 +10,13 @@ import SwiftUI
 struct ScanItemView2: View {
     @StateObject var vm: ScanItemViewModel
     @EnvironmentObject var sessionManager: SessionManager
+    @Environment(\.dismiss) var dismiss
     
-    var userId = "test user"
     @State private var addButtonTapped = false
     //@State private var addedItem = ""
     @State private var isShowPantry = false
+    
+    var onDismiss: () -> Void
     
     var body: some View {
         VStack {
@@ -24,13 +26,19 @@ struct ScanItemView2: View {
                 }
                 .ignoresSafeArea()
                 .id(vm.dataScannerViewId)
-                .frame(height: 250)
+                
             
             //implement added animation bar
             AddedBarAnimation(isTapped: addButtonTapped)
             
             VStack {
-               
+                VStack(alignment: .center) {
+                    Text("Use camera to capture text on food package. tap on green button to save.")
+                }
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 15))
+                .foregroundStyle(.white)
+                .padding()
+                            
                 ScrollView {
                     LazyVStack {
                         ForEach(vm.recognizedItems) { item in
@@ -69,14 +77,27 @@ struct ScanItemView2: View {
                     }
                 }
                 
-                VStack(alignment: .center) {
-                    Text("Scan text")
-                }
-                .ignoresSafeArea()
-                .padding(.bottom, -50)
-                .foregroundStyle(Color(.accent))
-                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 16))
-                
+               
+                    VStack(alignment: .center) {
+                        Button {
+                            //dismiss view
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 ) {
+                            dismiss()
+                        }
+                        onDismiss()
+                            
+                        } label: {
+                            Text("Go back")
+                        }
+                    }
+                    .ignoresSafeArea()
+                    .padding(.bottom, -50)
+                    .foregroundStyle(Color(.accent))
+                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
+                    
+                   
+
+               
               
 
             }
@@ -86,7 +107,7 @@ struct ScanItemView2: View {
                 
             }
         }
-        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

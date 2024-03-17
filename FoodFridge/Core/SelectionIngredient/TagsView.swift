@@ -23,13 +23,16 @@ struct TagsView: View {
     
     @State private var showAlertForLoginUser = false
     @State private var showAlertForNotLoginUser = false
+
+    // navigate choice of views camera // or add pantry manual in alert
+    @State private var navigationSelection: NavigationSelection? = nil
     
-    @State private var navigationSelection: NavigationSelection?
-    // Use NavigationPath for path-based navigation
-    @State private var navigationPath = NavigationPath()
     
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var sessionManager: SessionManager
+    @Environment(\.dismiss) var dismiss
+    
+    
     @StateObject var createGroup = CreateGroup()
     
     init(dataDicts: [String : [String]], selectedTarget: String) {
@@ -99,7 +102,7 @@ struct TagsView: View {
     
     var body: some View {
        
-            NavigationStack(path: $navigationPath) {
+            NavigationStack() {
                 ScrollView {
                     ScrollViewReader { scrollview in
                         
@@ -126,8 +129,10 @@ struct TagsView: View {
                                                 Button(action: {
                                                     if UserDefaults.standard.bool(forKey: "userLoggedIn") {
                                                         showAlertForLoginUser = true
+                                                        
                                                     }else {
                                                         showAlertForNotLoginUser = true
+                                                       
                                                     }
                                                     
                                                 }) {
@@ -135,32 +140,26 @@ struct TagsView: View {
                                                         .font(.title)
                                                 }
                                                 .alert("", isPresented: $showAlertForNotLoginUser) {
-                                                    Button("ok", role: .cancel) { }
+                                                Button("ok", role: .cancel) { }
                                                 } message: {
-                                                    Text("Please Sign in to add pantry")
+                                                Text("Please Sign in to add pantry")
                                                 }
-                                                
                                                 
                                                 .alert("Add Pantry", isPresented: $showAlertForLoginUser) {
                                                     Button("By camera", role: .destructive) {
-                                                        // Update the navigation path to navigate
-                                                        navigationPath.append(NavigationSelection.scanItemView)
+                                                        // Update to trigger full screen presentation
+                                                        navigationSelection = .scanItemView
                                                     }
                                                     Button("By text", role: .destructive) {
-                                                        navigationPath.append(NavigationSelection.addPantryView)
+                                                        // Update to trigger full screen presentation
+                                                        navigationSelection = .addPantryView
                                                     }
                                                     Button("Not now", role: .cancel) { }
                                                 } message: {
                                                     Text("How do you like to add the item?")
                                                 }
-                                                .navigationDestination(for: NavigationSelection.self) { destination in
-                                                    switch destination {
-                                                    case .scanItemView:
-                                                        ScanItemView2(vm: ScanItemViewModel(sessionManager: sessionManager))
-                                                    case .addPantryView:
-                                                        AddPantryView2()
-                                                    }
-                                                }
+                                               
+                                                
                                             }
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .padding(.horizontal)
@@ -235,16 +234,12 @@ struct TagsView: View {
                                 
                             };if isNoResultsFound() {
                                 if isNoResultsFound() && isSearchDone {
-                                    Text("No result found")
+                                    Text("No ingredient found")
                                         .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
                                         .padding()
                                         .foregroundColor(.gray)
                                 }
-                            }//else {
-                               //ProgressView()
-                            //}
-                           
-                             
+                            }
                             
                         }
                         
@@ -255,9 +250,22 @@ struct TagsView: View {
                 }
                 .searchable(text: $searchTag, placement:
                         .navigationBarDrawer(displayMode: .always))
+            } 
+            .fullScreenCover(item: $navigationSelection) { viewType in
+                switch viewType {
+                case .scanItemView:
+                    ScanItemView2(vm: ScanItemViewModel(sessionManager: sessionManager), onDismiss: {DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                        dismiss()
+                     } })
+                   
+                case .addPantryView:
+                    AddPantryView2(onDismiss: {DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {
+                        dismiss()
+                     } })
+                }
             }
-            
-                    
+           
+           
     }
     
     // Function to determine if any search results are found
@@ -281,14 +289,12 @@ struct TagsView: View {
 }
 
 
-/*
- #Preview {
-     TagsView(dataDicts: ["" : [""]], selectedTarget: "", isTapped: .constant(true))
- }
- */
-enum NavigationSelection: Hashable {
+
+
+
+enum NavigationSelection: Identifiable {
     case scanItemView
     case addPantryView
+
+    var id: Self { self }
 }
-
-
