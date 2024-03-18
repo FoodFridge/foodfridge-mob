@@ -29,7 +29,7 @@ class SignUpWithEmailViewModel: ObservableObject {
             try await SignUpWithEmail(sessionManager: sessionManager).signUp(email: self.email, password: self.password, name: self.name)
             
             //if sign up success, then log in
-            self.sessionData = try await LoginWithEmailService(sessionManager: sessionManager).login(email: self.email, password: self.password)
+            try await LoginWithEmailService(sessionManager: sessionManager).login(email: self.email, password: self.password)
                 
             return true
           
