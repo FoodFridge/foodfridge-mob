@@ -59,7 +59,6 @@ class AddPantryViewModel: ObservableObject {
     func addPantry(sessionManager: SessionManager, item: String) {
         Task {
              self.httpResponseCode = try await AddPantry(sessionManager: sessionManager).addPantry(with: item)
-             self.feedBack =  AddStatus(statusCode: httpResponseCode).description
              }
     }
     
