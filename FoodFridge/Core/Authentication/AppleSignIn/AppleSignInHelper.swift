@@ -14,6 +14,7 @@ import FirebaseAuth
 class AppleSignInHelper: ObservableObject {
     
     var displayName = ""
+    var userEmail = "appleUser@apple.com"
     
     fileprivate var currentNonce: String?
     
@@ -31,11 +32,13 @@ class AppleSignInHelper: ObservableObject {
     }
     
     func handleSignInWithAppleCompletion(_ result: Result<ASAuthorization, Error>) {
+        
         switch result {
             
         case .success(let success):
             
             if let appleCredential = success.credential as? ASAuthorizationAppleIDCredential  {
+              
                 guard let nonce = currentNonce else {
                     print("completion currentNonce = \(String(describing: currentNonce))")
                     fatalError("Invalid state: a login call back was recived, but no login request was sent")
@@ -53,7 +56,7 @@ class AppleSignInHelper: ObservableObject {
                 let credential = OAuthProvider.appleCredential(withIDToken: tokenString,
                                                                rawNonce: nonce,
                                                                fullName: appleCredential.fullName)
-                
+               
                 //sign in firebase apple auth with credential
                 Auth.auth().signIn(with: credential) {(result, error) in
                     //check error
@@ -62,64 +65,25 @@ class AppleSignInHelper: ObservableObject {
                         print("rawNonce for credential = \(String(describing: self.currentNonce))")
                         return
                     }
-                    
+                   
                     if let authDataResult = result {
                         let user = authDataResult.user
+                        print("userData = \(user)")
+                        print("email = \(String(describing: user.email))")
+                        print("id = \(user.uid)")
                         
-                        //get email and firebase UID to Auth user with our app
-                        if let userEmail = user.email {
-                            Task {
+                        //get email and firebase UID to Auth user with our app if user email is nil assign mock email
+                        Task {
                                 //Auth user with app and save user session info in AuthwithApp function
                                 do {
-                                    let successAuthWithApp = try await AuthUserWithApp.auth(email: userEmail , userId: user.uid , sessionManager: self.sessionManager )
+                                    let successAuthWithApp = try await AuthUserWithApp.auth(email: user.email ?? self.userEmail , userId: user.uid , sessionManager: self.sessionManager )
                                     if successAuthWithApp {
                                         print("apple signed in")
                                     }
                                 }catch {
                                     print("got error AuthWithApp = \(error.localizedDescription)")
                                 }
-                            }
                         }
-                        
-                        /* delete when done
-                        //save user id in session
-                        self.sessionManager.saveLocalID(id: ("\(user.uid)"))
-                        print("User apple ID: \(user.uid)")
-                        print("saved apple local id = \(String(describing: self.sessionManager.getLocalID()))")
-                        print("User apple Email: \(user.email ?? "N/A")")
-                        print("User apple name: \(user.displayName ?? "user displayname")")
-                        
-                        // Get the ID token
-                        user.getIDToken { idToken, error in
-                            if let error = error {
-                                print("Error getting ID token: \(error.localizedDescription)")
-                                return
-                            }
-                            //save id token in session
-                            if let idToken = idToken {
-                                print("ID Token: \(idToken)")
-                                // save id token in session
-                                self.sessionManager.saveAuthToken(token: idToken)
-                                print("saved id token apple = \(String(describing: self.sessionManager.getAuthToken()))")
-                            } else {
-                                print("ID Token is nil")
-                            }
-                        }
-                        
-                        /*
-                         //MARK: TODO : save user data in firebase collection
-                         //if sucess sign in, get user data save to firebase user collection
-                         var name = String(localized: "NotDisplayName")
-                         if let displayName = result?.user.displayName {
-                         self.displayName = displayName
-                         print("Apple display name = \(displayName)")
-                         }
-                         */
-                        
-                       
-                        //update sign in state to true
-                        UserDefaults.standard.set(true, forKey: "userLoggedIn")
-                         */
                     }
                 }
             }
@@ -160,24 +124,6 @@ class AppleSignInHelper: ObservableObject {
         
         return hashString
     }
-    /*
-    //MARK: TODO this func use when same user sign in again in our app do not overwite user name if it's already exist.
-    func updateDisplayName(for user: User, with appleIDCredential: ASAuthorizationAppleIDCredential, force: Bool = false) async {
-        if let currentDisplayName = Auth.auth().currentUser?.displayName , !currentDisplayName.isEmpty {
-            //current user is non-empty, don't overwrite it
-        }
-        else {
-            let changeRequest = user.createProfileChangeRequest()
-            changeRequest.displayName = self.displayName
-            do {
-                try await changeRequest.commitChanges()
-                self.displayName = Auth.auth().currentUser?.displayName ?? "displayName"
-            }catch {
-                print("unable to update user's display name : \(error.localizedDescription)")
-            }
-        }
-
-    }
-     */
+   
 }
 
