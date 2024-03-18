@@ -14,6 +14,7 @@ struct FoodFridgeApp: App {
     @StateObject var authentication = Authentication()
     @StateObject var sessionManager = SessionManager()
     
+    
     @AppStorage("emailSignIn") var isEmailSignIn = false
     @AppStorage("userLoggedIn") var isLoggedIn = false
     
@@ -40,6 +41,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
+                        
                         
                 }
             

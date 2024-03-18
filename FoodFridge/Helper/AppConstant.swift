@@ -9,7 +9,7 @@ import Foundation
 class AppConstant {
     
     static var signUpWithEmailURLString = 
-        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/sign_up_with_email_and_password"
+        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/SignupWithEmailAndPassword"
     
     static var logInWithEmailURLString =
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/login_with_email_and_password"

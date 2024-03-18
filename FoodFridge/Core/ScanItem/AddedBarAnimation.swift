@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct AddedBarAnimation: View {
-    @EnvironmentObject var sessionManager: SessionManager
     
+    @EnvironmentObject var sessionManager: SessionManager
+
     var isTapped  =  false
-    //var item = "Test Item"
+  
     var body: some View {
         Rectangle()
             .fill(Color(.button2))
@@ -25,6 +26,7 @@ struct AddedBarAnimation: View {
             .animation(.spring(response: 2, dampingFraction: 0.6), value: isTapped)
     }
 }
+
 
 #Preview {
     AddedBarAnimation()

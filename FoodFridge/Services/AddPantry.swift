@@ -9,13 +9,16 @@ import Foundation
 
 class AddPantry {
     
+    
     let sessionManager: SessionManager
         
         init(sessionManager: SessionManager) {
             self.sessionManager = sessionManager
         }
     
-   func addPantry(with pantryName: String) async throws {
+   func addPantry(with pantryName: String) async throws -> Int {
+       
+       var addPantryResponseCode: Int = 0
         // Create an instance of JSONEncoder
         let encoder = JSONEncoder()
         // Create request body
@@ -55,18 +58,31 @@ class AddPantry {
                 // Make the request using URLSession
                 let (data, response) = try await URLSession.shared.data(for: request)
                 
-                guard(response as? HTTPURLResponse)?.statusCode == 200 else {  throw URLError(.badServerResponse)  }
-                print("DEBUG: statusCode =  \(response)")
-                
+                if let httpResponse = response as? HTTPURLResponse {
+                    switch httpResponse.statusCode {
+                    case 200:
+                        addPantryResponseCode = 200
+                    case 409:
+                        addPantryResponseCode = 400
+                    default:
+                        addPantryResponseCode = httpResponse.statusCode
+                    }
+                }
                 // Handle the response
                 if let responseText = String(data: data, encoding: .utf8) {
                  print("response = \(responseText)")
                 }
             }
             
+            return addPantryResponseCode
+            
+            
         }catch {
             print("add pantry error = \(error.localizedDescription)")
         }
+       
+       return addPantryResponseCode
+     
     }
-  
+   
 }

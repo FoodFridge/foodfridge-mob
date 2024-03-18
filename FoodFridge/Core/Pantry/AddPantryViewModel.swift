@@ -11,6 +11,8 @@ import Combine
 class AddPantryViewModel: ObservableObject {
         @Published var searchText = ""
         @Published var suggestions: [String] = []
+        @Published var httpResponseCode: Int = 0
+        @Published var feedBack = ""
     
         private var cancellables = Set<AnyCancellable>()
     
@@ -56,10 +58,42 @@ class AddPantryViewModel: ObservableObject {
    
     func addPantry(sessionManager: SessionManager, item: String) {
         Task {
-                try await AddPantry(sessionManager: sessionManager).addPantry(with: item)
+             self.httpResponseCode = try await AddPantry(sessionManager: sessionManager).addPantry(with: item)
              }
     }
     
     
+    enum AddStatus {
+
+        case success
+        case conflict
+        case other(Int)
+        
+        
+        init(statusCode: Int) {
+            switch statusCode {
+            case 200:
+                self = .success
+            case 409:
+                self = .conflict
+            default:
+                self = .other(statusCode)
+            }
+        }
+        
+        var description: String {
+                switch self {
+                case .success:
+                    return "Item added to your pantry"
+                case .conflict:
+                    return "Already added item into pantry"
+                case .other(let code):
+                    return "Other status: \(code)"
+                }
+            }
+        
+    }
+   
     
 }
+
