@@ -54,7 +54,7 @@ class SignUpWithEmail {
                 throw SignupError.duplicateEmail
                 
             default:
-                print("Unknow error, please try again")
+                print("Unknown error, please try again")
                 //assign error to display
                 throw SignupError.unknown
             }

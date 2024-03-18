@@ -71,7 +71,7 @@ struct SignUpWithEmailView: View {
                                 self.isAuthenSuccess = try await vm.signUpUser(sessionManager: sessionManager)
                                 if isAuthenSuccess {
                                     authenthication.updateValidation(success: true)
-                                    if vm.sessionData.token != nil && vm .sessionData.localId != nil {
+                                    if vm.sessionData.token != nil && vm.sessionData.localId != nil {
                                         //save session data
                                         sessionManager.saveAuthToken(token: vm.sessionData.token ?? "mockToken")
                                         sessionManager.saveLocalID(id: vm.sessionData.localId ?? "mockId")
@@ -80,12 +80,13 @@ struct SignUpWithEmailView: View {
                                 }else  {
                                     //Cannot sign up and log in successfully
                                     // assign alert in message and display
-                                    self.signUpErrorMessage = vm.signupError?.errorDescription ?? "Failed to autenticate. Please try again"
-                                    self.signUpErrorAlert = true
+                                    // handle sign up error
+                                    self.alertMessage = vm.signupError?.errorDescription ?? "Failed to autenticate. Please try again"
+                                    self.showAlert = true
                                 }
                             }catch {
-                                // handle sign up error
-                                self.alertMessage = validator.fieldError?.textErrorDescription ?? "Failed to login. Please try again"
+                                // handle
+                                self.alertMessage = validator.fieldError?.textErrorDescription ?? "Failed to authenticate. Please try again"
                                 self.showAlert = true
                             }
                         }
@@ -102,9 +103,9 @@ struct SignUpWithEmailView: View {
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text(""), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
-                .alert(isPresented: $signUpErrorAlert) {
-                    Alert(title: Text(""), message: Text(signUpErrorMessage), dismissButton: .default(Text("Ok")))
-                }
+               // .alert(isPresented: $signUpErrorAlert) {
+                    //Alert(title: Text(""), message: Text(signUpErrorMessage), dismissButton: .default(Text("Ok")))
+               // }
                 .bold()
                 .foregroundStyle(.black)
                 .frame(width: 150, height: 30)

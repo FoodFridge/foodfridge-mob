@@ -75,16 +75,18 @@ struct LogInView: View {
                     //validate textfield
                     let isFieldValidated =  validator.validateTextField(email: vm.email, password: vm.password, name: nil)
                     print("validated = \(isFieldValidated)")
+                    
                     if isFieldValidated {
                         
                         //login user
                         Task {
-                            do {
-                                self.userData = try await LoginWithEmailService(sessionManager: sessionManager).login(email: vm.email, password: vm.password)
-                            }catch {
-                                self.alertMessage =  validator.fieldError?.textErrorDescription ?? "Failed to login. Please try again"
-                                self.showAlert = true
-                            }
+                           let isLoggedIn = try await vm.logIn(sessionManager: sessionManager)
+                                if isLoggedIn {
+                                    
+                                }else {
+                                    self.alertMessage =  vm.loginError?.errorDescription ?? "Failed to login. Please try again"
+                                    self.showAlert = true
+                                }
                         }
                         //if validate is failed
                     }else {
