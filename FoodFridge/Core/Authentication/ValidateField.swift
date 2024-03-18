@@ -8,7 +8,7 @@
 import Foundation
 class ValidateField: ObservableObject  {
     
-    @Published var loginFieldError: AuthenFieldError?
+    @Published var fieldError: AuthenFieldError?
     
     func isValidEmail(_ email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -56,12 +56,12 @@ class ValidateField: ObservableObject  {
             }
             
             // If all validations pass, reset any previous error and return true
-            self.loginFieldError = nil
+            self.fieldError = nil
             return true
             
         }catch let error as AuthenFieldError {
-            //Catch and assign the specific AuthenFieldError to loginFieldError
-            self.loginFieldError = error
+            //Catch and assign the specific AuthenFieldError to fieldError
+            self.fieldError = error
             return false
             
         }catch {
@@ -70,6 +70,7 @@ class ValidateField: ObservableObject  {
         
        
     }
+    
 }
 
 
@@ -82,6 +83,7 @@ enum AuthenFieldError: Error, LocalizedError {
     case invalidCredentialEmail
     case invalidPasswordSetUp
     case invalidCredentailPassword
+    case unknowError
     
     var textErrorDescription: String? {
         switch self {
@@ -101,6 +103,8 @@ enum AuthenFieldError: Error, LocalizedError {
             return "Invalid credential"
         case .invalidCredentailPassword:
             return "Invalid credential"
+        case.unknowError:
+            return "Unknown error, please try again later"
         }
             
         }

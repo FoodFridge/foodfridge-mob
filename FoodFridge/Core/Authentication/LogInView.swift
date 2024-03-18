@@ -82,13 +82,13 @@ struct LogInView: View {
                             do {
                                 self.userData = try await LoginWithEmailService(sessionManager: sessionManager).login(email: vm.email, password: vm.password)
                             }catch {
-                                self.alertMessage =  validator.loginFieldError?.textErrorDescription ?? "Failed to login. Please try again"
+                                self.alertMessage =  validator.fieldError?.textErrorDescription ?? "Failed to login. Please try again"
                                 self.showAlert = true
                             }
                         }
                         //if validate is failed
                     }else {
-                        self.alertMessage = validator.loginFieldError?.textErrorDescription ?? "An error occor"
+                        self.alertMessage = validator.fieldError?.textErrorDescription ?? "An error occor"
                         self.showAlert = true
                     }
                     

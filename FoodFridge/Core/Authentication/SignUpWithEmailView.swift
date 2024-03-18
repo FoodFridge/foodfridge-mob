@@ -14,11 +14,14 @@ struct SignUpWithEmailView: View {
     @EnvironmentObject var authenthication: Authentication
     @EnvironmentObject var sessionManager: SessionManager
    
-    @State private var isSignUpSuccess = false
+    @State private var isAuthenSuccess = false
     @State private var isPassHidden = true
     
     @State private var showAlert = false
     @State private var alertMessage = ""
+    
+    @State private var signUpErrorAlert = false
+    @State private var signUpErrorMessage = ""
     
    
     
@@ -64,8 +67,9 @@ struct SignUpWithEmailView: View {
                         //sign up user
                         Task {
                             do {
-                                self.isSignUpSuccess = try await vm.signUpUser(sessionManager: sessionManager)
-                                if isSignUpSuccess {
+                                //AuthenSuccess = user can sign up then log in successfully
+                                self.isAuthenSuccess = try await vm.signUpUser(sessionManager: sessionManager)
+                                if isAuthenSuccess {
                                     authenthication.updateValidation(success: true)
                                     if vm.sessionData.token != nil && vm .sessionData.localId != nil {
                                         //save session data
@@ -73,16 +77,21 @@ struct SignUpWithEmailView: View {
                                         sessionManager.saveLocalID(id: vm.sessionData.localId ?? "mockId")
                                         
                                     }
+                                }else  {
+                                    //Cannot sign up and log in successfully
+                                    // assign alert in message and display
+                                    self.signUpErrorMessage = vm.signupError?.errorDescription ?? "Failed to autenticate. Please try again"
+                                    self.signUpErrorAlert = true
                                 }
                             }catch {
                                 // handle sign up error
-                                self.alertMessage = "Failed to login. Please try again"
+                                self.alertMessage = validator.fieldError?.textErrorDescription ?? "Failed to login. Please try again"
                                 self.showAlert = true
                             }
                         }
-                        //if validation has failed, show alert
+                        //if fields validation has failed, show alert
                     }else {
-                        self.alertMessage = validator.loginFieldError?.textErrorDescription ?? "An unknown error occur"
+                        self.alertMessage = validator.fieldError?.textErrorDescription ?? "An unknown error occur"
                         self.showAlert = true
                     }
                     
@@ -92,7 +101,10 @@ struct SignUpWithEmailView: View {
                 }
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text(""), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                        }
+                }
+                .alert(isPresented: $signUpErrorAlert) {
+                    Alert(title: Text(""), message: Text(signUpErrorMessage), dismissButton: .default(Text("Ok")))
+                }
                 .bold()
                 .foregroundStyle(.black)
                 .frame(width: 150, height: 30)

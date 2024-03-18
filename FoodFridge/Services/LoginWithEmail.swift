@@ -91,6 +91,7 @@ class LoginWithEmailService: ObservableObject {
                
            }catch {
                print("Log in Error: \(error.localizedDescription)")
+
            }
             
         return LogInResponseData.MOCKdata.data

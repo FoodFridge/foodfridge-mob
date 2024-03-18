@@ -88,6 +88,7 @@
 		75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */; };
 		75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */; };
 		75A1CBC02B895E4900AC5095 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBF2B895E4900AC5095 /* ForgotPasswordView.swift */; };
+		75A37DFF2BA7EF8000902D86 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A37DFE2BA7EF8000902D86 /* SignUpResponse.swift */; };
 		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
@@ -196,6 +197,7 @@
 		75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		75A1CBBF2B895E4900AC5095 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		75A37DFE2BA7EF8000902D86 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				752580D12B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift */,
 				752580DC2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift */,
 				753245A92B7FF16700545DE7 /* LogInResponseData.swift */,
+				75A37DFE2BA7EF8000902D86 /* SignUpResponse.swift */,
 				75AAD3282B803BC400A4E1F6 /* UserData.swift */,
 				75D9504B2B97DFD7009926BE /* RefreshTokenResponse.swift */,
 				75D950512B97F5DF009926BE /* JWTPayload.swift */,
@@ -667,6 +670,7 @@
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
 				754A8FAA2B58A99600C9FD04 /* IngredientByCategory.swift in Sources */,
 				754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */,
+				75A37DFF2BA7EF8000902D86 /* SignUpResponse.swift in Sources */,
 				754A8FA42B586DFE00C9FD04 /* IngredientsParser.swift in Sources */,
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */,

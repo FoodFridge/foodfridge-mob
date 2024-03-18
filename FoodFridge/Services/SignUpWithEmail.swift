@@ -11,13 +11,12 @@ import SwiftUI
 class SignUpWithEmail {
     
     let sessionManager: SessionManager
-    
     init(sessionManager: SessionManager) {
         self.sessionManager = sessionManager
     }
     
-
-     func signUp(email:String, password: String, name: String)async throws -> Bool {
+    
+    func signUp(email:String, password: String, name: String)async throws {
         
         guard let url = URL(string: AppConstant.signUpWithEmailURLString) else { throw URLError(.badURL)}
         
@@ -28,36 +27,60 @@ class SignUpWithEmail {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             
             //JSON data to be sent to the server
-            let jsonData = try? JSONSerialization.data(withJSONObject: ["email": email, "password": password, "name": name], options: [])
+            let jsonData = try JSONSerialization.data(withJSONObject: ["email": email, "password": password, "name": name], options: [])
             request.httpBody = jsonData
             
             //network request
-            let (_, response) = try await URLSession.shared.data(for: request)
-            
-            guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
-            print("DEBUG: statusCode =  \(response)")
-            
-            let _ = try await LoginWithEmailService(sessionManager: sessionManager).login(email: email, password: password)
-        
-          //  let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
-            
-            //if sign up successfully
-            print("Sign up successfully")
-            
-            return true
+            let (_ , response) = try await URLSession.shared.data(for: request)
             
             
-        }catch {
-            print("Error: Unable to parse JSON response")
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw SignupError.unknown
+            }
+            
+            print("sign up status code = \(httpResponse.statusCode)")
+            
+            switch httpResponse.statusCode {
+                
+            case 200:
+                //if sign up successfully
+                print("Sign up successfully")
+                return
+                
+            case 409:
+                //if duplicate email
+                print("Sign up duplicate email")
+                //assign error to display
+                throw SignupError.duplicateEmail
+                
+            default:
+                print("Unknow error, please try again")
+                //assign error to display
+                throw SignupError.unknown
+            }
         }
-         
-   
-         return false
+        
+        catch {
+            print("Sign up error = \(error.localizedDescription)")
+            throw error
+            
+        }
+        
     }
     
 }
 
-enum Destination: Hashable {
-    case landingPage
-    case logInPage
+
+enum SignupError: Error, LocalizedError {
+    case duplicateEmail
+    case unknown
+    
+    var errorDescription: String? {
+        switch self {
+        case .duplicateEmail:
+            return "This email is already in use"
+        case .unknown:
+            return "An unknown error occurred. Please try again"
+        }
+    }
 }

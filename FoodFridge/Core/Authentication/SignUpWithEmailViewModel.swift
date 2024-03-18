@@ -14,27 +14,33 @@ class SignUpWithEmailViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var name: String = ""
     @Published var isSignUpSuccess = false
-    @Published var showProgressView = false
+   
     @Published var sessionData = LogInResponseData.MOCKdata.data
     
+    @Published var signupError: SignupError?
     
     
     func signUpUser(sessionManager: SessionManager)async throws -> Bool {
-        showProgressView = true
+        
+        
         do {
+            print("view model call service")
             //call service class
-            let result =  try await SignUpWithEmail(sessionManager: sessionManager).signUp(email: self.email, password: self.password, name: self.name)
-            //call log in after sign up
+            try await SignUpWithEmail(sessionManager: sessionManager).signUp(email: self.email, password: self.password, name: self.name)
+            
+            //if sign up success, then log in
             self.sessionData = try await LoginWithEmailService(sessionManager: sessionManager).login(email: self.email, password: self.password)
+                
+            return true
+          
+         
+        } catch let error as SignupError {
+            self.signupError  = error
+            print ("sign up Error = \(String(describing: signupError))")
             
-            showProgressView = false
-            
-            return result
             
         } catch {
-            showProgressView = false
             print("Sign up failed with error : \(error.localizedDescription)")
-            
         }
         return false
     }
