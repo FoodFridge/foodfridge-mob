@@ -61,7 +61,7 @@ struct LandingPageView: View {
                                     } label: {
                                         SmallButton(title: "Generate Recipe")
                                     }
-                                        .simultaneousGesture(TapGesture().onEnded({
+                                    .simultaneousGesture(TapGesture().onEnded({
                                             Task {
                                                 try await vm.generateRecipe(from: vm.selectedTags)
                                             }

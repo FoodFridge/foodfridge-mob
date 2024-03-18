@@ -11,7 +11,7 @@ struct ScanItemView2: View {
     @StateObject var vm: ScanItemViewModel
     @EnvironmentObject var sessionManager: SessionManager
     @Environment(\.dismiss) var dismiss
-    
+    @Environment(\.colorScheme) var colorScheme
     @State private var addButtonTapped = false
     //@State private var addedItem = ""
     @State private var isShowPantry = false
@@ -36,7 +36,7 @@ struct ScanItemView2: View {
                     Text("Use camera to capture text on food package. Tap on green button to save.")
                 }
                 .font(Font.custom(CustomFont.appFontBold.rawValue, size: 15))
-                .foregroundStyle(.white)
+                .foregroundStyle(colorScheme == .dark ? .white : .black)
                 .padding()
                             
                 ScrollView {

@@ -12,7 +12,6 @@ struct ScanItemView: View {
     @EnvironmentObject var vm: ScanItemViewModel
     @EnvironmentObject var sessionManager: SessionManager
     
-    var userId = "test user"
     @State private var addButtonTapped = false
     //@State private var addedItem = ""
     @State private var isShowPantry = false
