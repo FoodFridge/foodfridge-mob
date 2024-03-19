@@ -59,4 +59,9 @@ class AppConstant {
     static var editPantryURLString =
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/pantry/edit"
     
+    static let privacyPolicyLink =
+        "https://sites.google.com/view/vocbox-privacy-policy/home"
+    
+    static let termOfUseLink =
+        "https://sites.google.com/view/terms-of-use-for-vocbox/home"
 }

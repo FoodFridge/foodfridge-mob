@@ -8,11 +8,30 @@
 import SwiftUI
 
 enum Settings: String, CaseIterable {
-    case SignOut = "Sign Out"
-    case DeleteAccount = "Delete Account"
-    case ContactUs = "Contact Us"
+    case signOut = "Sign out"
+    case contactUs = "Contact us"
+    case privacyPolicy = "Privacy policy"
+    case termOfUse = "Term of use "
+    
+    var iconName: String {
+        switch self {
+        case .signOut:
+            return "rectangle.portrait.and.arrow.right.fill"
+        case .contactUs:
+            return "envelope.fill"
+        case .privacyPolicy:
+            return "person.crop.rectangle"
+        case .termOfUse:
+            return "list.clipboard.fill"
+        }
+    }
+    
 }
 
+enum LinkDestination: Hashable {
+    case privacyPolicy(URL)
+    case termOfUse(URL)
+}
 
 struct ProfileSettingView: View {
     
@@ -22,33 +41,51 @@ struct ProfileSettingView: View {
     @State private var selectedSetting = ""
     @State private var isBlinking = false
     @State private var isSignedOut = false
+    @State private var emailUs = false
+    @State private var privacyPolicy = false
+    @State private var TermOfUse = false
+    
+    
     
     var body: some View {
-        
-        List {
-            ForEach(Settings.allCases, id: \.self) { setting in
-                Button(action: {
-                    selectedSetting = setting.rawValue
-                    handleSelection(for: setting)
-                    triggerBlink()
-                    isSignedOut = true
-                }) {
-                    Text(setting.rawValue)
-                        .foregroundStyle(isBlinking && selectedSetting == setting.rawValue ? .red : .primary)
+        VStack {
+            List {
+                ForEach(Settings.allCases, id: \.self) { setting in
+                    Button(action: {
+                        selectedSetting = setting.rawValue
+                        handleSelection(for: setting)
+                        triggerBlink()
+                        
+                    }) {
+                        HStack {
+                            //icon
+                            Image(systemName: setting.iconName).bold()
+                            //text
+                            Text(setting.rawValue)
+                        }
+                        .foregroundStyle(determineColor(for: setting))
+                    }
+                    .sheet(isPresented: $privacyPolicy, content: {
+                        PrivacyPolicyView()
+                    })
+                    .sheet(isPresented: $TermOfUse, content: {
+                        TermOfUseView()
+                    })
+                    
                 }
                 
             }
-            
         }
     }
+               
     
     
     
     func handleSelection(for setting: Settings) {
             switch setting {
-            case .SignOut:
+            case .signOut:
                 print("Sign Out Tapped")
-                
+                //sign out user
                 Task {
                     do {
                         self.isSignedOut = try await LogOut(sessionManager: sessionManager).logUserOut()
@@ -66,16 +103,26 @@ struct ProfileSettingView: View {
                     }
                 }
                 
-                            
-                
-            case .DeleteAccount:
-               
-                print("Delete Account Tapped")
                  
-            case .ContactUs:
-    
-                print("Contact Us Tapped")
-               
+            case .contactUs:
+                print("Contact Us tapped")
+                //display email form
+                Task {
+                    self.emailUs = true
+                    EmailController.shared.sendEmail(subject: "", body: "", to: "foodfridge.contact@gmail.com")
+                }
+                
+                
+            case .privacyPolicy:
+                print("Privacy tapped")
+                //display privacy policy
+                privacyPolicy = true
+                    
+                
+            case .termOfUse:
+                print("Term of use tapped")
+                //display term of use
+                self.TermOfUse = true
             }
         }
     
@@ -89,6 +136,20 @@ struct ProfileSettingView: View {
                isBlinking = false
            }
        }
+    
+    // Determine color based on the setting
+    func determineColor(for setting: Settings) -> Color {
+        if isBlinking {
+            if setting == .signOut && selectedSetting == setting.rawValue {
+                return .red // Make Sign Out red when selected
+            } else if selectedSetting == setting.rawValue {
+                return .button5
+            } else {
+                return .primary // Use the default color for unselected settings
+            }
+        }
+        return .primary
+    }
 }
 
 #Preview {
