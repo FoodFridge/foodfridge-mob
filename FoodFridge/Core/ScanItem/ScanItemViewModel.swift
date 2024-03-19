@@ -110,8 +110,16 @@ final class ScanItemViewModel: ObservableObject {
                 // remove the item from pantryInfo array within this section
                 section.pantryInfo.remove(atOffsets: offsets)
                 print("deleted \(String(describing: pantryIdToDelete))")
+                
                 // update the section in the main array
                 pantryItems[sectionIndex] = section
+                
+                // If the section is now empty, remove the entire section
+                if section.pantryInfo.isEmpty {
+                        pantryItems.remove(at: sectionIndex)
+                        print("Removed empty section")
+                }
+                
                 // Call API to delete pantry
                 Task {
                     do {
@@ -137,15 +145,6 @@ final class ScanItemViewModel: ObservableObject {
         isLoading = false
     }
     
-    /*
-    func getPantry() {
-        isLoading = true
-        Task {
-          try await pantryItems = GetPantry(sessionManager: sessionManager).getPantry()
-        }
-        isLoading = false
-    }
-     */
 }
 
 

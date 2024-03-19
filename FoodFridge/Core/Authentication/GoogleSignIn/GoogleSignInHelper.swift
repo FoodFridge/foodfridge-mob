@@ -52,8 +52,7 @@ class GoogleSignInHelper {
                 }
                 if let authDataResult = result { // Assuming authDataResult is the variable containing FIRAuthDataResult
                     let user = authDataResult.user
-                    let additionalUserInfo = authDataResult.additionalUserInfo
-                    
+            
                     //get email and firebase UID to Auth user with our app
                     if let userEmail = user.email {
                         Task {
@@ -70,56 +69,7 @@ class GoogleSignInHelper {
                     }
                 }
             }
-            
-            
-            
-            
-            
-            /* delete when done
-            
-            
-            
-            //save user id in session
-            self.sessionManager.saveLocalID(id: ("\(user.uid)"))
-            print("User ID: \(user.uid)")
-            print("saved local id = \(String(describing: self.sessionManager.getLocalID()))")
-            //print("User Email: \(user.email ?? "N/A")")
-            // Print other user properties as needed
-            /*
-             if let profile = additionalUserInfo?.profile {
-             // If additional user info is available
-             print("Additional User Info:")
-             for (key, value) in profile {
-             print("\(key): \(value)")
-             }
-             }
-             */
-            
-            
-            // Get the ID token
-            user.getIDToken { idToken, error in
-                if let error = error {
-                    print("Error getting ID token: \(error.localizedDescription)")
-                    return
-                }
-                
-                if let idToken = idToken {
-                    print("ID Token: \(idToken)")
-                    // save id token in session
-                    self.sessionManager.saveAuthToken(token: idToken)
-                    print("saved id token = \(String(describing: self.sessionManager.getAuthToken()))")
-                } else {
-                    print("ID Token is nil")
-                }
-            }
-            
-            UserDefaults.standard.set(true, forKey: "userLoggedIn")
-            
-            */
-            
         }
-        
-        
     }
     
 }

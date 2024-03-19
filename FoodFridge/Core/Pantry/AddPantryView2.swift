@@ -28,10 +28,13 @@ struct AddPantryView2: View {
                             }
                             onDismiss()
                         }, label: {
-                            Text("back")
+                            Text("Back")
                         })
                     }
                     .foregroundStyle(.accent)
+                    .font(.system(size: 20))
+                    
+                    
                     Spacer()
                 }
                 .padding(.bottom, 40)
@@ -42,9 +45,9 @@ struct AddPantryView2: View {
                 ZStack{
                     HStack(spacing: 0) {
                         TextField("Enter item", text: $vm.searchText)
+                            .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                             .padding()
                             .autocapitalization(.none)
-                        //.background(Color.button4)
                             .foregroundColor(colorScheme == .dark ? .white : .black)
                             .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.button1, lineWidth: 5))
                         Spacer()
@@ -59,15 +62,17 @@ struct AddPantryView2: View {
                                 // Reset the state after a delay
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                                     isTapped = false
-                                    //reset text after tap button
-                                    vm.searchText = ""
+                                    
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2 ) {
+                                        //reset text after tap button
+                                        vm.searchText = ""
+                                    }
                                 }
-                                
-                                
                             }
                         } label: {
                             Text("Add")
                                 .bold()
+                                .foregroundStyle(.accent)
                                 .padding(.horizontal)
                                 .frame(height: 55)
                                 .overlay(RoundedRectangle(cornerRadius: 5)
@@ -90,6 +95,7 @@ struct AddPantryView2: View {
                                 vm.searchText = suggestion // Update the text field with the selected suggestion
                             }
                     }
+                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                     .listRowBackground(Color.button3)
                     .foregroundColor(.black)
                     
