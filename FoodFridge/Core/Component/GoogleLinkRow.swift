@@ -76,35 +76,11 @@ struct GoogleLinkRow: View {
                             openURL(link)
                         }
                     } label: {
-                        AsyncImage(url: URL(string: googleLink?.img ?? "image" )) { phase in
-                            switch phase {
-                            case .empty:
-                                // Placeholder when the image is not yet loaded
-                                ProgressView()
-                            case .success(let image):
-                                image
-                                    .resizable()
-                                    .cornerRadius(10)
-                                    .frame(maxWidth: 70, maxHeight: 90)
-                                    .scaledToFill()
-                                    .backgroundStyle(.white)
-                                    .shadow(radius: 5, x: 5, y: 5)
-                            case .failure(_):
-                                // Placeholder or error handling when the image fails to load
-                                Image(systemName: "photo")
-                                    .resizable()
-                                    .cornerRadius(10)
-                                    .frame(maxWidth: 70, maxHeight: 90)
-                                    .scaledToFill()
-                                    .backgroundStyle(.white)
-                                    .shadow(radius: 5, x: 5, y: 5)
-                            @unknown default:
-                                // Placeholder or default handling for unknown cases
-                                ProgressView()
-                            }
-                        }
-                        .aspectRatio(contentMode: .fill)
-                        .padding(.horizontal)
+                        let url = URL(string: googleLink?.img ?? "https://spoonacular.com/recipeImages/86929-312x231.jpg")
+                        // Check if the placeholder image exists. If not, use a system image or another safe default.
+                        let placeholderImage = UIImage(named: "foodImage") ?? UIImage(systemName: "photo")!
+                                
+                        CachedAsyncImage(url: url, placeholder: placeholderImage)
                     }
                     
                 }
