@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@MainActor
 class AddPantryViewModel: ObservableObject {
         @Published var searchText = ""
         @Published var suggestions: [String] = []
@@ -30,7 +31,7 @@ class AddPantryViewModel: ObservableObject {
     private func performSearch(query: String) {
         // Use Task.init to bridge to async code
 
-        // Check if the query string is empty and return early if it is
+        // Check if the query string is empty, not to show suggestion
         guard !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             self.suggestions = []
             return

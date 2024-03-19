@@ -80,7 +80,10 @@ struct PantryView: View {
                                 }
                             }
                             .onDelete { offsets in
-                                vm.deleteItem(at: offsets, from: vm.pantryItems[pantryIndex].date)
+                                Task {
+                                    
+                                     vm.deleteItem(at: offsets, from: vm.pantryItems[pantryIndex].date)
+                                }
                                 
                             }
                             .frame(minHeight: 50)

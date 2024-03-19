@@ -24,7 +24,7 @@ struct AddPantryView: View {
                         TextField("Enter item", text: $vm.searchText)
                             .padding()
                             .autocapitalization(.none)
-                            //.background(Color.button4)
+                            .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                             .foregroundColor(colorScheme == .dark ? .white : .black)
                             .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.button1, lineWidth: 5))
                         Spacer()
@@ -39,8 +39,11 @@ struct AddPantryView: View {
                                 // Reset the state after a delay
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                                     isTapped = false
-                                    //reset text after tap button
-                                    vm.searchText = ""
+                                    
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2 ) {
+                                        //reset text after tap button
+                                        vm.searchText = ""
+                                    }
                                 }
                                 
                                 
@@ -75,6 +78,7 @@ struct AddPantryView: View {
                     
                     
                 }
+                .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
                 .listStyle(PlainListStyle()) // Remove default List padding/styling
          
             

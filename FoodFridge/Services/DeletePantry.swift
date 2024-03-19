@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class DeletePantry {
     
     static func delete(of pantryId: String) async throws {
