@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum Settings: String, CaseIterable {
+    
     case signOut = "Sign out"
     case contactUs = "Contact us"
     case privacyPolicy = "Privacy policy"
@@ -28,10 +29,6 @@ enum Settings: String, CaseIterable {
     
 }
 
-enum LinkDestination: Hashable {
-    case privacyPolicy(URL)
-    case termOfUse(URL)
-}
 
 struct ProfileSettingView: View {
     

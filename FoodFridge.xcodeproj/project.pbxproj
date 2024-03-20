@@ -84,6 +84,11 @@
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
 		759F55532B8AC3D300276079 /* RecipeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F55522B8AC3D300276079 /* RecipeAnimation.swift */; };
 		759F55552B8ACA7F00276079 /* GoogleLinkRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */; };
+		75A176B22BAA3F9C006B46D4 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A176B12BAA3F9C006B46D4 /* LottieView.swift */; };
+		75A176B52BAA43D8006B46D4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 75A176B42BAA43D8006B46D4 /* Lottie */; };
+		75A176B72BAA454F006B46D4 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A176B62BAA454F006B46D4 /* SplashScreen.swift */; };
+		75A176C12BAA55DA006B46D4 /* FoodAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 75A176C02BAA55DA006B46D4 /* FoodAnimation.json */; };
+		75A176C32BAA6B46006B46D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A176C22BAA6B46006B46D4 /* ContentView.swift */; };
 		75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */; };
 		75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */; };
 		75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */; };
@@ -197,6 +202,10 @@
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
 		759F55522B8AC3D300276079 /* RecipeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAnimation.swift; sourceTree = "<group>"; };
 		759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLinkRowViewModel.swift; sourceTree = "<group>"; };
+		75A176B12BAA3F9C006B46D4 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		75A176B62BAA454F006B46D4 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		75A176C02BAA55DA006B46D4 /* FoodAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FoodAnimation.json; path = ../../../Downloads/FoodAnimation.json; sourceTree = "<group>"; };
+		75A176C22BAA6B46006B46D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
@@ -256,6 +265,7 @@
 				757C63F32B852C1D00FC6D5E /* GoogleSignIn in Frameworks */,
 				757C63BC2B85298C00FC6D5E /* FirebaseAnalytics in Frameworks */,
 				757C63D82B85298C00FC6D5E /* FirebaseFirestoreSwift in Frameworks */,
+				75A176B52BAA43D8006B46D4 /* Lottie in Frameworks */,
 				757C63F52B852C1D00FC6D5E /* GoogleSignInSwift in Frameworks */,
 				757C63E82B85298C00FC6D5E /* FirebasePerformance in Frameworks */,
 				757C63CC2B85298C00FC6D5E /* FirebaseCrashlytics in Frameworks */,
@@ -358,8 +368,10 @@
 			isa = PBXGroup;
 			children = (
 				757542DC2B34B08D00048178 /* LandingPageView.swift */,
+				75A176C22BAA6B46006B46D4 /* ContentView.swift */,
 				75C2DD9A2B78793B00CD184E /* ScrollTarget.swift */,
 				757C63B42B82F70900FC6D5E /* GreetingView.swift */,
+				75A176B62BAA454F006B46D4 /* SplashScreen.swift */,
 			);
 			path = LandingPage;
 			sourceTree = "<group>";
@@ -390,6 +402,7 @@
 				754A8F9F2B5792A700C9FD04 /* Ingredients.json */,
 				75C42DEB2B6460FC003959B6 /* GoogleSearchResult.json */,
 				7593FE942B71B3240026D47B /* FavoriteRecipes.json */,
+				75A176C02BAA55DA006B46D4 /* FoodAnimation.json */,
 				757542C22B33E8F000048178 /* FoodFridgeApp.swift */,
 				757542D42B33EFCE00048178 /* Core */,
 				751EB55E2B53483600106FD6 /* Model */,
@@ -420,6 +433,7 @@
 				75A1F4842BA9E515006BD634 /* EmailController.swift */,
 				757C63FD2B85362B00FC6D5E /* ExtentionView.swift */,
 				75A1F4822BA93528006BD634 /* ImageLoader.swift */,
+				75A176B12BAA3F9C006B46D4 /* LottieView.swift */,
 				75CC3BD22BA5FBF9002BEBAD /* WebView.swift */,
 				75D950532B97FC2F009926BE /* UserTimeZone.swift */,
 				757542E52B351BD800048178 /* Fonts */,
@@ -579,6 +593,7 @@
 				757C63ED2B85298C00FC6D5E /* FirebaseStorage */,
 				757C63F22B852C1D00FC6D5E /* GoogleSignIn */,
 				757C63F42B852C1D00FC6D5E /* GoogleSignInSwift */,
+				75A176B42BAA43D8006B46D4 /* Lottie */,
 			);
 			productName = FoodFridge;
 			productReference = 757542BF2B33E8F000048178 /* FoodFridge.app */;
@@ -612,6 +627,7 @@
 				753245AD2B8008B600545DE7 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				757C63BA2B85298C00FC6D5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				757C63F12B852C1D00FC6D5E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				75A176B32BAA43D8006B46D4 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 757542C02B33E8F000048178 /* Products */;
 			projectDirPath = "";
@@ -632,6 +648,7 @@
 				757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */,
 				75C42DEC2B6460FC003959B6 /* GoogleSearchResult.json in Resources */,
 				757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */,
+				75A176C12BAA55DA006B46D4 /* FoodAnimation.json in Resources */,
 				757542C72B33E8F100048178 /* Assets.xcassets in Resources */,
 				75CE75B62B75E2330063B742 /* Pantry.json in Resources */,
 				757C63B72B85260600FC6D5E /* GoogleService-Info.plist in Resources */,
@@ -695,6 +712,7 @@
 				753245992B7E962A00545DE7 /* SignUpWithEmail.swift in Sources */,
 				757C63B92B85279E00FC6D5E /* AppDelegate.swift in Sources */,
 				75A1F4852BA9E515006BD634 /* EmailController.swift in Sources */,
+				75A176C32BAA6B46006B46D4 /* ContentView.swift in Sources */,
 				75CD18A12BA2322B00758328 /* AuthenticationView2.swift in Sources */,
 				75A1F4872BA9F9C3006BD634 /* PrivacyPolicyView.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
@@ -708,6 +726,7 @@
 				75D950542B97FC2F009926BE /* UserTimeZone.swift in Sources */,
 				75C42DE62B6300E4003959B6 /* RecipeRow.swift in Sources */,
 				752580D02B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift in Sources */,
+				75A176B22BAA3F9C006B46D4 /* LottieView.swift in Sources */,
 				752580C82B698B0900D536D2 /* LinkRecipeResource.swift in Sources */,
 				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
 				75D950582B98FC03009926BE /* AddPantryViewModel.swift in Sources */,
@@ -740,6 +759,7 @@
 				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
 				753245B32B801CE500545DE7 /* LogOut.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
+				75A176B72BAA454F006B46D4 /* SplashScreen.swift in Sources */,
 				752580CE2B6AD2D900D536D2 /* UpdateFavoriteRecipe.swift in Sources */,
 				75C42DF02B646A5C003959B6 /* GoogleLinkRow.swift in Sources */,
 				751EB5642B56463500106FD6 /* IngredientItem.swift in Sources */,
@@ -1020,6 +1040,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		75A176B32BAA43D8006B46D4 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1097,6 +1125,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 757C63F12B852C1D00FC6D5E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		75A176B42BAA43D8006B46D4 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75A176B32BAA43D8006B46D4 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
