@@ -13,6 +13,9 @@ struct GreetingView: View {
         @State private var hasNavigated = false // Prevent multiple navigations
         
         @State private var path: [Int] = []
+        @EnvironmentObject var sessionManager : SessionManager
+    
+    
         var body: some View {
             NavigationStack {
                 if navigateToLandingPage {
@@ -20,13 +23,43 @@ struct GreetingView: View {
                     LandingPageView(popToRoot:  { path.removeAll() })
                 
                 } else {
-                    Text("Welcome back, Food Fridie!")
+                    
+                    //Check if session expire, display splash screen to get new token before transition to landing page
+                    let userTimezone = UserTimeZone.getTimeZone()
+                    let expTime = sessionManager.getExpTime()
+                    let isTokenExpired = TokenManager.isTokenExpired(expiryDateUnix: expTime ?? Date().timeIntervalSince1970, userTimeZoneIdentifier: userTimezone)
+                    
+                    if isTokenExpired {
+                        VStack {
+                            SplashScreen()
+                        }
+                        .onAppear {
+                            //request new token
+                            Task {
+                                try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime ?? Date().timeIntervalSince1970, userTimeZone: userTimezone, sessionManager: sessionManager)
+                            }
+                            //display 5 secs before navigate to landing page
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+                                if !hasNavigated {
+                                    navigateToLandingPage = true
+                                    hasNavigated = true
+                                }
+                            }
+                        }
+                    }
+                    // if user session not expire yet just display their landing page
+                    else {
+                        VStack {
+                            Text("Welcome back food frigdie")
+                        }
                         .onAppear {
                             if !hasNavigated {
                                 navigateToLandingPage = true
                                 hasNavigated = true
                             }
                         }
+                    }
+                
                 }
             }
         }
