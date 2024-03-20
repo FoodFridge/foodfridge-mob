@@ -22,9 +22,7 @@ struct ContentView: View {
         VStack {
             
             if  appState.showSplashScreen {
-                
                 SplashScreen()
-                
             } else {
                 LandingPageView(popToRoot: {path.removeAll()})
             }

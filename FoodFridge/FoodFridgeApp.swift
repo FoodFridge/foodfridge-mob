@@ -60,18 +60,20 @@ struct FoodFridgeApp: App {
        
         } 
         .onChange(of: scenePhase) { newPhase in
-            if newPhase == .active {
-                print("newPhase == active")
-                appState.appDidBecomeActive(sessionManager: sessionManager)
+            if newPhase == .inactive || newPhase == .background {
+                print("newPhase == inactive or background")
                 let currentTime = Date()
                 UserDefaults.standard.set(currentTime, forKey: "lastActiveTime")// Call the function when the app becomes active
-            } else if newPhase == .inactive || newPhase == .background {
-                print("newPhase == inActive or background")
                 appState.appDidBecomeActive(sessionManager: sessionManager)
-                // Save the current time as the last active time
-                let currentTime = Date()
-                UserDefaults.standard.set(currentTime, forKey: "lastActiveTime")
             }
+            
+            
+            else if newPhase == .active {
+                print("newPhase == active")
+                appState.appDidBecomeActive(sessionManager: sessionManager)
+            }
+             
+              
         }
         
         

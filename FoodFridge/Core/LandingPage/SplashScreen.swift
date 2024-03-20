@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct SplashScreen: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
        
-            VStack {
-                LottieView(name: "FoodAnimation")
-            }
-            .frame(width: 200, height: 200)
+            ZStack {
+                //Screen background
+                Color(colorScheme == .dark ? .black : .clear)
+                //Animation
+                LottieView(name: "FoodAnimation").frame(width: 200, height: 200)
 
+            }
+            .ignoresSafeArea()
+            
     }
 }
 
