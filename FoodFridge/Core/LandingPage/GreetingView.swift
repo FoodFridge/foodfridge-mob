@@ -9,60 +9,91 @@ import SwiftUI
 
 struct GreetingView: View {
     
-        @State private var navigateToLandingPage = false
+        @State private var navigateToContent = false
         @State private var hasNavigated = false // Prevent multiple navigations
+        @State private var showSplashScreen = false
         
         @State private var path: [Int] = []
         @EnvironmentObject var sessionManager : SessionManager
     
     
-        var body: some View {
-            NavigationStack {
-                if navigateToLandingPage {
-                    // we want Initial view as Landing page this working around to programmatically navigate to landingpage. this file purpose is to fix bug in prompt(tags displaying))
-                    LandingPageView(popToRoot:  { path.removeAll() })
-                
-                } else {
+    var body: some View {
+        NavigationStack {
+            // we want Initial view as Landing page this working around to programmatically navigate to landingpage. this file purpose is to fix bug in prompt(tags displaying missing after login))
+            if navigateToContent {
+                ContentView()
+            }else {
+                VStack {
+                    Text("Greeting!")
                     
-                    //Check if session expire, display splash screen to get new token before transition to landing page
-                    let userTimezone = UserTimeZone.getTimeZone()
-                    let expTime = sessionManager.getExpTime()
-                    let isTokenExpired = TokenManager.isTokenExpired(expiryDateUnix: expTime ?? Date().timeIntervalSince1970, userTimeZoneIdentifier: userTimezone)
-                    
-                    if isTokenExpired {
-                        VStack {
-                            SplashScreen()
-                        }
-                        .onAppear {
-                            //request new token
-                            Task {
-                                try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime ?? Date().timeIntervalSince1970, userTimeZone: userTimezone, sessionManager: sessionManager)
-                            }
-                            //display 5 secs before navigate to landing page
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-                                if !hasNavigated {
-                                    navigateToLandingPage = true
-                                    hasNavigated = true
-                                }
-                            }
-                        }
+                }
+                .onAppear {
+                    if !hasNavigated {
+                        navigateToContent = true
+                        hasNavigated = true
                     }
-                    // if user session not expire yet just display their landing page
-                    else {
-                        VStack {
-                            Text("Welcome back food frigdie")
+                }
+                
+                
+            }
+            
+            
+        }
+        
+        
+        
+        /*
+        
+        NavigationStack {
+            if navigateToLandingPage {
+                // we want Initial view as Landing page this working around to programmatically navigate to landingpage. this file purpose is to fix bug in prompt(tags displaying))
+                LandingPageView(popToRoot:  { path.removeAll() })
+                
+            } else {
+                
+                //Check if session expire, display splash screen to get new token before transition to landing page
+                let userTimezone = UserTimeZone.getTimeZone()
+                let expTime = sessionManager.getExpTime()
+                let isTokenExpired = TokenManager.isTokenExpired(expiryDateUnix: expTime ?? Date().timeIntervalSince1970, userTimeZoneIdentifier: userTimezone)
+                
+                if isTokenExpired {
+                    VStack {
+                        SplashScreen()
+                    }
+                    .onAppear {
+                        //request new token
+                        Task {
+                            try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime ?? Date().timeIntervalSince1970, userTimeZone: userTimezone, sessionManager: sessionManager)
                         }
-                        .onAppear {
+                        //display 6 secs before navigate to landing page
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
                             if !hasNavigated {
                                 navigateToLandingPage = true
                                 hasNavigated = true
                             }
                         }
                     }
-                
                 }
+                // if user session not expire yet just display their landing page
+                else {
+                    VStack {
+                        Text("Welcome back food frigdie")
+                    }
+                    .onAppear {
+                        if !hasNavigated {
+                            navigateToLandingPage = true
+                            hasNavigated = true
+                        }
+                    }
+                }
+                
             }
         }
+        
+        */
+        
+        
+    }
     
 }
 
