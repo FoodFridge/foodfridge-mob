@@ -42,7 +42,8 @@ struct FoodFridgeApp: App {
                        
                     
                 }else {
-                    AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
+                    OnBoardingScreen()
+                    //AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
                         .environmentObject(appState)
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
