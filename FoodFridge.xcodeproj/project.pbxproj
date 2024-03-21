@@ -84,6 +84,8 @@
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
 		759F55532B8AC3D300276079 /* RecipeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F55522B8AC3D300276079 /* RecipeAnimation.swift */; };
 		759F55552B8ACA7F00276079 /* GoogleLinkRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */; };
+		75A0CBC52BABA4BF0091CC5A /* FirstSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0CBC42BABA4BF0091CC5A /* FirstSplashScreen.swift */; };
+		75A0CBEB2BABCFB90091CC5A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0CBEA2BABCFB90091CC5A /* NavigationController.swift */; };
 		75A176B22BAA3F9C006B46D4 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A176B12BAA3F9C006B46D4 /* LottieView.swift */; };
 		75A176B52BAA43D8006B46D4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 75A176B42BAA43D8006B46D4 /* Lottie */; };
 		75A176B72BAA454F006B46D4 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A176B62BAA454F006B46D4 /* SplashScreen.swift */; };
@@ -103,6 +105,7 @@
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
 		75B480582BA3BEBE00477EC4 /* AuthUserWithApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */; };
 		75BD40862BA10F800055B06F /* ValidateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD40852BA10F800055B06F /* ValidateField.swift */; };
+		75BD90C02BAB7A0A00EDC7AA /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD90BF2BAB7A0A00EDC7AA /* OnBoardingScreen.swift */; };
 		75C2DD972B7853F500CD184E /* EditPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD962B7853F500CD184E /* EditPantry.swift */; };
 		75C2DD992B785D7800CD184E /* AddedBarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */; };
 		75C2DD9B2B78793B00CD184E /* ScrollTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD9A2B78793B00CD184E /* ScrollTarget.swift */; };
@@ -202,6 +205,8 @@
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
 		759F55522B8AC3D300276079 /* RecipeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAnimation.swift; sourceTree = "<group>"; };
 		759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLinkRowViewModel.swift; sourceTree = "<group>"; };
+		75A0CBC42BABA4BF0091CC5A /* FirstSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSplashScreen.swift; sourceTree = "<group>"; };
+		75A0CBEA2BABCFB90091CC5A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		75A176B12BAA3F9C006B46D4 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		75A176B62BAA454F006B46D4 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		75A176C02BAA55DA006B46D4 /* FoodAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FoodAnimation.json; path = ../../../Downloads/FoodAnimation.json; sourceTree = "<group>"; };
@@ -220,6 +225,7 @@
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 		75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserWithApp.swift; sourceTree = "<group>"; };
 		75BD40852BA10F800055B06F /* ValidateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateField.swift; sourceTree = "<group>"; };
+		75BD90BF2BAB7A0A00EDC7AA /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
 		75C2DD962B7853F500CD184E /* EditPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPantry.swift; sourceTree = "<group>"; };
 		75C2DD982B785D7800CD184E /* AddedBarAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedBarAnimation.swift; sourceTree = "<group>"; };
 		75C2DD9A2B78793B00CD184E /* ScrollTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTarget.swift; sourceTree = "<group>"; };
@@ -371,7 +377,6 @@
 				75A176C22BAA6B46006B46D4 /* ContentView.swift */,
 				75C2DD9A2B78793B00CD184E /* ScrollTarget.swift */,
 				757C63B42B82F70900FC6D5E /* GreetingView.swift */,
-				75A176B62BAA454F006B46D4 /* SplashScreen.swift */,
 			);
 			path = LandingPage;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				757C63FD2B85362B00FC6D5E /* ExtentionView.swift */,
 				75A1F4822BA93528006BD634 /* ImageLoader.swift */,
 				75A176B12BAA3F9C006B46D4 /* LottieView.swift */,
+				75A0CBEA2BABCFB90091CC5A /* NavigationController.swift */,
 				75CC3BD22BA5FBF9002BEBAD /* WebView.swift */,
 				75D950532B97FC2F009926BE /* UserTimeZone.swift */,
 				757542E52B351BD800048178 /* Fonts */,
@@ -449,6 +455,7 @@
 				75434FFB2B37E6C500823A50 /* Authentication */,
 				757542D52B33F2E700048178 /* Component */,
 				75434FFC2B37E6E600823A50 /* LandingPage */,
+				75BD90BE2BAB79CF00EDC7AA /* Onboarding */,
 				751EB5542B4E4C0500106FD6 /* Profile */,
 				751EB55B2B4E52B600106FD6 /* Pantry */,
 				752580D52B6B03FF00D536D2 /* FavoriteRecipe */,
@@ -510,6 +517,16 @@
 				75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */,
 			);
 			path = AppleSignIn;
+			sourceTree = "<group>";
+		};
+		75BD90BE2BAB79CF00EDC7AA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				75BD90BF2BAB7A0A00EDC7AA /* OnBoardingScreen.swift */,
+				75A0CBC42BABA4BF0091CC5A /* FirstSplashScreen.swift */,
+				75A176B62BAA454F006B46D4 /* SplashScreen.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		75C42DDC2B62E7D9003959B6 /* ResultPage */ = {
@@ -697,6 +714,7 @@
 				7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */,
 				753245AC2B80081600545DE7 /* UserSessionManager.swift in Sources */,
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
+				75BD90C02BAB7A0A00EDC7AA /* OnBoardingScreen.swift in Sources */,
 				754A8FAA2B58A99600C9FD04 /* IngredientByCategory.swift in Sources */,
 				754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */,
 				75A37DFF2BA7EF8000902D86 /* SignUpResponse.swift in Sources */,
@@ -730,6 +748,7 @@
 				752580C82B698B0900D536D2 /* LinkRecipeResource.swift in Sources */,
 				751EB55A2B4E4FD100106FD6 /* DataScannerView.swift in Sources */,
 				75D950582B98FC03009926BE /* AddPantryViewModel.swift in Sources */,
+				75A0CBEB2BABCFB90091CC5A /* NavigationController.swift in Sources */,
 				754A8FA22B585A8400C9FD04 /* GetIngredients.swift in Sources */,
 				752580DF2B6B3D6E00D536D2 /* FavLinkRow.swift in Sources */,
 				751EB5562B4E4C1F00106FD6 /* ProfileView.swift in Sources */,
@@ -774,6 +793,7 @@
 				753245AA2B7FF16700545DE7 /* LogInResponseData.swift in Sources */,
 				75CD189B2BA2182000758328 /* AddPantryView2.swift in Sources */,
 				75A1F4892BA9F9E9006BD634 /* TermOfUseView.swift in Sources */,
+				75A0CBC52BABA4BF0091CC5A /* FirstSplashScreen.swift in Sources */,
 				754A8FA62B58A41800C9FD04 /* Category.swift in Sources */,
 				752580DB2B6B0E2800D536D2 /* GetFavoriteRecipe.swift in Sources */,
 				7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */,
@@ -911,6 +931,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = FoodFridge/FoodFridge.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -922,17 +943,19 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodFridge/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow app to access the camera";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
@@ -954,6 +977,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
 				CODE_SIGN_ENTITLEMENTS = FoodFridge/FoodFridge.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -965,17 +989,19 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodFridge/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow app to access the camera";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";

@@ -19,13 +19,14 @@ struct LandingPageView: View {
     @EnvironmentObject var scrollTarget: ScrollTarget
     @EnvironmentObject var authentication: Authentication
     @EnvironmentObject var sessionManager: SessionManager
+    @EnvironmentObject var navigationController: NavigationController
     
-    var popToRoot: () -> Void
+   
     let rows = [GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem()]
 
     var body: some View {
       
-            VStack {
+           NavigationStack {
                 GeometryReader { proxy in
                     VStack {
                         //MARK: Head line
@@ -56,8 +57,8 @@ struct LandingPageView: View {
                                 .overlay(
                                     
                                     NavigationLink {
-                                        //TODO: tap and link to result of generated recipe
-                                        ResultView(popToRoot: popToRoot)
+                                        //MARK: tap and link to result of generated recipe
+                                        ResultView()
                                     } label: {
                                         SmallButton(title: "Generate Recipe")
                                     }
@@ -112,9 +113,9 @@ struct LandingPageView: View {
                                         .foregroundColor(Color(.button2))
                                 }
                             }else {
-                                Button {
+                                NavigationLink {
                                     //MARK: pop to Authen view
-                                    popToRoot()
+                                    AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
                                 }label: {
                                     Text("Sign in")
                                         .foregroundColor(Color(.button2))

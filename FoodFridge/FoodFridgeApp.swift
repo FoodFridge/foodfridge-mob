@@ -14,6 +14,7 @@ struct FoodFridgeApp: App {
     @StateObject var authentication = Authentication()
     @StateObject var sessionManager = SessionManager()
     @StateObject private var appState = AppState()
+    @StateObject var navigationController = NavigationController()
     
     @Environment(\.scenePhase) var scenePhase
     
@@ -26,8 +27,23 @@ struct FoodFridgeApp: App {
         
         WindowGroup {
             
-                if isLoggedIn  {
-                    GreetingView()
+            if isLoggedIn  {
+                GreetingView()
+                
+                    .environmentObject(appState)
+                    .environmentObject(sessionManager)
+                    .environmentObject(authentication)
+                    .environmentObject(TagsViewModel(sessionManager: sessionManager))
+                    .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
+                    .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
+                    .environmentObject(ScrollTarget())
+                
+            }else {
+                
+                
+                switch navigationController.currentView {
+                case .onboarding:
+                    FirstSplashScreen()
                         .environmentObject(appState)
                         .environmentObject(sessionManager)
                         .environmentObject(authentication)
@@ -35,13 +51,9 @@ struct FoodFridgeApp: App {
                         .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
-                        
-                        
-                        
-                      
-                       
+                        .environmentObject(navigationController)
                     
-                }else {
+                case .authentication:
                     AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
                         .environmentObject(appState)
                         .environmentObject(sessionManager)
@@ -50,31 +62,41 @@ struct FoodFridgeApp: App {
                         .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
-                        
-                        
+                        .environmentObject(navigationController)
+                    
+                case .landingPage:
+                    LandingPageView()
+                        .environmentObject(appState)
+                        .environmentObject(sessionManager)
+                        .environmentObject(authentication)
+                        .environmentObject(TagsViewModel(sessionManager: sessionManager))
+                        .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
+                        .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
+                        .environmentObject(ScrollTarget())
+                        .environmentObject(navigationController)
+                    
                 }
+                
             
+                
+            }
             
-            
-        
-       
-        } 
+        }
         .onChange(of: scenePhase) { newPhase in
-            if newPhase == .active {
-                print("newPhase == active")
-                appState.appDidBecomeActive(sessionManager: sessionManager)
+            if newPhase == .inactive || newPhase == .background {
+                print("newPhase == inactive or background")
                 let currentTime = Date()
                 UserDefaults.standard.set(currentTime, forKey: "lastActiveTime")// Call the function when the app becomes active
-            } else if newPhase == .inactive || newPhase == .background {
-                print("newPhase == inActive or background")
                 appState.appDidBecomeActive(sessionManager: sessionManager)
-                // Save the current time as the last active time
-                let currentTime = Date()
-                UserDefaults.standard.set(currentTime, forKey: "lastActiveTime")
             }
+            
+            
+            else if newPhase == .active {
+                print("newPhase == active")
+                appState.appDidBecomeActive(sessionManager: sessionManager)
+            }
+            
         }
-        
-        
         
     }
     

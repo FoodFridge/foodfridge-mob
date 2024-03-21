@@ -12,17 +12,17 @@ struct LinkRecipesView: View {
     @State private var LinkRecipes = [LinkRecipe]()
     @StateObject var vm: LinkRecipesViewModel
     @StateObject var likeState = GoogleLinkRowViewModel()
+    @EnvironmentObject var navigationController: NavigationController
     
     var sessionManager: SessionManager
     var title: String
     var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
-    var popToRoot: () -> Void
     
-    init(sessionManager: SessionManager, title: String, popToRoot: @escaping () -> Void) {
+    
+    init(sessionManager: SessionManager, title: String) {
         self.sessionManager = sessionManager
         self.title = title
         _vm = StateObject(wrappedValue: LinkRecipesViewModel(sessionManager: sessionManager))
-        self.popToRoot = popToRoot
     }
     
     var body: some View {
@@ -52,9 +52,9 @@ struct LinkRecipesView: View {
                     }
                 }
                 else {
-                    Button {
+                    NavigationLink {
                        //MARK: pop to Authen view
-                       popToRoot()
+                        AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
                     }label: {
                         Text("Sign in")
                             .foregroundColor(Color(.button2))
