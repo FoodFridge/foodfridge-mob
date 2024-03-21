@@ -8,11 +8,44 @@
 import SwiftUI
 
 struct FirstSplashScreen: View {
+    @State private var isActive = false
+   // @State var isFirstLaunch: Bool
+    //@EnvironmentObject var sessionManager: SessionManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+     
+            
+        if isActive {
+            
+            OnBoardingScreen()
+            
+        }else {
+            
+            ZStack {
+                //Screen background
+                Color(.button2)
+                //Animation
+                LottieView(name: "FoodAnimation").frame(width: 200, height: 200)
+            }
+            .onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.isActive = true
+                }
+            }
+            .ignoresSafeArea()
+            
+        
+        }
+       
+        
+      
+        
+        
     }
 }
 
-#Preview {
-    FirstSplashScreen()
-}
+/*
+ #Preview {
+ FirstSplashScreen(isFirstLaunch: true)
+ }
+ */

@@ -24,7 +24,8 @@ struct ContentView: View {
             if  appState.showSplashScreen {
                 SplashScreen()
             } else {
-                LandingPageView(popToRoot: {path.removeAll()})
+                LandingPageView()
+               // LandingPageView(popToRoot: {path.removeAll()})
             }
             
         }
@@ -39,8 +40,19 @@ struct ContentView: View {
 class AppState: ObservableObject {
     
     @Published var showSplashScreen = false
+    //@Published var isFirstLaunch : Bool
     
     init() {
+        /*
+        // Determine if this is the first launch, e.g., by checking UserDefaults
+        isFirstLaunch = UserDefaults.standard.bool(forKey: "HasLaunchedOnce") == false
+            if isFirstLaunch {
+                   // Mark that the app has been launched once
+                   UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")
+                   UserDefaults.standard.synchronize()
+            }
+         */
+        
         // Initial check to set splash screen state based on elapsed time since last active
         let shouldShowSplash = shouldShowSplashOnStart()
         showSplashScreen = shouldShowSplash

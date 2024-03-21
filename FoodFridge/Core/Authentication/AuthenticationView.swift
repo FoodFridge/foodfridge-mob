@@ -18,18 +18,17 @@ struct AuthenticationView: View {
     @State private var logInPageShow: Bool = false
     
     @EnvironmentObject var sessionManager: SessionManager
+    @EnvironmentObject var navigationController: NavigationController
     
     @Environment(\.colorScheme) var colorScheme
     
     @StateObject var appleSignIn: AppleSignInHelper
     
-    @State private var path: [Int] = []
-    
-
+   
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack  {
             if sessionManager.getAuthToken() != nil {
-                LandingPageView(popToRoot: { path.removeAll() })
+                LandingPageView()
             } else {
                 GeometryReader { proxy in
                     VStack {
@@ -46,20 +45,14 @@ struct AuthenticationView: View {
                             
                             //MARK: Skip link to landing page
                             
-                             Button {
-                             //append path
-                                 path.append(1)
-                             } label: {
-                             Text("Skip")
+                             NavigationLink {
                              
-                             }
-                             .navigationDestination(for: Int.self) { index  in
-                                 switch index {
-                                 case 1 :
-                                     LandingPageView(popToRoot: { path.removeAll() })
-                                 default:
-                                     EmptyView()
-                                 }
+                                 LandingPageView()
+                                 
+                             } label: {
+                                 
+                             Text("Skip")
+                                 
                              }
                              .padding(.trailing, -10)
                              .offset(y: -130)
@@ -151,7 +144,7 @@ struct AuthenticationView: View {
                 }
             }
         }
-        //.navigationBarBackButtonHidden(true)  
+        .navigationBarBackButtonHidden(true)  
     }
     
    
@@ -159,8 +152,3 @@ struct AuthenticationView: View {
 
 
 
-/*
- #Preview {
- AuthenthicationView()
- }
- */

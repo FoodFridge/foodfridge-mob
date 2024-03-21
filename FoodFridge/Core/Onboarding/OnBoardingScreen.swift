@@ -11,9 +11,10 @@ struct OnBoardingScreen: View {
     
     @State private var step = 1
     @EnvironmentObject var sessionManager: SessionManager
+    @EnvironmentObject var navigationController: NavigationController
     
     var body: some View {
-        NavigationStack {
+        
             ZStack {
                 // Background color
                 Color(.white)
@@ -89,7 +90,7 @@ struct OnBoardingScreen: View {
                     
                     HStack(spacing: 20) {
                         Button(action: { step = 1 }) {
-                            Image(systemName: "arrowtriangle.forward.fill")
+                            Image(systemName: "chevron.forward")
                                 .padding()
                                 .background(Circle().fill(Color(.button2)).shadow(radius: 10))
                                 .foregroundStyle(step == 1 ? Color(.button1) : Color(.clear))
@@ -97,7 +98,7 @@ struct OnBoardingScreen: View {
                         }
                         
                         Button(action: { step = 2 }) {
-                        Image(systemName: "arrowtriangle.forward.fill")
+                        Image(systemName: "chevron.forward")
                                 .padding()
                                 .background(Circle().fill(Color(.button2)).shadow(radius: 10))
                                 .foregroundStyle(step == 2 ? Color(.button1) : Color(.clear))
@@ -105,7 +106,7 @@ struct OnBoardingScreen: View {
                         }
                         
                         Button(action: { step = 3 }) {
-                            Image(systemName: "arrowtriangle.forward.fill")
+                            Image(systemName: "chevron.forward")
                                 .padding()
                                 .background(Circle().fill(Color(.button2)).shadow(radius: 10))
                                 .foregroundStyle(step == 3 ? Color(.clear) : Color(.clear))
@@ -116,8 +117,8 @@ struct OnBoardingScreen: View {
                     .font(.largeTitle)
                     .tint(Color(.button3))
                     
-                    NavigationLink {
-                        AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
+                   Button {
+                       navigationController.currentView = .authentication
                     }label: {
                         HStack {
                             Text("Continue")
@@ -128,14 +129,15 @@ struct OnBoardingScreen: View {
                         .background(Capsule().fill(Color(.button1)))
                         .foregroundStyle(Color(.button5))
                         .opacity(step == 3 ? 1 : 0)
-                        .animation(.none, value: step) // I don't want to animate the opacity ☝️
+                        .animation(.none, value: step) // adjust to animate the opacity
                         .scaleEffect(step == 3 ? 1 : 0.01)
                         .animation(Animation.interpolatingSpring(stiffness: 50, damping: 10, initialVelocity: 10), value: step)
                     }
+                  
                 }
             }
         }
-    }
+
 }
 
 #Preview {
