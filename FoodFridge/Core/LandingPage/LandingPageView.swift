@@ -84,7 +84,7 @@ struct LandingPageView: View {
                                                 } else {
                                                     isTapped = true
                                                     //resetState
-                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {  isTapped = false }
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {  isTapped = false }
                                                    isShowAlert = true
                                                }
                                            }
