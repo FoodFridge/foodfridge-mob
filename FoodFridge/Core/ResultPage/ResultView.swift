@@ -17,26 +17,39 @@ struct ResultView: View {
     var body: some View {
         
         NavigationStack {
-            ScrollView {
-                VStack {
-                    
-                    Text("We've found Recipes!")
-                        .padding(5)
-                        .frame(width: 350, height: 45)
-                        .background(.button2)
-                        .cornerRadius(19)
-                        .font(.custom(CustomFont.appFontBold.rawValue, size: 25))
+            //if got generate result
+            if !vm.isLoading {
+                if vm.generatedRecipes.count != 0 {
+                    ScrollView {
+                        VStack {
+                            
+                            Text("We've found Recipes!")
+                                .padding(5)
+                                .frame(width: 350, height: 45)
+                                .background(.button2)
+                                .cornerRadius(19)
+                                .font(.custom(CustomFont.appFontBold.rawValue, size: 25))
+                                .padding()
+                        }
+                        
                         .padding()
-                }
-                
-                .padding()
-                ForEach(0..<vm.generatedRecipes.count, id: \.self) { index in
-                    NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: vm.generatedRecipes[index].title)) {
-                        RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
+                        ForEach(0..<vm.generatedRecipes.count, id: \.self) { index in
+                            NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: vm.generatedRecipes[index].title)) {
+                                RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image)
+                            }
+                        }
                     }
+                    .scrollIndicators(.hidden)
+                }else {
+                    
+                    VStack {
+                        Text("No recipe, please try again.")
+                    }
+                    .font(.custom(CustomFont.appFontRegular.rawValue, size: 17))
                 }
+            } else {
+                ProgressView()
             }
-            .scrollIndicators(.hidden)
         }
         
         .toolbar {
@@ -52,7 +65,7 @@ struct ResultView: View {
                     }
                 }else {
                     NavigationLink {
-                       //MARK: pop to Authen view
+                        //MARK: pop to Authen view
                         AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
                     }label: {
                         Text("Sign in")
@@ -72,7 +85,7 @@ struct ResultView: View {
             
         }
         
-       
+        
     }
 }
 

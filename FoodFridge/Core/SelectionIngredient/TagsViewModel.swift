@@ -17,6 +17,7 @@ class TagsViewModel: ObservableObject {
     
     @Published var ingredientsByType: [String: [IngredientItem]] = [:]
     @Published var itemsDict: [String : [String]] = [:]
+    @Published var isLoading: Bool  = false
     
     var session: SessionManager
     
@@ -34,10 +35,12 @@ class TagsViewModel: ObservableObject {
     }
     
     func generateRecipe(from ingredients : [String]) async throws {
+        isLoading = true
         let ingredients = ingredients
         var recipes: [Recipe]
         recipes = try await GenerateRecipe.getRecipe(from: ingredients)
         self.generatedRecipes = recipes
+        isLoading = false
     }
     
    
