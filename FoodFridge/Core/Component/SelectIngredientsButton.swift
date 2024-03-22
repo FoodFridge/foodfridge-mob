@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectIngredientsButton: View {
     
-    var icon: String = "dairy"
+    var icon: String
     var title: String = "this is title"
     var action: () -> Void
     var sheetHeight: CGFloat = 0
@@ -56,7 +56,7 @@ struct SelectIngredientsButton: View {
 }
 
  #Preview {
- SelectIngredientsButton(action: {},showSheet: .constant(false))
+     SelectIngredientsButton(icon: "milk", action: {},showSheet: .constant(false))
  .previewLayout(.sizeThatFits)
  }
  

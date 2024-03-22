@@ -53,4 +53,34 @@ enum Category: String, CaseIterable {
            }
        }
     
+    var icon: String {
+        switch self {
+        case .protein:
+            return "steak"
+        case .carb:
+            return "bread"
+        case .dairy:
+            return "milk"
+        case .veggie:
+            return "vegetables"
+        case .seasoning:
+            return "spices"
+        case .seafood:
+            return "seafood"
+        case .fruit:
+            return "fruit"
+        case .pantry:
+            return "refrigerator"
+        case .cereal:
+            return "almond"
+        case .others:
+            return "glitter"
+        case .sauces:
+            return "spice"
+        case .sugar:
+            return "bag"
+        }
+        
+    }
+    
 }

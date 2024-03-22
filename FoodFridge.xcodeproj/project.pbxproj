@@ -99,7 +99,6 @@
 		75A1F4852BA9E515006BD634 /* EmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1F4842BA9E515006BD634 /* EmailController.swift */; };
 		75A1F4872BA9F9C3006BD634 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1F4862BA9F9C3006BD634 /* PrivacyPolicyView.swift */; };
 		75A1F4892BA9F9E9006BD634 /* TermOfUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1F4882BA9F9E9006BD634 /* TermOfUseView.swift */; };
-		75A261862BAC88F90009F556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A261852BAC88F90009F556 /* LaunchScreen.storyboard */; };
 		75A37DFF2BA7EF8000902D86 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A37DFE2BA7EF8000902D86 /* SignUpResponse.swift */; };
 		75AAD3292B803BC400A4E1F6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAD3282B803BC400A4E1F6 /* UserData.swift */; };
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
@@ -220,7 +219,6 @@
 		75A1F4842BA9E515006BD634 /* EmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailController.swift; sourceTree = "<group>"; };
 		75A1F4862BA9F9C3006BD634 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		75A1F4882BA9F9E9006BD634 /* TermOfUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermOfUseView.swift; sourceTree = "<group>"; };
-		75A261852BAC88F90009F556 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75A37DFE2BA7EF8000902D86 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		75AAD3282B803BC400A4E1F6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
@@ -386,7 +384,6 @@
 		757542B62B33E8F000048178 = {
 			isa = PBXGroup;
 			children = (
-				75A261852BAC88F90009F556 /* LaunchScreen.storyboard */,
 				757542C12B33E8F000048178 /* FoodFridge */,
 				757542C02B33E8F000048178 /* Products */,
 			);
@@ -672,7 +669,6 @@
 				757542C72B33E8F100048178 /* Assets.xcassets in Resources */,
 				75CE75B62B75E2330063B742 /* Pantry.json in Resources */,
 				757C63B72B85260600FC6D5E /* GoogleService-Info.plist in Resources */,
-				75A261862BAC88F90009F556 /* LaunchScreen.storyboard in Resources */,
 				75C42DEE2B646151003959B6 /* Recipes.json in Resources */,
 				7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */,
 			);
@@ -960,6 +956,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
@@ -1006,6 +1003,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";

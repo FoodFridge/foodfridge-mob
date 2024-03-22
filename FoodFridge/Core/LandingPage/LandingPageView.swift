@@ -105,7 +105,7 @@ struct LandingPageView: View {
                             LazyHGrid (rows: rows) {
                                 ForEach(Category.allCases, id: \.self) { category in
                                     VStack {
-                                        SelectIngredientsButton(title: category.displayName, action: {
+                                        SelectIngredientsButton(icon: category.icon, title: category.displayName, action: {
                                             print("**Button \(category.displayName)*** tapped!")
                                             showSheet = true
                                             //assign key to display selectedCategory
