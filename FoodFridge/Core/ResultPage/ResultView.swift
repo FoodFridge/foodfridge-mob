@@ -40,6 +40,7 @@ struct ResultView: View {
         }
         
         .toolbar {
+            
             ToolbarItemGroup(placement: .topBarTrailing) {
                 if sessionManager.isLoggedIn() {
                     NavigationLink {
@@ -67,6 +68,8 @@ struct ResultView: View {
                         .foregroundColor(Color(.button2))
                 }
             }
+            
+            
         }
         
        

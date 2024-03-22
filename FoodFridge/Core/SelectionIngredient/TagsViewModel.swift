@@ -12,7 +12,7 @@ import SwiftUI
 @MainActor
 class TagsViewModel: ObservableObject {
     
-    @Published var selectedTags : [String] = ["test"] //MARK: todo - delete test
+    @Published var selectedTags : [String] = []
     @Published var generatedRecipes: [Recipe] = [Recipe]()
     
     @Published var ingredientsByType: [String: [IngredientItem]] = [:]
