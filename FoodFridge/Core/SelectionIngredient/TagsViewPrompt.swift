@@ -14,7 +14,6 @@ struct TagsViewPrompt: View {
     @State private var selectedItems = Set<String>()
     var items: [String]
     
-    //@ObservedObject var vm = TagsViewModel()
     @EnvironmentObject var vm2: TagsViewModel
     
     init(items: [String]) {

@@ -14,12 +14,16 @@ struct LandingPageView: View {
     @State var selectedItems = [String]()
     @State private var referenceHeight: CGFloat = 0
     @State private var isSignedOut = false
+    @State private var isShowAlert = false
+    @State private var isTapped = false
     
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var scrollTarget: ScrollTarget
     @EnvironmentObject var authentication: Authentication
     @EnvironmentObject var sessionManager: SessionManager
     @EnvironmentObject var navigationController: NavigationController
+    
+    
     
    
     let rows = [GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem()]
@@ -56,19 +60,37 @@ struct LandingPageView: View {
                             //MARK: Genenerate Recipes Button
                                 .overlay(
                                     
-                                    NavigationLink {
-                                        //MARK: tap and link to result of generated recipe
-                                        ResultView()
-                                    } label: {
-                                        SmallButton(title: "Generate Recipe")
-                                    }
-                                    .simultaneousGesture(TapGesture().onEnded({
-                                            Task {
-                                                try await vm.generateRecipe(from: vm.selectedTags)
-                                            }
-                                        }))
+                                        NavigationLink {
+                                             ResultView()
+                                        }label: {
+                                            SmallButton(title: "Generate Recipe", isTapped: $isTapped)
+                                                
+                                        }
+                                        .disabled(vm.selectedTags.isEmpty)
                                         .frame(width: 200, height: 30)
                                         .offset(y: 85)
+                                        .alert("", isPresented: $isShowAlert) {
+                                            Button("ok", role: .cancel) { }
+                                        } message: {
+                                            Text("Please select ingredient")
+                                        }
+                                        .simultaneousGesture(TapGesture().onEnded({
+                                            Task {
+                                                if !vm.selectedTags.isEmpty {
+                                                    
+                                                try await vm.generateRecipe(from: vm.selectedTags)
+                                                    
+                                                
+                                                } else {
+                                                    isTapped = true
+                                                    //resetState
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {  isTapped = false }
+                                                   isShowAlert = true
+                                               }
+                                           }
+                                        }))
+                                    
+                                
                                 )
                         }
                         .padding(.top, -10)

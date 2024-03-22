@@ -11,18 +11,28 @@ import SwiftUI
 struct SmallButton: View {
    
     var title = "Title"
+    @Binding var isTapped: Bool
     var body: some View {
         ZStack{
+            
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color.button2)
+                .stroke(Color.button1, lineWidth: 3)
+                .background(Color(.button2).cornerRadius(10))
+                .scaleEffect(isTapped ? 1.2 : 1 )
+                .animation(.easeInOut, value: isTapped)
+            
+            
             Text(title)
                 .font(Font.custom("CourierPrime-Regular", size: 17))
                 .foregroundStyle(Color.black)
                 .bold()
+        
         }
+       
+        
 
     }
 }
 #Preview {
-    SmallButton()
+    SmallButton(isTapped: .constant(true))
 }
