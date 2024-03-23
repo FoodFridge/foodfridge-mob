@@ -14,7 +14,7 @@ struct LinkRecipe: Codable, Identifiable {
     
     let id: String
     let title : String
-    let img : String
+    let img : String?
     let isFavorite: String?
     let recipeName: String?
     let url: String?

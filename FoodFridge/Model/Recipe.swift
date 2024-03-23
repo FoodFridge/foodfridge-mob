@@ -15,7 +15,7 @@ struct SpoonRecipe: Codable {
 struct Recipe: Codable, Identifiable, Hashable {
     let id: Int
     let title: String
-    let image: String
+    let image: String?
 }
 
 extension Recipe {
