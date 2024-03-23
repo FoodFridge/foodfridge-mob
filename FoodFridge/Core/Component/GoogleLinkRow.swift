@@ -19,42 +19,50 @@ struct GoogleLinkRow: View {
         
             ZStack {
                 Rectangle()
-                HStack {
-                    Button {
-                        // non logged in user cannot like to save, will display warning to log in
-                        if !sessionManager.isLoggedIn() {
-                            isLiked = false
-                            // trigger animation bar
-                            likeState.isNonLoggedInTapped = true
-                            // Reset the state after a delay
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                                likeState.isNonLoggedInTapped = false
+                VStack {
+                    HStack {
+                        Button {
+                            // non logged in user cannot like to save, will display warning to log in
+                            if !sessionManager.isLoggedIn() {
+                                isLiked = false
+                                // trigger animation bar
+                                likeState.isNonLoggedInTapped = true
+                                // Reset the state after a delay
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                                    likeState.isNonLoggedInTapped = false
+                                }
+                            }else {
+                                // logged in user tap to save/unsave
+                                isLiked.toggle()
+                                
+                                Task {
+                                    try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
+                                }
                             }
-                        }else {
-                            // logged in user tap to save/unsave
-                            isLiked.toggle()
                             
-                            Task {
-                                try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
+                            
+                        } label: {
+                            HStack {
+                                Image(systemName: isLiked ?  "bookmark.fill" : "bookmark" )
+                                    .foregroundStyle(.black)
+                                    .padding(10)
+                                Text(isLiked ? "Saved" : "Save")
                             }
                         }
                         
-                        
-                    } label: {
-                        Image(systemName: isLiked ?  "heart.fill" : "heart" )
-                            .foregroundStyle(.black)
-                            .padding(10)
+                        Spacer()
                     }
+                    .offset(y: -5)
                     
-                    
-      
+                    //title link
                     NavigationLink {
                         // tap to navigate to google link
                         if let link = URL(string: googleLink?.url ?? "link") {
+                            //openURL(googleLink)
                             WebView(url: link)
                                 .navigationTitle("\(googleLink?.title ?? "Recipe")")
                                 .navigationBarTitleDisplayMode(.inline)
-                            //openURL(googleLink)
+                            
                         }
                     } label: {
                         VStack {
@@ -69,11 +77,15 @@ struct GoogleLinkRow: View {
        
                     
                     Spacer()
-                    
-                    Button {
+                
+                   //Image link
+                   NavigationLink {
                         // tap to navigate to google link
                         if let link = URL(string: googleLink?.url ?? "Link") {
-                            openURL(link)
+                            //openURL(link)
+                            WebView(url: link)
+                                .navigationTitle("\(googleLink?.title ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg")")
+                                .navigationBarTitleDisplayMode(.inline)
                         }
                     } label: {
                         let url = URL(string: googleLink?.img ?? "https://spoonacular.com/recipeImages/86929-312x231.jpg")

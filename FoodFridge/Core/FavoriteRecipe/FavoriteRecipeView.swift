@@ -29,11 +29,13 @@ struct FavoriteRecipeView: View {
                             VStack(alignment: .leading) {
                                 Text("\(recipe.recipeName)")
                                     .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
+                                
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 20)
                             .padding(.trailing, 5)
                             .padding(.bottom, -5)
+                            .padding(.top, 20)
                             
                             
                             ForEach(recipe.recipeLinks, id: \.self) { recipeLink in
