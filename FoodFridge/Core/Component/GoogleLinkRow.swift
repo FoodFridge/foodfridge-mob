@@ -12,6 +12,7 @@ struct GoogleLinkRow: View {
     @State var isLiked: Bool
     @State var nonLoggedInUserTapped = false
     @Environment(\.openURL) var openURL
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var sessionManager: SessionManager
     @ObservedObject var likeState: GoogleLinkRowViewModel
     
@@ -44,62 +45,73 @@ struct GoogleLinkRow: View {
                         } label: {
                             HStack {
                                 Image(systemName: isLiked ?  "bookmark.fill" : "bookmark" )
-                                    .foregroundStyle(.black)
-                                    .padding(10)
-                                Text(isLiked ? "Saved" : "Save")
+                                Text(isLiked ? "Saved!" : "Save recipe")
                             }
+                            .padding(5)
+                            .background(Rectangle().fill(Color.button1).cornerRadius(5))
+                            .font(.callout)
+                            .padding(.top,10)
+                            .foregroundStyle(.white)
                         }
+                        .padding()
                         
                         Spacer()
                     }
-                    .offset(y: -5)
                     
-                    //title link
-                    NavigationLink {
-                        // tap to navigate to google link
-                        if let link = URL(string: googleLink?.url ?? "link") {
-                            //openURL(googleLink)
-                            WebView(url: link)
-                                .navigationTitle("\(googleLink?.title ?? "Recipe")")
-                                .navigationBarTitleDisplayMode(.inline)
+                    
+                    VStack {
+                        //link image
+                        NavigationLink {
+                            // tap to navigate to google link
+                            if let link = URL(string: googleLink?.url ?? "Link") {
+                                //openURL(link)
+                                WebView(url: link)
+                                    .navigationTitle("\(googleLink?.title ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg")")
+                                    .navigationBarTitleDisplayMode(.inline)
+                            }
+                        } label: {
+                            let url = URL(string: googleLink?.img ?? "https://spoonacular.com/recipeImages/86929-312x231.jpg")
+                            // Check if the placeholder image exists. If not, use a system image or another safe default.
+                            let placeholderImage = UIImage(named: "foodImage") ?? UIImage(systemName: "photo")!
                             
+                            CachedAsyncImage(url: url, placeholder: placeholderImage)
                         }
-                    } label: {
-                        VStack {
-                            Text(googleLink?.title ?? "Recipe title")
-                                .foregroundStyle(.black)
-                                .font(.custom(CustomFont.appFontRegular.rawValue, size: 13))
-                                .padding()
-                                .multilineTextAlignment(.leading)
+                        
+                        
+                        
+                        //link title
+                        NavigationLink {
+                            // tap to navigate to google link
+                            if let link = URL(string: googleLink?.url ?? "link") {
+                                //openURL(googleLink)
+                                WebView(url: link)
+                                    .navigationTitle("\(googleLink?.title ?? "Recipe")")
+                                    .navigationBarTitleDisplayMode(.inline)
                                 
-                        }
-                    }
-       
-                    
-                    Spacer()
-                
-                   //Image link
-                   NavigationLink {
-                        // tap to navigate to google link
-                        if let link = URL(string: googleLink?.url ?? "Link") {
-                            //openURL(link)
-                            WebView(url: link)
-                                .navigationTitle("\(googleLink?.title ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg")")
-                                .navigationBarTitleDisplayMode(.inline)
-                        }
-                    } label: {
-                        let url = URL(string: googleLink?.img ?? "https://spoonacular.com/recipeImages/86929-312x231.jpg")
-                        // Check if the placeholder image exists. If not, use a system image or another safe default.
-                        let placeholderImage = UIImage(named: "foodImage") ?? UIImage(systemName: "photo")!
+                            }
+                        } label: {
+                            VStack {
+                                Text(googleLink?.title ?? "Recipe title")
+                                    .lineLimit(2)
+                                    .foregroundStyle(.black)
+                                    .font(.custom(CustomFont.appFontRegular.rawValue, size: 17))
+                                    .padding()
+                                    .multilineTextAlignment(.leading)
                                 
-                        CachedAsyncImage(url: url, placeholder: placeholderImage)
+                            }
+                        }
+                        
+                        
+                       
+                        
+                        
+                      
                     }
-                    
                 }
                 
             }
             
-            .frame(width: 350, height: 100)
+            .frame(width: 350, height: 380)
             .shadow(radius: 8, x: 5, y:5)
             .cornerRadius(10)
             .foregroundStyle(.button2)

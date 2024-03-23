@@ -34,10 +34,10 @@ struct FavLinkRow: View {
                     
                     Spacer()
                 }
-               // Spacer()
+               
                 
                 VStack {
-                    //Image
+                    //Link Image
                     NavigationLink {
                         // tap to navigate to google link
                         if let link = URL(string: googleLink?.url ?? "url") {
@@ -88,7 +88,7 @@ struct FavLinkRow: View {
                     .padding(.horizontal)
                    
                     
-                    //Title
+                    //Link title
                     NavigationLink {
                         // tap to navigate to google link
                         if let link = URL(string: googleLink?.url ?? "url") {
