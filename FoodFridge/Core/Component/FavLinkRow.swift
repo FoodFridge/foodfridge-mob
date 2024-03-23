@@ -81,8 +81,7 @@ struct FavLinkRow: View {
                                     .shadow(radius: 5, x: 5, y: 5)
                             }
                         }
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.horizontal)
+                        
                     }
                     .aspectRatio(contentMode: .fit)
                     .padding(.horizontal)
@@ -121,100 +120,7 @@ struct FavLinkRow: View {
             .foregroundStyle(colorScheme == .dark ? .white : .button3)
         
         
-        /*
-        ZStack {
-            Rectangle()
-            HStack {
-                Button {
-                    // tap to save/unsave
-                    isLiked.toggle()
-                    Task {
-                        try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
-                    }
-                } label: {
-                    Image(systemName:  isLiked  ?  "heart.fill" : "heart" )
-                        .foregroundStyle(.black)
-                        .padding(10)
-                }
-                .onChange(of: isLiked) { newValue in
-                    
-                }
-                
-                NavigationLink {
-                    // tap to navigate to google link
-                    if let link = URL(string: googleLink?.url ?? "url") {
-                        //openURL(googleLink)
-                        WebView(url: link)
-                            .navigationTitle("\(googleLink?.title ?? "Recipe")")
-                            .navigationBarTitleDisplayMode(.inline)
-                    }
-                } label: {
-                    VStack {
-                        Text(googleLink?.title ?? "Title")
-                            .foregroundStyle(.black)
-                            .font(.custom(CustomFont.appFontRegular.rawValue, size: 13))
-                            .padding()
-                            .multilineTextAlignment(.leading)
-                    }
-                }
-               
-                Spacer()
-                
-                NavigationLink {
-                    // tap to navigate to google link
-                    if let link = URL(string: googleLink?.url ?? "url") {
-                        //openURL(googleLink)
-                        WebView(url: link)
-                            .navigationTitle("\(googleLink?.title ?? "Recipe")")
-                            .navigationBarTitleDisplayMode(.inline)
-                    }
-                } label: {
-                    
-                    AsyncImage(url: URL(string: googleLink?.img ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg" )) { phase in
-                        switch phase {
-                        case .empty:
-                            // Placeholder when the image is not yet loaded
-                            ProgressView()
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .cornerRadius(10)
-                                .frame(maxWidth: 70, maxHeight: 90)
-                                .scaledToFill()
-                                .backgroundStyle(.white)
-                                .shadow(radius: 5, x: 5, y: 5)
-                        case .failure(_):
-                            // Placeholder or error handling when the image fails to load
-                            Image("foodImage")
-                                .resizable()
-                                .cornerRadius(10)
-                                .frame(maxWidth: 70, maxHeight: 90)
-                                .scaledToFill()
-                                .backgroundStyle(.white)
-                                .shadow(radius: 5, x: 5, y: 5)
-                        @unknown default:
-                            // Placeholder or default handling for unknown cases
-                            Image(systemName: "foodImage")
-                                .resizable()
-                                .cornerRadius(10)
-                                .frame(maxWidth: 70, maxHeight: 90)
-                                .scaledToFill()
-                                .backgroundStyle(.white)
-                                .shadow(radius: 5, x: 5, y: 5)
-                        }
-                    }
-                    .aspectRatio(contentMode: .fill)
-                    .padding(.horizontal)
-                }
-               
-            }
-    
-        }
-        .frame(width: 350, height: 100)
-        .shadow(radius: 8, x: 5, y:5)
-        .cornerRadius(10)
-        .foregroundStyle(.button2)
-        */
+        
         
       
     }
