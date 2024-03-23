@@ -28,7 +28,7 @@ struct FavoriteRecipeView: View {
                         ForEach(vm.listOfFavLinks, id: \.self) { recipe in
                             VStack(alignment: .leading) {
                                 Text("\(recipe.recipeName)")
-                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
+                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
                                 
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)

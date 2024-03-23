@@ -13,6 +13,7 @@ enum Settings: String, CaseIterable {
     case contactUs = "Contact us"
     case privacyPolicy = "Privacy policy"
     case termOfUse = "Term of use "
+    case reviewUs = "Review us"
     
     var iconName: String {
         switch self {
@@ -24,6 +25,8 @@ enum Settings: String, CaseIterable {
             return "person.crop.rectangle"
         case .termOfUse:
             return "list.clipboard.fill"
+        case .reviewUs:
+            return "star.fill"
         }
     }
     
@@ -63,10 +66,17 @@ struct ProfileSettingView: View {
                         .foregroundStyle(determineColor(for: setting))
                     }
                     .sheet(isPresented: $privacyPolicy, content: {
-                        PrivacyPolicyView()
+                        NavigationStack {
+                            WebView(url: AppConstant.privacyPolicyLink!)
+                                .ignoresSafeArea()
+                        }
                     })
                     .sheet(isPresented: $TermOfUse, content: {
-                        TermOfUseView()
+                        NavigationStack {
+                            WebView(url: AppConstant.termOfUseLink!)
+                                .ignoresSafeArea()
+                            
+                        }
                     })
                     
                 }
@@ -114,12 +124,17 @@ struct ProfileSettingView: View {
                 print("Privacy tapped")
                 //display privacy policy
                 privacyPolicy = true
+            
                     
                 
             case .termOfUse:
                 print("Term of use tapped")
                 //display term of use
                 self.TermOfUse = true
+                
+            case .reviewUs:
+                //Navigate user to app review
+                self.TermOfUse = true 
             }
         }
     

@@ -37,6 +37,7 @@ struct FoodFridgeApp: App {
                     .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                     .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                     .environmentObject(ScrollTarget())
+                    .environmentObject(navigationController)
                 
             }else {
                 
