@@ -38,6 +38,7 @@ struct SelectionSheetView: View {
                     VStack {
                         TagsView(dataDicts: vm.itemsDict, selectedTarget: scrollTarget.targetID)
                     }
+                    //for search ingredient vtext color
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
                 }
            
