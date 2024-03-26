@@ -36,7 +36,7 @@ struct TagsView: View {
     @StateObject var createGroup = CreateGroup()
     
     init(dataDicts: [String : [String]], selectedTarget: String) {
-        
+       
         self.dataDicts = dataDicts
         if !self.dataDicts.isEmpty {
             print("*******tagView got dataDict passed******** ")
@@ -204,6 +204,7 @@ struct TagsView: View {
                                                         .padding()
                                                         .padding(.vertical, -10)
                                                         .background(selectedItems.contains(tag) ? (Color(.button4)) : (Color(.button3)) )
+                                                        .foregroundStyle(.black)
                                                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
                                                         .onTapGesture {
                                                             //update tag to prompt
@@ -242,15 +243,17 @@ struct TagsView: View {
                             }
                             
                         }
+                        .searchable(text: $searchTag, placement:
+                                .navigationBarDrawer(displayMode: .always))
                         
                         
                     }
                     
                     
                 }
-                .searchable(text: $searchTag, placement:
-                        .navigationBarDrawer(displayMode: .always))
-            } 
+                
+            }
+            
             .fullScreenCover(item: $navigationSelection) { viewType in
                 switch viewType {
                 case .scanItemView:
@@ -298,3 +301,5 @@ enum NavigationSelection: Identifiable {
 
     var id: Self { self }
 }
+
+

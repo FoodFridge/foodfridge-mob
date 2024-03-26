@@ -101,10 +101,9 @@ struct ScanItemView2: View {
               
 
             }
-            .onChange(of: vm.textContentType) { _ in vm.recognizedItems = [] }
-            .onChange(of: vm.recognizeMultipleItems) {  _ in
+            .onChange(of: vm.textContentType) { vm.recognizedItems = [] }
+            .onChange(of: vm.recognizeMultipleItems) {
                 vm.recognizedItems = []
-                
             }
         }
         

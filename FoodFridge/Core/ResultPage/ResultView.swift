@@ -27,7 +27,7 @@ struct ResultView: View {
                                 .padding(5)
                                 .frame(width: 350, height: 45)
                                 .background(.button2)
-                                .cornerRadius(19)
+                                .cornerRadius(10)
                                 .font(.custom(CustomFont.appFontBold.rawValue, size: 25))
                                 .padding()
                         }
@@ -43,7 +43,26 @@ struct ResultView: View {
                 }else {
                     
                     VStack {
-                        Text("No recipe, please try again.")
+                        Image("cat")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                        VStack {
+                            Text("No recipe.\nadd more ingredients and please try again.")
+                                .multilineTextAlignment(.center)
+                            NavigationLink {
+                               LandingPageView()
+                            }label: {
+                                Text("Try again")
+                                    .bold()
+                                    .foregroundStyle(.button1)
+                            }
+                            .padding()
+                        }
+                        .padding()
+                        .background(Rectangle().fill(Color.button2).cornerRadius(5))
+                        .padding(.horizontal)
+                        
                     }
                     .font(.custom(CustomFont.appFontRegular.rawValue, size: 17))
                 }

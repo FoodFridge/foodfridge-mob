@@ -76,6 +76,8 @@ struct GoogleLinkRow: View {
                             
                             CachedAsyncImage(url: url, placeholder: placeholderImage)
                         }
+                        .aspectRatio(contentMode: .fit)
+                        //.padding(.horizontal)
                         
                         
                         

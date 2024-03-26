@@ -75,7 +75,7 @@ class GetFavoriteRecipe {
             
             guard(response as? HTTPURLResponse)?.statusCode == 200 else { throw FetchError.serverError }
             //print("DEBUG: statusCode =  \(response)")
-            let jsonString = String(data: data, encoding: .utf8)
+            //let jsonString = String(data: data, encoding: .utf8)
             //print("favorite recipes JSON String: \(jsonString ?? "N/A")")
             
             

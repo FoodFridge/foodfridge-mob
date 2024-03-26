@@ -13,6 +13,7 @@ struct FavoriteRecipeView: View {
     var googleRecipes = GoogleSearchRecipe.mockGoogleSearchRecipes
     @State private var LinkRecipes = [LinkRecipe]()
     @State private var isLiked = false
+    @State private var searchMenu = ""
     @ObservedObject var vm: FavoriteRecipeViewModel
     
     init(sessionManager: SessionManager) {
@@ -28,7 +29,7 @@ struct FavoriteRecipeView: View {
                         ForEach(vm.listOfFavLinks, id: \.self) { recipe in
                             VStack(alignment: .leading) {
                                 Text("\(recipe.recipeName)")
-                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
+                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
                                 
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -48,6 +49,7 @@ struct FavoriteRecipeView: View {
                     
                 }
                 .scrollIndicators(.hidden)
+                
             
             }else if vm.isLoading {
                 ProgressView()

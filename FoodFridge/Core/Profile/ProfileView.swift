@@ -26,7 +26,7 @@ struct ProfileView: View {
                                 selectedView = view
                             } label: {
                                 Text(view.rawValue)
-                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 17))
+                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 18))
                                     .foregroundColor(view == selectedView ? .black : .gray)
                                     .padding(.vertical, 10)
                                     .padding(.horizontal, 20)

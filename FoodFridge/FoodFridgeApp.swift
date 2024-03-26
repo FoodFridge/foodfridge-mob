@@ -22,8 +22,11 @@ struct FoodFridgeApp: App {
     @AppStorage("emailSignIn") var isEmailSignIn = false
     @AppStorage("userLoggedIn") var isLoggedIn = false
     
+
     
     var body: some Scene {
+        
+        
         
         WindowGroup {
             
@@ -37,6 +40,7 @@ struct FoodFridgeApp: App {
                     .environmentObject(ScanItemViewModel(sessionManager: sessionManager))
                     .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                     .environmentObject(ScrollTarget())
+                    .environmentObject(navigationController)
                 
             }else {
                 
@@ -82,8 +86,8 @@ struct FoodFridgeApp: App {
             }
             
         }
-        .onChange(of: scenePhase) { newPhase in
-            if newPhase == .inactive || newPhase == .background {
+        .onChange(of: scenePhase) {
+            if scenePhase == .inactive || scenePhase == .background {
                 print("newPhase == inactive or background")
                 let currentTime = Date()
                 UserDefaults.standard.set(currentTime, forKey: "lastActiveTime")// Call the function when the app becomes active
@@ -91,7 +95,7 @@ struct FoodFridgeApp: App {
             }
             
             
-            else if newPhase == .active {
+            else if scenePhase == .active {
                 print("newPhase == active")
                 appState.appDidBecomeActive(sessionManager: sessionManager)
             }

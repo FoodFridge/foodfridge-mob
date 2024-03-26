@@ -83,7 +83,7 @@ struct CachedAsyncImage: View {
                             Image(uiImage: image)
                                 .resizable()
                                 .cornerRadius(10)
-                                .frame(maxWidth: 380, maxHeight: 280)
+                                .frame(maxWidth: 420, maxHeight: 280)
                                 .scaledToFit()
                                 .backgroundStyle(.white)
                                 .shadow(radius: 5, x: 5, y: 5)
@@ -92,7 +92,7 @@ struct CachedAsyncImage: View {
                             Image(uiImage: placeholder)
                                 .resizable()
                                 .cornerRadius(10)
-                                .frame(maxWidth: 380, maxHeight: 280)
+                                .frame(maxWidth: 420, maxHeight: 280)
                                 .scaledToFit()
                                 .backgroundStyle(.white)
                                 .shadow(radius: 5, x: 5, y: 5)
@@ -106,7 +106,7 @@ struct CachedAsyncImage: View {
                                
             }
         }
-        .aspectRatio(contentMode: .fill)
+        .aspectRatio(contentMode: .fit)
         .padding(.horizontal)
         .onAppear {
             if let url {
