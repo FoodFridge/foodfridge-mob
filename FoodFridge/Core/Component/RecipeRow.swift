@@ -20,7 +20,7 @@ struct RecipeRow: View {
                     .resizable()
                     .scaledToFit()
                     .backgroundStyle(.white)
-                    .cornerRadius(20)
+                    .cornerRadius(10)
                     .shadow(radius: 8, x: 5, y:5)
                  
             } placeholder: {

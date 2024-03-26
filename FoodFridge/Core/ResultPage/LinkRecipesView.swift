@@ -32,7 +32,8 @@ struct LinkRecipesView: View {
                     GoogleLinkRow(googleLink: linkRecipe, isLiked: linkRecipe.isFavorite == "Y" ? true : false, likeState: likeState)
                 }
                 
-            }.scrollIndicators(.hidden)
+            }
+            .scrollIndicators(.hidden)
             
         }
         .onAppear {

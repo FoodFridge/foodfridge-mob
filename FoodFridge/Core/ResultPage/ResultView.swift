@@ -27,7 +27,7 @@ struct ResultView: View {
                                 .padding(5)
                                 .frame(width: 350, height: 45)
                                 .background(.button2)
-                                .cornerRadius(19)
+                                .cornerRadius(10)
                                 .font(.custom(CustomFont.appFontBold.rawValue, size: 25))
                                 .padding()
                         }
