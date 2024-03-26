@@ -22,8 +22,11 @@ struct FoodFridgeApp: App {
     @AppStorage("emailSignIn") var isEmailSignIn = false
     @AppStorage("userLoggedIn") var isLoggedIn = false
     
+
     
     var body: some Scene {
+        
+        
         
         WindowGroup {
             

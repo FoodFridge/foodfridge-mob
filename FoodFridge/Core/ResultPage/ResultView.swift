@@ -48,7 +48,7 @@ struct ResultView: View {
                             .scaledToFit()
                             .frame(width: 200, height: 200)
                         VStack {
-                            Text("No recipe, add more ingredients and please try again.")
+                            Text("No recipe.\nadd more ingredients and please try again.")
                                 .multilineTextAlignment(.center)
                             NavigationLink {
                                LandingPageView()

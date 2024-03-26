@@ -10,6 +10,7 @@ import SwiftUI
 struct SelectionSheetView: View {
     
     @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var scrollTarget: ScrollTarget
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var sessionManager: SessionManager
@@ -17,6 +18,7 @@ struct SelectionSheetView: View {
    
     var body: some View {
         VStack{
+            /*
             HStack {
                 Spacer()
                 Button(action: {
@@ -30,12 +32,13 @@ struct SelectionSheetView: View {
                 .padding(.horizontal)
                 .foregroundColor(Color(.button2))
             }
-            
+            */
             
                 NavigationStack {
                     VStack {
                         TagsView(dataDicts: vm.itemsDict, selectedTarget: scrollTarget.targetID)
                     }
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
                 }
            
         }

@@ -30,7 +30,7 @@ struct FavLinkRow: View {
                             .foregroundStyle(.black)
                             .padding(10)
                     }
-                    .offset(y: -5)
+                    //.offset(y: -5)
                     
                     Spacer()
                 }
@@ -115,9 +115,9 @@ struct FavLinkRow: View {
             
         }
         .frame(width: 350, height: 350)
-            .shadow(radius: 8, x: 5, y:5)
-            .cornerRadius(10)
-            .foregroundStyle(colorScheme == .dark ? .white : .button3)
+        .shadow(radius: 8, x: 5, y:5)
+        .cornerRadius(10)
+        .foregroundStyle(colorScheme == .dark ? .white : .button6)
         
         
         

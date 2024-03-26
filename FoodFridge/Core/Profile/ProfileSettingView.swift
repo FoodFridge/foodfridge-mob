@@ -37,13 +37,15 @@ struct ProfileSettingView: View {
     
     @EnvironmentObject var sessionManager: SessionManager
     @EnvironmentObject var authentication: Authentication
+    @Environment(\.openURL) var openURL
     
     @State private var selectedSetting = ""
     @State private var isBlinking = false
     @State private var isSignedOut = false
     @State private var emailUs = false
     @State private var privacyPolicy = false
-    @State private var TermOfUse = false
+    @State private var termOfUse = false
+    @State private var reviewUS = false
     
     
     
@@ -71,12 +73,16 @@ struct ProfileSettingView: View {
                                 .ignoresSafeArea()
                         }
                     })
-                    .sheet(isPresented: $TermOfUse, content: {
+                    .sheet(isPresented: $termOfUse, content: {
                         NavigationStack {
                             WebView(url: AppConstant.termOfUseLink!)
                                 .ignoresSafeArea()
                             
                         }
+                    })
+                    .sheet(isPresented: $reviewUS, content: {
+                       
+                               
                     })
                     
                 }
@@ -130,11 +136,11 @@ struct ProfileSettingView: View {
             case .termOfUse:
                 print("Term of use tapped")
                 //display term of use
-                self.TermOfUse = true
+                self.termOfUse = true
                 
             case .reviewUs:
                 //Navigate user to app review
-                self.TermOfUse = true 
+                openURL(AppConstant.appReviewLink!)
             }
         }
     

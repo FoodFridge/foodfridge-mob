@@ -15,7 +15,7 @@ struct SplashScreen: View {
        
             ZStack {
                 //Screen background
-                Color(colorScheme == .dark ? .black : .clear)
+                Color(.button2)
                 //Animation
                 LottieView(name: "FoodAnimation").frame(width: 200, height: 200)
 
