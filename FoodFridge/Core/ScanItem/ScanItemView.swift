@@ -86,7 +86,7 @@ struct ScanItemView: View {
                     }
                 }
                 .ignoresSafeArea()
-                .padding(.bottom, -50)
+                .padding(.bottom)
                 .foregroundStyle(Color(.accent))
                 .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
                /*
