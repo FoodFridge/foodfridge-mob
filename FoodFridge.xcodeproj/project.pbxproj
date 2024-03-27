@@ -29,7 +29,6 @@
 		7532459B2B7E9D7100545DE7 /* LoginWithEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */; };
 		7532459D2B7EA4A100545DE7 /* AuthenticationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532459C2B7EA4A100545DE7 /* AuthenticationTextField.swift */; };
 		7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */; };
-		753245A22B7EE34800545DE7 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A12B7EE34800545DE7 /* ViewModelFactory.swift */; };
 		753245A42B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */; };
 		753245A62B7FD39300545DE7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A52B7FD39300545DE7 /* Authentication.swift */; };
 		753245AA2B7FF16700545DE7 /* LogInResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753245A92B7FF16700545DE7 /* LogInResponseData.swift */; };
@@ -126,7 +125,6 @@
 		75CD189B2BA2182000758328 /* AddPantryView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189A2BA2182000758328 /* AddPantryView2.swift */; };
 		75CD189D2BA2190000758328 /* ScanItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189C2BA2190000758328 /* ScanItemView2.swift */; };
 		75CD189F2BA22D2500758328 /* FetchPantryIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */; };
-		75CD18A12BA2322B00758328 /* AuthenticationView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD18A02BA2322B00758328 /* AuthenticationView2.swift */; };
 		75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B32B75DA8A0063B742 /* GetPantry.swift */; };
 		75CE75B62B75E2330063B742 /* Pantry.json in Resources */ = {isa = PBXBuildFile; fileRef = 75CE75B52B75E2330063B742 /* Pantry.json */; };
 		75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE75B72B76B3140063B742 /* DeletePantry.swift */; };
@@ -162,7 +160,6 @@
 		7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithEmail.swift; sourceTree = "<group>"; };
 		7532459C2B7EA4A100545DE7 /* AuthenticationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextField.swift; sourceTree = "<group>"; };
 		7532459E2B7ED4D600545DE7 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
-		753245A12B7EE34800545DE7 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewModel.swift; sourceTree = "<group>"; };
 		753245A52B7FD39300545DE7 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		753245A92B7FF16700545DE7 /* LogInResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponseData.swift; sourceTree = "<group>"; };
@@ -246,7 +243,6 @@
 		75CD189A2BA2182000758328 /* AddPantryView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView2.swift; sourceTree = "<group>"; };
 		75CD189C2BA2190000758328 /* ScanItemView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView2.swift; sourceTree = "<group>"; };
 		75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPantryIngredients.swift; sourceTree = "<group>"; };
-		75CD18A02BA2322B00758328 /* AuthenticationView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView2.swift; sourceTree = "<group>"; };
 		75CE75B32B75DA8A0063B742 /* GetPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPantry.swift; sourceTree = "<group>"; };
 		75CE75B52B75E2330063B742 /* Pantry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Pantry.json; sourceTree = "<group>"; };
 		75CE75B72B76B3140063B742 /* DeletePantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePantry.swift; sourceTree = "<group>"; };
@@ -341,20 +337,11 @@
 			path = FavoriteRecipe;
 			sourceTree = "<group>";
 		};
-		753245A02B7EE30E00545DE7 /* DependencyInjection */ = {
-			isa = PBXGroup;
-			children = (
-				753245A12B7EE34800545DE7 /* ViewModelFactory.swift */,
-			);
-			path = DependencyInjection;
-			sourceTree = "<group>";
-		};
 		75434FFB2B37E6C500823A50 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				753245A52B7FD39300545DE7 /* Authentication.swift */,
 				757542C42B33E8F000048178 /* AuthenticationView.swift */,
-				75CD18A02BA2322B00758328 /* AuthenticationView2.swift */,
 				75BD40852BA10F800055B06F /* ValidateField.swift */,
 				757542DE2B34F3D300048178 /* LogInView.swift */,
 				753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */,
@@ -444,7 +431,6 @@
 				75D950532B97FC2F009926BE /* UserTimeZone.swift */,
 				757542E52B351BD800048178 /* Fonts */,
 				754350032B3A653200823A50 /* CustomFont.swift */,
-				753245A02B7EE30E00545DE7 /* DependencyInjection */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -710,7 +696,6 @@
 				75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
 				75CC3BD52BA658E7002BEBAD /* CustomSignedInUserEmptyPantryAlert.swift in Sources */,
-				753245A22B7EE34800545DE7 /* ViewModelFactory.swift in Sources */,
 				7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */,
 				753245AC2B80081600545DE7 /* UserSessionManager.swift in Sources */,
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
@@ -731,7 +716,6 @@
 				757C63B92B85279E00FC6D5E /* AppDelegate.swift in Sources */,
 				75A1F4852BA9E515006BD634 /* EmailController.swift in Sources */,
 				75A176C32BAA6B46006B46D4 /* ContentView.swift in Sources */,
-				75CD18A12BA2322B00758328 /* AuthenticationView2.swift in Sources */,
 				75A1F4872BA9F9C3006BD634 /* PrivacyPolicyView.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */,
