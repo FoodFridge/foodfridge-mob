@@ -37,13 +37,12 @@ struct OnBoardingScreen: View {
                                         .resizable()
                                         .frame(width: 300, height: 300)
                                     
-                                    Text("Recipes ideas with ingredient available in your fridge")
+                                    Text("Recipes ideas with ingredient available\n in your fridge")
                                         .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 25))
                                         .multilineTextAlignment(.center)
                                         .lineLimit(nil)
                                         .minimumScaleFactor(0.5)
-                                        .padding(.top, -10)
-                                    
+                                        .padding(.top, -20)
                                         .padding()
                                         .animation(Animation.interpolatingSpring(stiffness: 40, damping: 8).delay(0.1), value: step)
                                 }
@@ -141,7 +140,7 @@ struct OnBoardingScreen: View {
                         
                     }
                 }
-               //set elements to be adaptive in any screen size 
+               //set elements to be adaptive in any screen size
                 .frame(width: geo.size.width, height: geo.size.height)
             }
         }
