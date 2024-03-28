@@ -25,7 +25,7 @@ struct GoogleLinkRow: View {
                         Button {
                             // non logged in user cannot like to save, will display warning to log in
                             if !sessionManager.isLoggedIn() {
-                                isLiked = false
+                                isLiked = false 
                                 // trigger animation bar
                                 likeState.isNonLoggedInTapped = true
                                 // Reset the state after a delay

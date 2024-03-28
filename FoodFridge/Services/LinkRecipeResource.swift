@@ -34,17 +34,35 @@ class LinkRecipeResource {
             
             let body = LinkRecipeRequestBody(localId: localID ?? "" , recipeName: recipeName)
             
-            
             let jsonData = try encoder.encode(body)
-
-            // Convert the JSON data to a string for debugging
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                print("Encoded JSON: \(jsonString)")
-
+            
+            let userTimeZone  = UserTimeZone.getTimeZone()
+              
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
                 request.httpBody = jsonData
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                
+                //if user is logged in
+                if UserDefaults.standard.bool(forKey: "userLoggedIn") {
+                    guard let expTime = sessionManager.getExpTime() else {
+                        throw SessionError.missingExpTime
+                    }
+                    request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
+                    let returnNewToken = try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime, userTimeZone: userTimeZone, sessionManager: sessionManager)
+                    if returnNewToken == nil {
+                        // if token still valid use present token to fetch
+                        request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+                    }else {
+                        // use new token to fetch
+                        request.setValue("Bearer \(returnNewToken ?? "")", forHTTPHeaderField: "Authorization")
+                    }
+                }
+                
+                
+                
+                
                 // Make the request using URLSession
                 let (data, response) = try await URLSession.shared.data(for: request)
                
@@ -60,7 +78,7 @@ class LinkRecipeResource {
                 let responseData = try JSONDecoder().decode(LinkeRecipeResponseData.self, from: data)
                 print("LinkRecipe = \(responseData.data)")
                 return responseData.data
-            }
+            
         } catch {
             print("Error encoding JSON: \(error.localizedDescription)")
             //detailed error info:
