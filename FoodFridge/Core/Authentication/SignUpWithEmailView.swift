@@ -23,7 +23,8 @@ struct SignUpWithEmailView: View {
     @State private var signUpErrorAlert = false
     @State private var signUpErrorMessage = ""
     
-   
+    @State private var showPrivacyPolicy = false
+    @State private var showTermOfUse = false
     
     var body: some View {
         NavigationStack {
@@ -103,9 +104,6 @@ struct SignUpWithEmailView: View {
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text(""), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
-               // .alert(isPresented: $signUpErrorAlert) {
-                    //Alert(title: Text(""), message: Text(signUpErrorMessage), dismissButton: .default(Text("Ok")))
-               // }
                 .bold()
                 .foregroundStyle(.black)
                 .frame(width: 150, height: 30)
@@ -116,7 +114,41 @@ struct SignUpWithEmailView: View {
                
                 
                 VStack {
-                    Text("Password setting with 6 digits and up.\nBy using the app, you agree to our Terms of use and Privacy policy")
+                    VStack(alignment: .leading) {
+                        Text("Password setting with 6 digits and up.")
+                        Text("By using the app, you agree to our ")
+                    }
+                    
+                    HStack {
+                        //show term of use
+                        Button {
+                            showTermOfUse = true
+                        } label: {
+                            Text("Terms of use")
+                                .lineLimit(1)
+                        }
+                        .sheet(isPresented: $showTermOfUse, content: {
+                            NavigationStack {
+                                WebView(url: AppConstant.termOfUseLink!)
+                                    .ignoresSafeArea()
+                            }
+                        })
+                        //show privacy policy
+                        Button {
+                            showPrivacyPolicy = true
+                        } label: {
+                            Text("and Privacy policy")
+                                .lineLimit(1)
+                        }
+                        .sheet(isPresented: $showPrivacyPolicy, content: {
+                            NavigationStack {
+                                WebView(url: AppConstant.privacyPolicyLink!)
+                                    .ignoresSafeArea()
+                                
+                            }
+                        })
+
+                    }
                 }
                 .lineLimit(3)
                 .font(.custom("CourierPrime-Regular", size: 12))
