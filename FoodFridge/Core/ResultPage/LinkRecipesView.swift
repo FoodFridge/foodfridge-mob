@@ -25,7 +25,7 @@ struct LinkRecipesView: View {
         _vm = StateObject(wrappedValue: LinkRecipesViewModel(sessionManager: sessionManager))
     }
     
-    var body: some View {
+    var body: some View {        
         VStack {
             ScrollView {
                 ForEach(vm.listOfgoogleLinks) { linkRecipe in
