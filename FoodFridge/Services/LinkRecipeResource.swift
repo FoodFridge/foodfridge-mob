@@ -44,7 +44,7 @@ class LinkRecipeResource {
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 
                 
-                //if user is logged in
+                //if user is logged in add token and timeZone for authorization
                 if UserDefaults.standard.bool(forKey: "userLoggedIn") {
                     guard let expTime = sessionManager.getExpTime() else {
                         throw SessionError.missingExpTime

@@ -48,7 +48,7 @@ class GetFavoriteRecipe {
                    request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
                    
             
-            //if user is logged in
+            //if user is logged in add token and timeZone for authorization
             if UserDefaults.standard.bool(forKey: "userLoggedIn") {
                 let returnNewToken = try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime, userTimeZone: userTimeZone, sessionManager: sessionManager)
                 if returnNewToken == nil {
