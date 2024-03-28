@@ -10,10 +10,10 @@ struct LinkeRecipeResponseData: Codable {
     let data: [LinkRecipe]
 }
 
-struct LinkRecipe: Codable, Identifiable {
+ struct LinkRecipe: Codable, Identifiable {
     
     let id: String
-    let title : String
+    let title : String?
     let img : String?
     let isFavorite: String?
     let recipeName: String?

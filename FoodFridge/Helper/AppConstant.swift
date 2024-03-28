@@ -39,7 +39,7 @@ class AppConstant {
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/GenerateRecipe"
     
     static var linkRecipeResourceURLString =
-        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/LinkRecipe"
+        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/LinkRecipe2"
     
     static var addFavoriteRecipeURLString =
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/favorite"
