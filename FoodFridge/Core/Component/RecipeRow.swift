@@ -15,18 +15,29 @@ struct RecipeRow: View {
     var body: some View {
         
         VStack {
-            AsyncImage(url: URL(string: imageURL)) { Image in
-                Image
-                    .resizable()
-                    .scaledToFit()
-                    .backgroundStyle(.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 8, x: 5, y:5)
-                 
-            } placeholder: {
-                
-            }
-            .frame(width: 300, height: 200)
+            AsyncImage(url: URL(string: imageURL)) { phase in
+                           switch phase {
+                           case .empty:
+                               // Placeholder for loading image
+                               ProgressView()
+                                   .frame(width: 300, height: 200)
+                           case .success(let image):
+                               image
+                                   .resizable()
+                                   .scaledToFill() // This ensures the image fill the frame //
+                                   .frame(width: 300, height: 200) // Set the frame to consistency
+                                   .clipped() // clip overflow to fit frame
+                                   .background(Color.white)
+                                   .cornerRadius(10)
+                                   .shadow(radius: 8, x: 5, y: 5)
+                           case .failure:
+                               // Placeholder for failed image loading
+                               Image(systemName: "foodImage")
+                                   .frame(width: 300, height: 200)
+                           @unknown default:
+                               EmptyView()
+                           }
+                       }
             
             Text(title)
                 .font(.custom(CustomFont.appFontBold.rawValue, size: 18))

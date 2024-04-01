@@ -37,7 +37,7 @@ class TagsViewModel: ObservableObject {
     func generateRecipe(from ingredients : [String]) async throws {
         isLoading = true
         var recipes: [Recipe]
-        recipes = try await GenerateRecipe.getRecipe(from: self.selectedTags)
+        recipes = try await GenerateRecipe.getRecipe(from: ingredients)
         self.generatedRecipes = recipes
         isLoading = false
     }

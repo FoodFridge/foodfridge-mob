@@ -42,11 +42,12 @@ class GenerateRecipe {
                  print("response = \(responseText)")
                 }
                 // Decode data to SpoonRecipe
-                let responseData = try JSONDecoder().decode(SpoonRecipe.self, from: data)
+                let responseData = try JSONDecoder().decode(GoogleRecipe.self, from: data)
+                print("decodedRecipes = \(responseData)")
                 return responseData.recipes
             }
         } catch {
-            print("Error encoding JSON: \(error)")
+            print("Error coding JSON: \(error)")
         }
             
             return Recipe.mockRecipes
