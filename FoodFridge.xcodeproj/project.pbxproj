@@ -81,6 +81,7 @@
 		757C63FE2B85362B00FC6D5E /* ExtentionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C63FD2B85362B00FC6D5E /* ExtentionView.swift */; };
 		7580613A2B4E3F1D0091FFFA /* ScanItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758061392B4E3F1D0091FFFA /* ScanItemView.swift */; };
 		7593FE952B71B3240026D47B /* FavoriteRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7593FE942B71B3240026D47B /* FavoriteRecipes.json */; };
+		759E690D2BBB27DF004DF1A5 /* GoogleRecipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 759E690C2BBB27DF004DF1A5 /* GoogleRecipes.json */; };
 		759F55532B8AC3D300276079 /* RecipeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F55522B8AC3D300276079 /* RecipeAnimation.swift */; };
 		759F55552B8ACA7F00276079 /* GoogleLinkRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */; };
 		75A0CBC52BABA4BF0091CC5A /* FirstSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0CBC42BABA4BF0091CC5A /* FirstSplashScreen.swift */; };
@@ -200,6 +201,7 @@
 		757C63FD2B85362B00FC6D5E /* ExtentionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionView.swift; sourceTree = "<group>"; };
 		758061392B4E3F1D0091FFFA /* ScanItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItemView.swift; sourceTree = "<group>"; };
 		7593FE942B71B3240026D47B /* FavoriteRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FavoriteRecipes.json; sourceTree = "<group>"; };
+		759E690C2BBB27DF004DF1A5 /* GoogleRecipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleRecipes.json; sourceTree = "<group>"; };
 		759F55522B8AC3D300276079 /* RecipeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAnimation.swift; sourceTree = "<group>"; };
 		759F55542B8ACA7F00276079 /* GoogleLinkRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLinkRowViewModel.swift; sourceTree = "<group>"; };
 		75A0CBC42BABA4BF0091CC5A /* FirstSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSplashScreen.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				757542E02B351AAF00048178 /* Info.plist */,
 				757C63B62B85260600FC6D5E /* GoogleService-Info.plist */,
 				75C42DED2B646151003959B6 /* Recipes.json */,
+				759E690C2BBB27DF004DF1A5 /* GoogleRecipes.json */,
 				75CE75B52B75E2330063B742 /* Pantry.json */,
 				754A8F9F2B5792A700C9FD04 /* Ingredients.json */,
 				75C42DEB2B6460FC003959B6 /* GoogleSearchResult.json */,
@@ -648,6 +651,7 @@
 			files = (
 				754A8FA02B5792A700C9FD04 /* Ingredients.json in Resources */,
 				757542CB2B33E8F100048178 /* Preview Assets.xcassets in Resources */,
+				759E690D2BBB27DF004DF1A5 /* GoogleRecipes.json in Resources */,
 				757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */,
 				75C42DEC2B6460FC003959B6 /* GoogleSearchResult.json in Resources */,
 				757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */,

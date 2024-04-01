@@ -88,26 +88,30 @@ struct GoogleLinkRow: View {
                                 case .success(let image):
                                     image
                                         .resizable()
+                                        .scaledToFill() // This ensures the image fill the frame //
+                                        .frame(width: 300, height: 200) // Set the frame to consistency
+                                        .clipped() // clip overflow to fit frame
+                                        .background(Color.white)
                                         .cornerRadius(10)
-                                        .frame(maxWidth: 380, maxHeight: 280)
-                                        .scaledToFit()
-                                        .backgroundStyle(.white)
                                         .shadow(radius: 5, x: 5, y: 5)
+                    
                                 case .failure(_):
                                     // Placeholder or error handling when the image fails to load
                                     Image("foodImage")
                                         .resizable()
+                                        .scaledToFill() // This ensures the image fill the frame //
+                                        .frame(width: 300, height: 200) // Set the frame to consistency
+                                        .clipped() // clip overflow to fit frame
+                                        .background(Color.white)
                                         .cornerRadius(10)
-                                        .frame(maxWidth: 380, maxHeight: 280)
-                                        .scaledToFit()
-                                        .backgroundStyle(.white)
                                         .shadow(radius: 5, x: 5, y: 5)
+                                        
                                 @unknown default:
                                     // Placeholder or default handling for unknown cases
                                     Image(systemName: "foodImage")
                                         .resizable()
                                         .cornerRadius(10)
-                                        .frame(maxWidth: 380, maxHeight: 280)
+                                        .frame(maxWidth: 300, maxHeight: 200)
                                         .scaledToFit()
                                         .backgroundStyle(.white)
                                         .shadow(radius: 5, x: 5, y: 5)

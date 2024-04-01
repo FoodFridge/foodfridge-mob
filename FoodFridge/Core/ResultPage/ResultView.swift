@@ -19,10 +19,9 @@ struct ResultView: View {
         NavigationStack {
             //if got generate result
            if !vm.isLoading {
-                if vm.generatedRecipes.count != 0 {
+               if vm.generatedRecipes.count != 0 {
                     ScrollView {
                         VStack {
-                            
                             Text("We've found Recipes!")
                                 .padding(5)
                                 .frame(width: 350, height: 45)
@@ -34,11 +33,12 @@ struct ResultView: View {
                         .padding()
                         ForEach(0..<vm.generatedRecipes.count, id: \.self) { index in
                             NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: vm.generatedRecipes[index].title)) {
-                                RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].image ?? "")
+                                RecipeRow(title: vm.generatedRecipes[index].title , imageURL: vm.generatedRecipes[index].img)
                             }
                         }
                     }
                     .scrollIndicators(.hidden)
+              
                 }else {
                     //display no recipe found
                     VStack {
@@ -65,11 +65,11 @@ struct ResultView: View {
                     }
                     .font(.custom(CustomFont.appFontRegular.rawValue, size: 17))
                 }
+              
             } else {
-               ProgressView()
-            }
+              ProgressView()
+           }
         }
-        
         .toolbar {
             
             ToolbarItemGroup(placement: .topBarTrailing) {
