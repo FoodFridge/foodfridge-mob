@@ -79,7 +79,6 @@ struct CachedAsyncImage: View {
         Group {
             switch loader.state {
                         case .success(let image):
-                 
                             Image(uiImage: image)
                                 .resizable()
                                 .cornerRadius(10)

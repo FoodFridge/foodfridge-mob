@@ -35,6 +35,8 @@ class LinkRecipeResource {
             let body = LinkRecipeRequestBody(localId: localID ?? "" , recipeName: recipeName)
             
             let jsonData = try encoder.encode(body)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            print("jsonRequestBody = \(String(describing: jsonString))")
             
             let userTimeZone  = UserTimeZone.getTimeZone()
               
@@ -51,11 +53,15 @@ class LinkRecipeResource {
                     }
                     request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
                     let returnNewToken = try await TokenManager.verifyTokenAndRequestNewToken(expTime: expTime, userTimeZone: userTimeZone, sessionManager: sessionManager)
+                    print("check user token")
                     if returnNewToken == nil {
+                        print("token \(token ?? "don't have token") request link recipe still valid")
+                        
                         // if token still valid use present token to fetch
                         request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
                     }else {
                         // use new token to fetch
+                        print("use new token link recipe to fetch")
                         request.setValue("Bearer \(returnNewToken ?? "")", forHTTPHeaderField: "Authorization")
                     }
                 }
@@ -71,9 +77,9 @@ class LinkRecipeResource {
                 print("DEBUG: statusCode =  \(response)")
 
                 // Handle the response
-                if let responseText = String(data: data, encoding: .utf8) {
-                 print("response = \(responseText)")
-                }
+                //if let responseText = String(data: data, encoding: .utf8) {
+                 //print("response = \(responseText)")
+               //}
                 // Decode resonse data to LinkRecipe
                 let responseData = try JSONDecoder().decode(LinkeRecipeResponseData.self, from: data)
                 print("LinkRecipe = \(responseData.data)")

@@ -70,11 +70,49 @@ struct GoogleLinkRow: View {
                                     .navigationBarTitleDisplayMode(.inline)
                             }
                         } label: {
+                            //option1 : Use cached image form ui image: Benefit is display all loaded image at the same time when loaded done. Downside: Slower displaying screen compare to option#2     
+                            /*
                             let url = URL(string: googleLink?.img ?? "https://spoonacular.com/recipeImages/86929-312x231.jpg")
-                            // Check if the placeholder image exists. If not, use a system image or another safe default.
+                            // Check if the placeholder image exists from url provided. If not, use a system image or another safe default.
                             let placeholderImage = UIImage(named: "foodImage") ?? UIImage(systemName: "photo")!
                             
                             CachedAsyncImage(url: url, placeholder: placeholderImage)
+                             */
+                            
+                            //option2 : AsyncImage : Benefit is more responsive displaying screen instantly when navigate to. Downside: Image have different loading time for each image) 
+                            AsyncImage(url: URL(string: googleLink?.img ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg" )) { phase in
+                                switch phase {
+                                case .empty:
+                                    // Placeholder when the image is not yet loaded
+                                    ProgressView()
+                                case .success(let image):
+                                    image
+                                        .resizable()
+                                        .cornerRadius(10)
+                                        .frame(maxWidth: 380, maxHeight: 280)
+                                        .scaledToFit()
+                                        .backgroundStyle(.white)
+                                        .shadow(radius: 5, x: 5, y: 5)
+                                case .failure(_):
+                                    // Placeholder or error handling when the image fails to load
+                                    Image("foodImage")
+                                        .resizable()
+                                        .cornerRadius(10)
+                                        .frame(maxWidth: 380, maxHeight: 280)
+                                        .scaledToFit()
+                                        .backgroundStyle(.white)
+                                        .shadow(radius: 5, x: 5, y: 5)
+                                @unknown default:
+                                    // Placeholder or default handling for unknown cases
+                                    Image(systemName: "foodImage")
+                                        .resizable()
+                                        .cornerRadius(10)
+                                        .frame(maxWidth: 380, maxHeight: 280)
+                                        .scaledToFit()
+                                        .backgroundStyle(.white)
+                                        .shadow(radius: 5, x: 5, y: 5)
+                                }
+                            }
                         }
                         .aspectRatio(contentMode: .fit)
                         //.padding(.horizontal)
