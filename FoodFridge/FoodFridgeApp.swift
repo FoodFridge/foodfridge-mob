@@ -97,6 +97,7 @@ struct FoodFridgeApp: App {
             
             else if scenePhase == .active {
                 print("newPhase == active")
+                
                 appState.appDidBecomeActive(sessionManager: sessionManager)
             }
             

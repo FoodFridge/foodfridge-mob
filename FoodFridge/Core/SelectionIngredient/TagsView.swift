@@ -207,10 +207,38 @@ struct TagsView: View {
                                                         .foregroundStyle(.black)
                                                         .clipShape(RoundedRectangle(cornerRadius: 20.0))
                                                         .onTapGesture {
-                                                            //update tag to prompt
-                                                            vm.addSelectedTag(tag: tag)
-                                                            print("selected tag = \(tag)")
-                                                            print("update added list:\(vm.selectedTags)")
+                                                            
+                                                            //if ingredient already in array of selected tag, delete that item
+                                                            if vm.selectedTags.contains(where: { $0 == tag }) {
+                                                                //delete that item
+                                                                vm.deleteSelectedTag(tag: tag)
+                                                                print("selected tag to delete= \(tag)")
+                                                                print("update added list after delete:\(vm.selectedTags)")
+                                                                
+                                                                //update user defaults
+                                                                UserDefaults.standard.set(vm.selectedTags, forKey: "SavedTags")
+                                                                if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                                                                    // Use loaded array
+                                                                    vm.selectedTags = loadedStringsArray
+                                                                    print("save default selectedtags = \(loadedStringsArray)")
+                                                                }
+                                                                 
+                                                            }else {
+                                                                //else add item in array
+                                                                //update tag to prompt
+                                                                vm.addSelectedTag(tag: tag)
+                                                                print("selected tag to add = \(tag)")
+                                                                print("update added list after add:\(vm.selectedTags)")
+                                                                
+                                                                //update user defults ingredients
+                                                                UserDefaults.standard.set(vm.selectedTags, forKey: "SavedTags")
+                                                                if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                                                                    // Use loaded array
+                                                                    vm.selectedTags = loadedStringsArray
+                                                                    print("save default selectedtags = \(loadedStringsArray)")
+                                                                }
+                                                                
+                                                            }
                                                             
                                                             //update tag background color in sheet
                                                             if selectedItems.contains(tag) {

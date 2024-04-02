@@ -23,7 +23,7 @@ struct LandingPageView: View {
     @EnvironmentObject var sessionManager: SessionManager
     @EnvironmentObject var navigationController: NavigationController
     
-    
+    @Environment(\.scenePhase) var scenePhase
     
    
     let rows = [GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem()]
@@ -61,7 +61,7 @@ struct LandingPageView: View {
                                 .overlay(
                                     
                                         NavigationLink {
-                                             ResultView()
+                                            ResultView(viewModel: ResultViewModel(ingredients: vm.selectedTags))
                                         }label: {
                                             SmallButton(title: "Generate Recipe", isTapped: $isTapped)
                                                 
@@ -77,10 +77,7 @@ struct LandingPageView: View {
                                         .simultaneousGesture(TapGesture().onEnded({
                                             Task {
                                                 if !vm.selectedTags.isEmpty {
-                                                    
-                                                try await vm.generateRecipe(from: vm.selectedTags)
-                                                    
-                                                
+                    
                                                 } else {
                                                     isTapped = true
                                                     //resetState
@@ -157,9 +154,30 @@ struct LandingPageView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
+            .onChange(of: scenePhase) {
+                if scenePhase == .active {
+                    //user come back to app
+                    if let savedTags = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                        print("landing user default comeback = \(savedTags) ")
+                        // Use savedTags to display to user
+                        vm.selectedTags = savedTags
+                        print("forground loaded selectedtags = \(savedTags)")
+                        print("forground vm selectedtags = \(vm.selectedTags)")
+                        print("Restore - scencePhase")
+                    }
+                }
+            }
+            .onAppear {
+                if let savedTags = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                    print("on appear user default comeback = \(savedTags) ")
+                    // Use savedTags to display to user
+                    vm.selectedTags = savedTags
+                    print("forground on appear loaded selectedtags = \(savedTags)")
+                    print("forground on appear vm selectedtags = \(vm.selectedTags)")
+                    
+                }
+            }
             
-            
-           
                
         }
         
