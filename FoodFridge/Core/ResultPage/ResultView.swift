@@ -12,7 +12,7 @@ struct ResultView: View {
     @EnvironmentObject var vm: TagsViewModel
     @EnvironmentObject var sessionManager: SessionManager
     @EnvironmentObject var navigationController: NavigationController
-   
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         
@@ -69,6 +69,32 @@ struct ResultView: View {
             } else {
               ProgressView()
            }
+        }
+        .onChange(of: scenePhase) {
+            if scenePhase == .background || scenePhase == .inactive {
+                /*
+                //persist vm.selectedtags
+                UserDefaults.standard.set(vm.selectedTags, forKey: "SavedTags")
+                if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                    // Use your loaded array
+                    print("background selectedtags = \(loadedStringsArray)")
+                }
+                 */
+                
+                
+            }else {
+                //user come back to app
+                if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                    print("landing user default comeback = \(loadedStringsArray) ")
+                    // Use your loaded array
+                    vm.selectedTags = loadedStringsArray
+                    print("forground loaded selectedtags = \(loadedStringsArray)")
+                    print("forground vm selectedtags = \(vm.selectedTags)")
+                    print("Restore - scencePhase")
+                }
+               
+               
+            }
         }
         .toolbar {
             

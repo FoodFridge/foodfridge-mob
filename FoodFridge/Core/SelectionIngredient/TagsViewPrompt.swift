@@ -70,6 +70,12 @@ struct TagsViewPrompt: View {
                                         vm2.deleteSelectedTag(tag: item)
                                         print("deleted : \(item)")
                                         print("update deleted list = \(vm2.selectedTags)")
+                                        
+                                        UserDefaults.standard.set(vm2.selectedTags, forKey: "SavedTags")
+                                        if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                                            // Use your loaded array
+                                            print("save default selectedtags after delete = \(loadedStringsArray)")
+                                        }
                                     }
                                     .onAppear {
                                         scrollView.scrollTo(item.last, anchor: .bottom)

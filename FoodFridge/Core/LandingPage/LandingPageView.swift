@@ -23,7 +23,7 @@ struct LandingPageView: View {
     @EnvironmentObject var sessionManager: SessionManager
     @EnvironmentObject var navigationController: NavigationController
     
-    
+    @Environment(\.scenePhase) var scenePhase
     
    
     let rows = [GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem()]
@@ -157,7 +157,32 @@ struct LandingPageView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
-            
+            .onChange(of: scenePhase) {
+                if scenePhase == .background || scenePhase == .inactive {
+                    /*
+                    //persist vm.selectedtags
+                    UserDefaults.standard.set(vm.selectedTags, forKey: "SavedTags")
+                    if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                        // Use your loaded array
+                        print("background selectedtags = \(loadedStringsArray)")
+                    }
+                     */
+                    
+                    
+                }else {
+                    //user come back to app
+                    if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                        print("landing user default comeback = \(loadedStringsArray) ")
+                        // Use your loaded array
+                        vm.selectedTags = loadedStringsArray
+                        print("forground loaded selectedtags = \(loadedStringsArray)")
+                        print("forground vm selectedtags = \(vm.selectedTags)")
+                        print("Restore - scencePhase")
+                    }
+                   
+                   
+                }
+            }
             
            
                
