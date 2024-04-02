@@ -214,12 +214,15 @@ struct TagsView: View {
                                                                 vm.deleteSelectedTag(tag: tag)
                                                                 print("selected tag to delete= \(tag)")
                                                                 print("update added list after delete:\(vm.selectedTags)")
+                                                                
                                                                 //update user defaults
                                                                 UserDefaults.standard.set(vm.selectedTags, forKey: "SavedTags")
                                                                 if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
-                                                                    // Use your loaded array
+                                                                    // Use loaded array
+                                                                    vm.selectedTags = loadedStringsArray
                                                                     print("save default selectedtags = \(loadedStringsArray)")
                                                                 }
+                                                                 
                                                             }else {
                                                                 //else add item in array
                                                                 //update tag to prompt
@@ -230,9 +233,11 @@ struct TagsView: View {
                                                                 //update user defults ingredients
                                                                 UserDefaults.standard.set(vm.selectedTags, forKey: "SavedTags")
                                                                 if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
-                                                                    // Use your loaded array
+                                                                    // Use loaded array
+                                                                    vm.selectedTags = loadedStringsArray
                                                                     print("save default selectedtags = \(loadedStringsArray)")
                                                                 }
+                                                                
                                                             }
                                                             
                                                             //update tag background color in sheet

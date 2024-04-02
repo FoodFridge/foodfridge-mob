@@ -18,8 +18,6 @@ struct TagsViewPrompt: View {
     
     init(items: [String]) {
         self.items = items
-        //_vm = ObservedObject(initialValue: TagsViewModel())
-        //groupItems = createGroupedItems(items: _vm.wrappedValue.selectedTags )
         groupItems = createGroupedItems(items: items)
         func createGroupedItems(items: [String]) -> [[String]] {
             var groupedItems: [[String]] = [[String]]()
@@ -76,6 +74,7 @@ struct TagsViewPrompt: View {
                                             // Use your loaded array
                                             print("save default selectedtags after delete = \(loadedStringsArray)")
                                         }
+                                         
                                     }
                                     .onAppear {
                                         scrollView.scrollTo(item.last, anchor: .bottom)

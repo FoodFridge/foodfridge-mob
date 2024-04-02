@@ -61,7 +61,7 @@ struct LandingPageView: View {
                                 .overlay(
                                     
                                         NavigationLink {
-                                             ResultView()
+                                            ResultView(viewModel: ResultViewModel(ingredients: vm.selectedTags))
                                         }label: {
                                             SmallButton(title: "Generate Recipe", isTapped: $isTapped)
                                                 
@@ -77,10 +77,7 @@ struct LandingPageView: View {
                                         .simultaneousGesture(TapGesture().onEnded({
                                             Task {
                                                 if !vm.selectedTags.isEmpty {
-                                                    
-                                                try await vm.generateRecipe(from: vm.selectedTags)
-                                                    
-                                                
+                    
                                                 } else {
                                                     isTapped = true
                                                     //resetState
@@ -158,33 +155,29 @@ struct LandingPageView: View {
             }
             .navigationBarBackButtonHidden(true)
             .onChange(of: scenePhase) {
-                if scenePhase == .background || scenePhase == .inactive {
-                    /*
-                    //persist vm.selectedtags
-                    UserDefaults.standard.set(vm.selectedTags, forKey: "SavedTags")
-                    if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
-                        // Use your loaded array
-                        print("background selectedtags = \(loadedStringsArray)")
-                    }
-                     */
-                    
-                    
-                }else {
+                if scenePhase == .active {
                     //user come back to app
-                    if let loadedStringsArray = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
-                        print("landing user default comeback = \(loadedStringsArray) ")
-                        // Use your loaded array
-                        vm.selectedTags = loadedStringsArray
-                        print("forground loaded selectedtags = \(loadedStringsArray)")
+                    if let savedTags = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                        print("landing user default comeback = \(savedTags) ")
+                        // Use savedTags to display to user
+                        vm.selectedTags = savedTags
+                        print("forground loaded selectedtags = \(savedTags)")
                         print("forground vm selectedtags = \(vm.selectedTags)")
                         print("Restore - scencePhase")
                     }
-                   
-                   
+                }
+            }
+            .onAppear {
+                if let savedTags = UserDefaults.standard.array(forKey: "SavedTags") as? [String] {
+                    print("on appear user default comeback = \(savedTags) ")
+                    // Use savedTags to display to user
+                    vm.selectedTags = savedTags
+                    print("forground on appear loaded selectedtags = \(savedTags)")
+                    print("forground on appear vm selectedtags = \(vm.selectedTags)")
+                    
                 }
             }
             
-           
                
         }
         
