@@ -58,7 +58,7 @@ struct LogInView: View {
                         HStack {
                             Spacer()
                             NavigationLink {
-                                ForgotPasswordView()
+                                ForgotPasswordView(vm: ForgotPasswordViewModel())
                             }label: {
                                 Text("Forgot password?")
                             }
@@ -88,7 +88,7 @@ struct LogInView: View {
                                     self.showAlert = true
                                 }
                         }
-                        //if validate is failed
+                    //if validate is failed
                     }else {
                         self.alertMessage = validator.fieldError?.textErrorDescription ?? "An error occor"
                         self.showAlert = true

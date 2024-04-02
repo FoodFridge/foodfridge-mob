@@ -9,10 +9,35 @@ import Foundation
 class ValidateField: ObservableObject  {
     
     @Published var fieldError: AuthenFieldError?
+    @Published var fieldResetError: ResetPasswordError?
     
     func isValidEmail(_ email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
+    func validateResetField(email: String) -> Bool {
+        do {
+            //verify email not empty
+            guard !email.isEmpty else {
+                throw ResetPasswordError.filedEmpty
+            }
+            //verify email format
+            guard isValidEmail(email) else {
+                throw ResetPasswordError.invalidEmail
+            }
+            
+            // If all validations pass, reset any previous error and return true
+            self.fieldError = nil
+            return true
+            
+        } catch let error as ResetPasswordError {
+            self.fieldResetError = error
+            return false
+            
+        }catch {
+            return false
+        }
     }
 
     func validateTextField(email: String, password: String, name: String?) ->Bool {
@@ -33,7 +58,7 @@ class ValidateField: ObservableObject  {
             }
                     
             //if it sign up field and user put invalid password to sign up
-            if name != nil,  password.count < 6 {
+            if name != nil, password.count < 6 {
                 throw AuthenFieldError.invalidPasswordSetUp
             }
                  
@@ -68,9 +93,21 @@ class ValidateField: ObservableObject  {
             return false
         }
         
-       
     }
     
+}
+enum ResetPasswordError: Error, LocalizedError {
+    case filedEmpty
+    case invalidEmail
+    
+    var textErrorDescription: String? {
+        switch self {
+        case .filedEmpty:
+            return "Please enter your email"
+        case .invalidEmail:
+            return "Invalid Email"
+        }
+    }
 }
 
 
