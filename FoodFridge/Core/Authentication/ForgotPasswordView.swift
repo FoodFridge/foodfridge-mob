@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ForgotPasswordView: View {
-    @StateObject var vm: ForgotPasswordViewModel
+    @ObservedObject var vm: ForgotPasswordViewModel
     @State private var showAlert = false
     @State private var alertMessage = ""
+    @State private var navigateToNextpage = false
     @StateObject var validator = ValidateField()
     
     var body: some View {
@@ -32,6 +33,27 @@ struct ForgotPasswordView: View {
                     //call api send email to reset password
                     if isFieldValidated {
                         print("can reset password")
+                        Task {
+                            let _ = try await vm.resetPassword(email: vm.email)
+                            vm.email = ""
+                            if vm.resetPasswordFeedback == 200 {
+                                print("status = \(vm.resetPasswordFeedback)")
+                                navigateToNextpage = true 
+                                //self.alertMessage = "Sent reset password instruction to your email!"
+                                //self.showAlert = true
+                            }
+                            else {
+                                print("status = \(vm.resetPasswordFeedback)")
+                                if vm.resetPasswordFeedback == 404 {
+                                    self.alertMessage = "Not registered email, try another email"
+                                    self.showAlert = true
+                                }else if vm.resetPasswordFeedback == 500 {
+                                    self.alertMessage = "Cannot reset password, please try again"
+                                    self.showAlert = true
+                                }
+                                
+                            }
+                        }
                         
                         
                     }else {
@@ -41,6 +63,11 @@ struct ForgotPasswordView: View {
                     
                 }, label: {
                     Text("Submit")
+                })
+                .sheet(isPresented: $navigateToNextpage, content: {
+                    // feedback page
+                    //TestView()
+                    ResetPasswordFeedback()
                 })
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text(""), message: Text(alertMessage), dismissButton: .default(Text("OK")))

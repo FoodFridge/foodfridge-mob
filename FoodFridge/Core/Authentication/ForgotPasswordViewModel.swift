@@ -6,6 +6,14 @@
 //
 
 import Foundation
+
+@MainActor
 class ForgotPasswordViewModel: ObservableObject {
     @Published var email: String = ""
+    @Published var resetPasswordFeedback: Int = 0
+    
+    func resetPassword(email : String) async throws -> Int {
+        self.resetPasswordFeedback = try await ResetPassword.requestResetEmail(email: email)
+        return self.resetPasswordFeedback
+    }
 }
