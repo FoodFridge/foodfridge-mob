@@ -15,6 +15,7 @@ struct FoodFridgeApp: App {
     @StateObject var sessionManager = SessionManager()
     @StateObject private var appState = AppState()
     @StateObject var navigationController = NavigationController()
+    @StateObject var resetPassword = ResetPasswordViewModel()
     
     @Environment(\.scenePhase) var scenePhase
     
@@ -41,6 +42,7 @@ struct FoodFridgeApp: App {
                     .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                     .environmentObject(ScrollTarget())
                     .environmentObject(navigationController)
+                    .environmentObject(resetPassword)
                 
             }else {
                 
@@ -56,6 +58,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
                         .environmentObject(navigationController)
+                        .environmentObject(resetPassword)
                     
                 case .authentication:
                     AuthenticationView(appleSignIn: AppleSignInHelper(sessionManager: sessionManager))
@@ -67,6 +70,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
                         .environmentObject(navigationController)
+                        .environmentObject(resetPassword)
                     
                 case .landingPage:
                     LandingPageView()
@@ -78,6 +82,7 @@ struct FoodFridgeApp: App {
                         .environmentObject(SelectionSheetViewModel(sessionManager: sessionManager))
                         .environmentObject(ScrollTarget())
                         .environmentObject(navigationController)
+                        .environmentObject(resetPassword)
                     
                 }
                 

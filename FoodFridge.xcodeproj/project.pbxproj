@@ -94,7 +94,7 @@
 		75A1CBB02B867CD300AC5095 /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */; };
 		75A1CBB32B8681C500AC5095 /* AppleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */; };
 		75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */; };
-		75A1CBC02B895E4900AC5095 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBF2B895E4900AC5095 /* ForgotPasswordView.swift */; };
+		75A1CBC02B895E4900AC5095 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1CBBF2B895E4900AC5095 /* ResetPasswordView.swift */; };
 		75A1F4832BA93528006BD634 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1F4822BA93528006BD634 /* ImageLoader.swift */; };
 		75A1F4852BA9E515006BD634 /* EmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1F4842BA9E515006BD634 /* EmailController.swift */; };
 		75A1F4872BA9F9C3006BD634 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1F4862BA9F9C3006BD634 /* PrivacyPolicyView.swift */; };
@@ -106,6 +106,10 @@
 		75B480582BA3BEBE00477EC4 /* AuthUserWithApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */; };
 		75BA25BA2BBC7BAE003D0D73 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA25B92BBC7BAE003D0D73 /* ResultViewModel.swift */; };
 		75BA25BC2BBC8B58003D0D73 /* CannotFindRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA25BB2BBC8B58003D0D73 /* CannotFindRecipeView.swift */; };
+		75BA25BE2BBC90A3003D0D73 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA25BD2BBC90A3003D0D73 /* ResetPasswordViewModel.swift */; };
+		75BA25C02BBCCFF5003D0D73 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA25BF2BBCCFF4003D0D73 /* ResetPassword.swift */; };
+		75BA25C22BBCD931003D0D73 /* ResetPasswordFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA25C12BBCD931003D0D73 /* ResetPasswordFeedback.swift */; };
+		75BA25C42BBCEF92003D0D73 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA25C32BBCEF92003D0D73 /* TestView.swift */; };
 		75BD40862BA10F800055B06F /* ValidateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD40852BA10F800055B06F /* ValidateField.swift */; };
 		75BD90C02BAB7A0A00EDC7AA /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD90BF2BAB7A0A00EDC7AA /* OnBoardingScreen.swift */; };
 		75C2DD972B7853F500CD184E /* EditPantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2DD962B7853F500CD184E /* EditPantry.swift */; };
@@ -215,7 +219,7 @@
 		75A1CBAF2B867CD300AC5095 /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBB22B8681C500AC5095 /* AppleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInHelper.swift; sourceTree = "<group>"; };
 		75A1CBBA2B88301900AC5095 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
-		75A1CBBF2B895E4900AC5095 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		75A1CBBF2B895E4900AC5095 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		75A1F4822BA93528006BD634 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		75A1F4842BA9E515006BD634 /* EmailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailController.swift; sourceTree = "<group>"; };
 		75A1F4862BA9F9C3006BD634 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
@@ -227,6 +231,10 @@
 		75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserWithApp.swift; sourceTree = "<group>"; };
 		75BA25B92BBC7BAE003D0D73 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		75BA25BB2BBC8B58003D0D73 /* CannotFindRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannotFindRecipeView.swift; sourceTree = "<group>"; };
+		75BA25BD2BBC90A3003D0D73 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		75BA25BF2BBCCFF4003D0D73 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
+		75BA25C12BBCD931003D0D73 /* ResetPasswordFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordFeedback.swift; sourceTree = "<group>"; };
+		75BA25C32BBCEF92003D0D73 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		75BD40852BA10F800055B06F /* ValidateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateField.swift; sourceTree = "<group>"; };
 		75BD90BF2BAB7A0A00EDC7AA /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
 		75C2DD962B7853F500CD184E /* EditPantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPantry.swift; sourceTree = "<group>"; };
@@ -351,7 +359,10 @@
 				75BD40852BA10F800055B06F /* ValidateField.swift */,
 				757542DE2B34F3D300048178 /* LogInView.swift */,
 				753245B02B80128F00545DE7 /* LogInWithEmailViewModel.swift */,
-				75A1CBBF2B895E4900AC5095 /* ForgotPasswordView.swift */,
+				75A1CBBF2B895E4900AC5095 /* ResetPasswordView.swift */,
+				75BA25C12BBCD931003D0D73 /* ResetPasswordFeedback.swift */,
+				75BA25C32BBCEF92003D0D73 /* TestView.swift */,
+				75BA25BD2BBC90A3003D0D73 /* ResetPasswordViewModel.swift */,
 				753245B42B802A8300545DE7 /* LogOutViewModel.swift */,
 				757542DA2B3401EE00048178 /* SignUpWithEmailView.swift */,
 				753245A32B7F1AE400545DE7 /* SignUpWithEmailViewModel.swift */,
@@ -563,11 +574,12 @@
 				75CE75B72B76B3140063B742 /* DeletePantry.swift */,
 				75CE75B92B771FC80063B742 /* AddPantry.swift */,
 				75C2DD962B7853F500CD184E /* EditPantry.swift */,
-				753245982B7E962A00545DE7 /* SignUpWithEmail.swift */,
 				7532459A2B7E9D7100545DE7 /* LoginWithEmail.swift */,
 				753245B22B801CE500545DE7 /* LogOut.swift */,
 				75D9504D2B97E16F009926BE /* TokenManager.swift */,
 				75CD189E2BA22D2500758328 /* FetchPantryIngredients.swift */,
+				75BA25BF2BBCCFF4003D0D73 /* ResetPassword.swift */,
+				753245982B7E962A00545DE7 /* SignUpWithEmail.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -702,7 +714,7 @@
 				759F55552B8ACA7F00276079 /* GoogleLinkRowViewModel.swift in Sources */,
 				75BA25BA2BBC7BAE003D0D73 /* ResultViewModel.swift in Sources */,
 				757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */,
-				75A1CBC02B895E4900AC5095 /* ForgotPasswordView.swift in Sources */,
+				75A1CBC02B895E4900AC5095 /* ResetPasswordView.swift in Sources */,
 				751EB5602B53488200106FD6 /* PantryItem.swift in Sources */,
 				75CE75BA2B771FC80063B742 /* AddPantry.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
@@ -731,6 +743,7 @@
 				75A1F4872BA9F9C3006BD634 /* PrivacyPolicyView.swift in Sources */,
 				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75CE75B42B75DA8A0063B742 /* GetPantry.swift in Sources */,
+				75BA25BE2BBC90A3003D0D73 /* ResetPasswordViewModel.swift in Sources */,
 				759F55532B8AC3D300276079 /* RecipeAnimation.swift in Sources */,
 				75D9504E2B97E16F009926BE /* TokenManager.swift in Sources */,
 				75C42DF22B6600A0003959B6 /* AppConstant.swift in Sources */,
@@ -765,11 +778,13 @@
 				752580D72B6B042200D536D2 /* FavoriteRecipeView.swift in Sources */,
 				75A1CBBB2B88301900AC5095 /* ProfileSettingView.swift in Sources */,
 				75C2DD992B785D7800CD184E /* AddedBarAnimation.swift in Sources */,
+				75BA25C42BBCEF92003D0D73 /* TestView.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				75C42DE02B62E81E003959B6 /* LinkRecipesViewModel.swift in Sources */,
 				752580DD2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift in Sources */,
 				75C2DD9B2B78793B00CD184E /* ScrollTarget.swift in Sources */,
 				75C42DE42B62EF94003959B6 /* Recipe.swift in Sources */,
+				75BA25C02BBCCFF5003D0D73 /* ResetPassword.swift in Sources */,
 				7532459B2B7E9D7100545DE7 /* LoginWithEmail.swift in Sources */,
 				751EB5662B57134900106FD6 /* FetchIngredients.swift in Sources */,
 				753245B32B801CE500545DE7 /* LogOut.swift in Sources */,
@@ -792,6 +807,7 @@
 				75A0CBC52BABA4BF0091CC5A /* FirstSplashScreen.swift in Sources */,
 				754A8FA62B58A41800C9FD04 /* Category.swift in Sources */,
 				752580DB2B6B0E2800D536D2 /* GetFavoriteRecipe.swift in Sources */,
+				75BA25C22BBCD931003D0D73 /* ResetPasswordFeedback.swift in Sources */,
 				7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */,
 				75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */,
 				757C63FE2B85362B00FC6D5E /* ExtentionView.swift in Sources */,

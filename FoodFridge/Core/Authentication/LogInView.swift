@@ -22,11 +22,12 @@ struct LogInView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     
+    @State var navigationPath = [Int]()
     
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath){
             VStack {
                 Text("Welcome back!")
                     .font(.custom("CourierPrime-Bold", size: 35))
@@ -57,14 +58,23 @@ struct LogInView: View {
                         
                         HStack {
                             Spacer()
-                            NavigationLink {
-                                ForgotPasswordView()
+                            Button {
+                                navigationPath.append(1)
+                               
                             }label: {
                                 Text("Forgot password?")
                             }
                             .font(.custom("CourierPrime-regular", size: 13))
                             .padding(.trailing, 25)
                             .padding(.top, -20)
+                            .navigationDestination(for: Int.self) { index in
+                                switch index{
+                                case 1:
+                                    ResetPasswordView(popToRoot: {navigationPath.removeAll()})
+                                default:
+                                    EmptyView()
+                                }
+                            }
                             
                         }
                     }
@@ -88,7 +98,7 @@ struct LogInView: View {
                                     self.showAlert = true
                                 }
                         }
-                        //if validate is failed
+                    //if validate is failed
                     }else {
                         self.alertMessage = validator.fieldError?.textErrorDescription ?? "An error occor"
                         self.showAlert = true
