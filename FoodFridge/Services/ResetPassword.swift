@@ -36,6 +36,7 @@ class ResetPassword {
                 print("not found email in app's database")
                 return 404
             default:
+                print("Server error")
                 return 500
             }
         }
@@ -43,8 +44,3 @@ class ResetPassword {
     
 }
 
-enum ResetPasswordFeedbackCode: Int {
-    case success = 200
-    case badRequest = 404
-    case serverError = 500
-}

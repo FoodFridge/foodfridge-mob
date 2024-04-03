@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct ForgotPasswordView: View {
-    @ObservedObject var vm: ForgotPasswordViewModel
+struct ResetPasswordView: View {
+    @EnvironmentObject var vm: ResetPasswordViewModel
     @State private var showAlert = false
     @State private var alertMessage = ""
+    @State private var textField = ""
     @State private var navigateToNextpage = false
     @StateObject var validator = ValidateField()
+    
+    var popToRoot:() -> Void
     
     var body: some View {
         VStack {
@@ -24,7 +27,7 @@ struct ForgotPasswordView: View {
             
             .padding()
             
-                TextField("email", text: $vm.email)
+            TextField("email", text: $vm.email)
                     .AppTextFieldStyle()
                 Button(action: {
                     //validate text field
@@ -35,12 +38,14 @@ struct ForgotPasswordView: View {
                         print("can reset password")
                         Task {
                             let _ = try await vm.resetPassword(email: vm.email)
+                            
+                            //reset text field to empty
                             vm.email = ""
+                            print("email feedback = \(vm.userEmailForFeedback)")
+                            
                             if vm.resetPasswordFeedback == 200 {
                                 print("status = \(vm.resetPasswordFeedback)")
-                                navigateToNextpage = true 
-                                //self.alertMessage = "Sent reset password instruction to your email!"
-                                //self.showAlert = true
+                                navigateToNextpage = true
                             }
                             else {
                                 print("status = \(vm.resetPasswordFeedback)")
@@ -53,6 +58,7 @@ struct ForgotPasswordView: View {
                                 }
                                 
                             }
+                            
                         }
                         
                         
@@ -65,9 +71,8 @@ struct ForgotPasswordView: View {
                     Text("Submit")
                 })
                 .sheet(isPresented: $navigateToNextpage, content: {
-                    // feedback page
-                    //TestView()
-                    ResetPasswordFeedback()
+                    //if return 200 go feedback page
+                    ResetPasswordFeedback(popToRoot: popToRoot)
                 })
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text(""), message: Text(alertMessage), dismissButton: .default(Text("OK")))
@@ -86,5 +91,5 @@ struct ForgotPasswordView: View {
 }
 
 #Preview {
-    ForgotPasswordView(vm: ForgotPasswordViewModel())
+    ResetPasswordView(popToRoot: {})
 }
