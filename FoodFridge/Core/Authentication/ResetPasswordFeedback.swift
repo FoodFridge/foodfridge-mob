@@ -127,7 +127,7 @@ struct ResetPasswordFeedback: View {
     }
     
     func emailProviderIsSupport(email: String) -> Bool {
-            let supportedProviders = ["gmail.com", "yahoo.com", "outlook.com", "icloud.com"]
+            let supportedProviders = ["gmail.com", "yahoo.com", "outlook.com", "icloud.com", "hotmail.com"]
             let emailDomain = email.split(separator: "@").last.map(String.init)
             
             if let domain = emailDomain, !supportedProviders.contains(domain) {
@@ -169,6 +169,15 @@ struct ResetPasswordFeedback: View {
                             } else {
                                 // If Outlook isn't installed, open Outlook on the web.
                                 let webURL = URL(string: "https://outlook.live.com/")!
+                                openURL(webURL)
+                            }
+            case "hotmail.com":
+                let outlookURL = URL(string: "ms-outlook://")!
+                            if UIApplication.shared.canOpenURL(outlookURL) {
+                                openURL(outlookURL)
+                            } else {
+                                // If Outlook isn't installed, open Outlook on the web.
+                                let webURL = URL(string: "https://outlook.live.com/owa/?nlp=1&realm=hotmail.com")!
                                 openURL(webURL)
                             }
             case "icloud.com":
