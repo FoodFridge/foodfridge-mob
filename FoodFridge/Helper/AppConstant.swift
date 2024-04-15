@@ -69,5 +69,5 @@ class AppConstant {
         URL(string: "https://sites.google.com/view/foodfridge-eula/home")
     
     static let appReviewLink =
-        URL(string: "https://apps.apple.com/app/id6471903173?action=write-review")
+        URL(string: "https://apps.apple.com/app/id6476799564?action=write-review")
 }
