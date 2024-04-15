@@ -17,7 +17,7 @@ class LogInWithEmailViewModel: ObservableObject {
         
             do {
                 print("view model call login service")
-                try await LoginWithEmailService(sessionManager: sessionManager).login(email: self.email, password: self.password)
+                try await LoginWithEmailService(sessionManager: sessionManager).login(email: self.email.lowercased(), password: self.password)
                 return true
             }catch let error as LogInError {
                 self.loginError = error

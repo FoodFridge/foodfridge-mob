@@ -53,6 +53,11 @@ class SignUpWithEmail {
                 //assign error to display
                 throw SignupError.duplicateEmail
                 
+            case 400:
+                //if domain doesn't accept
+                print("Sign in with not accept domain")
+                throw SignupError.notAcceptDomain
+                
             default:
                 print("Unknown error, please try again")
                 //assign error to display
@@ -73,12 +78,15 @@ class SignUpWithEmail {
 
 enum SignupError: Error, LocalizedError {
     case duplicateEmail
+    case notAcceptDomain
     case unknown
     
     var errorDescription: String? {
         switch self {
         case .duplicateEmail:
             return "This email is already in use"
+        case .notAcceptDomain:
+            return "Domain not accept for sign in, please use different email"
         case .unknown:
             return "An unknown error occurred. Please try again"
         }

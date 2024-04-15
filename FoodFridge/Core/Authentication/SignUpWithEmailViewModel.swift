@@ -26,10 +26,10 @@ class SignUpWithEmailViewModel: ObservableObject {
         do {
             print("view model call service")
             //call service class
-            try await SignUpWithEmail(sessionManager: sessionManager).signUp(email: self.email, password: self.password, name: self.name)
+            try await SignUpWithEmail(sessionManager: sessionManager).signUp(email: self.email.lowercased(), password: self.password, name: self.name)
             
             //if sign up success, then log in
-            try await LoginWithEmailService(sessionManager: sessionManager).login(email: self.email, password: self.password)
+            try await LoginWithEmailService(sessionManager: sessionManager).login(email: self.email.lowercased(), password: self.password)
                 
             return true
           

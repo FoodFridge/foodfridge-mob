@@ -110,6 +110,7 @@ struct ScanItemView: View {
             .onChange(of: vm.recognizeMultipleItems) {
                 vm.recognizedItems = []
             }
+            
         }.navigationBarBackButtonHidden(true)
     }
 }
