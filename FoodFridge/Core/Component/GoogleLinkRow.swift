@@ -61,13 +61,15 @@ struct GoogleLinkRow: View {
                     
                     VStack {
                         //link image
-                        NavigationLink {
+                        Button {
                             // tap to navigate to google link
                             if let link = URL(string: googleLink?.url ?? "Link") {
-                                //openURL(link)
+                                openURL(link)
+                                /*
                                 WebView(url: link)
                                     .navigationTitle("\(googleLink?.title ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg")")
                                     .navigationBarTitleDisplayMode(.inline)
+                                 */
                             }
                         } label: {
                             //option1 : Use cached image form ui image: Benefit is display all loaded image at the same time when loaded done. Downside: Slower displaying screen compare to option#2     
@@ -77,9 +79,10 @@ struct GoogleLinkRow: View {
                             let placeholderImage = UIImage(named: "foodImage") ?? UIImage(systemName: "photo")!
                             
                             CachedAsyncImage(url: url, placeholder: placeholderImage)
-                             */
+                            */
                             
                             //option2 : AsyncImage : Benefit is more responsive displaying screen instantly when navigate to. Downside: Image have different loading time for each image) 
+                            
                             AsyncImage(url: URL(string: googleLink?.img ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg" )) { phase in
                                 switch phase {
                                 case .empty:
@@ -117,26 +120,28 @@ struct GoogleLinkRow: View {
                                         .shadow(radius: 5, x: 5, y: 5)
                                 }
                             }
+                            
                         }
                         .aspectRatio(contentMode: .fit)
                         //.padding(.horizontal)
-                        
+                       
                         
                         
                         //link title
-                        NavigationLink {
+                        Button {
                             // tap to navigate to google link
                             if let link = URL(string: googleLink?.url ?? "link") {
-                                //openURL(googleLink)
-                                WebView(url: link)
-                                    .navigationTitle("\(googleLink?.title ?? "Recipe")")
-                                    .navigationBarTitleDisplayMode(.inline)
+                                openURL(link)
+                                //WebView(url: link)
+                                    //.navigationTitle("\(googleLink?.title ?? "Recipe")")
+                                    //.navigationBarTitleDisplayMode(.inline)
                                 
                             }
                         } label: {
                             VStack {
                                 Text(googleLink?.title ?? "Recipe title")
-                                    .lineLimit(2)
+                                    
+                                    //.lineLimit(4, reservesSpace: true)
                                     .foregroundStyle(.black)
                                     .font(.custom(CustomFont.appFontRegular.rawValue, size: 17))
                                     .padding()

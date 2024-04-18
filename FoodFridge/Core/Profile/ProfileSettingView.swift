@@ -14,6 +14,7 @@ enum Settings: String, CaseIterable {
     case privacyPolicy = "Privacy policy"
     case termOfUse = "Term of use "
     case reviewUs = "Review us"
+    case deleteAccount = "Delete account"
     
     var iconName: String {
         switch self {
@@ -27,6 +28,8 @@ enum Settings: String, CaseIterable {
             return "list.clipboard.fill"
         case .reviewUs:
             return "star.fill"
+        case .deleteAccount:
+            return "delete.right.fill"
         }
     }
     
@@ -46,6 +49,7 @@ struct ProfileSettingView: View {
     @State private var privacyPolicy = false
     @State private var termOfUse = false
     @State private var reviewUS = false
+    @State private var showAlertDeleteAccount = false
     
     
     
@@ -67,6 +71,40 @@ struct ProfileSettingView: View {
                         }
                         .foregroundStyle(determineColor(for: setting))
                     }
+                    .alert(isPresented: $showAlertDeleteAccount) {
+                                    Alert(
+                                        title: Text("Confirm Deletion"),
+                                        message: Text("Deleting your account will delete all data archived, This action cannot be undone."),
+                                        primaryButton: .destructive(Text("Delete")) {
+                                            //call api to delete account
+                                            Task {
+                                               let isSuccessDeleteAccount = try await DeleteUserAccount(sessionManager: sessionManager).deleteUser()
+                                                    print("Account deleted.")
+                                                if isSuccessDeleteAccount {
+                                                    //Log user out and update user login session to false to navigate to app first
+                                                    Task {
+                                                        do {
+                                                            self.isSignedOut = try await LogOut(sessionManager: sessionManager).logUserOut()
+                                                            print(isSignedOut)
+                                                            if self.isSignedOut {
+                                                                sessionManager.logout()
+                                                                print("logged out")
+                                                                authentication.updateValidation(success: false)
+                                                                //reset user's ingredient tag to empty array
+                                                                UserDefaults.standard.set([], forKey: "SavedTags")
+                                                                //turn loggedIn status to false 
+                                                                UserDefaults.standard.set(false, forKey: "userLoggedIn")
+                                                            }
+                                                        }catch {
+                                                            print("\(error.localizedDescription)")
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        secondaryButton: .cancel()
+                                    )
+                                }
                     .sheet(isPresented: $privacyPolicy, content: {
                         NavigationStack {
                             WebView(url: AppConstant.privacyPolicyLink!)
@@ -141,6 +179,11 @@ struct ProfileSettingView: View {
             case .reviewUs:
                 //Navigate user to app review
                 openURL(AppConstant.appReviewLink!)
+                
+            case .deleteAccount:
+                //show user alert
+                showAlertDeleteAccount = true
+                
             }
         }
     

@@ -15,6 +15,7 @@ struct RecipeRow: View {
     var body: some View {
         
         VStack {
+            /*
             AsyncImage(url: URL(string: imageURL)) { phase in
                            switch phase {
                            case .empty:
@@ -38,10 +39,16 @@ struct RecipeRow: View {
                                EmptyView()
                            }
                        }
+             */
             
             Text(title)
+                .foregroundStyle(.black)
+                .padding(.horizontal)
                 .font(.custom(CustomFont.appFontBold.rawValue, size: 18))
-                .frame(width: 300)
+                .frame(width: 350, height: 70)
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 8, x: 5, y: 5)
                 .multilineTextAlignment(.center)
         }
         
