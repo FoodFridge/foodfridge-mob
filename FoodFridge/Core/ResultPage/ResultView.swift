@@ -25,6 +25,7 @@ struct ResultView: View {
                     ScrollView {
                         VStack {
                             Text("We've found what you can cook!")
+                                .padding()
                                 .lineLimit(2, reservesSpace: true)
                                 .multilineTextAlignment(.center)
                                 .padding(5)

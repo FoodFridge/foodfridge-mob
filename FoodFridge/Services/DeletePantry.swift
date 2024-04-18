@@ -27,7 +27,7 @@ class DeletePantry {
             
             
         }catch {
-            print("Error deleting: \(error)")
+            print("Error deleting pantry: \(error)")
         }
     }
 }
