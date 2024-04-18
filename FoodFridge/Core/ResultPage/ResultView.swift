@@ -24,9 +24,11 @@ struct ResultView: View {
                 if viewModel.recipes.count != 0 {
                     ScrollView {
                         VStack {
-                            Text("We've found Recipes!")
+                            Text("We've found what you can cook!")
+                                .lineLimit(2, reservesSpace: true)
+                                .multilineTextAlignment(.center)
                                 .padding(5)
-                                .frame(width: 350, height: 45)
+                                .frame(width: 350, height: 65)
                                 .background(.button2)
                                 .cornerRadius(10)
                                 .font(.custom(CustomFont.appFontBold.rawValue, size: 25))

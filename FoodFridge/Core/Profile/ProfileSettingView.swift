@@ -14,6 +14,7 @@ enum Settings: String, CaseIterable {
     case privacyPolicy = "Privacy policy"
     case termOfUse = "Term of use "
     case reviewUs = "Review us"
+    case deleteAccount = "Delete account"
     
     var iconName: String {
         switch self {
@@ -27,6 +28,8 @@ enum Settings: String, CaseIterable {
             return "list.clipboard.fill"
         case .reviewUs:
             return "star.fill"
+        case .deleteAccount:
+            return "delete.right.fill"
         }
     }
     
@@ -46,6 +49,7 @@ struct ProfileSettingView: View {
     @State private var privacyPolicy = false
     @State private var termOfUse = false
     @State private var reviewUS = false
+    @State private var showAlertDeleteAccount = false
     
     
     
@@ -67,6 +71,21 @@ struct ProfileSettingView: View {
                         }
                         .foregroundStyle(determineColor(for: setting))
                     }
+                    .alert(isPresented: $showAlertDeleteAccount) {
+                                    Alert(
+                                        title: Text("Confirm Deletion"),
+                                        message: Text("Deleting your account will delete all data archived, This action cannot be undone."),
+                                        primaryButton: .destructive(Text("Delete")) {
+                                            print("Item deleted.")
+                                            //call api to delete account, if deleting success then log user out
+                                            
+                                            //
+                                            
+                                            
+                                        },
+                                        secondaryButton: .cancel()
+                                    )
+                                }
                     .sheet(isPresented: $privacyPolicy, content: {
                         NavigationStack {
                             WebView(url: AppConstant.privacyPolicyLink!)
@@ -141,6 +160,11 @@ struct ProfileSettingView: View {
             case .reviewUs:
                 //Navigate user to app review
                 openURL(AppConstant.appReviewLink!)
+                
+            case .deleteAccount:
+                //show user alert
+                showAlertDeleteAccount = true
+                
             }
         }
     

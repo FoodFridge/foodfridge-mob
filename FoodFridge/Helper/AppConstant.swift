@@ -70,4 +70,7 @@ class AppConstant {
     
     static let appReviewLink =
         URL(string: "https://apps.apple.com/app/id6476799564?action=write-review")
+    
+    static let deleteUserAccountURLString =
+        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/pantry/edit"
 }
