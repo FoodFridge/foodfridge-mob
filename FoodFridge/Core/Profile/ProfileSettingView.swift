@@ -81,8 +81,24 @@ struct ProfileSettingView: View {
                                                let isSuccessDeleteAccount = try await DeleteUserAccount(sessionManager: sessionManager).deleteUser()
                                                     print("Account deleted.")
                                                 if isSuccessDeleteAccount {
-                                                    //update user login session to false to navigate to app first page
-                                                    UserDefaults.standard.set(false, forKey: "userLoggedIn")
+                                                    //Log user out and update user login session to false to navigate to app first
+                                                    Task {
+                                                        do {
+                                                            self.isSignedOut = try await LogOut(sessionManager: sessionManager).logUserOut()
+                                                            print(isSignedOut)
+                                                            if self.isSignedOut {
+                                                                sessionManager.logout()
+                                                                print("logged out")
+                                                                authentication.updateValidation(success: false)
+                                                                //reset user's ingredient tag to empty array
+                                                                UserDefaults.standard.set([], forKey: "SavedTags")
+                                                                //turn loggedIn status to false 
+                                                                UserDefaults.standard.set(false, forKey: "userLoggedIn")
+                                                            }
+                                                        }catch {
+                                                            print("\(error.localizedDescription)")
+                                                        }
+                                                    }
                                                 }
                                             }
                                         },
