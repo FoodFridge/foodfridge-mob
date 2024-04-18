@@ -76,12 +76,15 @@ struct ProfileSettingView: View {
                                         title: Text("Confirm Deletion"),
                                         message: Text("Deleting your account will delete all data archived, This action cannot be undone."),
                                         primaryButton: .destructive(Text("Delete")) {
-                                            print("Item deleted.")
-                                            //call api to delete account, if deleting success then log user out
-                                            
-                                            //
-                                            
-                                            
+                                            //call api to delete account
+                                            Task {
+                                               let isSuccessDeleteAccount = try await DeleteUserAccount(sessionManager: sessionManager).deleteUser()
+                                                    print("Account deleted.")
+                                                if isSuccessDeleteAccount {
+                                                    //update user login session to false to navigate to app first page
+                                                    UserDefaults.standard.set(false, forKey: "userLoggedIn")
+                                                }
+                                            }
                                         },
                                         secondaryButton: .cancel()
                                     )

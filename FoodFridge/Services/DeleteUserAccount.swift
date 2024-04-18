@@ -20,12 +20,19 @@ class DeleteUserAccount: ObservableObject {
         do {
             let localID = sessionManager.getLocalID()
             print("deleting user id = \(String(describing: localID))")
+            
+            guard let token = sessionManager.getAuthToken() else {
+                throw SessionError.missingAuthToken
+            }
+            
             let requestBody = try? JSONSerialization.data(withJSONObject: ["localId": localID], options: [])
             let userTimeZone  = UserTimeZone.getTimeZone()
             // URL request object with URL and request method
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
+            request.httpBody = requestBody
             request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             
             let (_, response) = try await URLSession.shared.data(for: request)

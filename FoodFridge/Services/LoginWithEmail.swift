@@ -30,7 +30,7 @@ class LoginWithEmailService: ObservableObject {
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                
                //JSON data to be sent to the server
-               let jsonData = try JSONSerialization.data(withJSONObject: ["email": email, "password": password], options: [])
+               let jsonData = try JSONSerialization.data(withJSONObject: ["email": email.lowercased(), "password": password], options: [])
                request.httpBody = jsonData
                
                //network request
@@ -98,6 +98,12 @@ class LoginWithEmailService: ObservableObject {
                    //assign error to display
                    throw LogInError.inCorrectPassword
                    
+               case 404:
+                   //if not found email
+                   print("Log in email not found")
+                   //assign error to display
+                   throw LogInError.emailNotFound
+                   
                default:
                    print("Unknown error, please try again")
                    //assign error to display
@@ -120,12 +126,15 @@ class LoginWithEmailService: ObservableObject {
 enum LogInError : Error, LocalizedError {
     
     case inCorrectPassword
-    case unknown 
+    case emailNotFound
+    case unknown
     
     var errorDescription: String? {
         switch self {
         case .inCorrectPassword:
             return "Incorrect credential"
+        case .emailNotFound:
+            return "Email not found please try another email"
         case .unknown:
             return "An unknown error occurred. Please try again"
         }
