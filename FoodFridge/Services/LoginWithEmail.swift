@@ -24,10 +24,12 @@ class LoginWithEmailService: ObservableObject {
            guard let url = URL(string: AppConstant.logInWithEmailURLString2) else { throw URLError(.badURL)}
            
            do {
+               let userTimeZone  = UserTimeZone.getTimeZone()
                // URL request object with URL and request method
                var request = URLRequest(url: url)
                request.httpMethod = "POST"
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+               request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
                
                //JSON data to be sent to the server
                let jsonData = try JSONSerialization.data(withJSONObject: ["email": email.lowercased(), "password": password], options: [])
