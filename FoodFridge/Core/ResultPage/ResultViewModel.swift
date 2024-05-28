@@ -9,17 +9,17 @@ import Foundation
 
 @MainActor
 class ResultViewModel: ObservableObject {
-    @Published var recipes: [Recipe] = [Recipe]()
+    @Published var recipes: [EdamamRecipe] = [EdamamRecipe]()
     @Published var isLoading: Bool = false
     
-    init(ingredients: [String]) {
-        generatedRecipes(from: ingredients)
+    init(ingredients: [String], sessionManager: SessionManager) {
+        generateRecipes(from: ingredients, sessionManager: sessionManager)
     }
     
-    func generatedRecipes(from ingredients: [String]) {
+    func generateRecipes(from ingredients: [String], sessionManager: SessionManager) {
         Task {
             self.isLoading = true
-            self.recipes = try await GenerateRecipe.getRecipe(from: ingredients)
+            self.recipes = try await GenerateRecipe(sessionManager: sessionManager).getRecipe(from: ingredients)
             self.isLoading = false
             
         }

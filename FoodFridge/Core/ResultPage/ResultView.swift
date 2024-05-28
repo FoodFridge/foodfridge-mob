@@ -15,10 +15,9 @@ struct ResultView: View {
     @Environment(\.scenePhase) var scenePhase
     @State private var showProgressView = true
     @StateObject var viewModel: ResultViewModel
+    @StateObject var likeState = GoogleLinkRowViewModel()
     
-    let mockRecipes1 = ["A Christmas With Peking Duck", "Hunter's Duck","Asian Meatballs", "Duck Rumaki", "Black Truffle Caesar Salad","Duck with Dried Cranberries", "Tangerines and Mascarpone Sauce",  "Grilled Duck","Slow-roasted duck legs","Pan-Seared Duck With Blueberry Glaze","Baked Chicken Dijon"]
-    let mockRecipes2 = ["Kappa Maki", "Nasi Pudina (Mint Rice)",  "Cardamon Infused Black Rice Pudding with Coconut Milk", "Cumin-Scented Basmati Rice Pilaf", "Thai-Style Sticky Rice & Mango Dessert Shots" , "Coconut Rice Pudding",  "Wild Rice With Bacon", "Mushrooms & Green Onions", "Chicken Rollintini with Pesto", "Baby Spinach & Brown Rice" ]
-    
+  
     var body: some View {
         
         NavigationStack {
@@ -38,21 +37,19 @@ struct ResultView: View {
                                 .padding()
                         }
                         .padding()
-                        ForEach(mockRecipes2 , id: \.self) { recipe in
-                            NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: recipe)) {
-                                RecipeRow(title: recipe)
-                            }
                         
-                        }
                         
-                        /*
+                        
                         ForEach(viewModel.recipes, id: \.self) { recipe in
+                            //Text("recipe = \(recipe.title)")
+                            /*
                             NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: recipe.title)) {
                                 RecipeRow(title: recipe.title , imageURL: recipe.img)
                             }
-                         
+                             */
+                            RecipeRow(edamanRecipe: recipe, isLiked: recipe.isFavorite == "Y" ? true : false, likeState: likeState)
                         }
-                         */
+                        
                     }
                     .scrollIndicators(.hidden)
                 }else {

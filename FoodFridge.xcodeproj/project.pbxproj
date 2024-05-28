@@ -104,6 +104,7 @@
 		75AECFE62B7D2357009B93E1 /* AddPantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE52B7D2357009B93E1 /* AddPantryView.swift */; };
 		75AECFE82B7D2F92009B93E1 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AECFE72B7D2F92009B93E1 /* PantryView.swift */; };
 		75B16C782BE57B95003A46C4 /* EdamamRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B16C772BE57B95003A46C4 /* EdamamRecipe.swift */; };
+		75B16C7A2BE58403003A46C4 /* EdamamRecipeRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B16C792BE58403003A46C4 /* EdamamRecipeRequestBody.swift */; };
 		75B480582BA3BEBE00477EC4 /* AuthUserWithApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */; };
 		75BA25BA2BBC7BAE003D0D73 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA25B92BBC7BAE003D0D73 /* ResultViewModel.swift */; };
 		75BA25BC2BBC8B58003D0D73 /* CannotFindRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA25BB2BBC8B58003D0D73 /* CannotFindRecipeView.swift */; };
@@ -230,6 +231,7 @@
 		75AECFE52B7D2357009B93E1 /* AddPantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPantryView.swift; sourceTree = "<group>"; };
 		75AECFE72B7D2F92009B93E1 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 		75B16C772BE57B95003A46C4 /* EdamamRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipe.swift; sourceTree = "<group>"; };
+		75B16C792BE58403003A46C4 /* EdamamRecipeRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipeRequestBody.swift; sourceTree = "<group>"; };
 		75B480572BA3BEBE00477EC4 /* AuthUserWithApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserWithApp.swift; sourceTree = "<group>"; };
 		75BA25B92BBC7BAE003D0D73 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		75BA25BB2BBC8B58003D0D73 /* CannotFindRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannotFindRecipeView.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				752580C92B698F6500D536D2 /* LinkeRecipeResponseData.swift */,
 				752580CB2B69A13100D536D2 /* LinkRecipeRequestBody.swift */,
 				752580CF2B6ADD4500D536D2 /* FavoriteRecipeRequestBody.swift */,
+				75B16C792BE58403003A46C4 /* EdamamRecipeRequestBody.swift */,
 				752580D12B6AE64A00D536D2 /* AddFavoriteRecipeResonseData.swift */,
 				752580DC2B6B0EDE00D536D2 /* FavoriteLinkRecipe.swift */,
 				753245A92B7FF16700545DE7 /* LogInResponseData.swift */,
@@ -813,6 +816,7 @@
 				752580DB2B6B0E2800D536D2 /* GetFavoriteRecipe.swift in Sources */,
 				75BA25C22BBCD931003D0D73 /* ResetPasswordFeedback.swift in Sources */,
 				7532459F2B7ED4D600545DE7 /* NavigationViewModel.swift in Sources */,
+				75B16C7A2BE58403003A46C4 /* EdamamRecipeRequestBody.swift in Sources */,
 				75CE75B82B76B3140063B742 /* DeletePantry.swift in Sources */,
 				757C63FE2B85362B00FC6D5E /* ExtentionView.swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,

@@ -61,7 +61,10 @@ struct LandingPageView: View {
                                 .overlay(
                                     
                                         NavigationLink {
-                                            ResultView(viewModel: ResultViewModel(ingredients: vm.selectedTags))
+                                            
+ 
+                                            ResultView(viewModel: ResultViewModel(ingredients: vm.selectedTags, sessionManager: sessionManager))
+                                           
                                         }label: {
                                             SmallButton(title: "Generate Recipe", isTapped: $isTapped)
                                                 
