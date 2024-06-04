@@ -15,7 +15,7 @@ struct CannotFindRecipeView: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
             VStack {
-                Text("No recipe.\nadd more ingredients and please try again.")
+                Text("No recipe.\nchoose new ingredients and please try again.")
                     .multilineTextAlignment(.center)
                 NavigationLink {
                     LandingPageView()

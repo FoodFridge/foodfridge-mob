@@ -73,4 +73,9 @@ class AppConstant {
     
     static let deleteUserAccountURLString =
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/deleteUserAccount"
+    
+    static let generateRecipWithEdamam =
+        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/GenerateRecipeWithEdamam"
+    
+    
 }

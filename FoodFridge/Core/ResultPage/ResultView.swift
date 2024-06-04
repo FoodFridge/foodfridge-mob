@@ -15,8 +15,9 @@ struct ResultView: View {
     @Environment(\.scenePhase) var scenePhase
     @State private var showProgressView = true
     @StateObject var viewModel: ResultViewModel
+    @StateObject var likeState = GoogleLinkRowViewModel()
     
-    
+  
     var body: some View {
         
         NavigationStack {
@@ -36,11 +37,19 @@ struct ResultView: View {
                                 .padding()
                         }
                         .padding()
+                        
+                        
+                        
                         ForEach(viewModel.recipes, id: \.self) { recipe in
+                            //Text("recipe = \(recipe.title)")
+                            /*
                             NavigationLink(destination: LinkRecipesView(sessionManager: sessionManager, title: recipe.title)) {
                                 RecipeRow(title: recipe.title , imageURL: recipe.img)
                             }
+                             */
+                            RecipeRow(edamanRecipe: recipe, isLiked: recipe.isFavorite == "Y" ? true : false, likeState: likeState)
                         }
+                        
                     }
                     .scrollIndicators(.hidden)
                 }else {

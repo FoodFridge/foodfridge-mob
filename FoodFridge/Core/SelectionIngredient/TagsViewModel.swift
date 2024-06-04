@@ -13,7 +13,7 @@ import SwiftUI
 class TagsViewModel: ObservableObject {
     
     @Published var selectedTags : [String] = []
-    @Published var generatedRecipes: [Recipe] = [Recipe]()
+    @Published var generatedRecipes: [EdamamRecipe] = [EdamamRecipe]()
     
     @Published var ingredientsByType: [String: [IngredientItem]] = [:]
     @Published var itemsDict: [String : [String]] = [:]
@@ -36,7 +36,7 @@ class TagsViewModel: ObservableObject {
     
     func generateRecipe(from ingredients : [String]) async throws {
         isLoading = true
-        self.generatedRecipes = try await GenerateRecipe.getRecipe(from: ingredients)
+        self.generatedRecipes = try await GenerateRecipe(sessionManager: session).getRecipe(from: ingredients)
         isLoading = false
     }
     

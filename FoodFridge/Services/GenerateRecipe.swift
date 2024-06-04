@@ -7,23 +7,32 @@
 
 import Foundation
 class GenerateRecipe {
+    
+    let sessionManager: SessionManager
+        
+        init(sessionManager: SessionManager) {
+            self.sessionManager = sessionManager
+        }
+    
    
-    static func getRecipe(from selectedIngredients: [String]) async throws -> [Recipe] {
+    func getRecipe(from selectedIngredients: [String]) async throws -> [EdamamRecipe] {
         
         let ingredients = selectedIngredients
 
-        // Create an instance of JSONEncoder
-        let encoder = JSONEncoder()
         // Convert array to a dictionary with string keys
         let dict = Dictionary(uniqueKeysWithValues: zip(ingredients.indices.map(String.init), ingredients))
         
-        guard let url = URL(string: AppConstant.getRecipesURLString) else {
+        guard let url = URL(string: AppConstant.generateRecipWithEdamam) else {
                    throw URLError(.badURL)
                }
         // Encode the array of strings into JSON data
         do {
-            let jsonData = try encoder.encode(dict)
-
+            
+            let localID = sessionManager.getLocalID()
+            print("generate recipe user id = \(String(describing: localID))")
+            
+            let jsonData = try JSONSerialization.data(withJSONObject: ["local_id": localID ?? "", "ingredient": dict], options: [])
+           
             // Convert the JSON data to a string for debugging
             if let jsonString = String(data: jsonData, encoding: .utf8) {
                 print("Encoded JSON: \(jsonString)")
@@ -42,15 +51,15 @@ class GenerateRecipe {
                  print("response = \(responseText)")
                 }
                 // Decode data to SpoonRecipe
-                let responseData = try JSONDecoder().decode(GoogleRecipe.self, from: data)
+                let responseData = try JSONDecoder().decode([EdamamRecipe].self, from: data)
                 print("decodedRecipes = \(responseData)")
-                return responseData.recipes
+                return responseData
             }
         } catch {
             print("Error coding JSON: \(error)")
         }
             
-            return Recipe.mockRecipes
+            return EdamamRecipe.mockRecipes
         }
     
 }

@@ -55,12 +55,17 @@ class GoogleSignInHelper {
             
                     //get email and firebase UID to Auth user with our app
                     if let userEmail = user.email {
+                        print("gg signing in email = \(userEmail)")
+                        print("gg local id = \(user.uid)")
                         Task {
                             //Auth user with app and save user session info in AuthwithApp function
                             do {
                                 let successAuthWithApp = try await AuthUserWithApp.auth(email: userEmail , userId: user.uid , sessionManager: self.sessionManager )
                                 if successAuthWithApp {
                                     print("google signed in")
+                                }
+                                else{
+                                    print("gg sign in cannot auth with app")
                                 }
                             }catch {
                                 print("got error AuthWithApp = \(error.localizedDescription)")
