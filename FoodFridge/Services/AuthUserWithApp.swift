@@ -15,10 +15,12 @@ class AuthUserWithApp {
         guard let url = URL(string: urlEndPoint) else { throw URLError(.badURL)}
         
         do {
+            let userTimeZone  = UserTimeZone.getTimeZone()
             //create request object, http method and header
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type" )
+            request.setValue(userTimeZone, forHTTPHeaderField: "User-Timezone")
             //JSON data to be sent to the server
             let jsonData = try? JSONSerialization.data(withJSONObject: ["email": email, "localId": userId], options: [])
             request.httpBody = jsonData
