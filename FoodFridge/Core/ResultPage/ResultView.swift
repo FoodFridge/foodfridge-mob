@@ -94,8 +94,8 @@ struct ResultView: View {
             
             
         }
-        
-        
+        // show animated bar to let user sign in before save recipe
+        RecipeAnimation(likeState: likeState)
     }
 }
 
