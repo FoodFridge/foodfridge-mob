@@ -47,6 +47,7 @@ struct ResultView: View {
                                 RecipeRow(title: recipe.title , imageURL: recipe.img)
                             }
                              */
+                           
                             RecipeRow(edamanRecipe: recipe, isLiked: recipe.isFavorite == "Y" ? true : false, likeState: likeState)
                         }
                         
@@ -62,6 +63,11 @@ struct ResultView: View {
             }
             
         }
+        .onAppear {
+                //Task {
+                    //GenerateRecipe.getRecipe(from:)
+                //}
+            }
         .toolbar {
             
             ToolbarItemGroup(placement: .topBarTrailing) {

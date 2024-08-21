@@ -25,10 +25,16 @@ struct FavoriteRecipeView: View {
             if !vm.listOfFavLinks.isEmpty {
                 ScrollView {
                     // Looping through the recipes array
+                    
+                    ForEach(vm.listOfFavLinks, id: \.self) { recipeLink in
+                        FavLinkRow(favLink: recipeLink)
+                    }
+                    /*
                     VStack {
+                        
                         ForEach(vm.listOfFavLinks, id: \.self) { recipe in
                             VStack(alignment: .leading) {
-                                Text("\(recipe.recipeName)")
+                                Text("\(recipe.title)")
                                     .font(Font.custom(CustomFont.appFontBold.rawValue, size: 20))
                                 
                             }
@@ -38,16 +44,16 @@ struct FavoriteRecipeView: View {
                             .padding(.bottom, -5)
                             .padding(.top, 20)
                             
-                            
-                            ForEach(recipe.recipeLinks, id: \.self) { recipeLink in
-                                FavLinkRow(googleLink: recipeLink)
-                            }
+                           
+                  
                             
                         }
+                     */
+                     
                         
                     }
                     
-                }
+               
                 .scrollIndicators(.hidden)
                 
             

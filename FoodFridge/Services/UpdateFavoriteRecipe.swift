@@ -38,7 +38,7 @@ class UpdateFavoriteRecipe {
                 print("DEBUG: statusCode =  \(response)")
                 
                 if let responseText = String(data: data, encoding: .utf8) {
-                 print("response = \(responseText)")
+                 print("update fav  response = \(responseText)")
                     
                 }
                 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavLinkRow: View {
-    var googleLink:  RecipeLink?
+    var favLink:  RecipeLink?
     @State private var isLiked: Bool = true
     @Environment(\.openURL) var openURL
     @Environment(\.colorScheme) var colorScheme
@@ -23,7 +23,7 @@ struct FavLinkRow: View {
                         // tap to save/unsave
                         isLiked.toggle()
                         Task {
-                            try await UpdateFavoriteRecipe.updateFavorite(linkId: googleLink?.id ?? "id", isFavorite: isLiked)
+                            try await UpdateFavoriteRecipe.updateFavorite(linkId: favLink?.id ?? "id", isFavorite: isLiked)
                         }
                     } label: {
                         Image(systemName:  isLiked  ?  "heart.fill" : "heart" )
@@ -40,15 +40,15 @@ struct FavLinkRow: View {
                     //Link Image
                     NavigationLink {
                         // tap to navigate to google link
-                        if let link = URL(string: googleLink?.url ?? "url") {
+                        if let link = URL(string: favLink?.link ?? "url") {
                             //openURL(googleLink)
                             WebView(url: link)
-                                .navigationTitle("\(googleLink?.title ?? "Recipe")")
+                                .navigationTitle("\(favLink?.title ?? "Recipe")")
                                 .navigationBarTitleDisplayMode(.inline)
                         }
                     } label: {
                         
-                        AsyncImage(url: URL(string: googleLink?.img ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg" )) { phase in
+                        AsyncImage(url: URL(string: favLink?.img ?? "https://www.twopeasandtheirpod.com/wp-content/uploads/2015/01/Peanut-Butter-Apple-Baked-Oatmeal-2.jpg" )) { phase in
                             switch phase {
                             case .empty:
                                 // Placeholder when the image is not yet loaded
@@ -90,15 +90,15 @@ struct FavLinkRow: View {
                     //Link title
                     NavigationLink {
                         // tap to navigate to google link
-                        if let link = URL(string: googleLink?.url ?? "url") {
+                        if let link = URL(string: favLink?.link ?? "url") {
                             //openURL(googleLink)
                             WebView(url: link)
-                                .navigationTitle("\(googleLink?.title ?? "Recipe")")
+                                .navigationTitle("\(favLink?.title ?? "Recipe")")
                                 .navigationBarTitleDisplayMode(.inline)
                         }
                     } label: {
                         VStack {
-                            Text(googleLink?.title ?? "Title")
+                            Text(favLink?.title ?? "Title")
                                 .lineLimit(2)
                                 .foregroundStyle(.black)
                                 .font(.custom(CustomFont.appFontRegular.rawValue, size: 17))
