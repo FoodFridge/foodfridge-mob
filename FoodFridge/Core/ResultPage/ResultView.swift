@@ -47,6 +47,7 @@ struct ResultView: View {
                                 RecipeRow(title: recipe.title , imageURL: recipe.img)
                             }
                              */
+                           
                             RecipeRow(edamanRecipe: recipe, isLiked: recipe.isFavorite == "Y" ? true : false, likeState: likeState)
                         }
                         
@@ -62,6 +63,11 @@ struct ResultView: View {
             }
             
         }
+        .onAppear {
+                //Task {
+                    //GenerateRecipe.getRecipe(from:)
+                //}
+            }
         .toolbar {
             
             ToolbarItemGroup(placement: .topBarTrailing) {
@@ -94,8 +100,8 @@ struct ResultView: View {
             
             
         }
-        
-        
+        // show animated bar to let user sign in before save recipe
+        RecipeAnimation(likeState: likeState)
     }
 }
 

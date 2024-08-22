@@ -24,18 +24,20 @@ struct RecipeLink: Codable, Identifiable, Hashable {
     var id: String
     var img: String
     var title: String
-    var url:String
-    var isFavorite: String
-    var userId: String?
+    var link:String
+    var favorite_status: String
+    var local_id: String?
     
+    /*
     enum CodingKeys: String, CodingKey {
-        case id = "favId"
+        case id
         case img
         case title
-        case url
-        case isFavorite
-        case userId
+        case link
+        case favorite_status
+        case local_id
     }
+     */
 }
 
 

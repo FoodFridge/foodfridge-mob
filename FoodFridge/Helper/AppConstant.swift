@@ -45,10 +45,10 @@ class AppConstant {
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/Link"
     
     static var addFavoriteRecipeURLString =
-        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/favorite"
+        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/favoriteRecipe"
     
     static var getFavoriteRecipeOfuserUSLString =
-        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/favorite"
+        "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/favoriteRecipe"
     
     static var addPantryURLString =
         "https://3vrjipny8a.execute-api.us-east-1.amazonaws.com/prod/api/v1/pantry/add"

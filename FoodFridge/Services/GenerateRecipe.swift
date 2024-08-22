@@ -52,7 +52,7 @@ class GenerateRecipe {
                 }
                 // Decode data to SpoonRecipe
                 let responseData = try JSONDecoder().decode([EdamamRecipe].self, from: data)
-                print("decodedRecipes = \(responseData)")
+                print("Edaman Recipes = \(responseData)")
                 return responseData
             }
         } catch {

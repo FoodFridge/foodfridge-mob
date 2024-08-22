@@ -21,8 +21,9 @@ struct EdamamRecipe: Codable, Identifiable, Hashable {
         case img
         case isFavorite = "favorite_status"
         case link
-        case userId = "local_Id"
+        case userId = "local_id"
     }
+    
 }
     
 extension EdamamRecipe {
