@@ -53,7 +53,6 @@ struct DataScannerView: UIViewControllerRepresentable {
         }
         
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
             recognizedItems.append(contentsOf: addedItems)
             print("didAddItems \(addedItems)")
         }

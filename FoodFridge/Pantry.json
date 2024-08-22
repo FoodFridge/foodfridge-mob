@@ -1,0 +1,28 @@
+{
+    "status": "1",
+    "message": "Data retrieved successfully",
+    "data": [
+        {
+            "date": "02/28/2024",
+            "pantryInfo": [
+                {
+                    "pantryName": "Evian",
+                    "doc_id": "jTupMq6cWx5yuLBDqpmo"
+                }
+            ]
+        },
+        {
+            "date": "02/29/2024",
+            "pantryInfo": [
+                {
+                    "pantryName": "Sausage.",
+                    "doc_id": "2diqTk7uMJCbQ2YyrXrI"
+                },
+                {
+                    "pantryName": "Cucumber",
+                    "doc_id": "GKXeGtErZemVuGQVurCB"
+                }
+            ]
+        }
+    ]
+}

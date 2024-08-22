@@ -2,67 +2,126 @@
 //  PantryView.swift
 //  FoodFridge
 //
-//  Created by Jessie Pastan on 1/9/24.
+//  Created by Jessie Pastan on 2/14/24.
 //
 
 import SwiftUI
+import Foundation
 
 struct PantryView: View {
     
     @EnvironmentObject var vm: ScanItemViewModel
-  
+    
     @FocusState private var isTextFieldFocused: Bool
-    @State private var isEditing = false
- 
-    @State private var text = ""
-    @State private var editingItemId: Int?
-    
-    var body: some View {
-        
-        Text("Your pantry")
-        Text("(for testing) edit id : \(editingItemId ?? 1000)")
-        
-        
-        List {
-            Section(header: Text(Date(), style: .date)) {
-                     ForEach($vm.pantryItems.indices, id: \.self) { index in
-                         if PantryItem.mockPantryItem[index].id == editingItemId {
-                             HStack {
-                                 TextField(PantryItem.mockPantryItem[index].itemName, text: $text, onCommit: {
-                                     self.editingItemId = nil
-                                     // Handle the commit action here
-                                 })
-                                 Button {
-                                     self.editingItemId = nil
-                                     //MARK: TODO: Save new data to database
-                                 } label: {
-                                     Text("Done")
-                                 }
-                             }
-                         } else {
-                             HStack {
-                                 Text(PantryItem.mockPantryItem[index].itemName)
-                                 Spacer()
-                                 Button {
-                                     isEditing = true
-                                     self.editingItemId = PantryItem.mockPantryItem[index].id
-                                 } label: {
-                                     Text("Edit")
-                                 }
-                             }
-                         }
-                     }.onDelete(perform: deleteItems)
-                 }
-             }
-    }
-    
-    
 
-    func deleteItems(at offsets: IndexSet) {
-        vm.pantryItems.remove(atOffsets: offsets)
+    @State var onSwipeId = ""
+   
+    @State private var editingItemId: String?
+    
+    @State private var showAlert = false
+
+    var body: some View {
+        NavigationStack {
+            
+            if !vm.pantryItems.isEmpty {
+                //let userTimeZone = TimeZone.current
+                //Text("(for testing) edit id : \(editingItemId ?? "testId")")
+                //Text("user time zone identifier = \(userTimeZone.identifier)")
+                
+                List {
+                    ForEach(vm.pantryItems.indices, id: \.self) { pantryIndex in
+                        Section(header: Text(vm.pantryItems[pantryIndex].date)) {
+                            ForEach(vm.pantryItems[pantryIndex].pantryInfo.indices, id: \.self) { pantryItemIndex in
+                                let pantry = $vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex]
+                                if pantry.id == editingItemId {
+                                    HStack {
+                                        TextField("Enter pantry name" , text: $vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName)
+                                        Button(action: {
+                                            //if user edit some text
+                                                // Save new data to database
+                                            if !String(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName).isEmpty {
+                                                Task {
+                                                    try await EditPantry.edit(itemID: editingItemId ?? "", to:   String(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName).trimmingCharacters(in: .whitespacesAndNewlines))
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Delay of 0.2 second
+                                                        withAnimation {
+                                                            self.editingItemId = nil
+                                                        }
+                                                    }
+                                                }
+                                            }else {
+                                                //show alert
+                                                self.showAlert = true
+                                            }
+                                            
+                                        }) {
+                                            Text("Done")
+                                        }
+                                        .alert(isPresented: $showAlert) {
+                                            Alert(title: Text(""), message: Text("Please enter item to save"), dismissButton: .default(Text("OK")))
+                                                }
+                                    }
+                                    .focused($isTextFieldFocused) // Bind to FocusState
+                                    .onAppear {
+                                    DispatchQueue.main.async {
+                                    self.isTextFieldFocused = true // Activate editing mode
+                                }
+                                }
+                                    
+                                } else {
+                                    HStack {
+                                        Text(vm.pantryItems[pantryIndex].pantryInfo[pantryItemIndex].pantryName)
+                                        Spacer()
+                                        Button(action: {
+                                            self.editingItemId = pantry.id
+                                        }) {
+                                            Text("Edit")
+                                        }
+                                    }
+                                }
+                            }
+                            .onDelete { offsets in
+                                Task {
+                                    
+                                     vm.deleteItem(at: offsets, from: vm.pantryItems[pantryIndex].date)
+                                }
+                                
+                            }
+                            .frame(minHeight: 50)
+                        }
+                    }
+                }
+                
+    
+                 
+            }
+            else if vm.isLoading {
+                ProgressView()
+            }
+            else {
+                Text("Your pantry is empty")
+            }
+        }
+        .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 17))
+        .onAppear {
+            
+            //fetch updated pantry
+            Task {
+                await vm.getPantry()
+            }
+        }
+        
+        
+        //MARK: TODO : Add new pantry
+        NavigationLink {
+            AddPantryView()
+        } label: {
+            Image(systemName: "plus.app")
+                .bold()
+                .font(.title)
+        }
+        
+        
     }
-    
-    
     
 }
 

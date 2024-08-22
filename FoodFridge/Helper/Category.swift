@@ -7,27 +7,80 @@
 
 import Foundation
 
-enum Category: String {
+enum Category: String, CaseIterable {
     
-    case carb = "01"
+    case pantry = "01"
     case protein = "02"
-    case dairy = "03"
-    case veggie = "04"
-    case seasoning = "05"
+    case seafood = "03"
+    case dairy = "04"
+    case sauces = "05"
+    case cereal = "06"
+    case carb = "07"
+    case veggie = "08"
+    case fruit = "09"
+    case seasoning = "10"
+    case sugar = "11"
+    case others = "12"
+    
+    
     
     var displayName: String {
            switch self {
            case .protein:
-               return "Protein"
+               return "Meat"
            case .carb:
-               return "Carbohydrate"
+               return "Carb"
            case .dairy:
-               return "Dairy Product"
+               return "Dairy"
            case .veggie:
-               return "Fruit and Vegetable"
+               return "Veggie"
            case .seasoning:
-               return "Seasoning"
+               return "Spices"
+           case .seafood:
+               return "Seafood"
+           case .fruit:
+               return "Fruit"
+           case .pantry:
+               return "My pantry"
+           case .cereal:
+               return "Nuts"
+           case .others:
+               return "Others"
+           case .sauces:
+               return "Sauce"
+           case .sugar:
+               return "Sugar"
            }
        }
+    
+    var icon: String {
+        switch self {
+        case .protein:
+            return "steak"
+        case .carb:
+            return "bread"
+        case .dairy:
+            return "milk"
+        case .veggie:
+            return "vegetables"
+        case .seasoning:
+            return "spices"
+        case .seafood:
+            return "seafood"
+        case .fruit:
+            return "fruit"
+        case .pantry:
+            return "refrigerator"
+        case .cereal:
+            return "almond"
+        case .others:
+            return "glitter"
+        case .sauces:
+            return "spice"
+        case .sugar:
+            return "bag"
+        }
+        
+    }
     
 }

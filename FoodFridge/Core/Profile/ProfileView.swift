@@ -8,40 +8,65 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var data: [String: [IngredientItem]] = [:]
-    @State private var dictData: [String : [String]] = [:]
+    
+    
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = .button2
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
+    }
+   
+    @State private var selectedView: ChoiceOfView = .favorite
+   
     var body: some View {
-        VStack {
-            Text("\(data.count)")
-            Text("\(dictData.count)")
-            List(dictData.keys.sorted(), id: \.self) { key in
-                        Section(header: Text("Type Code: \(key)")) {
-                            ForEach(dictData[key] ?? [], id: \.self) { ingredientName in
-                                Text(ingredientName)
-                                
+        NavigationStack {
+            VStack {
+                    HStack(spacing: 3) {
+                        ForEach(ChoiceOfView.allCases, id: \.self) { view in
+                            Button {
+                                selectedView = view
+                            } label: {
+                                Text(view.rawValue)
+                                    .font(Font.custom(CustomFont.appFontBold.rawValue, size: 18))
+                                    .foregroundColor(view == selectedView ? .black : .gray)
+                                    .padding(.vertical, 10)
+                                    .padding(.horizontal, 20)
+                                    .background(view == selectedView ? Color.button2 : Color.white)
+                                    .cornerRadius(5)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color.button1, lineWidth: 5)
+                                        .opacity(view == selectedView ? 1 : 0)
+                                        .offset(x: 0, y: 0)
+                                    )
                             }
-                            
-                            }
+
                         }
+                    } 
+                        
+                Spacer()
+                ChosenSubProfileView(selectedView: selectedView)
+                Spacer()
+               
+            }
+            
             
         }
-        .onAppear {
-            //fetch all ingredient
-            Task {
-                do {
-                    // Assuming fetchData is an asynchronous function that returns data
-                    let fetchedData =  try FetchIngredientsLocal().loadIngredients()
-                    self.data = fetchedData
-                    //print("Successful retrieved data = \(fetchedData)")
-                    self.dictData = SelectionSheetViewModel().getItemsNameWithCategory(data: self.data)
-                    
-                } catch {
-                    print("Error fetching data: \(error.localizedDescription)")
-                }
+        .toolbar {
+            
+            NavigationLink {
+                //MARK: navigate to Profile view
+                ProfileSettingView()
+            }label: {
+                Image(systemName: "gearshape.fill")
+                    .foregroundColor(Color(.button2))
             }
         }
     }
 }
+
+
+
+
 
 #Preview {
     ProfileView()

@@ -9,56 +9,63 @@ import SwiftUI
 
 struct SelectionSheetView: View {
     
-    @State private var data : [String : [IngredientItem]] = [:]
-    @State private var dataDict: [String : [String]] = ["" : [""]]
-    @State var searchTag = ""
-    
-    @ObservedObject var vm = SelectionSheetViewModel()
     @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var scrollTarget: ScrollTarget
+    @EnvironmentObject var vm: TagsViewModel
+    @EnvironmentObject var sessionManager: SessionManager
     
-    
+   
     var body: some View {
-        
-        HStack {
-        Spacer()
-            Button(action: {
-                dismiss()
-            }, label: {
-                Image(systemName: "x.circle.fill").resizable()
+        VStack{
+            /*
+            HStack {
+                Spacer()
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "x.circle.fill").resizable()
+                    
+                })
+                .frame(width: 20, height: 20)
+                .padding(.top)
+                .padding(.horizontal)
+                .foregroundColor(Color(.button2))
+            }
+            */
+            
+                NavigationStack {
+                    VStack {
+                        TagsView(dataDicts: vm.itemsDict, selectedTarget: scrollTarget.targetID)
+                    }
+                    //for search ingredient vtext color
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+                }
+           
+        }
+        .onAppear {
+            Task {
+                //update all ingredients
+                try await vm.fetchIngredients()
+                if !vm.ingredientsByType.isEmpty {
+                    print("********sheetview got fetched ingredients data*********")
+                }else {
+                    print("sheetView can't get fethed data")
+                }
+                // transform fetched data to group of category
+                vm.itemsDict = try await vm.getItemsNameWithCategory(data: vm.ingredientsByType)
+                if !vm.itemsDict.isEmpty {
+                    print("**********sheetView got transform fetched data to dataDict*********")
+                }else {
+                    print("sheetView can't get dataDict")
+                }
                 
-            })
-            .frame(width: 20, height: 20)
-            .padding(.top)
-            .padding(.horizontal)
-            .foregroundColor(Color(.button2))
+            }
         }
         
-        
-        NavigationStack {
-            TagsView(dataDicts: self.dataDict )
-           }
-           .searchable(text: $searchTag, placement:
-           .navigationBarDrawer(displayMode: .always))
-           .onAppear {
-               //fetch all ingredient
-               Task {
-                   do {
-                       
-                       let fetchedData =  try FetchIngredientsLocal().loadIngredients()
-                       self.data = fetchedData
-                       self.dataDict = vm.getItemsNameWithCategory(data: self.data)
-                       
-                       //print("Successful retrieved data = \(fetchedData)")
-                       
-                       
-                   } catch {
-                       print("Error fetching data: \(error.localizedDescription)")
-                   }
-               }
-           }
-      
-      
     }
+    
+    
 }
 
 

@@ -1,0 +1,56 @@
+{
+    "status": "1",
+    "message": "Data retrieved successfully",
+    "data": [
+        {
+            "recipeName": "Homemade Vegetable Chips",
+            "recipeLinks": [
+                {
+                    "favId": "9ksXT4GhU7D1JcCMq6o7",
+                    "img": "https://thebigmansworld.com/wp-content/uploads/2022/04/veggie-chips-recipe.jpeg",
+                    "title": "Homemade Veggie Chips (Oil free!) - The Big Man's World ®",
+                    "url": "https://thebigmansworld.com/oil-free-baked-veggie-chips-paleo-vegan-gluten-free/",
+                    "isFavorite": "Y",
+                    "userId": "test user"
+                },
+                {
+                    "favId": "CQsjJVSDpgIfp41ZaMZZ",
+                    "img": "https://i1.wp.com/www.thespiffycookie.com/wp-content/uploads/2017/06/Homemade-Veggie-Chips-5.jpg",
+                    "title": "Homemade Veggie Chips",
+                    "url": "https://www.thespiffycookie.com/2017/06/08/homemade-veggie-chips/",
+                    "isFavorite": "Y",
+                    "userId": "test user"
+                },
+                {
+                    "favId": "Cge52HZVxwfhd2InMM7R",
+                    "img": "https://www.slenderkitchen.com/sites/default/files/styles/data_share/public/recipe_images/microwave-vegetable-chips-4.jpg",
+                    "title": "Microwave Veggie Chips - Slender Kitchen",
+                    "url": "https://www.slenderkitchen.com/recipe/microwave-veggie-chips",
+                    "isFavorite": "Y",
+                    "userId": "test user"
+                }
+            ]
+        },
+        {
+            "recipeName": "Taro Tapioca Dessert Soup",
+            "recipeLinks": [
+                {
+                    "favId": "DIUArKkeAHcWqaaR0Dml",
+                    "img": "https://thewoksoflife.com/wp-content/uploads/2022/11/taro-sago-dessert-soup-14.jpg",
+                    "title": "Taro Sago (Tapioca) Dessert Soup - The Woks of Life",
+                    "url": "https://thewoksoflife.com/taro-sago-dessert-soup/",
+                    "isFavorite": "Y",
+                    "userId": "test user"
+                },
+                {
+                    "favId": "Ja5Q4xJq2eNLUWquS0zV",
+                    "img": "https://www.justonecookbook.com/wp-content/uploads/2011/05/Taro-Tapioca-Dessert-Soup-II-e1305358126882.jpg",
+                    "title": "Taro Tapioca Pearl Dessert • Just One Cookbook",
+                    "url": "https://www.justonecookbook.com/taro-tapioca-dessert-soup/",
+                    "isFavorite": "Y",
+                    "userId": "test user"
+                }
+            ]
+        }
+    ]
+}
