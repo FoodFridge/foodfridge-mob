@@ -658,6 +658,7 @@
 				757C63BA2B85298C00FC6D5E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				757C63F12B852C1D00FC6D5E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				75A176B32BAA43D8006B46D4 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				604BBBAE2C77ECC10064F515 /* XCRemoteSwiftPackageReference "firebase" */,
 			);
 			productRefGroup = 757542C02B33E8F000048178 /* Products */;
 			projectDirPath = "";
@@ -958,7 +959,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodFridge/Preview Content\"";
-				DEVELOPMENT_TEAM = M538P8S5RA;
+				DEVELOPMENT_TEAM = PT92CM9W49;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1006,7 +1007,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodFridge/Preview Content\"";
-				DEVELOPMENT_TEAM = M538P8S5RA;
+				DEVELOPMENT_TEAM = PT92CM9W49;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1066,6 +1067,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		604BBBAE2C77ECC10064F515 /* XCRemoteSwiftPackageReference "firebase" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Loukkeaw/firebase";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		753245AD2B8008B600545DE7 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
